@@ -45,13 +45,23 @@ export function addEnergy(a: EnergyCost, b: EnergyCost): EnergyCost {
 
 export const ZERO_ENERGY: EnergyCost = { fuelL: 0, kwh: 0, fuelCost: 0, elecCost: 0 };
 
-/** Where to sleep at a stop. High-altitude nights always go to a hotel (cold, oxygen). */
-export function sleepModeFor(node: RouteNode, strategy: LodgingStrategy, transit: boolean): SleepMode {
+/** below this monthly average low (°C) nights are too cold to camp or sleep in the car */
+export const OUTDOOR_MIN_C = 0;
+/** people who can sleep in the car (a flat rear bed for two) */
+export const CAR_BEDS = 2;
+
+/**
+ * Where to sleep at a stop. High-altitude nights always go to a hotel (cold, oxygen); so do freezing months
+ * (`minTemp`: the month's average low) for camping and car sleeping, and car sleeping for more than two people.
+ */
+export function sleepModeFor(node: RouteNode, strategy: LodgingStrategy, transit: boolean,
+  { minTemp = null, people = 2 }: { minTemp?: number | null; people?: number } = {}): SleepMode {
   if ((node.alt ?? 0) >= HIGH_ALTITUDE_M) return "H";
+  if (minTemp != null && minTemp < OUTDOOR_MIN_C) return "H";
   const opts = node.sleep.split(/\s+/) as SleepMode[];
   if (strategy === "comfort") return "H";
   if (strategy === "budget") {
-    if (transit || opts.includes("V")) return "V";
+    if ((transit || opts.includes("V")) && people <= CAR_BEDS) return "V";
     if (opts.includes("C")) return "C";
     return "H";
   }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { packingFor } from "../lib/packing";
-import type { Plan } from "../lib/types";
+import { monthOf } from "../lib/dates";
+import type { Dataset, Plan } from "../lib/types";
 
 const KEY = "wanlilushu.packing.v1";
 
@@ -8,12 +9,12 @@ function load(): Record<string, boolean> {
   try { return JSON.parse(localStorage.getItem(KEY) ?? "{}"); } catch { return {}; }
 }
 
-export function Packing({ plan }: { plan: Plan }) {
+export function Packing({ plan, data }: { plan: Plan; data: Dataset }) {
   const [done, setDone] = useState<Record<string, boolean>>(load);
   useEffect(() => {
     try { localStorage.setItem(KEY, JSON.stringify(done)); } catch { /* storage may be unavailable */ }
   }, [done]);
-  const groups = packingFor(plan);
+  const groups = packingFor(plan, (s) => data.climate[s.node.id]?.[monthOf(s.date) - 1]?.[1] ?? null);
   const all = groups.flatMap((g) => g.items);
   const n = all.filter((i) => done[i]).length;
   return (

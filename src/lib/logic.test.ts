@@ -157,3 +157,29 @@ describe("budget options", () => {
     expect(opt?.label).toContain("×1）");
   });
 });
+
+describe("sleeping outdoors", () => {
+  it("books a hotel instead of camping or sleeping in the car on freezing nights", () => {
+    const d = fixture();
+    // b offers camping (not car sleeping); make its January nights freezing
+    d.climate.b = Array.from({ length: 12 }, (_, m) => [m === 0 ? -2 : 20, m === 0 ? -12 : 10, 50, 3] as MonthClimate);
+    const at = (startDate: string) => buildPlan(d, baseInput({ lodging: "budget", startDate })).stops.find((s) => s.node.id === "b")!.sleep;
+    expect(at("2027-06-01")).toBe("C");
+    expect(at("2027-01-01")).toBe("H");
+  });
+
+  it("does not put more than two people to sleep in the car", () => {
+    const p = buildPlan(fixture(), baseInput({ lodging: "budget", adults: 2, kids: 1 }));
+    expect(p.stops.find((s) => s.node.id === "b")!.sleep).toBe("C");
+  });
+});
+
+describe("one adult with a dog", () => {
+  it("boards the dog on days at pet-free sights, since nobody can take turns", () => {
+    const two = buildPlan(fixture(), baseInput({ dog: true, dogCare: "rotate", dogPerDay: 0, boardingPerDay: 100 }));
+    const one = buildPlan(fixture(), baseInput({ dog: true, dogCare: "rotate", dogPerDay: 0, boardingPerDay: 100, adults: 1 }));
+    expect(two.costs.dog).toBe(0);
+    expect(one.costs.dog).toBe(100);
+    expect(one.warnings.some((w) => w.text.includes("只有一位大人"))).toBe(true);
+  });
+});

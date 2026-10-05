@@ -206,7 +206,7 @@ export function StopDetail({ s, plan, data, set, onAddAfter, onSkipped }: {
       {n.tip && <p className="sd-tip">{n.tip}</p>}
       {plan.input.dog && (n.dog || s.petBanned) && (
         <p className="dogline">
-          {n.dog}{s.petBanned && !n.dog && `这里有禁宠或宠物政策未查到的收费景区，${plan.input.dogCare === "boarding" ? "已按寄养计费" : "安排一人陪狗或就近寄养"}。`}
+          {n.dog}{s.petBanned && !n.dog && `这里有禁宠或宠物政策未查到的收费景区，${plan.input.dogCare === "boarding" || plan.input.adults < 2 ? "已按寄养计费" : "安排一人陪狗或就近寄养"}。`}
         </p>
       )}
       {s.attractions.length > 0 && (

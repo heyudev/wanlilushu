@@ -28,3 +28,17 @@ describe("planToMarkdown", () => {
     expect(md).toContain("| 合计 |");
   });
 });
+
+describe("packing follows the plan", () => {
+  it("lists camping gear only with nights outdoors, and winter clothes only with freezing nights", async () => {
+    const { fixture, baseInput } = await import("./fixture");
+    const { buildPlan } = await import("./plan");
+    const hotel = buildPlan(fixture(), baseInput({ lodging: "comfort" }));
+    const camp = buildPlan(fixture(), baseInput({ lodging: "budget" }));
+    const tags = (p: typeof hotel, cold = false) => packingFor(p, () => (cold ? -5 : 10)).map((g) => g.tag);
+    expect(tags(hotel)).not.toContain("camp");
+    expect(tags(camp)).toContain("camp");
+    expect(tags(hotel)).not.toContain("winter");
+    expect(tags(hotel, true)).toContain("winter");
+  });
+});

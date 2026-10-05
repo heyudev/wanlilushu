@@ -13,7 +13,7 @@ export const COST_META: Record<keyof CostBreakdown, { label: string; basis: (p: 
   fuel: { label: "燃油", basis: (p) => `${p.input.lPer100} L/100km；92# 按各省 2026-09-24 调价后限价${p.input.fuelPrice != null ? `（已改为统一 ¥${p.input.fuelPrice}/L）` : ""}` },
   toll: { label: "过路费", basis: (p) => `高速里程 × ¥${p.input.tollPerKm}/km（一类客车，各省 0.4–0.6 不等）；未扣节假日免费` },
   electricity: { label: "充电", basis: (p) => p.input.vehicle === "phev" ? `纯电续航 ${p.input.evRangeKm}km × 各段充电便利度；${p.input.kwhPer100} kWh/100km；¥${p.input.elecPrice}/kWh` : "非插电车型，不计" },
-  dog: { label: "狗狗", basis: (p) => p.input.dog ? `¥${p.input.dogPerDay}/天口粮${p.input.dogCare === "boarding" ? `；禁宠景区日寄养 ¥${p.input.boardingPerDay}/天` : "；禁宠景区轮流陪护不计费"}` : "不带狗" },
+  dog: { label: "狗狗", basis: (p) => p.input.dog ? `¥${p.input.dogPerDay}/天口粮${p.input.dogCare === "boarding" || p.input.adults < 2 ? `；禁宠景区日寄养 ¥${p.input.boardingPerDay}/天` : "；禁宠景区轮流陪护不计费"}；坐飞机回家期间寄养` : "不带狗" },
   maintenance: { label: "保养", basis: (p) => `每 1 万公里 ¥${p.input.maintenancePer10k}` },
   misc: { label: "停车杂费", basis: (p) => `¥${p.input.miscPerDay}/天` },
   ferry: { label: "轮渡", basis: () => "渤海轮渡 大连→烟台（车 + 随车人员）" },

@@ -1,7 +1,7 @@
 // Packing list. Items carry a condition so the list follows the plan (dog, camping, plateau, plug-in).
 import type { Plan } from "./types";
 
-export type PackTag = "always" | "dog" | "camp" | "plateau" | "phev";
+export type PackTag = "always" | "dog" | "camp" | "plateau" | "phev" | "winter";
 
 export interface PackGroup {
   title: string;
@@ -31,6 +31,9 @@ export const PACKING: PackGroup[] = [
     "指夹血氧仪", "便携氧气（进藏后当地购买）", "防晒霜 SPF50+、UV400 墨镜、遮阳帽", "抓绒 + 冲锋衣 + 羽绒服",
     "润唇膏、保湿霜", "高反药物（出发前咨询医生）",
   ] },
+  { title: "冬季保暖", tag: "winter", items: [
+    "厚羽绒服、保暖内衣", "防滑雪地靴", "毛线帽、围巾、厚手套", "暖宝宝", "车用防冻液检查（出发前）",
+  ] },
   { title: "衣物", tag: "always", items: [
     "速干衣裤", "冲锋衣", "轻羽绒（北方、高原早晚）", "雨衣或折叠伞", "徒步鞋、拖鞋", "帽子、手套",
   ] },
@@ -45,14 +48,17 @@ export const PACKING: PackGroup[] = [
   ] },
 ];
 
-export function packingFor(plan: Plan): PackGroup[] {
+/** `minTemp(stop)`: the month's average low there, null without climate data */
+export function packingFor(plan: Plan, minTemp: (s: Plan["stops"][number]) => number | null = () => null): PackGroup[] {
   const plateau = plan.stops.some((s) => (s.node.alt ?? 0) >= 3000);
   const on: Record<PackTag, boolean> = {
     always: true,
     dog: plan.input.dog,
-    camp: plan.input.lodging !== "comfort",
+    // only when the plan actually has nights in a tent or in the car
+    camp: plan.stops.some((s) => s.nights > 0 && (s.sleep === "C" || s.sleep === "V")),
     plateau,
     phev: plan.input.vehicle === "phev",
+    winter: plan.stops.some((s) => s.nights > 0 && (minTemp(s) ?? 99) < 0),
   };
   return PACKING.filter((g) => on[g.tag]);
 }

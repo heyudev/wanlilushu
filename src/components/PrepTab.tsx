@@ -22,7 +22,7 @@ export function PrepTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
         <Warnings plan={plan} data={data} onSelectStop={onOpenStop} />
       </section>
       <Fold title="装备清单" sub="按你的行程自动增减，勾选会保存在本机">
-        <Packing plan={plan} />
+        <Packing plan={plan} data={data} />
       </Fold>
       <Fold title="证件、政策与路况" sub="边境管理区通行证、独库公路、新藏线、油价与过路费">
         <PolicyGuide />

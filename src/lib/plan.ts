@@ -138,7 +138,8 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     const date = addDays(input.startDate, day);
     const month = monthOf(date);
     // a month-long stay is costed as a monthly rental
-    const sleep = whole >= LONG_STAY_NIGHTS ? "R" : sleepModeFor(node, input.lodging, transit);
+    const sleep = whole >= LONG_STAY_NIGHTS ? "R"
+      : sleepModeFor(node, input.lodging, transit, { minTemp: data.climate[node.id]?.[month - 1]?.[1] ?? null, people: input.adults + input.kids });
     const src = pricedNear(stopIdx);
     const lodging = lodgingCost(sleep, nights, input, (src && priceIndex(data, src.id)) ?? 1);
     if (lodging == null && nights > 0) uncosted.add(sleep === "C" ? "camp" : "hotel");
@@ -407,12 +408,14 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     if (tKm > 0) segAdd(TRANSFER_SEG, tKm, 0, drive * share);
     roadNights += Math.max(0, l.driveDays - 1);
   }
+  // taking turns to stay with the dog needs two adults; alone, the dog is boarded on those days
+  const boardDog = input.dog && (input.dogCare === "boarding" || input.adults < 2);
   let careDays = 0;
   for (const s of stops) {
     localKm += s.localKm;
     costs.fuel += s.localEnergy.fuelCost; costs.electricity += s.localEnergy.elecCost;
     costs.lodging += s.lodgingCost; costs.tickets += s.ticketCost;
-    if (input.dogCare === "boarding") careDays += boardingDays(s.attractions, s.nights);
+    if (boardDog) careDays += boardingDays(s.attractions, s.nights);
     segAdd(s.node.seg, s.localKm, s.nights, s.localEnergy.fuelCost + s.localEnergy.elecCost + s.lodgingCost + s.ticketCost);
   }
   // the drives from home and back home, and nights on the road during long drives
@@ -496,6 +499,12 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     });
   }
   if (input.dog) {
+    if (input.dogCare === "rotate" && input.adults < 2 && careDays > 0) {
+      warnings.push({
+        kind: "dog", level: "info",
+        text: `只有一位大人时没法轮流陪狗，不让带狗的景区按就近寄养计费（共 ${careDays} 天）。`,
+      });
+    }
     if (visited.has("beijing") && input.dogSize !== "small") {
       warnings.push({
         kind: "dog", level: "warn",

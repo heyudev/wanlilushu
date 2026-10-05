@@ -208,6 +208,7 @@ export function TripSettings({ input, set, setAll, data, today }: { input: PlanI
           options={[["all", "全部"], ["4A", "4A 及以上"], ["5A", "只看 5A"]]} />
         <Choice label="住宿" value={input.lodging} onChange={(v) => set("lodging", v)}
           options={[["budget", "车宿露营优先"], ["balanced", "均衡"], ["comfort", "全住酒店"]]} />
+        <p className="hint">海拔 3500 米以上、当月平均最低气温低于 0℃ 的地方不露营不车宿，改住酒店；车里最多睡两个人。</p>
         <div className="row2">
           <Num id="maxh" label="每天最多开" unit="小时" value={input.maxDriveHours} step={0.5} min={3} onChange={(v) => set("maxDriveHours", Math.max(3, v))} />
         </div>
