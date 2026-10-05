@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { budgetOptions, fitToBudget } from "./budget";
 import { buildPlan, costTotal, daysUntilWindow, nightsFor } from "./plan";
+import { applyRhythm } from "../components/RhythmPicker";
+import { DEFAULT_INPUT } from "./defaults";
 import { baseInput, fixture } from "./fixture";
 import type { Dataset, MonthClimate } from "./types";
 
@@ -94,6 +96,15 @@ describe("waiting for the season", () => {
     const skipped = p.warnings.filter((w) => w.text.includes("没有等"));
     expect(skipped).toHaveLength(1);
     expect(skipped[0].text).toContain("最多等 30 天");
+  });
+
+  it("does not wait by default, and picking a rhythm keeps the traveller's own choice", () => {
+    expect(DEFAULT_INPUT.waitForSeason).toBe(false);
+    for (const r of ["checkin", "slow", "deep", "sojourn"] as const) {
+      expect(applyRhythm(DEFAULT_INPUT, r).waitForSeason).toBe(false);
+      const mine = applyRhythm({ ...DEFAULT_INPUT, waitForSeason: true, maxWaitDays: 90 }, r);
+      expect([mine.waitForSeason, mine.maxWaitDays]).toEqual([true, 90]);
+    }
   });
 
   it("waits when the window opens within the allowed days", () => {

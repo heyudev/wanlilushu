@@ -38,12 +38,13 @@ export const GATE_WINDOWS: Record<string, [number, number]> = {
 };
 
 export const RHYTHMS: Record<Exclude<Rhythm, "custom">, { label: string; hint: string; stayFactor: number;
-  comfortStayNights: number; sojournEveryWeeks: number; sojournWeeks: number; waitForSeason: boolean; maxWaitDays: number }> = {
-  // trip lengths on the full loop (2027 starts, March–September): about 9 months / 1 year / 1.5 years / 2 years
-  checkin: { label: "打卡", hint: "每站住一两晚，看主要风景", stayFactor: 1, comfortStayNights: 0, sojournEveryWeeks: 0, sojournWeeks: 0, waitForSeason: false, maxWaitDays: 0 },
-  slow: { label: "慢游", hint: "每个地方多住一点，舒服的地方住一周", stayFactor: 1.25, comfortStayNights: 7, sojournEveryWeeks: 0, sojournWeeks: 0, waitForSeason: true, maxWaitDays: 30 },
-  deep: { label: "深度慢游", hint: "每个地方多住一半，舒服的地方住两周", stayFactor: 1.5, comfortStayNights: 14, sojournEveryWeeks: 0, sojournWeeks: 0, waitForSeason: true, maxWaitDays: 30 },
-  sojourn: { label: "慢游 + 旅居", hint: "舒服的地方住两周，每两个多月旅居一个半月", stayFactor: 1.5, comfortStayNights: 14, sojournEveryWeeks: 10, sojournWeeks: 6, waitForSeason: true, maxWaitDays: 60 },
+  comfortStayNights: number; sojournEveryWeeks: number; sojournWeeks: number }> = {
+  // trip lengths on the full loop (2027 starts, March–September): about 9 months / 1 year / 1.5 years / 2 years.
+  // Waiting for a region's season is a separate choice (waitForSeason), off unless the traveller turns it on.
+  checkin: { label: "打卡", hint: "每站住一两晚，看主要风景", stayFactor: 1, comfortStayNights: 0, sojournEveryWeeks: 0, sojournWeeks: 0 },
+  slow: { label: "慢游", hint: "每个地方多住一点，舒服的地方住一周", stayFactor: 1.25, comfortStayNights: 7, sojournEveryWeeks: 0, sojournWeeks: 0 },
+  deep: { label: "深度慢游", hint: "每个地方多住一半，舒服的地方住两周", stayFactor: 1.5, comfortStayNights: 14, sojournEveryWeeks: 0, sojournWeeks: 0 },
+  sojourn: { label: "慢游 + 旅居", hint: "舒服的地方住两周，每两个多月旅居一个半月", stayFactor: 1.5, comfortStayNights: 14, sojournEveryWeeks: 10, sojournWeeks: 6 },
 };
 
 export const DOG_SIZE_LABEL: Record<"small" | "medium" | "large", { label: string; hint: string }> = {
@@ -102,8 +103,8 @@ export const DEFAULT_INPUT: PlanInput = {
   sojournEveryWeeks: RHYTHMS.slow.sojournEveryWeeks,
   sojournWeeks: RHYTHMS.slow.sojournWeeks,
   minComfort: 0.7,
-  waitForSeason: RHYTHMS.slow.waitForSeason,
-  maxWaitDays: RHYTHMS.slow.maxWaitDays,
+  waitForSeason: false,
+  maxWaitDays: 30,
   rentPerMonth: null,
   breaks: [],
   flightPerPerson: 1500,

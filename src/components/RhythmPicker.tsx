@@ -9,14 +9,14 @@ type Preset = Exclude<Rhythm, "custom">;
 
 export function applyRhythm(input: PlanInput, r: Preset): PlanInput {
   const p = RHYTHMS[r];
-  return { ...input, rhythm: r, stayFactor: p.stayFactor, comfortStayNights: p.comfortStayNights, sojournEveryWeeks: p.sojournEveryWeeks, sojournWeeks: p.sojournWeeks, waitForSeason: p.waitForSeason, maxWaitDays: p.maxWaitDays };
+  return { ...input, rhythm: r, stayFactor: p.stayFactor, comfortStayNights: p.comfortStayNights, sojournEveryWeeks: p.sojournEveryWeeks, sojournWeeks: p.sojournWeeks };
 }
 
 /** Four rhythm presets, each showing how long the whole trip becomes with the current choices. */
 export function RhythmPicker({ input, data, onPick }: { input: PlanInput; data: Dataset; onPick: (next: PlanInput) => void }) {
   const lengths = useMemo(() => Object.fromEntries((Object.keys(RHYTHMS) as Preset[]).map((r) => [r, buildPlan(data, applyRhythm(input, r)).days])),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [data, input.start, input.startDate, input.direction, input.pace, input.interests.join(), input.minComfort, input.breaks]);
+    [data, input.start, input.startDate, input.direction, input.pace, input.interests.join(), input.minComfort, input.breaks, input.waitForSeason, input.maxWaitDays]);
   return (
     <div className="field">
       <span className="label">旅行节奏</span>
@@ -74,14 +74,14 @@ export function RhythmFields({ input, set }: { input: PlanInput; set: SetInput }
         </div>
       </div>
       <label className="toggle" htmlFor="wait">
-        <input id="wait" type="checkbox" checked={input.waitForSeason} onChange={(e) => custom("waitForSeason", e.target.checked)} />
+        <input id="wait" type="checkbox" checked={input.waitForSeason} onChange={(e) => set("waitForSeason", e.target.checked)} />
         <span className="track" aria-hidden="true" />
-        <span>等季节：进西藏、新疆、川西、东北极北前季节不对，就在前一个旅居地多住</span>
+        <span>等季节（默认不等）：进西藏、新疆、川西、东北极北前季节不对，就在前一个旅居地多住</span>
       </label>
       {input.waitForSeason && (
         <div className="field" style={{ marginTop: 10 }}>
           <label htmlFor="mw">最多等多久（再久就不等，到时提醒季节不对）</label>
-          <select id="mw" value={String(input.maxWaitDays)} onChange={(e) => custom("maxWaitDays", Number(e.target.value))}>
+          <select id="mw" value={String(input.maxWaitDays)} onChange={(e) => set("maxWaitDays", Number(e.target.value))}>
             {[14, 30, 60, 90, 180].map((d) => <option key={d} value={d}>{d >= 30 ? `${d / 30} 个月` : `${d / 7} 周`}</option>)}
           </select>
         </div>
