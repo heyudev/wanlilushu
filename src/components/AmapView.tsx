@@ -19,7 +19,7 @@ const llToGcj = (ll: [number, number]) => wgsToGcj(ll[1], ll[0]);
 const PEAKS = (elevation as unknown as { peaks?: Record<string, [number, number, number]> }).peaks ?? {};
 
 const C = {
-  route: "#2d5e5a", routeDark: "#7fb5ab", dim: "#a9b9b2", dimDark: "#3f5652",
+  route: "#2d5e5a", dim: "#a9b9b2",
   start: "#b2392b", sojourn: "#2d5e5a", comfort: "#5b9a6e", wait: "#c27c1e", road: "#d9a650", ex: "#4f7f8a", pass: "#6b5aa6",
 };
 
@@ -28,21 +28,15 @@ const LAYER_LABEL: Record<LayerKey, string> = {
   dir: "行驶方向", roads: "风景道", numbers: "站点序号", passes: "高海拔山口", excursions: "单日往返",
 };
 
-function isDark() {
-  const t = document.documentElement.dataset.theme;
-  if (t) return t === "dark";
-  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
-}
-
 const svgUri = (w: number, h: number, body: string) =>
   `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">${body}</svg>`)}`;
 
 /** Marker icon by stop kind and state: circle = city, square = town or village, triangle = nature, dashed ring = overnight on the road. */
-function stopIcon(s: Stop, dark: boolean) {
+function stopIcon(s: Stop) {
   const big = s.node.star === 3 && !s.transit;
   const r = s.transit ? 3.5 : big ? 7 : 5.5;
-  const fill = s.sojourn ? C.sojourn : s.comfortStay ? C.comfort : s.waitDays > 0 ? C.wait : big ? (dark ? C.routeDark : C.route) : dark ? "#1b1f23" : "#ffffff";
-  const stroke = s.waitDays > 0 ? C.wait : dark ? C.routeDark : C.route;
+  const fill = s.sojourn ? C.sojourn : s.comfortStay ? C.comfort : s.waitDays > 0 ? C.wait : big ? C.route : "#ffffff";
+  const stroke = s.waitDays > 0 ? C.wait : C.route;
   const size = Math.ceil(r * 2 + 6), c = size / 2;
   const kind = s.transit ? "transit" : s.node.kind;
   let shape: string;
@@ -107,7 +101,6 @@ export function AmapView(props: Props) {
   const [ready, setReady] = useState(false);
   const [satellite, setSatellite] = useState(false);
   const [layers, setLayers] = useState<Record<LayerKey, boolean>>(loadLayers);
-  const [themeTick, setThemeTick] = useState(0);
   const [legendOpen, setLegendOpen] = useState(() => typeof window === "undefined" || window.innerWidth > 760);
 
   useEffect(() => { try { localStorage.setItem(LAYER_STORE, JSON.stringify(layers)); } catch { /* optional */ } }, [layers]);
@@ -129,7 +122,9 @@ export function AmapView(props: Props) {
       AMapRef.current = AMap;
       const map = new AMap.Map(el.current, {
         zoom: 4, center: [104, 36], viewMode: "2D", resizeEnable: true,
-        mapStyle: isDark() ? "amap://styles/darkblue" : "amap://styles/whitesmoke",
+        // only the standard style carries AMap's map approval number (审图号); custom styles such as
+        // whitesmoke or dark show none, so the basemap stays standard in both page themes
+        mapStyle: "amap://styles/normal",
       });
       map.addControl(new AMap.Scale());
       map.addControl(new AMap.ToolBar({ position: "RT" }));
@@ -149,22 +144,10 @@ export function AmapView(props: Props) {
     };
   }, []);
 
-  // ---- follow the page theme (system setting or the viewer's toggle)
-  useEffect(() => {
-    if (!ready) return;
-    const apply = () => { mapRef.current?.setMapStyle(isDark() ? "amap://styles/darkblue" : "amap://styles/whitesmoke"); setThemeTick((t) => t + 1); };
-    const mq = window.matchMedia?.("(prefers-color-scheme: dark)");
-    mq?.addEventListener?.("change", apply);
-    const mo = new MutationObserver(apply);
-    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-    return () => { mq?.removeEventListener?.("change", apply); mo.disconnect(); };
-  }, [ready]);
-
   // ---- draw everything for the current plan and layer switches
   useEffect(() => {
     const map = mapRef.current, AMap = AMapRef.current;
     if (!ready || !map || !AMap) return;
-    const dark = isDark();
     const R = L.current;
     R.lines.forEach(({ line }) => map.remove(line));
     R.lines.clear();
@@ -185,7 +168,7 @@ export function AmapView(props: Props) {
         const leg = data.legs[li];
         const path = leg.geom.map((c) => gcj(c as [number, number]));
         const line = new AMap.Polyline({
-          path, strokeColor: dark ? C.routeDark : C.route, strokeWeight: 6, strokeOpacity: 0.95,
+          path, strokeColor: C.route, strokeWeight: 6, strokeOpacity: 0.95,
           strokeStyle: leg.ferry > 0 ? "dashed" : "solid", lineJoin: "round", lineCap: "round",
           showDir: layers.dir, dirColor: "#ffffff", extData: { seg: pl.seg, li }, cursor: "pointer", zIndex: 50,
         });
@@ -201,7 +184,7 @@ export function AmapView(props: Props) {
         }
         if (leg.ferry > 0) {
           G.ferry.push(new AMap.Text({ text: "⛴ 渤海轮渡", position: path[Math.floor(path.length / 2)], anchor: "center", zIndex: 130,
-            style: { padding: "2px 6px", "border-radius": "4px", border: `1px solid ${C.ex}`, "background-color": dark ? "#1b1f23" : "#fff", color: C.ex, "font-size": "12px" } }));
+            style: { padding: "2px 6px", "border-radius": "4px", border: `1px solid ${C.ex}`, "background-color": "#fff", color: C.ex, "font-size": "12px" } }));
         }
         // the leg's highest point, when it is a real mountain pass
         const pk = leg.orig != null ? PEAKS[String(leg.orig)] : undefined;
@@ -222,7 +205,7 @@ export function AmapView(props: Props) {
           G.excursions.push(new AMap.Polyline({ path: [a, b], strokeColor: C.ex, strokeWeight: 2, strokeStyle: "dashed", strokeDasharray: [6, 4], zIndex: 45, zooms: [5, 20] }));
           G.excursions.push(new AMap.Text({ text: `${e.name} · 往返${Math.round(e.km)}km`, position: b, anchor: "middle-left", offset: new AMap.Pixel(6, 0), zIndex: 126,
             zooms: [6, 20],
-            style: { padding: "1px 5px", "border-radius": "3px", border: `1px solid ${C.ex}`, "background-color": dark ? "#1b1f23" : "#fff", color: C.ex, "font-size": "11px" } }));
+            style: { padding: "1px 5px", "border-radius": "3px", border: `1px solid ${C.ex}`, "background-color": "#fff", color: C.ex, "font-size": "11px" } }));
         }
       }
     }
@@ -238,10 +221,10 @@ export function AmapView(props: Props) {
         position: llToGcj(s.node.ll),
         zooms: [major ? 3 : s.transit ? 7 : 5.5, 20],
         rank: (s.sojourn ? 40 : 0) + (s.comfortStay ? 20 : 0) + s.node.star * 10 + (s.transit ? 0 : 5),
-        icon: stopIcon(s, dark),
+        icon: stopIcon(s),
         text: {
           content: stopLabel(s, order, layers.numbers), direction: "right", offset: [4, 0],
-          style: { fontSize: 12, fontWeight: s.sojourn || s.node.star === 3 ? 600 : 400, fillColor: dark ? "#ebe5d9" : "#23201b", strokeColor: dark ? "#14171a" : "#ffffff", strokeWidth: 3 },
+          style: { fontSize: 12, fontWeight: s.sojourn || s.node.star === 3 ? 600 : 400, fillColor: "#23201b", strokeColor: "#ffffff", strokeWidth: 3 },
         },
       });
       const brk = plan.breaks.find((b) => b.after === s.node.id);
@@ -279,15 +262,14 @@ export function AmapView(props: Props) {
     }
 
     Object.values(G).flat().forEach((o) => map.add(o));
-  }, [ready, plan, data, ordered, layers, themeTick]);
+  }, [ready, plan, data, ordered, layers]);
 
   // ---- segment focus: dim the others, zoom to it, swap in detailed geometry
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    const dark = isDark();
     const R = L.current;
-    const on = dark ? C.routeDark : C.route, off = dark ? C.dimDark : C.dim;
+    const on = C.route, off = C.dim;
     R.lines.forEach(({ line, seg }) => line.setOptions({ strokeColor: !selectedSeg || seg === selectedSeg ? on : off, zIndex: seg === selectedSeg ? 60 : 50 }));
     if (selectedSeg) {
       const focus = [...R.lines.values()].filter((x) => x.seg === selectedSeg).map((x) => x.line);
