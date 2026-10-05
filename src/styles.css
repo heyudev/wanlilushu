@@ -663,3 +663,4 @@ table.t td.r, table.t th.r { text-align: right; font-family: var(--font-mono); f
 .route-compare li.on { background: var(--sign-soft); color: var(--ink); }
 .new-year .people { margin-top: 10px; }
 .lg-transfer { display: inline-block; width: 18px; border-top: 3px dashed var(--route); margin-left: 8px; }
+.month-card li.mv-gap { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 6px; padding: 4px 2px; font-size: 14px; }

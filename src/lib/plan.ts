@@ -287,9 +287,11 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     costs.home += cost;
     day += days + roadDays;
   };
+  // trips home already taken at the Spring Festival instead (one trip, not two in a row)
+  const mergedBreaks = new Set<string>();
   const takeBreak = (node: RouteNode) => {
     const b = input.breaks.find((x) => x.after === node.id);
-    if (!b || b.days <= 0) return;
+    if (!b || b.days <= 0 || mergedBreaks.has(node.id)) return;
     goHome(node, b.days, b.mode, false);
     // a Spring Festival that falls while already at home needs no trip of its own
     while (nyNext < nyLeave.length && nyLeave[nyNext] < day) nyNext++;
@@ -305,7 +307,10 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
       const before = Math.min(nights, Math.max(1, leave - day));
       stops.push(makeStop(node, before, { ...o, whole: nights }));
       day += before;
-      goHome(node, newYear.days, newYear.mode, true);
+      // a trip home planned after this stop anyway is taken now, together with the Spring Festival
+      const planned = input.breaks.find((x) => x.after === node.id && x.days > 0);
+      if (planned) mergedBreaks.add(node.id);
+      goHome(node, Math.max(newYear.days, planned?.days ?? 0), planned?.mode ?? newYear.mode, true);
       const after = nights - before;
       if (after > 0) {
         planLegs.push({
@@ -483,8 +488,10 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   }
   for (const [a, b, m1, m2, name] of SEASONAL_ROADS) {
     const k = data.legs.findIndex((l) => (l.frm === a && l.to === b) || (l.frm === b && l.to === a));
-    const drive = planLegs.find((l) => l.legIdx.includes(k));
-    if (k < 0 || !drive) continue;
+    // driven as a loop leg, or on a connecting drive whose road passes both ends
+    const drive = planLegs.find((l) => (k >= 0 && l.legIdx.includes(k))
+      || l.parts.some((p) => "transfer" in p && [a, b].every((id) => data.transfers[p.transfer]?.near?.includes(id))));
+    if (!drive) continue;
     const m = monthOf(drive.date);
     if (m < m1 || m > m2) {
       warnings.push({ kind: "road-season", level: "critical", text: `${name} 通常只在 ${m1}–${m2} 月通行，按当前日期你会在 ${m} 月经过。`, nodes: [a, b] });

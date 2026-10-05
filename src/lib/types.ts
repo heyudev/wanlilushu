@@ -233,6 +233,8 @@ export interface Transfer {
   km: number;
   h: number;
   hw: number;
+  /** loop stops the route passes within 10 km of */
+  near?: string[];
 }
 
 // ---------- plan input / output

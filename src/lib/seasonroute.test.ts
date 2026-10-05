@@ -177,3 +177,47 @@ describe("a stay split by a trip home", () => {
     expect(p.seasonScore.good + p.seasonScore.ok + p.seasonScore.off).toBe(4);
   });
 });
+
+describe("a trip home and the Spring Festival at the same stop", () => {
+  it("become one trip home, as long as the longer of the two", () => {
+    const p = buildPlan(fixture(), baseInput({
+      startDate: "2027-12-20", nightsOverride: { a: 60 },
+      newYearHome: { days: 14, mode: "fly" }, breaks: [{ after: "a", days: 20, mode: "drive" }],
+    }));
+    expect(p.breaks).toHaveLength(1);
+    expect(p.breaks[0]).toMatchObject({ newYear: true, days: 20, mode: "drive", date: "2028-01-22" });
+  });
+});
+
+describe("seasonal roads on connecting drives", () => {
+  const duku = { near: ["kuche", "bayinbuluke"] }; // open June–September
+  const usesInMonth = (p: ReturnType<typeof buildPlan>, key: string) =>
+    p.legs.filter((l) => l.parts.some((x) => "transfer" in x && x.transfer === key)).map((l) => Number(l.date.slice(5, 7)));
+
+  it("are avoided out of season when the order allows", () => {
+    const d = seasons();
+    d.transfers = { "P1>S0": { km: 1234, h: 15, hw: 1000, ...duku } };
+    for (const m of usesInMonth(buildPlan(d, input(), gates), "P1>S0")) expect(m >= 6 && m <= 9).toBe(true);
+  });
+
+  it("are warned about when every connecting drive runs over one", () => {
+    const d = seasons();
+    const ends = ["S0", "S1", "W0", "W1", "P0", "P1", "F0", "F1"];
+    d.transfers = Object.fromEntries(ends.flatMap((a) => ends.filter((b) => a < b && a[0] !== b[0]).map((b) => [`${a}>${b}`, { km: 900, h: 11, hw: 800, ...duku }])));
+    const p = buildPlan(d, input(), gates);
+    const closed = p.legs.filter((l) => l.parts.some((x) => "transfer" in x) && (Number(l.date.slice(5, 7)) < 6 || Number(l.date.slice(5, 7)) > 9));
+    expect(closed.length).toBeGreaterThan(0);
+    expect(p.warnings.some((w) => w.kind === "road-season" && w.text.includes("独库公路"))).toBe(true);
+  });
+});
+
+describe("month view", () => {
+  it("shows days on the road and at home instead of leaving gaps", async () => {
+    const { monthlyView } = await import("./calendar");
+    const p = buildPlan(seasons(), input({ maxDriveHours: 7, breaks: [{ after: "P0", days: 10, mode: "fly" }] }), gates);
+    const runs = monthlyView(p).flatMap((m) => m.runs);
+    const total = (label: string) => runs.filter((r) => r.label === label).reduce((a, r) => a + r.days, 0);
+    expect(total("回家")).toBe(10);
+    expect(total("转场路上")).toBe(p.legs.filter((l) => l.parts.some((x) => "transfer" in x)).reduce((a, l) => a + l.driveDays - 1, 0));
+  });
+});

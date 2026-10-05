@@ -3,6 +3,7 @@
 // kept in order) so that every region is visited in its season, joined by connecting drives (transfers).
 import { comfortScore } from "./comfort";
 import { addDays, monthOf, newYearLeaveDays } from "./dates";
+import { SEASONAL_ROADS } from "./defaults";
 import { haversine } from "./geo";
 import { drivingDays, keepNode, nightsFor } from "./stay";
 import type { Dataset, Leg, PlanInput, PlanPart, RouteNode } from "./types";
@@ -177,8 +178,15 @@ function searchOrder(data: Dataset, input: PlanInput, gates: Record<string, [num
   const U = units.length;
   // drives between unit ends: end e = 2u (first stop) or 2u + 1 (last stop)
   const endNode = (e: number) => (e % 2 ? units[e >> 1].last : units[e >> 1].first);
-  const drive: { km: number; h: number }[][] = Array.from({ length: 2 * U }, (_, a) =>
-    Array.from({ length: 2 * U }, (_, b) => (a >> 1 === b >> 1 ? { km: 0, h: 0 } : driveBetween(data, endNode(a), endNode(b)).leg)));
+  // each drive's km and hours, and the open months of seasonal roads it runs over
+  const drive: { km: number; h: number; open: [number, number][] }[][] = Array.from({ length: 2 * U }, (_, a) =>
+    Array.from({ length: 2 * U }, (_, b) => {
+      if (a >> 1 === b >> 1) return { km: 0, h: 0, open: [] };
+      const { leg, ref } = driveBetween(data, endNode(a), endNode(b));
+      const near = "transfer" in ref ? data.transfers[ref.transfer]?.near ?? [] : [];
+      const open = SEASONAL_ROADS.filter(([x, y]) => near.includes(x) && near.includes(y)).map(([, , m1, m2]) => [m1, m2] as [number, number]);
+      return { km: leg.km, h: leg.h, open };
+    }));
   const fromHome = Array.from({ length: 2 * U }, (_, e) => estimateDrive(data, home, endNode(e).ll));
 
   // month of each day of the trip, so the search never formats dates
@@ -196,8 +204,9 @@ function searchOrder(data: Dataset, input: PlanInput, gates: Record<string, [num
     for (const { seg, rev } of order) {
       const u = units.findIndex((x) => x.seg === seg);
       const startEnd = 2 * u + (rev ? 1 : 0), endEnd = 2 * u + (rev ? 0 : 1);
-      const d = at < 0 ? fromHome[startEnd] : drive[at][startEnd];
+      const d = at < 0 ? { ...fromHome[startEnd], open: [] as [number, number][] } : drive[at][startEnd];
       km += d.km;
+      for (const [m1, m2] of d.open) if (month(day) < m1 || month(day) > m2) gateBad++;
       day += dayRoad(d.h);
       const g = gates[seg];
       if (g && (month(day) < g[0] || month(day) > g[1])) gateBad++;

@@ -28,6 +28,33 @@ def norm_attraction(a):
                 checked=a.get("checked"), reviewBy=a.get("review_by"), reviewNote=a.get("review_note"))
 
 
+NEAR_KM = 10
+
+
+def transfers_with_stops(nodes):
+    """Transfer km/h/hw plus the loop stops each route passes within NEAR_KM of (to spot seasonal roads)."""
+    if not os.path.exists(path("data/generated/transfers.json")):
+        return {}
+    pairs = load("data/generated/transfers.json")["pairs"]
+    geom = load("public/route/transfers.json") if os.path.exists(path("public/route/transfers.json")) else {}
+    import math
+
+    def dist_km(p, a, b):
+        # point to segment, on a local flat projection (lon scaled by cos lat)
+        k = math.cos(math.radians(p[0]))
+        ax, ay, bx, by, px, py = a[0] * k, a[1], b[0] * k, b[1], p[1] * k, p[0]
+        dx, dy = bx - ax, by - ay
+        t = max(0, min(1, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy or 1)))
+        return math.hypot(px - ax - t * dx, py - ay - t * dy) * 111.2
+
+    out = {}
+    for key, v in pairs.items():
+        line = geom.get(key, [])
+        near = sorted({n["id"] for n in nodes if any(dist_km(n["ll"], line[i], line[i + 1]) < NEAR_KM for i in range(len(line) - 1))})
+        out[key] = dict(v, near=near)
+    return out
+
+
 def main():
     route = load("data/route.json")
     legs = load("data/generated/legs.json")
@@ -83,8 +110,7 @@ def main():
     save("src/data/prices.json", prices)
     pet = load("data/generated/pet_friendly.json") if os.path.exists(path("data/generated/pet_friendly.json")) else {}
     save("src/data/pet_friendly.json", pet)
-    transfers = path("data/generated/transfers.json")
-    save("src/data/transfers.json", load("data/generated/transfers.json")["pairs"] if os.path.exists(transfers) else {})
+    save("src/data/transfers.json", transfers_with_stops(route["nodes"]))
     save("src/data/roads.json", [{k: r[k] for k in ("id", "name", "legs", "best", "about")} for r in load("data/roads.json")["roads"]])
     print(f"nodes {len(nodes)} legs {len(out_legs)} attractions {len(attractions)} campsites {len(campsites)} policy {len(policy)} images {len(images)}")
 

@@ -21,6 +21,14 @@ function MonthView({ plan, onOpenStop }: { plan: Plan; onOpenStop: (i: number) =
             </header>
             <ul>
               {m.runs.map((r) => {
+                if (r.label) {
+                  return (
+                    <li key={`${r.label}-${r.from}`} className="mv-gap">
+                      <span className="num muted">{Number(r.from.slice(8))}{r.days > 1 ? `–${Number(r.to.slice(8))}` : ""}日</span>
+                      <span className="muted">{r.label}</span>
+                    </li>
+                  );
+                }
                 const s = plan.stops[r.stopIdx];
                 return (
                   <li key={`${r.stopIdx}-${r.from}`}>
