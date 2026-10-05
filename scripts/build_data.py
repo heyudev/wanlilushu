@@ -64,7 +64,7 @@ def main():
         m["alt"] = elev["nodes"].get(n["id"])
         if n["id"] in images:
             im = images[n["id"]]
-            m["img"] = dict(src=f"img/{n['id']}.webp", author=im["author"], license=im["license"], page=im["page"],
+            m["img"] = dict(src=f"img/{n['id']}.webp", title=im.get("title", ""), author=im["author"], license=im["license"], page=im["page"],
                             generic=bool(im.get("generic")))
         if m.get("ferry") and ferry:
             m["ferry"] = dict(m["ferry"], research=ferry)

@@ -67,6 +67,7 @@ python3 scripts/fetch_climate.py        # 逐月气候（Open-Meteo）
 python3 scripts/fetch_prices.py         # 各地餐厅人均分布（高德 Web服务）
 python3 scripts/fetch_pet_friendly.py   # 可带宠物的酒店、宠物餐厅、宠物医院数量（高德 Web服务）
 python3 scripts/fetch_images.py         # 图片与署名（Wikimedia Commons，只取开放授权）
+python3 scripts/fetch_hero.py           # 首页大图（同一批 Commons 照片的大尺寸版本）
 python3 scripts/make_og.py              # 分享卡片 public/og.png
 npm run data                            # 合并到 src/data/
 ```
@@ -113,7 +114,7 @@ npm run data                            # 合并到 src/data/
 
 | 内容 | 位置 | 来源与许可 |
 |---|---|---|
-| 过夜点图片 | `public/img/` | Wikimedia Commons，各图许可（CC BY、CC BY-SA、公有领域等）与作者见 `data/generated/images.json` 和页面“数据来源” |
+| 过夜点图片、首页大图 | `public/img/`、`public/hero/` | Wikimedia Commons，各图许可（CC BY、CC BY-SA、公有领域等）与作者见 `data/generated/images.json` 和页面“数据来源” |
 | 路段里程、路线几何 | `data/generated/legs.json`、`public/route/` | 由 OSRM 基于 OpenStreetMap 计算，© OpenStreetMap contributors，ODbL |
 | 海拔 | `data/generated/elevation.json` | OpenTopoData，SRTM 90m |
 | 逐月气候 | `data/generated/climate.json` | Open-Meteo，CC BY 4.0 |

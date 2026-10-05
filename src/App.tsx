@@ -135,7 +135,7 @@ export function App() {
     <div className="app">
       <header className="topbar">
         <div className="topbar-row">
-          <a className="brand" href="#route" onClick={(e) => { e.preventDefault(); go("route"); }}>万里路书</a>
+          <a className="brand" href="#route" onClick={(e) => { e.preventDefault(); go("route"); }}><span className="seal" aria-hidden="true"><i>路</i><i>万</i><i>书</i><i>里</i></span>万里路书</a>
           <p className="summary">
             <span>{plan.start.name}出发</span>
             <span className="num">{shortDate(plan.input.startDate).split(" ")[0]}–{shortDate(plan.endDate).split(" ")[0]}</span>

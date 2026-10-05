@@ -98,6 +98,7 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
                     )}
                     <button type="button" className="day-row" onClick={() => onOpenStop(index)}>
                       <span className="num date">{shortDate(stop.date)}</span>
+                      {stop.node.img ? <img className="day-thumb" src={stop.node.img.src} alt="" loading="lazy" width={72} height={48} /> : <span className="day-thumb" />}
                       <span className="place">
                         <b>{stop.node.n}</b>
                         <span className="muted small">{stop.transit ? "途中过夜" : stop.node.food.slice(0, 2).map((f) => f[0]).join(" · ")}</span>

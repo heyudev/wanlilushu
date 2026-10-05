@@ -12,6 +12,8 @@ export interface Segment {
 
 export interface NodeImage {
   src: string;
+  /** what the photo shows (Wikipedia/Commons title), may differ from the stop name */
+  title?: string;
   author: string;
   license: string;
   page: string;

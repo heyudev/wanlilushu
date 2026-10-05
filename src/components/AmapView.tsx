@@ -19,8 +19,8 @@ const llToGcj = (ll: [number, number]) => wgsToGcj(ll[1], ll[0]);
 const PEAKS = (elevation as unknown as { peaks?: Record<string, [number, number, number]> }).peaks ?? {};
 
 const C = {
-  route: "#0f6a4a", routeDark: "#4cc08b", dim: "#9fb7aa", dimDark: "#3a5a4b",
-  start: "#c21f32", sojourn: "#0f6a4a", comfort: "#2a9d5c", wait: "#c98500", road: "#e0a526", ex: "#2a78d6", pass: "#7a4fd6",
+  route: "#2d5e5a", routeDark: "#7fb5ab", dim: "#a9b9b2", dimDark: "#3f5652",
+  start: "#b2392b", sojourn: "#2d5e5a", comfort: "#5b9a6e", wait: "#c27c1e", road: "#d9a650", ex: "#4f7f8a", pass: "#6b5aa6",
 };
 
 export type LayerKey = "dir" | "roads" | "numbers" | "passes" | "excursions";
@@ -41,7 +41,7 @@ const svgUri = (w: number, h: number, body: string) =>
 function stopIcon(s: Stop, dark: boolean) {
   const big = s.node.star === 3 && !s.transit;
   const r = s.transit ? 3.5 : big ? 7 : 5.5;
-  const fill = s.sojourn ? C.sojourn : s.comfortStay ? C.comfort : s.waitDays > 0 ? C.wait : big ? (dark ? C.routeDark : C.route) : dark ? "#171d1a" : "#ffffff";
+  const fill = s.sojourn ? C.sojourn : s.comfortStay ? C.comfort : s.waitDays > 0 ? C.wait : big ? (dark ? C.routeDark : C.route) : dark ? "#1b1f23" : "#ffffff";
   const stroke = s.waitDays > 0 ? C.wait : dark ? C.routeDark : C.route;
   const size = Math.ceil(r * 2 + 6), c = size / 2;
   const kind = s.transit ? "transit" : s.node.kind;
@@ -129,7 +129,7 @@ export function AmapView(props: Props) {
       AMapRef.current = AMap;
       const map = new AMap.Map(el.current, {
         zoom: 4, center: [104, 36], viewMode: "2D", resizeEnable: true,
-        mapStyle: isDark() ? "amap://styles/dark" : "amap://styles/normal",
+        mapStyle: isDark() ? "amap://styles/darkblue" : "amap://styles/whitesmoke",
       });
       map.addControl(new AMap.Scale());
       map.addControl(new AMap.ToolBar({ position: "RT" }));
@@ -152,7 +152,7 @@ export function AmapView(props: Props) {
   // ---- follow the page theme (system setting or the viewer's toggle)
   useEffect(() => {
     if (!ready) return;
-    const apply = () => { mapRef.current?.setMapStyle(isDark() ? "amap://styles/dark" : "amap://styles/normal"); setThemeTick((t) => t + 1); };
+    const apply = () => { mapRef.current?.setMapStyle(isDark() ? "amap://styles/darkblue" : "amap://styles/whitesmoke"); setThemeTick((t) => t + 1); };
     const mq = window.matchMedia?.("(prefers-color-scheme: dark)");
     mq?.addEventListener?.("change", apply);
     const mo = new MutationObserver(apply);
@@ -201,7 +201,7 @@ export function AmapView(props: Props) {
         }
         if (leg.ferry > 0) {
           G.ferry.push(new AMap.Text({ text: "⛴ 渤海轮渡", position: path[Math.floor(path.length / 2)], anchor: "center", zIndex: 130,
-            style: { padding: "2px 6px", "border-radius": "4px", border: `1px solid ${C.ex}`, "background-color": dark ? "#171d1a" : "#fff", color: C.ex, "font-size": "12px" } }));
+            style: { padding: "2px 6px", "border-radius": "4px", border: `1px solid ${C.ex}`, "background-color": dark ? "#1b1f23" : "#fff", color: C.ex, "font-size": "12px" } }));
         }
         // the leg's highest point, when it is a real mountain pass
         const pk = leg.orig != null ? PEAKS[String(leg.orig)] : undefined;
@@ -222,7 +222,7 @@ export function AmapView(props: Props) {
           G.excursions.push(new AMap.Polyline({ path: [a, b], strokeColor: C.ex, strokeWeight: 2, strokeStyle: "dashed", strokeDasharray: [6, 4], zIndex: 45, zooms: [5, 20] }));
           G.excursions.push(new AMap.Text({ text: `${e.name} · 往返${Math.round(e.km)}km`, position: b, anchor: "middle-left", offset: new AMap.Pixel(6, 0), zIndex: 126,
             zooms: [6, 20],
-            style: { padding: "1px 5px", "border-radius": "3px", border: `1px solid ${C.ex}`, "background-color": dark ? "#171d1a" : "#fff", color: C.ex, "font-size": "11px" } }));
+            style: { padding: "1px 5px", "border-radius": "3px", border: `1px solid ${C.ex}`, "background-color": dark ? "#1b1f23" : "#fff", color: C.ex, "font-size": "11px" } }));
         }
       }
     }
@@ -241,7 +241,7 @@ export function AmapView(props: Props) {
         icon: stopIcon(s, dark),
         text: {
           content: stopLabel(s, order, layers.numbers), direction: "right", offset: [4, 0],
-          style: { fontSize: 12, fontWeight: s.sojourn || s.node.star === 3 ? 600 : 400, fillColor: dark ? "#e6ebe8" : "#1b2320", strokeColor: dark ? "#111614" : "#ffffff", strokeWidth: 3 },
+          style: { fontSize: 12, fontWeight: s.sojourn || s.node.star === 3 ? 600 : 400, fillColor: dark ? "#ebe5d9" : "#23201b", strokeColor: dark ? "#14171a" : "#ffffff", strokeWidth: 3 },
         },
       });
       const brk = plan.breaks.find((b) => b.after === s.node.id);
