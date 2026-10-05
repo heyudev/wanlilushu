@@ -141,9 +141,16 @@ export function isOptional(item: string): boolean {
   return item.includes("可选");
 }
 
-/** Per-person price of an attraction in a given month, or null when the price is unknown. */
-export function attractionPrice(a: Attraction, month: number): number | null {
-  const base = isPeakMonth(month) ? a.peak : a.off ?? a.peak;
+/** Whether the peak price applies on `date` ("YYYY-MM-DD"): the attraction's own windows, or April–October. */
+export function isPeakOn(a: Attraction, date: string): boolean {
+  if (!a.peakWindows?.length) return isPeakMonth(Number(date.slice(5, 7)));
+  const md = date.slice(5);
+  return a.peakWindows.some(([from, to]) => (from <= to ? md >= from && md <= to : md >= from || md <= to));
+}
+
+/** Per-person price of an attraction on a date, or null when the price is unknown. */
+export function attractionPrice(a: Attraction, date: string): number | null {
+  const base = isPeakOn(a, date) ? a.peak : a.off ?? a.peak;
   if (base == null) return null;
   const extras = a.extras.filter((e) => !isOptional(e.item) && e.price != null).reduce((s, e) => s + (e.price ?? 0), 0);
   return base + extras;

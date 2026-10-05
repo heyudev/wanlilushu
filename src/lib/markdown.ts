@@ -2,7 +2,6 @@
 import { costTotal } from "./plan";
 import { shortDateFrom } from "./dates";
 import { attractionPrice } from "./costs";
-import { monthOf } from "./dates";
 import { duration, hours, int, km, yuan } from "./format";
 import type { Dataset, Plan } from "./types";
 
@@ -50,9 +49,8 @@ export function planToMarkdown(plan: Plan, data: Dataset): string {
     L.push(`**${shortDateFrom(s.date, year)} ${s.node.n}${tag}** · ${s.node.p} · 海拔 ${s.node.alt ?? "?"}m · 住 ${s.nights} 晚`, "");
     if (s.resumed) { L.push(""); return; }
     if (s.node.about && !s.transit) L.push(`> ${s.node.about}`, "");
-    const m = monthOf(s.date);
     for (const a of s.attractions) {
-      const p = attractionPrice(a, m);
+      const p = attractionPrice(a, s.date);
       L.push(`- 景点：${a.name}${a.level ? `（${a.level}）` : ""} ${p == null ? "票价待核实" : `约 ¥${int(p)}/人`}`);
     }
     if (!s.transit) for (const f of s.node.food) L.push(`- 美食：${f[0]}（人均约 ¥${f[2]}）${f[1] ? `：${f[1]}` : ""}`);

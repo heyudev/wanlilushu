@@ -20,8 +20,8 @@ export function SourceLinks({ src }: { src: string[] }) {
   return <span className="srcs">{src.slice(0, 3).map((u) => <a key={u} href={u} target="_blank" rel="noreferrer">{host(u)}</a>)}</span>;
 }
 
-function AttractionItem({ a, month }: { a: Attraction; month: number }) {
-  const p = attractionPrice(a, month);
+function AttractionItem({ a, date }: { a: Attraction; date: string }) {
+  const p = attractionPrice(a, date);
   const extras = a.extras.filter((e) => e.price != null);
   const pets = a.pets.includes("禁止") ? "off" : a.pets.includes("允许") ? "good" : "";
   return (
@@ -162,7 +162,6 @@ export function StopDetail({ s, plan, data, set, onAddAfter, onSkipped }: {
   const onBreaks = (b: HomeBreak[]) => set("breaks", b);
   const links = amapLinks(s.node.n.split(" · ")[0], s.node.ll);
   const n = s.node;
-  const month = monthOf(s.date);
   const camps = campsites.filter((c) => c.node === n.id);
   const i = plan.stops.indexOf(s);
   const legIn = i > 0 ? plan.legs[i - 1] : null;
@@ -212,7 +211,7 @@ export function StopDetail({ s, plan, data, set, onAddAfter, onSkipped }: {
       {s.attractions.length > 0 && (
         <section>
           <h3>景点与门票</h3>
-          <ul className="attrs">{s.attractions.map((a) => <AttractionItem key={a.name} a={a} month={month} />)}</ul>
+          <ul className="attrs">{s.attractions.map((a) => <AttractionItem key={a.name} a={a} date={s.date} />)}</ul>
         </section>
       )}
       {s.excursions.length > 0 && (

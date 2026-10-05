@@ -81,7 +81,11 @@ function ferryPrice(node: RouteNode): FerryPrice {
 
 export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string, [number, number]> = GATE_WINDOWS): Plan {
   const start = findStart(data, input.start);
-  const entryIdx = Math.max(0, data.nodes.findIndex((n) => n.id === start.entry));
+  // the loop starts at the start city's entry stop, or the next kept one when the traveller dropped it
+  let entryIdx = Math.max(0, data.nodes.findIndex((n) => n.id === start.entry));
+  for (let k = 0; k < data.nodes.length && !keepNode(data.nodes[entryIdx], input); k++) {
+    entryIdx = (entryIdx + (input.direction === "cw" ? 1 : -1) + data.nodes.length) % data.nodes.length;
+  }
   const seasonal = routeMode(input) === "season";
   let route = seasonal ? routeFromOrder(data, input, seasonOrder(data, input, gates, start.ll)) : null;
   if (!route || !route.nodes.length) route = loopRoute(data, input, entryIdx);
@@ -93,7 +97,8 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   // (the start city's own entry stop has road data either way)
   const roadOr = (node: RouteNode, from: [number, number], to: [number, number]) =>
     node.id === start.entry ? approachFor(start, input) : estimatedApproach(data, from, to, input);
-  const approach = closed ? approachFor(start, input) : roadOr(nodes[0], start.ll, nodes[0].ll);
+  const approach = closed ? (nodes[0].id === start.entry ? approachFor(start, input) : estimatedApproach(data, start.ll, nodes[0].ll, input))
+    : roadOr(nodes[0], start.ll, nodes[0].ll);
   const homeward = closed ? approach : roadOr(lastNode, lastNode.ll, start.ll);
   const people = input.adults + input.kids;
   const costs = emptyCosts();
@@ -151,7 +156,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     let ticketPerPerson = 0;
     let unpriced = 0;
     for (const a of attractions) {
-      const p = attractionPrice(a, month);
+      const p = attractionPrice(a, date);
       if (p == null) unpriced++;
       else ticketPerPerson += p;
     }

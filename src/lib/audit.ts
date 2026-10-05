@@ -2,7 +2,7 @@
 import { daysBetween } from "./dates";
 import type { Attraction, PolicyItem, RouteNode } from "./types";
 
-export type AuditKind = "due" | "stale" | "unpriced" | "low-confidence" | "pets-unknown" | "unverified-policy";
+export type AuditKind = "due" | "stale" | "unpriced" | "low-confidence" | "pets-unknown" | "unverified-policy" | "season-dates";
 
 export interface AuditItem {
   kind: AuditKind;
@@ -16,6 +16,7 @@ export const AUDIT_LABEL: Record<AuditKind, string> = {
   due: "到了复核日期",
   stale: "超过有效期未复核",
   unpriced: "票价未查到",
+  "season-dates": "淡旺季价不同但起止日期未查到",
   "low-confidence": "来源可信度低",
   "pets-unknown": "宠物政策未查到",
   "unverified-policy": "政策待确认",
@@ -35,6 +36,9 @@ export function auditData(
     if (a.peak == null) out.push({ kind: "unpriced", ref: a.node, name: where, detail: a.note?.slice(0, 60) ?? "" });
     else if (a.conf === "low") out.push({ kind: "low-confidence", ref: a.node, name: where, detail: `旺季 ¥${a.peak}` });
     if (!a.pets.includes("禁止") && !a.pets.includes("允许")) out.push({ kind: "pets-unknown", ref: a.node, name: where, detail: "" });
+    if (a.peak != null && a.off != null && a.off !== a.peak && !a.peakWindows?.length) {
+      out.push({ kind: "season-dates", ref: a.node, name: where, detail: `旺季 ¥${a.peak} / 淡季 ¥${a.off}，暂按 4–10 月为旺季` });
+    }
   }
   for (const p of policy) {
     const name = p.title ?? p.topic ?? p.key;
@@ -47,7 +51,7 @@ export function auditData(
 
 /** Markdown report grouped by kind, most urgent first. */
 export function auditMarkdown(items: AuditItem[], today: string): string {
-  const order: AuditKind[] = ["due", "stale", "unverified-policy", "unpriced", "low-confidence", "pets-unknown"];
+  const order: AuditKind[] = ["due", "stale", "unverified-policy", "unpriced", "season-dates", "low-confidence", "pets-unknown"];
   const L = [`# 数据待更新清单（${today}）`, "", "| 类别 | 条数 |", "|---|---:|"];
   for (const k of order) L.push(`| ${AUDIT_LABEL[k]} | ${items.filter((i) => i.kind === k).length} |`);
   for (const k of order) {

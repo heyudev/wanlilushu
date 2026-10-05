@@ -24,7 +24,7 @@ export function fixture(): Dataset {
     legs: [leg("a", "b", 100, 1.5), leg("b", "c", 300, 4), leg("c", "d", 200, 3), leg("d", "a", 400, 5)],
     exs: [{ node: "a", name: "ax", ll: [30, 120], km: 50, h: 1, hw: 0 }],
     attractions: [
-      { node: "a", name: "a1", level: "5A", peak: 100, off: 60, season: null, extras: [{ item: "观光车", price: 20 }, { item: "索道(可选)", price: 80 }], reserve: null, pets: "禁止", petsNote: null, src: [], conf: "high", note: null },
+      { node: "a", name: "a1", level: "5A", peak: 100, off: 60, season: null, peakWindows: [["04-01", "10-31"]], extras: [{ item: "观光车", price: 20 }, { item: "索道(可选)", price: 80 }], reserve: null, pets: "禁止", petsNote: null, src: [], conf: "high", note: null },
       { node: "c", name: "c1", level: null, peak: null, off: null, season: null, extras: [], reserve: null, pets: "未查到", petsNote: null, src: [], conf: "low", note: null },
     ],
     starts: [

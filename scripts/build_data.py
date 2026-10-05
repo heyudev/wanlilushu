@@ -21,7 +21,7 @@ def resolve_node(a):
 
 def norm_attraction(a):
     return dict(node=resolve_node(a), name=a["name"], level=a.get("level"), peak=a.get("peak"), off=a.get("off"),
-                season=a.get("season_rule"), extras=[e for e in (a.get("extras") or []) if isinstance(e, dict)],
+                season=a.get("season_rule"), peakWindows=a.get("peak_windows"), extras=[e for e in (a.get("extras") or []) if isinstance(e, dict)],
                 reserve=a.get("reserve"), pets=a.get("pets") or "未查到", petsNote=a.get("pets_note"),
                 discounts=a.get("discounts"), open=a.get("open"), src=a.get("src") or [],
                 conf=a.get("confidence") or "low", note=a.get("note"),

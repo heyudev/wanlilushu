@@ -183,3 +183,13 @@ describe("one adult with a dog", () => {
     expect(one.warnings.some((w) => w.text.includes("只有一位大人"))).toBe(true);
   });
 });
+
+describe("dropping the start city's own stop", () => {
+  it("starts the loop at the next kept stop instead of staying there", () => {
+    const p = buildPlan(fixture(), baseInput({ skip: ["a"] }));
+    expect(p.stops[0].node.id).toBe("b");
+    expect(p.stops.some((s) => s.node.id === "a" && !s.transit)).toBe(false);
+    const ccw = buildPlan(fixture(), baseInput({ skip: ["a"], direction: "ccw" }));
+    expect(ccw.stops[0].node.id).toBe("d");
+  });
+});

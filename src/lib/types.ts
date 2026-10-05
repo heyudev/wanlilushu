@@ -117,6 +117,8 @@ export interface Attraction {
   peak: number | null;
   off: number | null;
   season: string | null;
+  /** when the peak price applies: ["MM-DD", "MM-DD"] ranges from the season notes; absent = not found, April–October assumed */
+  peakWindows?: [string, string][] | null;
   extras: Extra[];
   reserve: string | null;
   pets: string;

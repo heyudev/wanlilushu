@@ -35,3 +35,10 @@ describe("auditData", () => {
     expect(md).toContain("| 票价未查到 | 1 |");
   });
 });
+
+describe("peak season dates", () => {
+  it("lists attractions with different peak and off prices but no peak dates", () => {
+    const items = auditData(data.nodes, [attr({ peakWindows: null, checked: "2026-10-03" })], [], "2026-10-05");
+    expect(items.map((i) => i.kind)).toEqual(["season-dates"]);
+  });
+});

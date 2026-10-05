@@ -46,11 +46,11 @@ describe("lodging", () => {
 describe("tickets", () => {
   const a1 = data.attractions[0];
   it("adds mandatory extras and skips optional ones", () => {
-    expect(attractionPrice(a1, 7)).toBe(120);
-    expect(attractionPrice(a1, 1)).toBe(80);
+    expect(attractionPrice(a1, "2027-07-15")).toBe(120);
+    expect(attractionPrice(a1, "2027-01-15")).toBe(80);
   });
   it("returns null when the price is unknown", () => {
-    expect(attractionPrice(data.attractions[1], 7)).toBeNull();
+    expect(attractionPrice(data.attractions[1], "2027-07-15")).toBeNull();
   });
   it("charges kids half", () => {
     expect(ticketCost(100, baseInput({ adults: 2, kids: 2 }))).toBe(300);
@@ -63,5 +63,24 @@ describe("tickets", () => {
   it("needs dog care where pets are banned", () => {
     expect(needsDogCare([a1])).toBe(true);
     expect(needsDogCare([data.attractions[1]])).toBe(false);
+  });
+});
+
+describe("peak season by date", () => {
+  it("uses the attraction's own peak dates, and April–October when they are unknown", () => {
+    const a = { ...fixture().attractions[0], peak: 120, off: 100 };
+    // 兵马俑: peak 3/1–11/30
+    const xian = { ...a, peakWindows: [["03-01", "11-30"]] as [string, string][] };
+    expect(attractionPrice(xian, "2027-03-05")).toBe(120 + 20);
+    expect(attractionPrice(xian, "2027-12-01")).toBe(100 + 20);
+    // 豫园: two windows
+    const yuyuan = { ...a, peakWindows: [["04-01", "06-30"], ["09-01", "11-30"]] as [string, string][] };
+    expect(attractionPrice(yuyuan, "2027-07-15")).toBe(100 + 20);
+    expect(attractionPrice(yuyuan, "2027-11-30")).toBe(120 + 20);
+    // a window across the year end
+    const winter = { ...a, peakWindows: [["12-15", "01-15"]] as [string, string][] };
+    expect(attractionPrice(winter, "2028-01-10")).toBe(120 + 20);
+    expect(attractionPrice(winter, "2027-06-10")).toBe(100 + 20);
+    expect(attractionPrice(a, "2027-04-01")).toBe(120 + 20);
   });
 });
