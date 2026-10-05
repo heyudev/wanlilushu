@@ -1,0 +1,1269 @@
+{
+ "shanghai": {
+  "title": "外滩",
+  "file": "A_picture_from_China_every_day_101.jpg",
+  "author": "Carsten Ullrich from Shanghai, China",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_picture_from_China_every_day_101.jpg"
+ },
+ "suzhou": {
+  "title": "拙政园",
+  "file": "Humble_Administrator's_Garden_Suzhou_November_2017_008.jpg",
+  "author": "King of Hearts",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_November_2017_008.jpg"
+ },
+ "hangzhou": {
+  "title": "西湖",
+  "file": "West_Lake,_Hangzhou_2025.jpg",
+  "author": "Takashishin",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:West_Lake,_Hangzhou_2025.jpg"
+ },
+ "huangshan": {
+  "title": "黄山",
+  "file": "Huangshan_pic_4.jpg",
+  "author": "Chi King",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Huangshan_pic_4.jpg"
+ },
+ "wuyuan": {
+  "title": "婺源县",
+  "file": "Wuyuan_huangling_scenery.jpg",
+  "author": "Maisie008",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wuyuan_huangling_scenery.jpg"
+ },
+ "wuyishan": {
+  "title": "九曲溪",
+  "file": "隐屏峰-天游峰小路_-_Path_Connecting_Yinping_Peak_and_Tianyou_Peak_-_2015.07_-_panoramio_(1).jpg",
+  "author": "rheins",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%9A%90%E5%B1%8F%E5%B3%B0-%E5%A4%A9%E6%B8%B8%E5%B3%B0%E5%B0%8F%E8%B7%AF_-_Path_Connecting_Yinping_Peak_and_Tianyou_Peak_-_2015.07_-_panoramio_(1).jpg"
+ },
+ "quanzhou": {
+  "title": "开元寺 (泉州)",
+  "file": "Quanzhou_Kaiyuan_Temple-the_Hall_of_Mahavira.jpg",
+  "author": "Tom@HK",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Quanzhou_Kaiyuan_Temple-the_Hall_of_Mahavira.jpg"
+ },
+ "xiamen": {
+  "title": "鼓浪屿",
+  "file": "鼓浪屿_-_panoramio.jpg",
+  "author": "gdczjkk",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%BC%93%E6%B5%AA%E5%B1%BF_-_panoramio.jpg"
+ },
+ "tulou": {
+  "title": "福建土楼",
+  "file": "Zhenchenglou.JPG",
+  "author": "Gisling唐戈",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zhenchenglou.JPG"
+ },
+ "chaozhou": {
+  "title": "潮州",
+  "file": "Paifangjie_(cropped).jpg",
+  "author": "Sgnpkd",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Paifangjie_(cropped).jpg"
+ },
+ "guangzhou": {
+  "title": "陈家祠",
+  "file": "Chen_Clan_Ancestral_Hall_2025.06_02.jpg",
+  "author": "Shujianyang",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_02.jpg"
+ },
+ "yangshuo": {
+  "title": "漓江",
+  "file": "漓江山水.jpg",
+  "author": "Charlie fong",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%BC%93%E6%B1%9F%E5%B1%B1%E6%B0%B4.jpg"
+ },
+ "longji": {
+  "title": "龙脊梯田",
+  "file": "Longsheng_Rice_Terraces_November_2017_014.jpg",
+  "author": "King of Hearts",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Longsheng_Rice_Terraces_November_2017_014.jpg"
+ },
+ "liuzhou": {
+  "title": "螺蛳粉",
+  "file": "Luosifen_at_Guangya,_Liuzhou_(20190420141814).jpg",
+  "author": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Luosifen_at_Guangya,_Liuzhou_(20190420141814).jpg"
+ },
+ "libo": {
+  "title": "荔波",
+  "file": "Xiaoqikong.JPG",
+  "author": "Fanghong",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xiaoqikong.JPG"
+ },
+ "xijiang": {
+  "title": "西江千户苗寨",
+  "file": "Xijiang_Miao_Village.jpg",
+  "author": "SONG1907",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xijiang_Miao_Village.jpg"
+ },
+ "guiyang": {
+  "title": "甲秀楼",
+  "file": "Jiaxiu_Pavilion,_Guiyang.jpg",
+  "author": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jiaxiu_Pavilion,_Guiyang.jpg"
+ },
+ "huangguoshu": {
+  "title": "黄果树瀑布",
+  "file": "黄果树瀑布_2026-07-31_01.jpg",
+  "author": "Kcx36",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%BB%84%E6%9E%9C%E6%A0%91%E7%80%91%E5%B8%83_2026-07-31_01.jpg"
+ },
+ "kunming": {
+  "title": "石林风景区",
+  "file": "Shilin,_Yunnan_24740.jpg",
+  "author": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shilin,_Yunnan_24740.jpg"
+ },
+ "dali": {
+  "title": "洱海",
+  "file": "洱海下和湾湿地公园_2025-07-24_01.jpg",
+  "author": "Kcx36",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%B4%B1%E6%B5%B7%E4%B8%8B%E5%92%8C%E6%B9%BE%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD_2025-07-24_01.jpg"
+ },
+ "lijiang": {
+  "title": "玉龙雪山",
+  "file": "Yulong_mount.jpg",
+  "author": "Munford",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Yulong_mount.jpg"
+ },
+ "shangrila": {
+  "title": "松赞林寺",
+  "file": "松赞林寺_-_全景_-_2025-05-07_09_(cropped).jpg",
+  "author": "瑞丽江的河水",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_(cropped).jpg"
+ },
+ "deqin": {
+  "title": "梅里雪山",
+  "file": "梅里雪山_-_核心山峰全景_-_2025-05-10_IMG_3463.jpg",
+  "author": "瑞丽江的河水",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%A2%85%E9%87%8C%E9%9B%AA%E5%B1%B1_-_%E6%A0%B8%E5%BF%83%E5%B1%B1%E5%B3%B0%E5%85%A8%E6%99%AF_-_2025-05-10_IMG_3463.jpg"
+ },
+ "mangkang": {
+  "title": "芒康县",
+  "file": "Markam_County_Tibet.jpg",
+  "author": "Reurinkjan",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Markam_County_Tibet.jpg"
+ },
+ "bomi": {
+  "title": "然乌湖",
+  "file": "然乌湖_2013_(9527239709).jpg",
+  "author": "邢 福君",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E7%84%B6%E4%B9%8C%E6%B9%96_2013_(9527239709).jpg"
+ },
+ "linzhi": {
+  "title": "南迦巴瓦峰",
+  "file": "Namcha_Barwa_from_the_west.jpg",
+  "author": "Cherry933",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Namcha_Barwa_from_the_west.jpg"
+ },
+ "lasa": {
+  "title": "布达拉宫",
+  "file": "Potala_palace23.jpg",
+  "author": "Antoine Taveneaux",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Potala_palace23.jpg"
+ },
+ "rikaze": {
+  "title": "扎什伦布寺",
+  "file": "Tashilhunpo11.jpg",
+  "author": "Antoine Taveneaux",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tashilhunpo11.jpg"
+ },
+ "dingri": {
+  "title": "珠穆朗玛峰",
+  "file": "Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
+  "author": "Luca Galuzzi (Lucag)",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
+ },
+ "saga": {
+  "title": "希夏邦马峰",
+  "file": "Shishapangma.jpg",
+  "author": "Swinelin at English Wikipedia",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Shishapangma.jpg"
+ },
+ "taqin": {
+  "title": "冈仁波齐峰",
+  "file": "Kailash-Barkha.jpg",
+  "author": "Jean-Marie Hullot",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kailash-Barkha.jpg"
+ },
+ "zhada": {
+  "title": "古格王朝",
+  "file": "古格阴霾.jpg",
+  "author": "squallgold",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E6%A0%BC%E9%98%B4%E9%9C%BE.jpg"
+ },
+ "shiquanhe": {
+  "title": "狮泉河镇",
+  "file": "Ngari_Prefecture_IMG_3552.jpg",
+  "author": "Nicolai Bangsgaard",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ngari_Prefecture_IMG_3552.jpg"
+ },
+ "ritu": {
+  "title": "班公错",
+  "file": "Pangong_lake.jpg",
+  "author": "Praveenpn",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pangong_lake.jpg"
+ },
+ "yecheng": {
+  "title": "昆仑山",
+  "file": "Peak_in_Kunlun_range.jpg",
+  "author": "",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Peak_in_Kunlun_range.jpg"
+ },
+ "taxian": {
+  "title": "慕士塔格峰",
+  "file": "Muztagh_Ata_Xinjiang_China.jpg",
+  "author": "Jialiang Gao www.peace-on-earth.org",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Muztagh_Ata_Xinjiang_China.jpg"
+ },
+ "kashi": {
+  "title": "艾提尕尔清真寺",
+  "file": "Hëytgah_Mosque,_Kashi_(20230923100109).jpg",
+  "author": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:H%C3%ABytgah_Mosque,_Kashi_(20230923100109).jpg"
+ },
+ "kuche": {
+  "title": "克孜尔千佛洞",
+  "file": "QizilDonors.jpg",
+  "author": "Unknown authorUnknown author",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:QizilDonors.jpg"
+ },
+ "bayinbuluke": {
+  "title": "开都河",
+  "file": "Kaidu_river_yanqi_xinjiang.jpg",
+  "author": "Rolf Müller",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Kaidu_river_yanqi_xinjiang.jpg"
+ },
+ "nalati": {
+  "title": "那拉提草原",
+  "file": "Nalati_Grassland_2.jpg",
+  "author": "Yoshi Canopus",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Nalati_Grassland_2.jpg"
+ },
+ "wuerhe": {
+  "title": "乌尔禾区",
+  "file": "新疆-制高点上观魔鬼城_-_panoramio.jpg",
+  "author": "Nyx Ning",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%96%B0%E7%96%86-%E5%88%B6%E9%AB%98%E7%82%B9%E4%B8%8A%E8%A7%82%E9%AD%94%E9%AC%BC%E5%9F%8E_-_panoramio.jpg"
+ },
+ "buerjin": {
+  "title": "布尔津县",
+  "file": "Burqin.jpg",
+  "author": "Fanghong",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Burqin.jpg"
+ },
+ "kanas": {
+  "title": "喀纳斯湖",
+  "file": "Kanas_Lake,_China,_LandSat_image.jpg",
+  "author": "NASA",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Kanas_Lake,_China,_LandSat_image.jpg"
+ },
+ "wulumuqi": {
+  "title": "天山天池",
+  "file": "天山天池2_-_panoramio.jpg",
+  "author": "zhanyoun",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E5%B1%B1%E5%A4%A9%E6%B1%A02_-_panoramio.jpg"
+ },
+ "tulufan": {
+  "title": "交河故城",
+  "file": "Jiaohe_City(Yarkhoto),Turpan,Xinjiang_HY2.jpg",
+  "author": "Hiroooooo",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jiaohe_City(Yarkhoto),Turpan,Xinjiang_HY2.jpg"
+ },
+ "hami": {
+  "title": "哈密市",
+  "file": "Downtown_Hami_City_night.jpg",
+  "author": "Baycrest",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Downtown_Hami_City_night.jpg"
+ },
+ "dunhuang": {
+  "title": "莫高窟",
+  "file": "Dunhuang_Mogao_Ku_2013.12.31_12-30-18.jpg",
+  "author": "Zhangzhugang",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dunhuang_Mogao_Ku_2013.12.31_12-30-18.jpg"
+ },
+ "chaka": {
+  "title": "茶卡盐湖",
+  "file": "Chaqia_Salt_Lake.JPG",
+  "author": "ZhengZhou",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chaqia_Salt_Lake.JPG"
+ },
+ "qinghaihu": {
+  "title": "青海湖",
+  "file": "Qinghai_lake.jpg",
+  "author": "NASA",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Qinghai_lake.jpg"
+ },
+ "xining": {
+  "title": "塔尔寺",
+  "file": "Taersi.jpg",
+  "author": "慕尼黑啤酒",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Taersi.jpg"
+ },
+ "qilian": {
+  "title": "卓尔山",
+  "file": "天境祁连_卓尔山_07.jpg",
+  "author": "郭泽泽泽泽泽真",
+  "license": "CC BY 2.5",
+  "license_url": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E5%A2%83%E7%A5%81%E8%BF%9E_%E5%8D%93%E5%B0%94%E5%B1%B1_07.jpg"
+ },
+ "zhangye": {
+  "title": "七彩丹霞",
+  "file": "Zhangye_Danxia.JPG",
+  "author": "YubYub41",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zhangye_Danxia.JPG"
+ },
+ "zhongwei": {
+  "title": "腾格里沙漠",
+  "file": "ISS066-E-83124_-_View_of_Earth.jpg",
+  "author": "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:ISS066-E-83124_-_View_of_Earth.jpg"
+ },
+ "yinchuan": {
+  "title": "西夏陵",
+  "file": "XiXia_Tomb_3_F.jpg",
+  "author": "BabelStone",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:XiXia_Tomb_3_F.jpg"
+ },
+ "eerduosi": {
+  "title": "成吉思汗陵",
+  "file": "成吉思汗陵2021.jpg",
+  "author": "ScareCriterion12",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E9%99%B52021.jpg"
+ },
+ "huhehaote": {
+  "title": "大召寺",
+  "file": "Dazhao_(Wuliang)_Temple_of_Hohhot2.JPG",
+  "author": "兜兜",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dazhao_(Wuliang)_Temple_of_Hohhot2.JPG"
+ },
+ "aershan": {
+  "title": "阿尔山",
+  "file": "阿尔山_市区_河流_2.jpg",
+  "author": "維基小霸王",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%98%BF%E5%B0%94%E5%B1%B1_%E5%B8%82%E5%8C%BA_%E6%B2%B3%E6%B5%81_2.jpg"
+ },
+ "hailaer": {
+  "title": "呼伦贝尔草原",
+  "file": "Hulunbuir_Grasslands,_Inner_Mongolia_-_9758734754.jpg",
+  "author": "Sergio Tittarini",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hulunbuir_Grasslands,_Inner_Mongolia_-_9758734754.jpg"
+ },
+ "eerguna": {
+  "title": "额尔古纳河",
+  "file": "Argun_River_near_Inner_Mogolia.jpg",
+  "author": "Jack No1",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Argun_River_near_Inner_Mogolia.jpg"
+ },
+ "shiwei": {
+  "title": "额尔古纳河",
+  "file": "Argun_River_near_Inner_Mogolia.jpg",
+  "author": "Jack No1",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Argun_River_near_Inner_Mogolia.jpg"
+ },
+ "mohe": {
+  "title": "漠河市",
+  "file": "Daxing'anling_May_6_Fire_Memorial_Museum.jpg",
+  "author": "Baycrest",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Daxing%27anling_May_6_Fire_Memorial_Museum.jpg"
+ },
+ "huma": {
+  "title": "黑龙江 (河流)",
+  "file": "Amur_River.JPG",
+  "author": "Original uploader was Refrain at zh.wikipedia",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Amur_River.JPG"
+ },
+ "heihe": {
+  "title": "黑河市",
+  "file": "Amur_River_and_Heihe.jpg",
+  "author": "Baycrest",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Amur_River_and_Heihe.jpg"
+ },
+ "haerbin": {
+  "title": "圣索菲亚大教堂",
+  "file": "Hagia_Sophia_Mars_2013.jpg",
+  "author": "Arild Vågen",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg"
+ },
+ "yanji": {
+  "title": "延吉市",
+  "file": "China_Korean_Folk_Park.jpg",
+  "author": "EditQ",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:China_Korean_Folk_Park.jpg"
+ },
+ "changbaishan": {
+  "title": "长白山天池",
+  "file": "Satellite_picture_of_Heaven_Lake_-_ISS041-E-78210.jpg",
+  "author": "Earth Science and Remote Sensing Unit, NASA Johnson Space Center",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Satellite_picture_of_Heaven_Lake_-_ISS041-E-78210.jpg"
+ },
+ "jian": {
+  "title": "好太王碑",
+  "file": "20230605_Stela_for_Gwanggaeto.jpg",
+  "author": "Yumeto",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20230605_Stela_for_Gwanggaeto.jpg"
+ },
+ "dandong": {
+  "title": "鸭绿江断桥",
+  "file": "Dandong_Bruecke.JPG",
+  "author": "The original uploader was Ragnar19 at German Wikipedia.",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Dandong_Bruecke.JPG"
+ },
+ "dalian": {
+  "title": "大连",
+  "file": "Xigang,_Dalian,_Liaoning,_China_-_panoramio_(18).jpg",
+  "author": "Fumihiko Ueno",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xigang,_Dalian,_Liaoning,_China_-_panoramio_(18).jpg"
+ },
+ "yantai": {
+  "title": "蓬莱阁",
+  "file": "PenglaiPavilion.jpg",
+  "author": "Chrishcn",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:PenglaiPavilion.jpg"
+ },
+ "qingdao": {
+  "title": "栈桥",
+  "file": "Seebrücke_Swakopmund,_Namibia.jpg",
+  "author": "Olga Ernst  &amp;  Hp.Baumeler",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seebr%C3%BCcke_Swakopmund,_Namibia.jpg"
+ },
+ "taian": {
+  "title": "泰山",
+  "file": "泰山_南天门.jpg",
+  "author": "Charlie fong",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%B3%B0%E5%B1%B1_%E5%8D%97%E5%A4%A9%E9%97%A8.jpg"
+ },
+ "beijing": {
+  "title": "故宫",
+  "file": "景山公园_(19687188164).jpg",
+  "author": "Han Zheng",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%99%AF%E5%B1%B1%E5%85%AC%E5%9B%AD_(19687188164).jpg"
+ },
+ "datong": {
+  "title": "云冈石窟",
+  "file": "61292-Yungang-Grottoes_(28498548881).jpg",
+  "author": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:61292-Yungang-Grottoes_(28498548881).jpg"
+ },
+ "wutaishan": {
+  "title": "五台山",
+  "file": "Mount_Wutai.JPG",
+  "author": "Zcm11",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mount_Wutai.JPG"
+ },
+ "pingyao": {
+  "title": "平遥古城",
+  "file": "Pingyao_40.JPG",
+  "author": "Nicor",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pingyao_40.JPG"
+ },
+ "hukou": {
+  "title": "壶口瀑布",
+  "file": "Hukou_Waterfall.jpg",
+  "author": "Leruswing",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hukou_Waterfall.jpg"
+ },
+ "luoyang": {
+  "title": "龙门石窟",
+  "file": "27427-Luoyang_(49067744628).jpg",
+  "author": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:27427-Luoyang_(49067744628).jpg"
+ },
+ "huashan": {
+  "title": "华山",
+  "file": "1_mount_hua_shan_china_2011.jpg",
+  "author": "chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:1_mount_hua_shan_china_2011.jpg"
+ },
+ "xian": {
+  "title": "秦始皇兵马俑",
+  "file": "51714-Terracota-Army.jpg",
+  "author": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg"
+ },
+ "jianmen": {
+  "title": "剑门关",
+  "file": "Jianmenguan.JPG",
+  "author": "User:Munford",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Jianmenguan.JPG"
+ },
+ "jiuzhaigou": {
+  "title": "九寨沟",
+  "file": "1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg",
+  "author": "Chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg"
+ },
+ "huanglong": {
+  "title": "黄龙风景名胜区",
+  "file": "1_huanglong_aerial_pano_2023.jpg",
+  "author": "Chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:1_huanglong_aerial_pano_2023.jpg"
+ },
+ "chengdu": {
+  "title": "大熊猫",
+  "file": "Giant_Panda_at_Singapore_River_Safari.jpg",
+  "author": "Michael Gwyther-Jones",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Giant_Panda_at_Singapore_River_Safari.jpg"
+ },
+ "siguniang": {
+  "title": "四姑娘山",
+  "file": "Mount_Siguniang_2.jpg",
+  "author": "Johannes Böckh",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mount_Siguniang_2.jpg"
+ },
+ "danba": {
+  "title": "丹巴县",
+  "file": "Danba,_Garze,_Sichuan,_China_-_panoramio_(10).jpg",
+  "author": "jetsun",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Danba,_Garze,_Sichuan,_China_-_panoramio_(10).jpg"
+ },
+ "xinduqiao": {
+  "title": "贡嘎山",
+  "file": "金色贡嘎_-_Golden_Mountains_-_2012.10_-_panoramio.jpg",
+  "author": "rheins",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E8%89%B2%E8%B4%A1%E5%98%8E_-_Golden_Mountains_-_2012.10_-_panoramio.jpg"
+ },
+ "daocheng": {
+  "title": "仙乃日",
+  "file": "Daocheng_Yading_scenic_area_gate.jpg",
+  "author": "David.C.LOK",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Daocheng_Yading_scenic_area_gate.jpg"
+ },
+ "litang": {
+  "title": "理塘县",
+  "file": "理塘长青春科尔寺.jpg",
+  "author": "Wang Junbo (talk · contribs)",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:%E7%90%86%E5%A1%98%E9%95%BF%E9%9D%92%E6%98%A5%E7%A7%91%E5%B0%94%E5%AF%BA.jpg"
+ },
+ "leshan": {
+  "title": "乐山大佛",
+  "file": "Leshan_Buddha_Statue_View.JPG",
+  "author": "Ariel Steiner",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Leshan_Buddha_Statue_View.JPG"
+ },
+ "chongqing": {
+  "title": "洪崖洞",
+  "file": "202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg",
+  "author": "Jonashtand",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg"
+ },
+ "zhangjiajie": {
+  "title": "张家界国家森林公园",
+  "file": "1_tianzishan_wulingyuan_zhangjiajie_2012.jpg",
+  "author": "chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg"
+ },
+ "fenghuang": {
+  "title": "凤凰古城",
+  "file": "Fenghuang_County,_Hunan,_China,_21_December_2016a.jpg",
+  "author": "凌晨疯子",
+  "license": "CC BY 2.5",
+  "license_url": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Fenghuang_County,_Hunan,_China,_21_December_2016a.jpg"
+ },
+ "changsha": {
+  "title": "橘子洲",
+  "file": "橘子洲_1.jpg",
+  "author": "維基小霸王",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%A9%98%E5%AD%90%E6%B4%B2_1.jpg"
+ },
+ "wuhan": {
+  "title": "黄鹤楼",
+  "file": "CN_-_Hubei_-_Wuhan_-_Kranichpagode.jpg",
+  "author": "MonsieurRoi",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:CN_-_Hubei_-_Wuhan_-_Kranichpagode.jpg"
+ },
+ "nanjing": {
+  "title": "中山陵",
+  "file": "Hall_of_Sun_Yat-sen_Mausoleum.jpg",
+  "author": "Jiong Sheng from London, United Kingdom",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hall_of_Sun_Yat-sen_Mausoleum.jpg"
+ },
+ "basu": {
+  "title": "Basu County Tibet",
+  "file": "Baxoi County.jpg",
+  "author": "Reurinkan",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baxoi_County.jpg"
+ },
+ "yining": {
+  "title": "Yining Xinjiang",
+  "file": "Along the Ili River, Yining, Xinjiang 2020-10-03.jpg",
+  "author": "Charlie Qi",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Along_the_Ili_River,_Yining,_Xinjiang_2020-10-03.jpg"
+ },
+ "sailimu": {
+  "title": "Sayram Lake",
+  "file": "Sayram Lake on north bank.jpg",
+  "author": "Y Chen",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sayram_Lake_on_north_bank.jpg"
+ },
+ "wudalianchi": {
+  "title": "Wudalianchi",
+  "file": "五大连池镇 wu da lian chi - panoramio (1).jpg",
+  "author": "wanghongliu",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E4%BA%94%E5%A4%A7%E8%BF%9E%E6%B1%A0%E9%95%87_wu_da_lian_chi_-_panoramio_(1).jpg"
+ },
+ "kangding": {
+  "title": "Kangding",
+  "file": "Kangding from above.jpg",
+  "author": "NoGhost",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kangding_from_above.jpg"
+ },
+ "enshi": {
+  "title": "Enshi Grand Canyon",
+  "file": "Enshi Grand Canyon 20240725.jpg",
+  "author": "HoweyYuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Enshi_Grand_Canyon_20240725.jpg"
+ },
+ "dachaidan": {
+  "title": "Qaidam Basin landscape",
+  "file": "China's Qaidam Basin Landscape Similar to Mars.jpg",
+  "author": "David Rubin, U.S. Geological Survey",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:China%27s_Qaidam_Basin_Landscape_Similar_to_Mars.jpg",
+  "generic": true
+ },
+ "xilinhaote": {
+  "title": "Xilin Gol grassland",
+  "file": "草原风景.jpg",
+  "author": "악준동",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E8%8D%89%E5%8E%9F%E9%A3%8E%E6%99%AF.jpg",
+  "generic": true
+ },
+ "wuzhen": {
+  "title": "乌镇",
+  "file": "1_wuzhen_aerial_2023.jpg",
+  "author": "Chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:1_wuzhen_aerial_2023.jpg"
+ },
+ "shaoxing": {
+  "title": "绍兴",
+  "file": "Guazhu_Hu.jpg",
+  "author": "Yumeto",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Guazhu_Hu.jpg"
+ },
+ "moganshan": {
+  "title": "莫干山",
+  "file": "Morganshan_side.JPG",
+  "author": "Mushero (talk)",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Morganshan_side.JPG"
+ },
+ "shexian": {
+  "title": "歙县",
+  "file": "Xuguoshifang_5225.jpg",
+  "author": "Doctoroftcm",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xuguoshifang_5225.jpg"
+ },
+ "jingdezhen": {
+  "title": "景德镇",
+  "file": "Changjiang_River_Seen_from_Zhushan_Bridge,_Jingdezhen.jpg",
+  "author": "EditQ",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Changjiang_River_Seen_from_Zhushan_Bridge,_Jingdezhen.jpg"
+ },
+ "fuzhou": {
+  "title": "三坊七巷",
+  "file": "东百中心A馆10楼瞭望台西三坊七巷.jpg",
+  "author": "董辰兴",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E7%99%BE%E4%B8%AD%E5%BF%83A%E9%A6%8610%E6%A5%BC%E7%9E%AD%E6%9C%9B%E5%8F%B0%E8%A5%BF%E4%B8%89%E5%9D%8A%E4%B8%83%E5%B7%B7.jpg"
+ },
+ "pingtan": {
+  "title": "平潭岛",
+  "file": "平潭海坛古城_8.jpg",
+  "author": "H2v5o68z",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%B9%B3%E6%BD%AD%E6%B5%B7%E5%9D%9B%E5%8F%A4%E5%9F%8E_8.jpg"
+ },
+ "dongshan": {
+  "title": "东山岛",
+  "file": "Sufeng_Mount.jpg",
+  "author": "Thyj",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sufeng_Mount.jpg"
+ },
+ "kaiping": {
+  "title": "开平碉楼与村落",
+  "file": "Zili_Village_Yunhuan_Lou_0005.jpg",
+  "author": "Stefan Fussan",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zili_Village_Yunhuan_Lou_0005.jpg"
+ },
+ "sanjiang": {
+  "title": "三江侗族自治县",
+  "file": "Feng`yu_Bridge,San`Jiang_county,2015-4-17.jpg",
+  "author": "Gmbsfd",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Feng%60yu_Bridge,San%60Jiang_county,2015-4-17.jpg"
+ },
+ "zhaoxing": {
+  "title": "侗族大歌",
+  "file": "Smithsonian_Folklife_Festival_DC_2014_(14563910183).jpg",
+  "author": "S Pakhrin from DC, USA",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Smithsonian_Folklife_Festival_DC_2014_(14563910183).jpg"
+ },
+ "xingyi": {
+  "title": "万峰林",
+  "file": "WanFengLin-ShangNaHui2025-08.jpg",
+  "author": "名字长的让人受不了",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:WanFengLin-ShangNaHui2025-08.jpg"
+ },
+ "luoping": {
+  "title": "罗平县",
+  "file": "Canola_field_in_Luoping.JPG",
+  "author": "Fanghong",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Canola_field_in_Luoping.JPG"
+ },
+ "jianshui": {
+  "title": "建水文庙",
+  "file": "建水文庙_-_航拍_-_2025-04-28_02.jpg",
+  "author": "瑞丽江的河水",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%BB%BA%E6%B0%B4%E6%96%87%E5%BA%99_-_%E8%88%AA%E6%8B%8D_-_2025-04-28_02.jpg"
+ },
+ "yuanyang": {
+  "title": "红河哈尼梯田",
+  "file": "Terrace_field_yunnan_china_denoised.jpg",
+  "author": "Jialiang Gao, www.peace-on-earth.org",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Terrace_field_yunnan_china_denoised.jpg"
+ },
+ "puer": {
+  "title": "普洱市",
+  "file": "普洱市_3.jpg",
+  "author": "維基小霸王",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%99%AE%E6%B4%B1%E5%B8%82_3.jpg"
+ },
+ "jinghong": {
+  "title": "西双版纳傣族自治州",
+  "file": "景澜3101.jpg",
+  "author": "Cangminzho",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%99%AF%E6%BE%9C3101.jpg"
+ },
+ "lincang": {
+  "title": "临沧市",
+  "file": "临沧天际线_-_航拍_-_2024-10-14_08.jpg",
+  "author": "瑞丽江的河水",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E4%B8%B4%E6%B2%A7%E5%A4%A9%E9%99%85%E7%BA%BF_-_%E8%88%AA%E6%8B%8D_-_2024-10-14_08.jpg"
+ },
+ "tengchong": {
+  "title": "腾冲市",
+  "file": "腾冲文庙_-_大成殿_-_2023-08-03_02.jpg",
+  "author": "瑞丽江的河水",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E8%85%BE%E5%86%B2%E6%96%87%E5%BA%99_-_%E5%A4%A7%E6%88%90%E6%AE%BF_-_2023-08-03_02.jpg"
+ },
+ "lugu": {
+  "title": "泸沽湖",
+  "file": "Overlooking_Lugu_Lake.jpg",
+  "author": "石璐",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Overlooking_Lugu_Lake.jpg"
+ },
+ "gyantse": {
+  "title": "白居寺",
+  "file": "IMG_1800_Gyantze_Kum_Bum_Palkhor_Choide.jpg",
+  "author": "Luca Galuzzi (Lucag)",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:IMG_1800_Gyantze_Kum_Bum_Palkhor_Choide.jpg"
+ },
+ "sakya": {
+  "title": "萨迦寺",
+  "file": "TIB-sakya-nordkloster.jpg",
+  "author": "Bgabel",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:TIB-sakya-nordkloster.jpg"
+ },
+ "shache": {
+  "title": "莎车县",
+  "file": "Approach_to_Yarkand,_1868.jpg",
+  "author": "Robert B. Shaw; first uploaded to en:Image:Approach to Yarkand, 1868.jpg",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Approach_to_Yarkand,_1868.jpg"
+ },
+ "aksu": {
+  "title": "阿克苏市",
+  "file": "20240322_Duolang_River_in_Aksu.jpg",
+  "author": "Windmemories",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20240322_Duolang_River_in_Aksu.jpg"
+ },
+ "tekes": {
+  "title": "特克斯县",
+  "file": "新疆-特克斯-八卦城-之一卦-我在城中心_-_panoramio.jpg",
+  "author": "Nyx Ning",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%96%B0%E7%96%86-%E7%89%B9%E5%85%8B%E6%96%AF-%E5%85%AB%E5%8D%A6%E5%9F%8E-%E4%B9%8B%E4%B8%80%E5%8D%A6-%E6%88%91%E5%9C%A8%E5%9F%8E%E4%B8%AD%E5%BF%83_-_panoramio.jpg"
+ },
+ "zhaosu": {
+  "title": "昭苏县",
+  "file": "Xinjiang_DSC_8179_(3813626261).jpg",
+  "author": "lwtt93 from Shanghai, China",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xinjiang_DSC_8179_(3813626261).jpg"
+ },
+ "wuwei": {
+  "title": "雷台汉墓",
+  "file": "Gansu_Museum_2007_257.jpg",
+  "author": "G41rn8",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gansu_Museum_2007_257.jpg"
+ },
+ "manzhouli": {
+  "title": "满洲里市",
+  "file": "满洲里_遥望城区内_02.jpg",
+  "author": "Liuxingy",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%BB%A1%E6%B4%B2%E9%87%8C_%E9%81%A5%E6%9C%9B%E5%9F%8E%E5%8C%BA%E5%86%85_02.jpg"
+ },
+ "aoluguya": {
+  "title": "敖鲁古雅鄂温克族乡",
+  "file": "根河_敖鲁古雅大门.jpg",
+  "author": "Liuxingy",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%A0%B9%E6%B2%B3_%E6%95%96%E9%B2%81%E5%8F%A4%E9%9B%85%E5%A4%A7%E9%97%A8.jpg"
+ },
+ "jingpohu": {
+  "title": "镜泊湖",
+  "file": "Jingpo_Lake,_rowing_boat.jpg",
+  "author": "drnan tu",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jingpo_Lake,_rowing_boat.jpg"
+ },
+ "weihai": {
+  "title": "刘公岛",
+  "file": "Liugongisland_warmemorialhall.jpg",
+  "author": "Rolf Müller (User:Rolfmueller)",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Liugongisland_warmemorialhall.jpg"
+ },
+ "jinan": {
+  "title": "趵突泉",
+  "file": "Baotu_Spring,_Jinan_in_Oct_2013.jpg",
+  "author": "Windmemories",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baotu_Spring,_Jinan_in_Oct_2013.jpg"
+ },
+ "tianjin": {
+  "title": "五大道",
+  "file": "五大道地标钟.jpg",
+  "author": "KangTyngrwey",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E4%BA%94%E5%A4%A7%E9%81%93%E5%9C%B0%E6%A0%87%E9%92%9F.jpg"
+ },
+ "chengde": {
+  "title": "避暑山庄",
+  "file": "Chengde_Mountain_Resort_22630-Chengde_(42954495010).jpg",
+  "author": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chengde_Mountain_Resort_22630-Chengde_(42954495010).jpg"
+ },
+ "saihanba": {
+  "title": "塞罕坝国家森林公园",
+  "file": "Saihanba_park.jpg",
+  "author": "Original uploader was 用心阁 at zh.wikipedia",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Saihanba_park.jpg"
+ },
+ "zhangbei": {
+  "title": "张北县",
+  "file": "Zhangbei_Grass_Skyline_from_the_ferris_wheel_(20210731135013).jpg",
+  "author": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zhangbei_Grass_Skyline_from_the_ferris_wheel_(20210731135013).jpg"
+ },
+ "yingxian": {
+  "title": "应县木塔",
+  "file": "Pagoda_of_Fogong_Temple_at_Dust.jpg",
+  "author": "Charlie fong",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pagoda_of_Fogong_Temple_at_Dust.jpg"
+ },
+ "tianshui": {
+  "title": "麦积山石窟",
+  "file": "Bodhisattva2_at_MaiJiShan.jpg",
+  "author": "Farm",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Bodhisattva2_at_MaiJiShan.jpg"
+ },
+ "xiahe": {
+  "title": "拉卜楞寺",
+  "file": "Labuleng.jpg",
+  "author": "",
+  "license": "CC BY-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Labuleng.jpg"
+ },
+ "langmusi": {
+  "title": "郎木寺",
+  "file": "Langmusi_-_1(cropped).jpg",
+  "author": "明雨卿晨\n\nderivative work: User:LimSoo-jung",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Langmusi_-_1(cropped).jpg"
+ },
+ "yaan": {
+  "title": "上里古镇",
+  "file": "Shangli_Ancient_Town.jpg",
+  "author": "NoGhost",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shangli_Ancient_Town.jpg"
+ },
+ "zigong": {
+  "title": "自贡恐龙博物馆",
+  "file": "ZigongDinoMuseum1.jpg",
+  "author": "WhisperToMe",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:ZigongDinoMuseum1.jpg"
+ },
+ "wulong": {
+  "title": "天生三桥",
+  "file": "Wulongtianshengsanqiao.JPG",
+  "author": "Brookqi",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG"
+ },
+ "yueyang": {
+  "title": "岳阳楼",
+  "file": "Frontal_view_of_Yueyang_Tower,_Hunan,_China1.jpg",
+  "author": "Huangdan2060",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Frontal_view_of_Yueyang_Tower,_Hunan,_China1.jpg"
+ },
+ "yangzhou": {
+  "title": "瘦西湖",
+  "file": "Five_Pavilion_Bridge_and_White_Pagoda_2017.jpg",
+  "author": "Amarespeco",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Five_Pavilion_Bridge_and_White_Pagoda_2017.jpg"
+ },
+ "xiapu": {
+  "title": "Xiapu mudflat",
+  "file": "Xiaohao Beach, Xiapu 20230827.jpg",
+  "author": "颐园居",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xiaohao_Beach,_Xiapu_20230827.jpg"
+ },
+ "huangyao": {
+  "title": "Huangyao ancient town",
+  "file": "View of Huangyao ancient town.jpg",
+  "author": "Diego Robayo",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:View_of_Huangyao_ancient_town.jpg"
+ },
+ "zhenyuan": {
+  "title": "Zhenyuan ancient town",
+  "file": "Panoramic image of Zhenyuan Ancient Town.jpg",
+  "author": "杰·影",
+  "license": "CC BY 2.5",
+  "license_url": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Panoramic_image_of_Zhenyuan_Ancient_Town.jpg"
+ },
+ "shaxi": {
+  "title": "Shaxi Yunnan",
+  "file": "Shaxi Man, Yunnan.jpg",
+  "author": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shaxi_Man,_Yunnan.jpg"
+ },
+ "keketuohai": {
+  "title": "Keketuohai",
+  "file": "Tourmaline, quartz 2.jpg",
+  "author": "Géry PARENT",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Tourmaline,_quartz_2.jpg"
+ },
+ "qikou": {
+  "title": "Qikou",
+  "file": "Pulse chart; Locations for palpating renying and qikou pulses Wellcome L0038008.jpg",
+  "author": "",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pulse_chart;_Locations_for_palpating_renying_and_qikou_pulses_Wellcome_L0038008.jpg"
+ },
+ "ruoergai": {
+  "title": "Zoige grassland",
+  "file": "甘南藏族自治州Rerdaba grassland - panoramio.jpg",
+  "author": "landagent",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E7%94%98%E5%8D%97%E8%97%8F%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9ERerdaba_grassland_-_panoramio.jpg"
+ },
+ "furongzhen": {
+  "title": "Furong Town Hunan",
+  "file": "Mount Furong, Ningxiang, Hunan, China2.jpg",
+  "author": "Huangdan2060",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Mount_Furong,_Ningxiang,_Hunan,_China2.jpg"
+ },
+ "dahongliutan": {
+  "title": "界山达坂",
+  "file": "抵达界山达坂.jpg",
+  "author": "Eric Feng",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%8A%B5%E8%BE%BE%E7%95%8C%E5%B1%B1%E8%BE%BE%E5%9D%82.jpg",
+  "generic": true
+ }
+}

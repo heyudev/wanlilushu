@@ -1,0 +1,553 @@
+{
+ "attractions": [
+  {
+   "node": "jianshui",
+   "name": "朱家花园",
+   "level": "4A",
+   "peak": 42,
+   "off": 42,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [],
+   "reserve": "未查到强制预约;OTA支持当日购票、随时退",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "优惠票21元(儿童/学生/老人,OTA口径);OTA另有35元起的折扣价与多景区联票",
+   "open": "08:00-19:00",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/512.html",
+    "https://gs.ctrip.com/html5/you/sight/1525908.html"
+   ],
+   "confidence": "medium",
+   "note": "官方渠道未查到。成人票42元为搜索摘要所载携程口径;携程列表页显示35元起(含优惠)。联票示例:文庙+朱家花园+临安府署+朝阳楼+学政考棚成人122元。景区地址翰林街16号。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "jianshui",
+   "name": "建水文庙",
+   "level": "4A",
+   "peak": 40,
+   "off": 40,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [],
+   "reserve": "OTA支持随买随用、随时退;未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "优惠票20元;儿童1.2米以下、老人(去哪儿标注'非云南省')享优惠,具体年龄口径未核实",
+   "open": "未查到(携程列表显示约08:00起)",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=22015",
+    "https://gs.ctrip.com/html5/you/sight/2153.html"
+   ],
+   "confidence": "medium",
+   "note": "成人票39.9-40元(去哪儿页面实际打开)。联票:文庙+学政考棚55元;文庙+朝阳楼+学政考棚+团山民居88元(均OTA搜索摘要)。地址临安路268号。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "jianshui",
+   "name": "建水小火车(可选)",
+   "level": "4A",
+   "peak": 120,
+   "off": 120,
+   "season_rule": "旺季需提前约3天购票;淡旺季差价未查到",
+   "extras": [
+    {
+     "item": "建水小火车往返硬座(可选)",
+     "price": 120
+    }
+   ],
+   "reserve": "旺季建议提前约3天,上午班次难约;可经'建水小火车'公众号或携程购票",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "优待票60元起(儿童/老人/学生/军人);儿童票限6岁以下且不占座",
+   "open": "班次约9:00、14:30(搜索摘要);携程列表显示08:00起",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail_1006254502.html",
+    "https://gs.ctrip.com/html5/you/sight/512.html"
+   ],
+   "confidence": "medium",
+   "note": "成人往返硬座120元起(去哪儿页面实际打开)。设临安站、双龙桥站、乡会桥站、团山站;双龙桥站停靠约30分钟。官方公众号票价未能直接核对。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "yuanyang",
+   "name": "元阳哈尼梯田景区(多依树/坝达/老虎嘴)",
+   "level": "4A",
+   "peak": 70,
+   "off": 70,
+   "season_rule": "未查到淡旺季差价;12月-3月灌水期景观最佳(游记口径)",
+   "extras": [
+    {
+     "item": "电子导览(可选,6-10元)",
+     "price": null
+    }
+   ],
+   "reserve": "OTA支持提前或当日购票;未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "老人票(70岁及以上)35元;学生35元;儿童(6岁及以下或1.2米以下)去哪儿标35元,另一来源称免票,以景区为准",
+   "open": "约08:00起(携程列表)",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=10346",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=456950",
+    "https://gs.ctrip.com/html5/you/sight/512.html"
+   ],
+   "confidence": "medium",
+   "note": "成人票70元(去哪儿多个子景点页面均为70元)。搜索摘要称多依树+坝达为一张联票可多次进入,老虎嘴/箐口在去哪儿另挂同价票,是否一票通用未核实。观光车未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "jinghong",
+   "name": "中科院西双版纳热带植物园(勐仑)",
+   "level": "5A",
+   "peak": 80,
+   "off": 80,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [
+    {
+     "item": "西区电瓶车(可选)",
+     "price": 50
+    },
+    {
+     "item": "全园电瓶车(可选)",
+     "price": 100
+    }
+   ],
+   "reserve": "建议提前1天经公众号预约(可优惠5元);另有来源称需提前3天经小程序预约,口径不一",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "学生持有效证件半价;中高考考生凭准考证有关联景区免票福利(具体未核实)",
+   "open": "08:00-18:00",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/2154.html",
+    "https://sina.cn/detail/niizvpc1222932",
+    "https://travel.sina.cn/2026-07-11/detail-inihmzut8185104.d.html"
+   ],
+   "confidence": "medium",
+   "note": "成人全价80元(携程列表+搜索摘要+新浪2026-07游记)。电瓶车价格来自搜索摘要。官方渠道未能直接打开核对。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "jinghong",
+   "name": "野象谷",
+   "level": "4A",
+   "peak": 60,
+   "off": 60,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [
+    {
+     "item": "热带雨林索道(可选,往返)",
+     "price": 70
+    }
+   ],
+   "reserve": "需提前2天经官方公众号预约(搜索摘要);16:30停止售票",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "08:00-18:00,16:30停止入园",
+   "src": [
+    "https://sina.cn/detail/niizvpc1222932",
+    "https://gs.ctrip.com/html5/you/sight/2154.html",
+    "https://lxs.cncn.com/53818/n400926"
+   ],
+   "confidence": "low",
+   "note": "门票各来源不一致:2026年摘要60元,携程列表58元起,旧资料65元/50元。索道单程50/往返70为较早资料,未核实2026现价。表演、观象架走廊等是否另收费未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "tengchong",
+   "name": "和顺古镇",
+   "level": "5A",
+   "peak": 55,
+   "off": 55,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [],
+   "reserve": "未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "儿童(6岁或1.2米以下)与70岁以上免票;6-18岁未成年人和60-70岁老人半价",
+   "open": "未查到",
+   "src": [
+    "https://m.thepaper.cn/detail/34000273",
+    "https://gs.ctrip.com/html5/you/sight/696.html"
+   ],
+   "confidence": "medium",
+   "note": "散客全价55元,7日内有效(澎湃转述景区2026-09-02声明)。景区声明提示网传'某时段免费入园'为不实信息。携程列表显示27.5元起(半价档)。部分区域免费、进特定小院需验票(游记口径)。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "tengchong",
+   "name": "热海景区",
+   "level": "5A",
+   "peak": 50,
+   "off": 50,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [
+    {
+     "item": "浴谷温泉/高级汤池(可选)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "08:00-20:00,19:00停止售票,18:30停止入园",
+   "src": [
+    "https://m.sohu.com/a/1036739830_122522015/",
+    "https://gs.ctrip.com/html5/you/sight/696.html",
+    "https://gs.ctrip.com/html5/you/sight/Shidian2185/15094.html"
+   ],
+   "confidence": "low",
+   "note": "门票约50元(含浴谷温泉基础票,高级汤池另算;搜狐文章),另有搜索摘要称55元,未能核对官方现价。携程列表未标价。浴谷温泉套票(热海门票+大滚锅饵丝+浴谷温泉+浴谷双程车)价格未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "tengchong",
+   "name": "北海湿地",
+   "level": "4A",
+   "peak": 55,
+   "off": 55,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [
+    {
+     "item": "竹筏/观光车/语音导览套票(可选)",
+     "price": 140
+    }
+   ],
+   "reserve": "OTA支持随买随用;未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "老人(70岁及以上)与学生27.5元;儿童(6岁以下或1.2米以下)优惠;搜索摘要称腾冲市民凭证件免费入园",
+   "open": "08:30开园",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=246",
+    "https://gs.ctrip.com/html5/you/sight/696.html"
+   ],
+   "confidence": "medium",
+   "note": "成人票55元(去哪儿页面实际打开)。套票140元含门票+竹筏+观光车+语音导览;畅玩168元;亲子(2大1小)299元。搜狐文章称55元含船票,与去哪儿分项报价不完全一致。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "shaxi",
+   "name": "沙溪古镇(寺登街)",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "无",
+   "extras": [],
+   "reserve": "无需预约(未查到相关要求)",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "无需门票",
+   "open": "全天可自由进入(街区),具体景点另有开放时间",
+   "src": [
+    "https://gs.ctrip.com/html5/you/travels/2215/4123980.html",
+    "https://m.thepaper.cn/newsDetail_forward_32265799"
+   ],
+   "confidence": "medium",
+   "note": "携程游记称'目前沙溪古镇不需要门票';搜索摘要称古镇免费,欧阳大院20元、石宝山石窟40元(未核对)。未查到景区等级和官方公告,不排除政策调整。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "lugu",
+   "name": "泸沽湖景区",
+   "level": "4A",
+   "peak": 70,
+   "off": 70,
+   "season_rule": "未查到淡旺季差价;旺季按5-10月计,需提前预约",
+   "extras": [
+    {
+     "item": "猪槽船(里务比岛环岛,可选)",
+     "price": 80
+    },
+    {
+     "item": "格姆女神山索道单程(可选)",
+     "price": 70
+    }
+   ],
+   "reserve": "2026年起全网实名预约,可经公众号'泸沽湖景区'或携程/美团/抖音;旺季提前3-7天",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "半价35元(学生、60-69岁);70岁以上老人、现役军人、残疾人免票;1.2米以下儿童免票",
+   "open": "景区大门24小时,游船约08:00-18:00,末班船16:30",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/ninglang2169/4200.html",
+    "https://sina.cn/detail/nimeknz5590364",
+    "https://www.sina.cn/news/article/nikirna8141086.html"
+   ],
+   "confidence": "medium",
+   "note": "云南侧成人70元,7天内川滇两侧互通。四川侧价格存在冲突:一说80元,另一说一票通玩川滇70元。摆渡/环湖包车约300-350元一车(7座)。官方公告未能直接打开,价格均来自搜索摘要。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "gyantse",
+   "name": "白居寺",
+   "level": null,
+   "peak": 40,
+   "off": 40,
+   "season_rule": "未查到现行淡旺季;2012年旧资料为旺季60/淡季30",
+   "extras": [
+    {
+     "item": "十万佛塔内带相机另收费(可选)",
+     "price": 15
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "约9:00-19:00(搜索摘要);旧资料9:00-16:00",
+   "src": [
+    "https://m.bendibao.com/show729340_4.html",
+    "https://gs.ctrip.com/html5/you/place/2437.html",
+    "https://www.qnly.com/sight/rikaze/1053.html"
+   ],
+   "confidence": "low",
+   "note": "40元为2015年旧文及汇总摘要口径,未找到2025-2026官方价;评论中有人提到60元。相机15元来自汇总摘要。等级未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "gyantse",
+   "name": "宗山古堡(宗山抗英遗址)",
+   "level": null,
+   "peak": 40,
+   "off": 40,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "景区观光电瓶车(2024-07资料)",
+     "price": 70
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "约9:00-18:00(汇总摘要)",
+   "src": [
+    "https://gs.ctrip.com/html5/you/place/2437.html",
+    "https://www.wingontravel.com/discovery/scenic-gyantse-20859/list",
+    "https://blog.snowliontours.com/?p=250"
+   ],
+   "confidence": "low",
+   "note": "门票40元来自无日期汇总摘要;2024-07资料称不可自行步行/驾车入内,须在游客中心购买电瓶车票(70元,或马车100元)。资料原文未能核对,2026现价未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "sakya",
+   "name": "萨迦寺",
+   "level": null,
+   "peak": 50,
+   "off": 50,
+   "season_rule": "未查到",
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "约9:00-18:30(汇总摘要)",
+   "src": [
+    "https://www.qnly.com/guide/1127.html",
+    "https://gs.ctrip.com/html5/you/place/100.html"
+   ],
+   "confidence": "low",
+   "note": "50元来自无日期汇总摘要,参观南寺约3小时;未找到官方或2025-2026来源。等级未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "shache",
+   "name": "阿曼尼莎罕纪念陵/叶尔羌汗国王陵",
+   "level": null,
+   "peak": 15,
+   "off": 15,
+   "season_rule": "未查到",
+   "extras": [],
+   "reserve": "OTA支持随买随用、随时退;未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "10:00开园",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/2499.html",
+    "https://gs.ctrip.com/html5/you/sight/124/43963.html"
+   ],
+   "confidence": "low",
+   "note": "携程列表显示阿曼尼莎罕纪念陵15元起,搜索摘要另有25元之说;叶尔羌汗国王陵(阿勒屯麻扎)单独票价未查到,两处相邻,是否联票未核实。等级未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "aksu",
+   "name": "温宿托木尔大峡谷",
+   "level": "5A",
+   "peak": 36,
+   "off": 36,
+   "season_rule": "未查到淡旺季差价",
+   "extras": [
+    {
+     "item": "区间车",
+     "price": 60
+    },
+    {
+     "item": "四驱越野车(可选)",
+     "price": null
+    }
+   ],
+   "reserve": "OTA支持随买随用;未查到强制预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "老人(65岁以上)与学生18元;儿童1.2米(含)以下优惠",
+   "open": "09:30-20:00,19:00停止售票",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=39852",
+    "https://gs.ctrip.com/html5/you/place/1446377.html"
+   ],
+   "confidence": "medium",
+   "note": "成人票36元(35.9元)+区间车60元,门票+区间车约96元(去哪儿页面实际打开及搜索摘要)。越野车价格未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "tekes",
+   "name": "喀拉峻草原",
+   "level": "5A",
+   "peak": 70,
+   "off": 70,
+   "season_rule": "2026年开放期约4月29日-10月31日;旺季6-8月;淡季价未查到",
+   "extras": [
+    {
+     "item": "区间车(单程45,往返90;另有来源称70)",
+     "price": 90
+    }
+   ],
+   "reserve": "实名预约制,日限2.2万人;旺季提前3-7天经官方小程序/OTA分时预约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "全日制学生半价35元,区间车无折扣",
+   "open": "购票时间08:00-19:30,最晚入园19:50",
+   "src": [
+    "https://www.sina.cn/news/article/nikhuhv0504265.html",
+    "https://touch.piao.qunar.com/touch/list_伊犁_景点门票.html",
+    "https://lxs.cncn.com/88738/n707922"
+   ],
+   "confidence": "low",
+   "note": "来源口径互相冲突:一说东西喀拉峻单线票140元(可能含区间车)、阔克苏峡谷155元、全域联票275元(去哪儿列表显示275元起);另一说东西喀拉峻票70元(学生35)+区间车70元。此处草原单票记70+区间车,请出行前核实。自驾票160-200元/车。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "tekes",
+   "name": "琼库什台",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "未查到",
+   "open": "未查到",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/115/145517.html",
+    "https://gs.ctrip.com/html5/you/sight/tekes1446388/1833176.html"
+   ],
+   "confidence": "low",
+   "note": "未查到琼库什台是否另收门票;检索结果仅见住宿(约100-400元/晚)和骑马、徒步线路信息。需向当地文旅部门确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "zhaosu",
+   "name": "夏塔景区",
+   "level": null,
+   "peak": 100,
+   "off": 100,
+   "season_rule": "旺季6-8月;淡季价未查到",
+   "extras": [
+    {
+     "item": "区间车",
+     "price": 60
+    }
+   ],
+   "reserve": "需提前预约,微信小程序'夏塔旅游景区',每日限流1万人;自驾票只能提前3天约",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "学生票80元、老年票80元",
+   "open": "约09:00-20:00,18:00停止售票",
+   "src": [
+    "https://gs.ctrip.com/html5/you/place/2508.html",
+    "https://c.m.163.com/news/a/KRRRMASM0556LKKU.html",
+    "https://c.m.163.com/news/a/L35IIQKS0556LTAY.html"
+   ],
+   "confidence": "low",
+   "note": "成人100元(多个摘要一致);区间车口径不一:60元,或区间车40元+电瓶车50元,请核实。景区等级未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "zhaosu",
+   "name": "昭苏天马文化园",
+   "level": "4A",
+   "peak": 70,
+   "off": 70,
+   "season_rule": "全年开放",
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "60-64岁老人40元,65岁及以上5元,学生40元(大河票务口径);去哪儿口径:成人40元、学生30元、65岁以上10元",
+   "open": "全年10:30-18:30,马术表演13:00/17:00,室内馆19:00",
+   "src": [
+    "https://www.dahepiao.com/lvyounews1/20251120537920.html",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=192854"
+   ],
+   "confidence": "low",
+   "note": "票价冲突:大河票务称成人70元(含区间车);去哪儿页面成人40元(区间车包含)。以现场/官方为准。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "zhaosu",
+   "name": "昭苏油菜花(花海)",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "花期约7月初-8月上旬",
+   "extras": [],
+   "reserve": "无",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "无",
+   "open": "自然农田景观,无固定开放时间",
+   "src": [
+    "https://cn.chinadaily.com.cn/a/202007/15/WS5f0e53b8a310a859d09d7e66.html"
+   ],
+   "confidence": "low",
+   "note": "未查到统一收费景区;花海多为自然农田,搜索摘要称部分私人地块进田拍摄需与农户沟通、约5-10元/人。观景台门票未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "keketuohai",
+   "name": "可可托海景区",
+   "level": "5A",
+   "peak": 90,
+   "off": 90,
+   "season_rule": "旺季5月1日-10月31日;淡季价未查到",
+   "extras": [
+    {
+     "item": "区间车",
+     "price": 26
+    }
+   ],
+   "reserve": "2026-07起新疆景区多实行限量预约错峰,建议提前7-10天(旅游资讯口径)",
+   "pets": "未查到",
+   "pets_note": null,
+   "discounts": "60-64岁老人71元(含车);65岁以上与6岁以下儿童13元;富蕴县本地群众半价",
+   "open": "9:30-19:00(景区2026-04公众号文);携程列表08:30开园;旺季另有08:00-20:00之说",
+   "src": [
+    "https://m.thepaper.cn/newsDetail_forward_32975702",
+    "https://gs.ctrip.com/html5/you/sight/2509.html",
+    "https://m.163.com/dy/article/L3AM0K7O0556IUD7.html",
+    "https://lxs.cncn.com/61420/n687839"
+   ],
+   "confidence": "medium",
+   "note": "门票90元+区间车26元=116元(携程列表116元起)。边境管理区通行证:多个旅游资讯称额尔齐斯河大峡谷/三号矿坑核心区需办理,可户籍地免费办或到阿勒泰后现场办;未查到官方通告,需出行前确认。可可托海国家矿山公园为另一4A景区(80元起)。",
+   "checked": "2026-10-04"
+  }
+ ]
+}

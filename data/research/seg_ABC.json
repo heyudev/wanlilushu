@@ -1,0 +1,1112 @@
+{
+ "attractions": [
+  {
+   "node": "shanghai",
+   "name": "豫园",
+   "level": "4A",
+   "peak": 40,
+   "off": 30,
+   "season_rule": "旺季 4/1–6/30、9/1–11/30 成人40元；淡季 7/1–8/31、12/1–3/31 成人30元",
+   "extras": [],
+   "reserve": "不强制预约：线上用“上海豫园”官方小程序购票，南门/北门均设售票窗口（官网）",
+   "pets": "禁止",
+   "pets_note": "官网游览须知第11条：禁止游客携带宠物入园（导盲犬除外）；园方不提供行李寄存",
+   "discounts": "6–18岁未成年人、全日制本科及以下学生、60岁以上老人半价（每人每日限购一张）；1.3米或6岁以下儿童（成人陪同，1成人限带3名）、残疾人、现役军人等免票",
+   "open": "9:00–16:30（16:00停止入园）；每周一闭园（法定节假日除外），春节期间以公告为准",
+   "src": [
+    "https://www.yugarden.com.cn/page/articleView/message.html",
+    "https://www.yugarden.com.cn/page/articleView/index.html",
+    "https://www.shanghai.gov.cn/citywalk/20260625/3a8ac74e088f4d468d9c3434b0b43d94.html"
+   ],
+   "confidence": "high",
+   "note": "官网现行开放信息含“周一闭园”（旧印象为每天开放，易跑空）；灯会等特别活动另行收费、分时段入场",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "shanghai",
+   "name": "上海博物馆（东馆/人民广场馆）",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "东馆常设展免费，无淡旺季；人民广场馆自2026-07-09至2027-11-14因“世界树之巅：美洲古代文明大展”全员购票",
+   "extras": [
+    {
+     "item": "人民广场馆美洲古代文明大展展票(可选；该馆展期内仅此展、须购票；148元来自百度文库转述，携程OTA起价135)",
+     "price": 148
+    }
+   ],
+   "reserve": "东馆：散客免预约，持有效身份证件原件从B1层东门安检后刷证入馆；古代文明探索宫、数字馆需在“上海博物馆参观预约”小程序选“专项预约”。人民广场馆：美洲展期间所有观众须在该小程序预约购票（境外观众可用Trip.com），当日凭证件核验入馆；10月1日起已可预约11月场次（上观新闻）",
+   "pets": "禁止",
+   "pets_note": "官网两馆观众须知均写明：携带宠物者谢绝入馆",
+   "discounts": "65岁以上老人、现役军人、残障人士等有绿色通道/免票权益（仅限入馆，不含收费特展）",
+   "open": "东馆 10:00–18:00（17:00后停止入场），周二闭馆（国定节假日除外）；人民广场馆 9:00–17:00（15:00后停止入场），周一闭馆（国定节假日除外），夜场另行公告",
+   "src": [
+    "https://www.shanghaimuseum.net/mu/frontend/pg/service/visit-east",
+    "https://www.shanghaimuseum.net/mu/frontend/pg/service/visit-west",
+    "https://www.shanghaimuseum.net/mu/frontend/pg/infomation/reservation",
+    "https://www.jfdaily.com/sgh/detail?id=4066538",
+    "https://wenku.baidu.com/view/536ec8940822590102020740be1e650e52eacf97.html"
+   ],
+   "confidence": "high",
+   "note": "官网域名自2026-09-01起改为 www.shanghaimuseum.cn（旧域名 .net 2027-01-01停用）；展期内常设展与其他特展集中在东馆；未满12周岁须成年人全程陪同；若只看常设展选东馆最省事",
+   "checked": "2026-10-03",
+   "review_by": "2027-11-14",
+   "review_note": "人民广场馆特展至 2027-11-14"
+  },
+  {
+   "node": "suzhou",
+   "name": "拙政园",
+   "level": "5A",
+   "peak": 80,
+   "off": 70,
+   "season_rule": "旺季 4–5月、7–10月 80元；淡季 1–3月、6月、11–12月 70元（苏州市旅游咨询中心官方页）",
+   "extras": [],
+   "reserve": "需提前实名预约购票（苏州本地宝2026年中秋期间列为需实名预约景区，可提前1–7天预约；渠道：“苏州园林旅游”公众号/“君到苏州”小程序）；医务人员等特例才写“免预约入园”，说明常规需预约",
+   "pets": "未查到",
+   "pets_note": "未查到游览须知中的宠物条款；携程转载的行李寄存规则写明“不可寄存各类动物、植物等宠物”",
+   "discounts": "6岁以下/1.4米以下免费，6–18岁半价；60–70岁半价，70岁以上免费；全日制本科及以下学生半价（携程转载官方优待）",
+   "open": "3/1–10/31 7:30–17:30，11/1–次年2月底 7:30–17:00；2026-06-19至10-07 暑期延长段提前到6:45开园（74年来首次调整）；17:00停止售票/入园；夜游另售",
+   "src": [
+    "https://visitsz.wglj.suzhou.com.cn/scenic-spot-detail.aspx?id=58",
+    "https://you.ctrip.com/sight/suzhou11/47072.html",
+    "https://m.thepaper.cn/newsDetail_forward_33417157",
+    "https://m.suzhou.bendibao.com/mip/139198.shtm",
+    "https://suzhou.bendibao.com/tour/2015113/ly112073.shtm"
+   ],
+   "confidence": "high",
+   "note": "价格取自苏州市旅游咨询中心官方景区页；预约渠道名称取自搜索结果，建议出行前在官方公众号核对",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "suzhou",
+   "name": "留园",
+   "level": "5A",
+   "peak": 55,
+   "off": 45,
+   "season_rule": "旺季 4–5月、7–10月 55元；淡季 1–3月、6月、11–12月 45元",
+   "extras": [],
+   "reserve": "需提前实名预约购票（苏州本地宝2026中秋期间名单含留园；可提前1–7天）",
+   "pets": "未查到",
+   "pets_note": "未查到游览须知中的宠物条款",
+   "discounts": "6岁以下/1.4米以下免费，6–18岁半价；70岁以上免费，60–70岁半价；学生半价",
+   "open": "3/1–10/31 7:30–17:30，11/1–次年2月底 7:30–17:00；清明/五一/端午/中秋/国庆 7:30–18:00（17:30停止入园）",
+   "src": [
+    "https://visitsz.wglj.suzhou.com.cn/scenic-spot-detail.aspx?id=56",
+    "https://you.ctrip.com/sight/suzhou11/1830.html",
+    "https://m.suzhou.bendibao.com/mip/139198.shtm"
+   ],
+   "confidence": "high",
+   "note": "",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "suzhou",
+   "name": "虎丘",
+   "level": "5A",
+   "peak": 70,
+   "off": 60,
+   "season_rule": "旺季 4–5月、7–10月 70元；淡季 1–3月、6月、11–12月 60元",
+   "extras": [],
+   "reserve": "2024年起虎丘曾列入实名预约景区；2026年中秋期间苏州本地宝公布的需预约名单未见虎丘，国庆是否需预约请以“苏州园林旅游”公众号为准（未能核实）",
+   "pets": "未查到",
+   "pets_note": "未查到宠物条款",
+   "discounts": "江苏省内60岁以上老人凭证免费（大型园事活动期间半价）；6–18岁未成年人、学生半价；景区内电瓶车/马车/游船身高1.2米以下需在兑票处购票",
+   "open": "5/1–10/31 7:30–18:00，11/1–4/30 7:30–17:30；17:00停止售票，17:30停止检票；2025年曾在8/23–10/8延时至21:00（2026年是否延续未查到）",
+   "src": [
+    "https://visitsz.wglj.suzhou.com.cn/scenic-spot-detail.aspx?id=55",
+    "https://you.ctrip.com/sight/suzhou11/3763.html",
+    "https://m.suzhou.bendibao.com/mip/139198.shtm"
+   ],
+   "confidence": "high",
+   "note": "携程OTA挂牌/起价与官方旺季价略有出入，以官方70/60为准",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "hangzhou",
+   "name": "灵隐飞来峰（含灵隐寺）",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "无淡旺季；原门票45元+灵隐寺香花券30元，自2025-12-01起全部取消，景区免票",
+   "extras": [],
+   "reserve": "须提前至少1天实名预约（支付宝/微信小程序“杭州灵隐飞来峰”，可约未来7日）；分上午场7:30–12:00（最晚入园13:00）与下午场12:00–17:00（最早入园11:00）；日限额 工作日3.5万/双休5万/节假日6.5万；凭有效证件原件一人一证核验；70岁以上、残疾人、现役军人等免预约；咨询电话0571-87969691",
+   "pets": "禁止",
+   "pets_note": "杭州本地宝2022年预约须知写明“禁止带宠物入园”；景区属西湖风景名胜区，区内公园景点禁止遛犬（西湖景区管委会通报）；未见寺方宠物寄存信息",
+   "discounts": "香花券已免；70岁以上老人、残疾人、军人等凭证核验入园无需预约",
+   "open": "每日 7:30–17:30（17:00停止入园）",
+   "src": [
+    "https://www.news.cn/local/20251119/6cc1e4a98a6448249f60cb9727d721bb/c.html",
+    "https://tidenews.com.cn/news.html?id=3303249",
+    "https://news.bjd.com.cn/2025/11/29/11434290.shtml",
+    "https://you.ctrip.com/sight/hangzhou14/48020.html",
+    "https://m.hz.bendibao.com/mip/135808.shtm",
+    "https://westlake.hangzhou.gov.cn/art/2021/12/8/art_1639430_59035676.html"
+   ],
+   "confidence": "high",
+   "note": "重大变化：2025-12-01起免票（含香花券），但改为强制实名预约、限流；国庆/节假日名额紧张；5A级别沿用西湖风景名胜区（携程列表未单列灵隐飞来峰等级）",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "hangzhou",
+   "name": "西溪国家湿地公园",
+   "level": "5A",
+   "peak": 80,
+   "off": 80,
+   "season_rule": "成人80元，全年无淡旺季价差（官网渠道约65元，OTA约67元）；仅开放时间分夏冬令",
+   "extras": [
+    {
+     "item": "电瓶船(游览内部主要交通，可选；门票+电瓶船套票约120–140元)",
+     "price": 60
+    }
+   ],
+   "reserve": "建议线上购票：微信搜索“西溪湿地”或“西湖旅游”公众号→门票购买；游客服务中心也可购票",
+   "pets": "禁止",
+   "pets_note": "依据《杭州市限制养犬规定》不得携犬进入公园等公共场所；西湖景区管委会通报称“西湖西溪景区”均须文明养犬。西溪景区自身须知中的宠物条款未查到，按禁止处理",
+   "discounts": "60–70岁及儿童半价40元，70岁以上免费；6月10日–8月31日学生“门票+电瓶船”联票67.8元（2026暑期政策）",
+   "open": "4/1–10/31 8:30–17:30（16:30停售门/船票）；11/1–3/31 8:30–17:00（16:00停售）；部分来源写夏季8:00开园",
+   "src": [
+    "https://m.bendibao.com/show687917.html",
+    "https://hz.bendibao.com/live/2014416/138901.shtm",
+    "https://you.ctrip.com/sight/hangzhou14/25481.html",
+    "https://hznews.hangzhou.com.cn/chengshi/content/2026-06/10/content_9236860.htm",
+    "https://bbs.youxiake.com/index.php/baike/5496_100.html"
+   ],
+   "confidence": "medium",
+   "note": "价格取自本地宝/文库转述，官网xixiwetland.com.cn未能打开核实",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "hangzhou",
+   "name": "西湖风景名胜区（携犬规定）",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "湖区免费；此条目仅回答能否携犬",
+   "extras": [],
+   "reserve": "湖区无需预约（灵隐等单个景点另有预约规则）",
+   "pets": "禁止",
+   "pets_note": "《杭州市限制养犬规定》第十一条：携犬者不得进入市场、商店、饭店、公园、公共绿地、展览馆、车站等公共场所，且小型观赏犬仅允许19:00至次日7:00出户（须束链、成年人牵领）；西湖景区管委会2021年通报：“西湖风景名胜区范围内的各公园景点禁止遛犬”，游客同样适用，抱着不算豁免；有网友称白堤、苏堤不允许犬只通行（低可信）",
+   "discounts": "",
+   "open": "湖区全天开放",
+   "src": [
+    "https://baike.baidu.com/item/%E6%9D%AD%E5%B7%9E%E5%B8%82%E9%99%90%E5%88%B6%E5%85%BB%E7%8A%AC%E8%A7%84%E5%AE%9A/7521680",
+    "https://westlake.hangzhou.gov.cn/art/2021/12/8/art_1639430_59035676.html",
+    "https://www.hangzhou.gov.cn/col/col812270/art/2026/art_10edfc74de994514a191b7bf5cde8573.html"
+   ],
+   "confidence": "medium",
+   "note": "规定文本明确适用“杭州市区任何单位和个人”，未查到另对外地游客的单独条款（即外地游客同样适用，不存在豁免）；杭州已在推进《养犬管理条例》修订，现行以百科收录的限制养犬规定+景区通报为准；带宠物游杭建议避开西湖景区公园，改去不在景区范围内的步道/商业街区",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "huangshan",
+   "name": "黄山风景区（含玉屏/云谷索道、换乘车）",
+   "level": "5A",
+   "peak": 190,
+   "off": 150,
+   "season_rule": "平旺季 2026-01-21至2026-12-19：全票190元（半票95）；冬游季 2025-12-20至2026-01-20：150元（半票75）。2026-12-20起是否再设冬游价（预计150）官方尚未见公告",
+   "extras": [
+    {
+     "item": "景区换乘车(南大门换乘中心→云谷寺/慈光阁，进山必乘)往返",
+     "price": 38
+    },
+    {
+     "item": "云谷索道单程(可选；冬游季65)",
+     "price": 80
+    },
+    {
+     "item": "玉屏索道单程(可选；冬游季75)",
+     "price": 90
+    },
+    {
+     "item": "太平索道单程(可选；冬游季65)",
+     "price": 80
+    },
+    {
+     "item": "西海大峡谷观光缆车单程(可选；冬游季80)",
+     "price": 100
+    }
+   ],
+   "reserve": "实名分时分方向预约后核验入园（“黄山旅游官方平台”小程序等，现场不售散客票）；门票首次入园后3日内可多次进山（次日起需到票务处办理免票手续）；天都峰需另行预约，6:30–15:00开放",
+   "pets": "禁止",
+   "pets_note": "百度文库(2026-09)称景区全域禁止携带宠物（持证导盲犬等工作犬除外），索道明文禁止携带宠物乘坐；也有论坛称小型犬可装箱带入，二者冲突，黄山管委会官网需浏览器验证未能打开官方原文，按禁止处理",
+   "discounts": "60–65岁半价、65岁以上免票、学生/未成年半价、1.2米以下儿童免费；索道对1.2–1.5米儿童有优惠（云谷/太平40元、玉屏45元、西海50元）",
+   "open": "9/1–次年3/4 8:00–16:40；3/5–7/24 周一至五7:00–17:10、周末6:30–17:40；7/25–8/31 周一至五6:30–17:10、周末6:00–17:40；徒步登山检票15:00关闭；国庆10/2–10/6 6:00–17:40（10/1、10/7 6:30起）；换乘车首末班随季节变化",
+   "src": [
+    "https://m.gmw.cn/2025-12/19/content_1304270257.htm",
+    "https://you.ctrip.com/sight/huangshancity120061/64844.html",
+    "https://baike.baidu.com/item/%E9%BB%84%E5%B1%B1%E6%8D%A2%E4%B9%98%E4%B8%AD%E5%BF%83/1988552",
+    "https://wenku.baidu.com/view/fce2ef4f955f804d2b160b4e767f5acfa1c783d9.html",
+    "https://wenku.baidu.com/view/75bb9c45413610661ed9ad51f01dc281e43a5655.html"
+   ],
+   "confidence": "medium",
+   "note": "价格取自光明网转载的黄山管委会2025-12-19公告（含冬游期）；换乘车价取自百度百科“黄山换乘中心”；黄山官网/官方平台因访问验证未能直接打开。据新浪等报道，景区官方山顶帐篷2026-07-31起开放租赁(130元/顶/晚)，未能核实官方原文",
+   "checked": "2026-10-03",
+   "review_by": "2026-12-20",
+   "review_note": "冬游价是否从 12-20 起实行未公布"
+  },
+  {
+   "node": "huangshan",
+   "name": "宏村",
+   "level": "5A",
+   "peak": 104,
+   "off": 104,
+   "season_rule": "无淡旺季；挂牌104元，OTA约94元；门票3天内可凭身份证多次进出",
+   "extras": [],
+   "reserve": "第三方(百度文库2026-09)称需网上实名预约、现场不设售票窗口，刷身份证入园——官方未核实",
+   "pets": "部分区域允许",
+   "pets_note": "百度文库(2026-07)转述称：仅限小型犬，须牵绳+嘴套，南湖书院、承志堂等室内景点禁止宠物；官方原文未查到，景区内多数老宅民宿不接受宠物",
+   "discounts": "65岁以上免费、60–65岁半价、学生/未成年半价、1.2米以下儿童免费；2026年4/1–3、4/7–9、4/28–30、5/6–8黄山市对特定人群免票(钱江晚报)",
+   "open": "景区全年全天开放（夜间演艺时段另有安排）",
+   "src": [
+    "https://you.ctrip.com/sight/yicounty528/140895.html",
+    "https://wenku.baidu.com/view/b8304d7b5d0102020740be1e650e52ea5418ce1d.html",
+    "https://wenku.baidu.com/view/5246b18085c758f5f61fb7360b4c2e3f572725af.html"
+   ],
+   "confidence": "medium",
+   "note": "",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "huangshan",
+   "name": "西递",
+   "level": "5A",
+   "peak": 104,
+   "off": 104,
+   "season_rule": "无淡旺季；挂牌104元，OTA约94元；3天内有效",
+   "extras": [],
+   "reserve": "未查到官方预约要求（同宏村，第三方称需网上预约，未核实）",
+   "pets": "未查到",
+   "pets_note": "未查到西递的宠物规定",
+   "discounts": "6岁/1.2米以下免费，未成年人及学生半价，65岁以上免费（携程转载）",
+   "open": "全年全天开放；夜游演艺春秋18:00–20:30、夏季19:00–21:00、冬季17:40–20:00",
+   "src": [
+    "https://you.ctrip.com/sight/yicounty528/18052.html"
+   ],
+   "confidence": "medium",
+   "note": "",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuyuan",
+   "name": "篁岭（含索道）",
+   "level": "5A",
+   "peak": 150,
+   "off": 135,
+   "season_rule": "2026年旺季：春节假期2/17–2/22、油菜花旺季3/7–4/6、五一5/1–5/4、十一10/1–10/6；其余为平季。平季门票135/旺季150；2027年旺季日期尚未见公告",
+   "extras": [
+    {
+     "item": "往返索道(平季120/旺季130；与门票的套票平季145、旺季165，实际索道只加10–15元；古村索道A+梯田索道B)",
+     "price": 120
+    }
+   ],
+   "reserve": "2026年起全面实行线上购票预约；国庆实行“预约购票限流管理”，10月2日已约满；日最大承载量3万人（官网）",
+   "pets": "未查到",
+   "pets_note": "官方须知未查到；网络来源互相矛盾：什么值得买/笔记(2024–2025)称中小型犬可牵绳入园并乘缆车，百家号(2026-03)称因索道和建筑密集通常不允许。婺源县政府答复称禁止携犬进入公园、博物馆等公共场所",
+   "discounts": "65岁以上免大门票索道半价；婺源县居民(双休日及节假日除外)免大门票索道半价；军人/残疾人/记者等免大门票索道半价；学生优惠票",
+   "open": "7/4–12/31 8:30–20:30（18:30停止售票/入园；19:00–20:00缆车停运维保）；1/1–7/3 8:00–20:00；国庆 7:30–20:30",
+   "src": [
+    "https://www.wyhl.cc/",
+    "https://www.wyhl.cc/site/wyhl/lyzx/jqgg/detail2026-07-28-456.html",
+    "https://www.wyhl.cc/site/wyhl/lyzx/jqgg/detail2026-09-25-507.html",
+    "https://www.wyhl.cc/site/wyhl/lyzx/jqgg/detail2026-10-03-508.html",
+    "https://you.ctrip.com/sight/wuyuan446/141512.html"
+   ],
+   "confidence": "high",
+   "note": "价格来自官网“2026年景区票价公示”图片；篁岭不含在婺源通票内；国庆高峰日（10/1–5）建议避开9:00–11:00、13:30–15:30进出高峰",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuyuan",
+   "name": "江岭",
+   "level": null,
+   "peak": 50,
+   "off": 50,
+   "season_rule": "无淡旺季；挂牌50元（百度百科、携程原价）；携程OTA约20–30元；部分2026游记称单点60–80元；含在婺源通票内",
+   "extras": [
+    {
+     "item": "景区接驳/观光车(可选；游记称15–20元/人)",
+     "price": 15
+    }
+   ],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到官方规定；2026-03一篇文章称石城、江岭等以观景台为核心的公共区域可牵绳游览，进入需购票的封闭观景区前须核实（低可信）",
+   "discounts": "1.2米以下免费，65岁以上免费，学生/60–65岁优惠（携程转载）",
+   "open": "7:30–18:00（全年；油菜花季日出观景台可更早到）",
+   "src": [
+    "https://baike.baidu.com/item/%E6%B1%9F%E5%B2%AD/9698065",
+    "https://you.ctrip.com/sight/wuyuan446/25721.html",
+    "https://baijiahao.baidu.com/s?id=1876760666381126560&wfr=spider&for=pc"
+   ],
+   "confidence": "low",
+   "note": "价格口径不一致（50/60–80/OTA 20–30），建议到官方渠道下单前核对；婺源高铁站—江岭景区公交票价约17元（2026-03公众号）；江岭旺季为3–4月油菜花季，10月为稻作/晒秋季节",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuyuan",
+   "name": "婺源旅游通票（景区通票）",
+   "level": null,
+   "peak": 210,
+   "off": 210,
+   "season_rule": "挂牌210元/人，线上渠道约180元；首次使用后5天内有效；不含篁岭",
+   "extras": [],
+   "reserve": "未查到统一预约要求（各景区以现场/OTA购票为主）",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "2026年3月8日女神节线下窗口购通票100元（限当日活动）；另有单点景区约60–80元",
+   "open": "随各景区；多数景区白天开放",
+   "src": [
+    "https://jx.ifeng.com/c/8rEtcorIGt3",
+    "https://baijiahao.baidu.com/s?id=1873918986156304079&wfr=spider&for=pc",
+    "https://wenku.baidu.com/view/08353245a1e9856a561252d380eb6294dd88223d.html",
+    "https://www.jjxxk.com/info/show60.html"
+   ],
+   "confidence": "medium",
+   "note": "通票含12景区：东线江湾、李坑、江岭、汪口、晓起；北线思溪延村、彩虹桥、朴园、严田、灵岩洞、石城；西线文公山（凤凰网江西2026-03-05）；婺源县文旅局官网未能直接核对价格，另有文章称180–210元区间",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuyishan",
+   "name": "武夷山风景名胜区（含观光车）",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "主景区大门票原价140元；2026年免大门票：官方可证实Q1(至3/31，中新网福建2026-02-11)及五一假期(人民网福建2026-04-27)；后续季度多家媒体/内容农场称“全年免”，携程列表仅显示观光车70元、无大门票价格，但未见官方原文——出行前以“中国武夷山”小程序为准",
+   "extras": [
+    {
+     "item": "景区观光车1日票(进山基本必购，私家车不能进山)",
+     "price": 70
+    },
+    {
+     "item": "景区观光车2日票(可选)",
+     "price": 85
+    },
+    {
+     "item": "景区观光车3日票(可选)",
+     "price": 95
+    },
+    {
+     "item": "九曲溪竹筏(可选；一人一票，含免票儿童)",
+     "price": 130
+    }
+   ],
+   "reserve": "免票也必须提前至少1天实名预约（微信小程序“中国武夷山”/公众号“武夷山旅游”，刷身份证入园），旺季建议提前3–7天；九曲溪竹筏另需提前3–7天抢票（官方提前7天放票）",
+   "pets": "禁止",
+   "pets_note": "武夷山国家公园官网游客安全须知写“在保护区内旅行时，不允许带宠物”；2024年游客称售票处/验票厅有“禁止宠物入内”标识；景区内私家车不可进，需乘观光车",
+   "discounts": "大门票优惠仅限大门票，观光车及各项目需另付；65岁以上观光车半价、1.2–1.5米儿童观光车半价；军人、残疾人、记者、台胞等免大门票",
+   "open": "3/1–10/31 6:30–18:00（16:30停止售票/入园）；11/1–次年2/28 7:00–17:00（16:00停止）",
+   "src": [
+    "https://www.fj.chinanews.com.cn/news/2026/2026-02-11/579820.html",
+    "https://you.ctrip.com/sight/wuyishan22/126481.html",
+    "https://baijiahao.baidu.com/s?id=1877763114751007422&wfr=spider&for=pc",
+    "https://wysgjgy.fujian.gov.cn/aqxz/ykaq/",
+    "https://m.thepaper.cn/newsDetail_forward_18756881"
+   ],
+   "confidence": "medium",
+   "note": "免票政策历来按季度/半年滚动公布（2022、2023、2024–2025均如此），务必在出行前确认10–12月是否仍免；2026-07-01起九曲溪竹筏禁止筏工收小费、讲解并入票价",
+   "checked": "2026-10-03",
+   "review_by": "2026-12-31",
+   "review_note": "免大门票按季度公布，10–12 月是否续免未确认"
+  },
+  {
+   "node": "wuyishan",
+   "name": "九曲溪竹筏",
+   "level": null,
+   "peak": 130,
+   "off": 130,
+   "season_rule": "全年130元/人，一人一票（每筏8人，约90分钟）",
+   "extras": [
+    {
+     "item": "景区观光车1日票(到九曲漂流码头需乘坐)",
+     "price": 70
+    }
+   ],
+   "reserve": "须提前预约/抢票：官方提前7天放票，公众号“武夷山文旅”或官方网站线上购票；旺季3–7天内常约满",
+   "pets": "未查到",
+   "pets_note": "官方须知禁止宠物进入保护区；有用户称2026-01(什么值得买)狗狗能坐竹筏、筏工未阻拦，属个案非官方规定",
+   "discounts": "",
+   "open": "早班7:20起；全程约90分钟",
+   "src": [
+    "https://baijiahao.baidu.com/s?id=1877763114751007422&wfr=spider&for=pc",
+    "https://you.ctrip.com/sight/wuyishan22/1407533.html",
+    "https://post.smzdm.com/p/a46mgm3l"
+   ],
+   "confidence": "medium",
+   "note": "携程列表“九曲溪竹筏漂流”起价200元，为含接送/导游等的OTA套餐口径，官方筏票130元",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "quanzhou",
+   "name": "开元寺（泉州）",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "免费开放，无淡旺季",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到（佛寺通常不便携宠，请自行确认）",
+   "discounts": "",
+   "open": "全年 6:30–17:40（17:00停止入园）",
+   "src": [
+    "https://you.ctrip.com/sight/quanzhou243/8874.html"
+   ],
+   "confidence": "medium",
+   "note": "游客点评(2026-06)称整座寺院免费开放，东西双塔可看；与潮州开元寺不是同一处",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "quanzhou",
+   "name": "清净寺",
+   "level": null,
+   "peak": 3,
+   "off": 3,
+   "season_rule": "门票3元，无淡旺季",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到（伊斯兰教古寺，宠物请勿带入）",
+   "discounts": "老人、儿童按规定优惠",
+   "open": "9:00–17:15；每周五不开放（礼拜日）；斋月期间会缩短（2026年2/18–3/20为9:00–16:00，已过）",
+   "src": [
+    "https://you.ctrip.com/sight/quanzhou243/8875.html",
+    "https://touch.travel.qunar.com/poi/703170",
+    "https://mp.weixin.qq.com/s?__biz=MzI0NTExMDMzOA==&mid=2651159586&idx=1&sn=045dbab60e9883254f242be49666a081&chksm=f3ee325d2e015f2a8b9ca8e2bc8954370b97e28974433e8655a6ec01bed4ad32d11e9565bc53&scene=27"
+   ],
+   "confidence": "medium",
+   "note": "3元为携程/去哪儿/游客点评口径；周五闭馆为携程信息，另有来源写“周五礼拜时段勿打扰”，出行前确认",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "quanzhou",
+   "name": "蟳埔村",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "渔村街巷，免费",
+   "extras": [],
+   "reserve": "无需预约（未查到）",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "",
+   "open": "全年全天开放",
+   "src": [
+    "https://you.ctrip.com/sight/quanzhou243/1477976.html"
+   ],
+   "confidence": "medium",
+   "note": "簪花围拍照、蚵壳厝等多为商户收费项目，村落本身不收门票",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xiamen",
+   "name": "鼓浪屿（轮渡/外地游客码头）",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "岛上无大门票，上岛只需船票；船票35元/人（普通航班），精品航班80元；无淡旺季差价",
+   "extras": [
+    {
+     "item": "往返船票(普通航班，东渡客运码头/嵩屿客运码头→鼓浪屿三丘田或内厝澳；买上岛票即赠20天内有效离岛票)",
+     "price": 35
+    },
+    {
+     "item": "精品航班(东渡部分班次、第一码头→内厝澳游客专线)(可选)",
+     "price": 80
+    },
+    {
+     "item": "日光岩(可选)",
+     "price": 50
+    },
+    {
+     "item": "菽庄花园(可选)",
+     "price": 30
+    }
+   ],
+   "reserve": "必须提前购买实名船票：官方唯一平台“屿见厦门·鼓浪屿船票官方”微信/支付宝小程序，预售15天，每日上岛上限5万人，售完即止；刷有效身份证检票；厦门本地居民8元往返专线仅限厦门身份证",
+   "pets": "禁止",
+   "pets_note": "厦门轮渡《乘船管理规定》：严禁携带猫、狗、蛇、虫及其他宠物乘船——无法带宠物上岛，也未见岛上宠物寄存信息",
+   "discounts": "6–14岁/1.2–1.5米儿童半价；残疾军人等半价；离岛票赠送免购",
+   "open": "岛上全天可游；船班：东渡客运码头7:10–17:30（6–9月至18:30）；轮渡码头2号厅→三丘田夜班17:50–23:45（6–9月18:50起）；三丘田离岛6:15–24:00、内厝澳7:20–20:00，0:00–5:00通宵离岛走钢琴码头",
+   "src": [
+    "http://www.xmferry.com/hxjpj/yk/hx/21069.htm",
+    "http://www.xmferry.com/hxjpj/yk/hx/21071.htm",
+    "http://www.xmferry.com/hxjpj/yk/hx/30356.htm",
+    "http://www.xmferry.com/hxjpj/yk/hx/21070.htm",
+    "http://www.xmferry.com/hxjpj/yk/hx/21036.htm",
+    "http://www.xmferry.com/chjdh/wshlk/",
+    "https://mp.weixin.qq.com/s/tbKK0Mk1xEdOIJWY_lkB1A",
+    "http://gly.xm.gov.cn/"
+   ],
+   "confidence": "high",
+   "note": "外地游客走“游客航线”：东渡客运码头（35/80元，约20分钟）、嵩屿客运码头（35元，约8分钟，自驾可停嵩屿）、第一码头（近中山路，80元）、轮渡码头2号厅夜班（35元）。台风/强对流会全线停航，当日船票可免手续费退改；2026-09-21起内厝澳↔第一码头游客航线调整班次；五大景点联票价格未查到",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xiamen",
+   "name": "南普陀寺",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "免费开放（2011年起免票）",
+   "extras": [],
+   "reserve": "入寺须提前免费预约：“南普陀寺预约服务平台”小程序，可提前约4天；选日期时段与人数",
+   "pets": "未查到",
+   "pets_note": "未查到宠物条款（佛寺，请自行确认）",
+   "discounts": "",
+   "open": "寺院约8:00–19:00（厦门本地宝2026-08写8:00–19:00，携程写8:00–18:00）；后山区域8:00–16:00",
+   "src": [
+    "https://m.xm.bendibao.com/mip/59983.shtm",
+    "https://m.xm.bendibao.com/tour/73099.shtm",
+    "https://you.ctrip.com/sight/xiamen21/2344.html",
+    "http://www.nanputuo.com/"
+   ],
+   "confidence": "medium",
+   "note": "官网为前端渲染页，开放时间和预约细则未能直接抓取，信息来自厦门本地宝及携程；18:30后时段是否免预约未核实",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulou",
+   "name": "南靖土楼（田螺坑土楼群）",
+   "level": "5A",
+   "peak": 90,
+   "off": 90,
+   "season_rule": "无淡旺季；田螺坑土楼群+裕昌楼+塔下村联票约90元(部分来源90–100)；另有A线115元(田螺坑~东倒西歪楼~塔下村)、B线80元(和贵楼~云水谣~怀远楼)的线路票口径，OTA起价约82–84元",
+   "extras": [
+    {
+     "item": "田螺坑景区观光车(可选；游记称约15元，低可信)",
+     "price": 15
+    }
+   ],
+   "reserve": "未查到强制预约；多为OTA/售票处购票",
+   "pets": "未查到",
+   "pets_note": "未查到官方宠物规定",
+   "discounts": "60–64岁、6–18岁、学生、教师等半价；65岁以上免费；现役军人免费（携程转载官方优待）",
+   "open": "田螺坑土楼群全年全天开放（携程）；福建土楼(南靖)景区 8:30–17:30；另有来源称7:00–19:00",
+   "src": [
+    "https://you.ctrip.com/sight/nanjingcounty2672/60746.html",
+    "https://you.ctrip.com/sight/nanjingcounty2672/69239823.html",
+    "https://wenku.baidu.com/view/fa5f1132a902de80d4d8d15abe23482fb4da0229.html",
+    "https://zhangzhou.bendibao.com/jingdian/tianluokengtulouqun/"
+   ],
+   "confidence": "medium",
+   "note": "南靖土楼分田螺坑、云水谣、河坑等多个收费片区，票种口径多，建议下单前在景区官方售票平台（电话4008885111，携程列示）核对；云水谣景区OTA约90元",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulou",
+   "name": "永定土楼·初溪土楼古村落",
+   "level": null,
+   "peak": 70,
+   "off": 70,
+   "season_rule": "无淡旺季；初溪约70元(不同来源65–80元)；永定土楼另有五大景区通票",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "60–69岁老人、在校学生半价；1.2米以下儿童、70岁以上老人免票（景区公示）",
+   "open": "6/1–9/30 8:30–19:30；10/1–次年5/31 8:30–19:00（晚5点后免票但部分楼院关闭，2025游记）",
+   "src": [
+    "https://you.ctrip.com/sight/longyan366/60655.html",
+    "https://wenku.baidu.com/view/44b133bfb54e852458fb770bf78a6529647d359f.html",
+    "https://baijiahao.baidu.com/s?id=1825720116629902389&wfr=spider&for=pc"
+   ],
+   "confidence": "medium",
+   "note": "初溪、洪坑、高北三处相距较远、门票独立；初溪游览观光车价格未查到",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulou",
+   "name": "永定土楼·洪坑土楼群（振成楼）",
+   "level": "5A",
+   "peak": 90,
+   "off": 90,
+   "season_rule": "无淡旺季；客家土楼民俗文化村(含振成楼、奎聚楼、如升楼)约90元，OTA约85元",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "65岁以上免费，60–65岁优惠；1.2米以下儿童免费；学生优惠",
+   "open": "4/1–10/31 6:00–21:00；11/1–次年3/31 6:00–20:30；振成楼景区内全天开放（携程）",
+   "src": [
+    "https://you.ctrip.com/sight/longyan366/17052.html",
+    "https://you.ctrip.com/sight/longyan366/126475.html",
+    "https://you.ctrip.com/sight/longyan366/136057663.html",
+    "https://wenku.baidu.com/view/44b133bfb54e852458fb770bf78a6529647d359f.html"
+   ],
+   "confidence": "medium",
+   "note": "携程“福建土楼永定景区”(5A)OTA起价50元疑为高北片区；洪坑振成楼被称“土楼王子”",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulou",
+   "name": "永定土楼·高北土楼群（承启楼/土楼王）",
+   "level": "5A",
+   "peak": 50,
+   "off": 50,
+   "season_rule": "无淡旺季；约50元",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "65岁以上免费；1.2米以下儿童免费",
+   "open": "6/1–9/30 6:30–21:00；10/1–次年5/31 6:30–20:30",
+   "src": [
+    "https://you.ctrip.com/sight/longyan366/1410893.html",
+    "https://wenku.baidu.com/view/44b133bfb54e852458fb770bf78a6529647d359f.html",
+    "https://baijiahao.baidu.com/s?id=1818964635864079588&wfr=spider&for=pc"
+   ],
+   "confidence": "medium",
+   "note": "携程公告提示中川古村落闭园；高北含承启楼，是拍土楼王全景的位置",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "chaozhou",
+   "name": "广济桥（湘子桥）",
+   "level": "4A",
+   "peak": 20,
+   "off": 20,
+   "season_rule": "约20元，无淡旺季（2018年百科、2026年文库转述；另有来源写30元，未核实）",
+   "extras": [],
+   "reserve": "官方预约渠道为“潮州古城”微信公众号，旺季建议提前1–3天购票（文库转述，未核实）",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "60岁以上免费；身高1.2米以下免费、1.2–1.5米半票；学生半票；军人、残疾人等免费",
+   "open": "周一至周五 10:00–17:30，周六日 9:00–17:30（17:00停止检票入场）；春节/清明/五一/端午/国庆 9:00–17:30；11/1–次年1/31 周一至五 10:00–16:30（16:00停止入园）",
+   "src": [
+    "https://www.chaozhou.gov.cn/czwgltj/gkmlpt/content/3/3992/mpost_3992738.html",
+    "https://you.ctrip.com/sight/chaozhou467/56634.html",
+    "https://wenku.baidu.com/view/ce0b7560f38a6529647d27284b73f242326c310a.html",
+    "https://baike.baidu.com/item/%E5%B9%BF%E6%B5%8E%E6%A1%A5/3929"
+   ],
+   "confidence": "medium",
+   "note": "潮州市政府通告：浮船段2026-05-23起恢复连接；2026-09-09因拍摄临时调整、9-10恢复正常；浮桥“开合”观景每天下午前后进行，具体时间以景区公告为准",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "chaozhou",
+   "name": "潮州牌坊街",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "街区免费",
+   "extras": [],
+   "reserve": "无需预约",
+   "pets": "未查到",
+   "pets_note": "街区公共区域，商铺/祠庙内请遵守各自规定（未查到统一规定）",
+   "discounts": "",
+   "open": "全年全天开放（商铺营业时间各异）",
+   "src": [
+    "https://you.ctrip.com/sight/chaozhou467/131443.html"
+   ],
+   "confidence": "medium",
+   "note": "",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "chaozhou",
+   "name": "潮州开元寺",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "免费",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到（佛寺）",
+   "discounts": "",
+   "open": "全年 7:00–17:00（16:30停止入园）",
+   "src": [
+    "https://you.ctrip.com/sight/chaozhou467/56642.html"
+   ],
+   "confidence": "medium",
+   "note": "与泉州开元寺不是同一处",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "guangzhou",
+   "name": "陈家祠（广东民间工艺博物馆）",
+   "level": "4A",
+   "peak": 10,
+   "off": 10,
+   "season_rule": "全票10元、半票5元（百度文库2026-09、百度知道2026-06）；无淡旺季，仅闭馆时间分季",
+   "extras": [],
+   "reserve": "第三方(百度文库2026-09)称实行全员实名预约制；1.3米以下儿童无需预约购票但须成人陪同（携程转载官方优待）",
+   "pets": "未查到",
+   "pets_note": "未查到宠物条款",
+   "discounts": "65岁以上老人、残疾人、现役军人免费；中学生/大学生半价；18岁以下1.3米以上预约优惠票5元",
+   "open": "9:00开馆；4/15–10/15 闭馆18:00（17:30停止入园），其余月份17:30；每周二闭馆（法定节假日除外）",
+   "src": [
+    "https://you.ctrip.com/sight/guangzhou152/6772.html",
+    "https://wenku.baidu.com/view/be7e897bc1da50e2524de518964bcf84b9d52ddf.html",
+    "https://zhidao.baidu.com/question/1524360390668892460.html",
+    "https://gz.bendibao.com/jingdian/chenjiaci/"
+   ],
+   "confidence": "medium",
+   "note": "官网未能打开，携程页写“门票需咨询景区”；10元为多个第三方一致口径",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "guangzhou",
+   "name": "广州塔（观光层）",
+   "level": "4A",
+   "peak": 150,
+   "off": 150,
+   "season_rule": "433米白云星空室内观光票挂牌约150元（携程OTA起价135元）；无淡旺季",
+   "extras": [],
+   "reserve": "线上购票为主，未查到强制预约",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "1.2米以下/6岁以下免费，1.2–1.5米半价；75岁以上免费；学生优惠票",
+   "open": "全年 9:30–22:30（22:00停止入园）；国庆10/1–10/6 9:00–22:30；摩天轮、极速云霄时间另有安排",
+   "src": [
+    "https://you.ctrip.com/sight/guangzhou152/107540.html"
+   ],
+   "confidence": "medium",
+   "note": "免票人群仅含433米室内观光；官网cantontower.com有真人验证未能打开，价格为携程口径",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "guangzhou",
+   "name": "顺德清晖园",
+   "level": "4A",
+   "peak": 15,
+   "off": 15,
+   "season_rule": "常规票15元/张，团体票12元，优惠票7元；无淡旺季",
+   "extras": [],
+   "reserve": "分时段预约/验票：8:30–11:00、11:00–13:00、13:00–15:00、15:00–17:30（“清晖园博物馆”官方渠道购票即预约），按时段验票进园",
+   "pets": "禁止",
+   "pets_note": "官网购票须知第四条：禁止携带宠物入馆；《禁止携带物品目录》写明除持工作证明的导盲犬外的其他动物不得带入；也禁止帐篷等露营装备",
+   "discounts": "顺德户籍/居住证居民、65岁以上老人、6岁以下或1.5米以下儿童、军人、残疾人等免费；18岁以下1.5米以上未成年人、全日制学生、60–65岁老人7元",
+   "open": "9:00–17:30（17:00停止进园）",
+   "src": [
+    "http://www.qinghuiyuan.com/",
+    "http://www.qinghuiyuan.com/detail/id/48.html",
+    "http://www.qinghuiyuan.com/detail/id/47.html",
+    "https://you.ctrip.com/sight/foshan207/49952.html"
+   ],
+   "confidence": "high",
+   "note": "携程OTA起价26元为打包口径，官方单人票15元",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yangshuo",
+   "name": "遇龙河竹筏漂流",
+   "level": null,
+   "peak": 160,
+   "off": 160,
+   "season_rule": "按筏计价（每筏2人）：金龙桥–旧县约90分钟320元/筏≈160元/人；夏棠–骥马、水厄底–综合码头200元/筏；富里桥–三岔口4人往返358元/筏；全年同价（旺季票源更紧）",
+   "extras": [
+    {
+     "item": "旧县综合码头返回停车场电瓶车",
+     "price": 10
+    }
+   ],
+   "reserve": "实名制：官方公众号“遇龙河”购票，热门线路常需前一晚20:00抢次日票（文库转述）",
+   "pets": "未查到",
+   "pets_note": "未查到遇龙河竹筏的宠物规定；两人总重通常限160kg",
+   "discounts": "",
+   "open": "约8:00–18:00（携程）",
+   "src": [
+    "https://post.smzdm.com/p/am9g50lv",
+    "https://wenku.baidu.com/view/d8b63a7e610e52ea551810a6f524ccbff021ca06.html",
+    "https://you.ctrip.com/sight/yangshuo702/137485.html",
+    "https://m.gl.bendibao.com/tour/16771.shtm"
+   ],
+   "confidence": "medium",
+   "note": "价格为按筏口径折算的每人价；遇龙河景区本身未见收门票",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yangshuo",
+   "name": "漓江竹筏（兴坪段）",
+   "level": null,
+   "peak": 140,
+   "off": 140,
+   "season_rule": "兴坪朝板山码头–九马画山往返约140元/人（文库2026-08）；全程杨堤–兴坪255元/人；携程列表“漓江竹筏游”起价90元；无淡旺季",
+   "extras": [],
+   "reserve": "线上预约购票；携程公告：儿童老人优惠需现场购票；兴坪码头提前半小时取票",
+   "pets": "禁止",
+   "pets_note": "携程景区公告“宠物无法乘筏”；另有点评称某兴坪朝板山电动竹筏包船订单可带狗不加价（个案，非官方）",
+   "discounts": "身高0.9–1.29米半价；60–64岁半价、65–69岁免费；学生、军人、残疾人等优惠均需现场购票",
+   "open": "全年 8:20–16:30（16:30停止售票）；兴坪码头平日8:00–17:30（国庆10/2–10/6 7:00起）",
+   "src": [
+    "https://you.ctrip.com/sight/yangshuo702/1508972.html",
+    "https://wenku.baidu.com/view/efdd634b3569a45177232f60ddccda38376be1b2.html"
+   ],
+   "confidence": "low",
+   "note": "漓江竹筏分段价120–255元不等，口径多，现场或官方小程序为准；20元人民币背景观景台在兴坪码头旁，免费",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yangshuo",
+   "name": "相公山",
+   "level": null,
+   "peak": 140,
+   "off": 140,
+   "season_rule": "门票含观光车（百度百科）；挂牌约140元，携程OTA起价90元；无淡旺季",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "6岁/1.2米以下免费，6–18岁及学生半价，65岁以上免费，桂林市民半价",
+   "open": "全年 6:00–18:00（夏季观日出时提前至5:30）；携程另写4:30–19:00",
+   "src": [
+    "https://you.ctrip.com/sight/yangshuo702/1417461.html",
+    "https://baike.baidu.com/item/%E7%9B%B8%E5%85%AC%E5%B1%B1/19781050",
+    "https://wenku.baidu.com/view/9fd0d99b901ea76e58fafab069dc5022aaea46dd.html"
+   ],
+   "confidence": "low",
+   "note": "价格口径不一（OTA 90、挂牌140），建议下单前核对；自驾凭门票免费停车（文库）",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "longji",
+   "name": "龙脊梯田（平安壮寨/金坑大寨）",
+   "level": "4A",
+   "peak": 80,
+   "off": 80,
+   "season_rule": "通票80元/人，含金坑大寨、平安寨、古壮寨三大观景区，3日内可反复进出；无淡旺季",
+   "extras": [
+    {
+     "item": "金坑大寨缆车往返(可选；单程约55–70元，不同来源口径不一)",
+     "price": 100
+    }
+   ],
+   "reserve": "建议经“龙脊梯田景区”官方小程序/抖音提前预约购票（文库）；国庆期间阳朔往返金坑大寨专线车另订（110元/单程）",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "1.2米以下儿童免票（需购保险+保洁费10元/人），6–18岁及学生半价，60–64岁半价，65岁以上免票",
+   "open": "景区全年全天开放（携程）；观景日出/日落时间随季节",
+   "src": [
+    "https://you.ctrip.com/sight/longsheng1445120/14892.html",
+    "https://m.gl.bendibao.com/mip/18554.shtm",
+    "https://wenku.baidu.com/view/30f3a7496adb6f1aff00bed5b9f3f90f77c64d4d.html",
+    "https://baijiahao.baidu.com/s?id=1876218408445658303&wfr=spider&for=pc"
+   ],
+   "confidence": "medium",
+   "note": "秋季(10月上旬)为稻穗金黄季；免票人群需自付保险和保洁费10元；平安寨和金坑大寨相距较远，各有停车场",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "libo",
+   "name": "荔波小七孔（含观光车）",
+   "level": "5A",
+   "peak": 120,
+   "off": 100,
+   "season_rule": "大小七孔联票：旺季 3/1–11/30 120元，淡季 12/1–次年2月底 100元；联票购买后7日内凭身份证可多次进出",
+   "extras": [
+    {
+     "item": "景区观光车(必购；2日内有效)",
+     "price": 40
+    },
+    {
+     "item": "景区保险(可在官方公众号取消)(可选)",
+     "price": 10
+    }
+   ],
+   "reserve": "必须提前在“一码游贵州”等官方小程序实名预约并选入园时段（旺季/周末约满）",
+   "pets": "禁止",
+   "pets_note": "景区全域禁止携带犬猫等宠物入园（文库2026-09）；入口设宠物免费寄存点（贵阳本地宝2024-07）",
+   "discounts": "全国6岁以下、65岁以上免门票；全国在校学生（学生证）免门票；教师/医护/退伍军人等凭证优惠；黔南州居民8折（需线下）",
+   "open": "全年 8:00–16:30（16:00停止售票/入园；旺季部分来源写延至17:00）；国庆7:30起",
+   "src": [
+    "https://www.guizhou.gov.cn/ztzl/hxxcwf/xqk/",
+    "https://k.sina.com.cn/article_7879923166_1d5ae15de06801drom.html",
+    "https://baijiahao.baidu.com/s?id=1877904539191825763&wfr=spider&for=pc",
+    "https://you.ctrip.com/sight/libo659/107386.html",
+    "https://m.gy.bendibao.com/tour/65397.shtm",
+    "https://wenku.baidu.com/view/9b05b65abd0d6c85ec3a87c24028915f804d84d1.html"
+   ],
+   "confidence": "medium",
+   "note": "贵州省政府专题页写“门票170元，含小七孔、大七孔和观光车票”（=120+40+保险10）；携程公告：水上森林暂停开放；2025年夏曾有130元联票的报道，以2026年120元为准；暑期/国庆单日人流极大",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "libo",
+   "name": "荔波大七孔",
+   "level": "5A",
+   "peak": 120,
+   "off": 100,
+   "season_rule": "与小七孔同一张联票，不另收大门票（联票120/淡季100）；另有大七孔游船等自费项目",
+   "extras": [
+    {
+     "item": "景区观光车(与小七孔共用，必购，2日有效)",
+     "price": 40
+    }
+   ],
+   "reserve": "同小七孔：“一码游贵州”等官方小程序实名预约",
+   "pets": "禁止",
+   "pets_note": "同荔波樟江景区全域禁止宠物",
+   "discounts": "同小七孔联票优惠",
+   "open": "全年 8:00–16:30（16:00停止售票）",
+   "src": [
+    "https://you.ctrip.com/sight/libo659/128771.html",
+    "https://www.guizhou.gov.cn/ztzl/hxxcwf/xqk/",
+    "https://wenku.baidu.com/view/ea3da212128884868762caaedd3383c4bb4cb4c1.html"
+   ],
+   "confidence": "medium",
+   "note": "大七孔入口在小七孔景区东门附近；游船票价未查到",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xijiang",
+   "name": "西江千户苗寨（含观光车）",
+   "level": "4A",
+   "peak": 90,
+   "off": 90,
+   "season_rule": "成人门票90元，无淡旺季价差；旺季4/1–10/31（含春节）与淡季11/1–次年3/31仅营业时间不同",
+   "extras": [
+    {
+     "item": "观光车(4程票，当日有效；也可5元/单程购买)",
+     "price": 20
+    }
+   ],
+   "reserve": "实名制分时预约购票（官方称至2026-08-21起执行；国庆/暑期建议至少提前1天）",
+   "pets": "未查到",
+   "pets_note": "来源互相矛盾：百度知道称不可带，百度文库称仅限小型宠物；雷山县2022年通告涉及景区犬只管理，原文已404；官方规定未核实",
+   "discounts": "6岁以下、65岁以上、全国在校学生、现役军人、教师及佛山/杭州户籍居民等免首道门票（观光车另购）",
+   "open": "4/1–10/31 7:00–次日1:00；11/1–次年3/31 7:30–次日0:00；观光车同旺淡季；夜景灯19:30起",
+   "src": [
+    "https://you.ctrip.com/sight/leishan2345/44302.html",
+    "http://www.xjqhmz.com/",
+    "https://baike.baidu.com/item/%E8%A5%BF%E6%B1%9F%E5%8D%83%E6%88%B7%E8%8B%97%E5%AF%A8/9015519",
+    "https://wenku.baidu.com/view/c851f6b7200c844769eae009581b6bd97f19bcc8.html",
+    "https://wenku.baidu.com/view/66fd4f37521252d380eb6294dd88d0d233d43c23.html",
+    "https://wenku.baidu.com/view/bd3b505e804769eae009581b6bd97f192379bf6a.html"
+   ],
+   "confidence": "medium",
+   "note": "官网公告：国庆特旺季观光车运营路线调整（2026-09-17/10-03）；西江索道9/30检修停运、10/1恢复；另有“暂停西江景区展示展演活动”公告(2026-09-29，正文未能读取)，需出行前确认演出是否恢复；价格来源为百度文库/百科转述及搜索摘要，景区官网未能核对",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "guiyang",
+   "name": "青岩古镇",
+   "level": "5A",
+   "peak": 60,
+   "off": 60,
+   "season_rule": "套票60元/人当日有效（含各小景点）；仅进古镇街区的首道门票10元/人当日有效（贵州日报2026-07-05，景区新增售票点并张贴价格公示牌）",
+   "extras": [],
+   "reserve": "第三方称需经“一码游贵州”实名预约购票（文库2026-10-03，未核实）",
+   "pets": "未查到",
+   "pets_note": "未查到官方规定；一篇小红书类笔记称古镇允许牵绳进入（低可信，石板路湿滑）",
+   "discounts": "6岁以下儿童、65岁以上老人、在校学生、人民警察/军人/教师/医护等免票（贵州省文旅惠民政策，不含特许经营项目）",
+   "open": "古镇全天开放，沿街商铺约8:10–22:00；景区内文物/人文展馆及日间实景演绎8:10–17:40（携程）",
+   "src": [
+    "https://baijiahao.baidu.com/s?id=1869879063574122433&wfr=spider&for=pc",
+    "https://mp.weixin.qq.com/s?__biz=MzA5Mzk0OTQwMA==&mid=2651177876&idx=1&sn=094f1faf29dc8b7ec51f18c671052367d&chksm=8aa675f340b185e1a8c63ad2207cd0416a2b91fa47a0e6b6ced5987b328999b90756b91d6c95&scene=27",
+    "https://you.ctrip.com/sight/guiyang33/20403.html",
+    "https://wenku.baidu.com/view/2fb5de1ff642336c1eb91a37f111f18582d00c58.html"
+   ],
+   "confidence": "high",
+   "note": "2026-07-04媒体报道“圈地收费”后景区公示：套票60元、门票10元；只想逛街区可只买10元票",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "guiyang",
+   "name": "甲秀楼",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "免费开放",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "discounts": "",
+   "open": "周二至周日 9:00–18:00（18:00停止入园）；每周一闭园（法定节假日除外）；7–8月避暑季周一 14:00–18:00开放",
+   "src": [
+    "https://you.ctrip.com/sight/guiyang33/18081.html"
+   ],
+   "confidence": "medium",
+   "note": "南明河畔，周一闭园是主要坑点",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "huangguoshu",
+   "name": "黄果树瀑布景区（含观光车）",
+   "level": "5A",
+   "peak": 160,
+   "off": 150,
+   "season_rule": "旺季 3/1–11/30 160元/人；淡季 12/1–次年2/28 150元/人；一张门票涵盖大瀑布、陡坡塘、天星桥，两日内有效（官网）",
+   "extras": [
+    {
+     "item": "景区观光车(必购；三个景区相距远、需换乘)",
+     "price": 50
+    },
+    {
+     "item": "大瀑布观光扶梯(可选；双乘50，单程30)",
+     "price": 50
+    }
+   ],
+   "reserve": "必须提前1–15天实名预约（“安旅通”小程序/“黄果树景区”公众号/“一码游贵州”），分时段入园，现场不售票；国庆日限量约3.5万人（新浪报道）；水帘洞需另行预约",
+   "pets": "禁止",
+   "pets_note": "景区官方公告(2026-05-04)：景区全域（大瀑布、陡坡塘、天星桥、观光车换乘区、游览步道、游客中心等）禁止携带犬、猫及其他宠物入园；导盲犬等工作犬凭证可入；景区门口无宠物寄存点（游客反馈）",
+   "discounts": "65岁以上老人免大门票（至2026-12-31）；6岁/120cm以下儿童免费；2026贵州惠民政策：全国在校学生免大门票（观光车/扶梯自付）；军人、残疾人等免门票，但需购观光车+扶梯票",
+   "open": "3/1–6/30 7:00–18:30；7/1–8/31 6:30–18:30；9/1–11/30 7:00–18:30；12/1–次年2/28 7:30–18:00；16:00停止售票、17:00停止入园",
+   "src": [
+    "https://www.hgscn.com/hgs/qwjq/pjjyhxx",
+    "https://www.guizhou.gov.cn/ztzl/hxxcwf/hgs/",
+    "https://m.gmw.cn/2026-05/05/content_1304444377.htm",
+    "https://you.ctrip.com/sight/zhenning2356/17681.html"
+   ],
+   "confidence": "high",
+   "note": "天星桥索道（10元）自2024-12-01起停运改造，恢复时间待定；2026-05-09起景区优化观光车线路（安顺市政府报道）；水帘洞、扶梯等项目另有公告",
+   "checked": "2026-10-03"
+  }
+ ],
+ "campsites": [
+  {
+   "node": "huangshan",
+   "name": "途居黄山露营地",
+   "location": "安徽省黄山市黄山区焦村镇（毗邻黄山西大门，步行约15分钟）",
+   "price": "房车营位约400–600元/晚（新浪文章2026-09，低可信）；营地含371个房车营位(其中68个自驾式营位)及酒店/木屋",
+   "pets": "未查到",
+   "src": [
+    "https://baike.baidu.com/item/%E9%80%94%E5%B1%85%E9%BB%84%E5%B1%B1%E9%9C%B2%E8%90%A5%E5%9C%B0/53301647",
+    "https://k.sina.com.cn/article_7879996882_1d5af35d206801zph8.html",
+    "https://www.elong.com/hotel/hoteldetail?hotelId=90924627"
+   ],
+   "note": "奇瑞控股投资、2015年开业的五星级房车露营地；价格请电话核实。另：黄山山下汤口镇有东里嗨露营地（人均几十元，据新浪报道）可作备选",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuyuan",
+   "name": "婺源江湾服务区房车营地（江湾服务区旁）",
+   "location": "江西省上饶市婺源县江湾镇，G56杭瑞高速江湾服务区旁；距江湾景区约1–2公里、篁岭车程较近",
+   "price": "2026年1月短视频/社区帖称可免费停放，水电桩/排污口，部分水龙头扫码付费（低可信，现状请核实）",
+   "pets": "未查到",
+   "src": [
+    "http://paper.srxww.com/pad/content/202510/31/content_26241.html",
+    "https://post.smzdm.com/p/a8wgv4qq/",
+    "https://post.smzdm.com/p/a2qdeen7"
+   ],
+   "note": "上饶新闻网(2025-10-31)报道：婺源公路事业发展中心投入80余万元升级江湾服务区，增设房车营地、户外露营帐篷区并配补水/充电设施；约30个车位；营地内禁明火",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuyishan",
+   "name": "武夷山游龙公园露营地",
+   "location": "福建省南平市武夷山市崇阳溪漫游道游龙公园（武夷山市区崇阳溪畔）",
+   "price": "未查到（2026-05-01试营业；帐篷露营+餐饮烧烤+骑行驿站）",
+   "pets": "未查到",
+   "src": [
+    "https://mp.weixin.qq.com/s?__biz=MzA3ODI1OTkzNw==&mid=2663970869&idx=1&sn=d5ca16a825223826096bf928a90dba9d&chksm=85a2a7546a845e7a3c0f9da8b6795408c8eb22034ea9cb56725de6a7b11abd1e9b71c1588e3e&scene=27"
+   ],
+   "note": "闽北日报2026-04-25报道：改造提升后2026年5月1日试营业；以帐篷/飞碟帐篷露营为主，未写明是否接纳房车；景区内无官方露营区",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yangshuo",
+   "name": "阳朔遇龙河河畔山水民宿房车营地",
+   "location": "广西桂林市阳朔县白沙镇玉龙桥背村78-1号（遇龙河畔），电话15295832700（住哪去网展示页）",
+   "price": "未查到（页面写“节假日及旺季价格浮动，咨询老板”）；另有文库称阳朔房车营地约20–150元/天（泛指，低可信）",
+   "pets": "未查到",
+   "src": [
+    "https://www.zhunaqu.com/item/370818",
+    "https://wenku.baidu.com/view/6b0ca0ede13a580216fc700abb68a98271feac2f.html"
+   ],
+   "note": "来自住哪去民宿网2026-01-18展示页，营业现状、车位数、设施（水电/排污）均未能核实，低可信；建议电话确认后再去",
+   "checked": "2026-10-03"
+  }
+ ]
+}

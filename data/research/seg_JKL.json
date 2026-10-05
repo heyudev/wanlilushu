@@ -1,0 +1,817 @@
+{
+ "attractions": [
+  {
+   "node": "dunhuang",
+   "name": "莫高窟",
+   "level": null,
+   "peak": 238,
+   "off": 140,
+   "season_rule": "旺季4/1-11/30;淡季12/1-3/31(敦煌研究院2026-03-30公告)。",
+   "extras": [],
+   "reserve": "必须实名分时预约:'莫高窟参观预约网'微信服务号/小程序(官方唯一渠道;旅行社走www.mgk.org.cn);提前约30天(多家来源,官方公告未写具体天数);须提前30分钟到数字展示中心取票。",
+   "pets": "禁止",
+   "pets_note": "官方2026公告:请勿将宠物、无人机、20寸及以上行李带入窟区。",
+   "discounts": "优惠票148(旺季)/95(淡季):学生、60-70岁老人等;特优票20元:4-6岁儿童、70岁以上、残疾人、现役军人、退役军人、三属、民警、消防救援人员、教师节当日教师等(凭证件)。",
+   "open": "旺季08:00-18:00(16:10停止检票);淡季09:00-17:00(15:10停止检票)。强降雨/沙尘时临时停开(2026-06-24因降雨暂停,2026-07-30恢复)。",
+   "src": [
+    "https://www.dha.ac.cn/info/1020/7498.htm",
+    "https://www.dha.ac.cn/skxl/mgk.htm",
+    "https://www.dha.ac.cn/info/1020/7811.htm",
+    "https://gs.ctrip.com/html5/you/sight/Dunhuang8/1566.html"
+   ],
+   "confidence": "high",
+   "note": "A类=常规参观:旺季全价238/优惠148/特优20,含展1馆数字电影+8个洞窟(淡季全价140/优惠95,10个洞窟);B类=应急参观(旺季启用):全价100/优惠55/特优20,仅4个洞窟、无电影。单日限额:常规6000张、应急12000张,另有限量'特窟'。窟区往返摆渡车含在票内(多家报道;官方公告未单列)。窟区不设售票处和停车场,须先到数字展示中心(敦煌市阳关东路8899号)。官方称未授权任何第三方代购。咨询电话4008-333-715。level字段:官方页与携程均未标注A级,故留空(未核实)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "dunhuang",
+   "name": "鸣沙山月牙泉",
+   "level": "5A",
+   "peak": 110,
+   "off": 55,
+   "season_rule": "旺季4/1-10/31(多个来源);淡季常见表述11/1-次年3/31,但敦煌市冬春半价惠民政策报道为12/1-3/31,口径不一,以景区公众号为准。",
+   "extras": [
+    {
+     "item": "骑骆驼(可选)",
+     "price": 100
+    },
+    {
+     "item": "景区电瓶车(可选,可步行;各来源价格不一约10-20)",
+     "price": null
+    },
+    {
+     "item": "鞋套(可选)",
+     "price": null
+    }
+   ],
+   "reserve": "多篇2026文章称自2025-01-01起全面实名预约、现场不设常规售票窗口:'鸣沙山月牙泉'公众号/'游敦煌'小程序/携程美团等,可提前约15天;但另有文章称'无强制预约、现场自助机可购',两者矛盾,出行前以官方公众号为准。",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定。",
+   "discounts": "学生、60-69岁半价55;70岁以上、1.2米以下儿童、军人等免大门票(自媒体口径)。",
+   "open": "06:00-19:30(2026-04-20起,19:30停止入场;携程同)。门票连续3天内可刷脸多次入园(自媒体)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Dunhuang8/1563.html",
+    "https://travel.sina.cn/2026-06-18/detail-inicvmmp6529359.d.html",
+    "https://travel.sina.cn/2026-06-30/detail-inifesxy3424538.d.html",
+    "https://app.xinhuanet.com/news/article.html?articleId=348efd56d4f1dca1a494c2a2a317bc85"
+   ],
+   "confidence": "medium",
+   "note": "携程挂牌价110(与新浪文旅文章的旺季全价110一致);淡季55取自搜索结果摘要(新浪等自媒体)。一篇新浪文章写旺季120/淡季80,与另两处不符,未采用。新华网报道敦煌市属景区(含鸣沙山月牙泉)12/1-3/31冬春半价。2026年4月起有万人演唱会/无人机表演公告(携程'公告'标题),可能影响夜间进入。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "dunhuang",
+   "name": "敦煌雅丹国家地质公园(魔鬼城)",
+   "level": "4A",
+   "peak": 120,
+   "off": null,
+   "season_rule": "冬春半价:2025-12-01至2026-03-31门票直享半价(景区春节推文);旺季/淡季划分及淡季具体价未查到。",
+   "extras": [],
+   "reserve": "关注'敦煌雅丹国家地质公园'官方微信公众号实名预约购票,凭身份证核验入园。",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定。",
+   "discounts": "春节推文:中小学生、60-69岁老人在半价基础上再优惠;70岁以上、退役军人、警察免票。",
+   "open": "春节推文:08:00-16:30(日落班首班16:30,末班18:00);携程显示07:00-18:30(18:30停止入园)。距敦煌市区约158公里,约2.5小时,戈壁路段无加油站,自驾需加满油。",
+   "src": [
+    "https://m.thepaper.cn/newsDetail_forward_32616421",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=10144",
+    "https://gs.ctrip.com/html5/you/sight/Dunhuang8/4945.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿/携程在售产品为'门票+观光车票成人票'120元(观光车含在内,环线观光车必坐);景区春节推文另有188元畅玩套票(门票+观光车+5D影院+沙漠冲浪车)。有搜索摘要称'观光车120元执行甘肃省发改委批复价',与120元含车捆绑价的拆分关系未核实。老人60-69岁95、70岁以上70、儿童95(去哪儿产品价)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "dachaidan",
+   "name": "大柴旦翡翠湖",
+   "level": "4A",
+   "peak": 60,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "携程有'能带宠物吗'问答,但答案内容未取到,未核实。",
+   "open": "携程:08:00-20:30(19:30停止售票/入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/120012/4331367.html",
+    "https://c.m.163.com/news/a/KUTFVS5C0556BNOH.html"
+   ],
+   "confidence": "low",
+   "note": "票价结构来源矛盾:携程'门票¥60起'(OTA,可能即小火车票);另有自媒体(网易号2026-06-08)称'翡翠湖无大门票,仅需自理内部景交',早先搜索摘要称小火车60元。故peak=60作上限估计,二次消费不再另列,避免重复计。严禁下湖/赤脚踩卤水(携程点评)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "dachaidan",
+   "name": "乌素特水上雅丹(大柴旦,G315旁)",
+   "level": "4A",
+   "peak": 30,
+   "off": null,
+   "season_rule": null,
+   "extras": [
+    {
+     "item": "观光车(12公里环线,必坐)",
+     "price": 60
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "08:00-19:00(18:30停止售票;网易号称观光车20:00停运)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/120012/4317342.html",
+    "https://m.163.com/dy/article/KV2704E60556M7YV.html",
+    "https://m.sohu.com/a/973080909_122545901/"
+   ],
+   "confidence": "low",
+   "note": "票价来源不一:网易号(2026)称门票30+观光车60;搜狐行程文称观光车60;携程'门票¥60起';早先搜索摘要另称门票+摆渡车合计118-120。以上均非官方。G315国道U型公路段为公共国道,未见收费信息(搜索摘要称免费;未查到官方说明)。网易号称景区内有房车营地(名称未核实)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "chaka",
+   "name": "茶卡盐湖",
+   "level": "4A",
+   "peak": 60,
+   "off": 30,
+   "season_rule": "旺季5/1-10/31 全价60(半价30);淡季30(半价15):2024-25官方口径为11/1-4/30,自媒体2026口径为3/1-4/30;冬季免费:2025-12-01至2026-02-28(青海省政府网转载西海都市报)。2026-12起是否继续免票未查到。",
+   "extras": [
+    {
+     "item": "轨道小火车单程(可选)",
+     "price": 50
+    },
+    {
+     "item": "观光电瓶车单程(老礼堂-茶卡盐站,冬季运营)",
+     "price": 5
+    },
+    {
+     "item": "游船单程(可选)",
+     "price": 90
+    },
+    {
+     "item": "鞋套租赁(可选,押金50)",
+     "price": 10
+    }
+   ],
+   "reserve": "冬季免票期:凭本人身份证到游客大厅预约刷证入园,或线上官方渠道预约。2026暑期自媒体称实行分时段实名预约(仅'茶卡盐湖'公众号),未核官方。",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定。",
+   "open": "携程:07:50-20:50(19:10停止售票);冬季运营时间08:15-17:30(官方)。门票48小时内可多次入园。",
+   "src": [
+    "http://www.qinghai.gov.cn/zwgk/system/2025/11/29/030087252.shtml",
+    "http://www.qinghai.gov.cn/dmqh/system/2024/11/04/030057345.shtml",
+    "https://travel.sina.cn/2026-06-18/detail-inicvmmp6461646.d.html",
+    "https://gs.ctrip.com/html5/you/sight/120012/11762.html"
+   ],
+   "confidence": "medium",
+   "note": "官方来源只覆盖冬季免票和2024-25淡季价30/15;旺季60及小火车/游船价取自新浪文旅文章(2026-06-18)与携程'60起',属OTA/自媒体。冬季免票期间轨道小火车、游船、商铺暂停,仅开放电瓶车。停车场30分钟内免费,超30分钟且12小时内10元/车;D区为房车露营区(新浪文章)。浙江籍居民凭身份证免门票(2016年起),6岁以下/60岁以上/现役军人/残疾人免票,学生与海西州居民半价。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "qinghaihu",
+   "name": "青海湖二郎剑景区",
+   "level": "5A",
+   "peak": 90,
+   "off": 50,
+   "season_rule": "官方:旺季门票90(2018年由100降至90)、淡季50;2024-11-01至2025-03-21执行淡季价50。具体旺季起止日期(自媒体:约4/15或4/16-10/15)未核官方。",
+   "extras": [
+    {
+     "item": "景区小火车(大门到二郎剑约13公里,点评称基本必坐;往返套票价为推算)",
+     "price": 100
+    }
+   ],
+   "reserve": "自媒体称2026-05-01起实行实名分时预约(小程序'智游青海湖'、铁路12306'铁路游',日限1.2万),未核官方;携程有'门票购买须知'公告但内容未取到。",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定。",
+   "discounts": "现役军人、残疾人、老人、学龄前儿童、学生等按国家及青海省规定减免。",
+   "open": "携程:07:30-19:00(18:45停止售票)。",
+   "src": [
+    "http://www.qinghai.gov.cn/zwgk/system/2018/09/19/010312777.shtml",
+    "http://www.qinghai.gov.cn/dmqh/system/2024/11/04/030057345.shtml",
+    "https://gs.ctrip.com/html5/you/sight/281/50229.html",
+    "https://gs.ctrip.com/html5/you/sight/281/1415198.html",
+    "https://travel.sina.cn/2026-07-11/detail-inihmerc8328542.d.html"
+   ],
+   "confidence": "medium",
+   "note": "门票价取自青海省政府网(发改委2018通知、2024-11淡季优惠报道),近两年是否再调整未查到。携程'门票¥190起'为含小火车的套票(游客点评:套票总价近200元,13公里需乘小火车);小火车100元为按190-90推算,非官方。二郎剑游船:点评称船+回程小火车合计约140。景区内观光车/游船价格单独标示、不得与门票捆绑(2018通知)。仙女湾景区携程门票50起(08:30-18:00),淡季30。青海湖'鸟岛景区'携程标注为生态保护区不对外开放(自媒体称2026年6/1-7/15限流开放,未核实)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "qinghaihu",
+   "name": "青海湖环湖西路/黑马河观景",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到(携程标注全年全天开放、无需购票)",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定;携程点评提到不能飞无人机。",
+   "open": "全年全天开放(携程环湖西路页)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/120074/1703470.html",
+    "https://m.sohu.com/a/973080909_122545901/",
+    "https://travel.sina.cn/2026-07-11/detail-inihmerc8328542.d.html"
+   ],
+   "confidence": "low",
+   "note": "携程'青海湖环湖西路':免费开放无需购票,点评称观景台不收费、观日出好地点。个别自媒体(搜狐行程文)称黑马河某小众入口收15元/人,未核实;黑马河日出观景台是否需预约未查到官方说明。携程'黑马河看日出'页内容缺失。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "qinghaihu",
+   "name": "青海湖裸鲤(湟鱼)禁捕禁食规定",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "第六次封湖育鱼:2021-01-01至2030-12-31。",
+   "src": [
+    "https://www.waizi.org.cn/policy/229345.html",
+    "https://www.chinanews.com.cn/gn/2022/06-18/9783155.shtml"
+   ],
+   "confidence": "high",
+   "note": "青海省人民政府通告(2020-12-26发布,转载于waizi.org.cn):范围含青海湖湖区及倒淌河、黑马河、布哈河、泉吉河、沙柳河、哈尔盖河、甘子河、吉尔孟河等入湖河流。禁止任何单位和个人捕捞青海湖裸鲤(湟鱼),或以任何方式收购、拉运、储存、贩卖;湟鱼及其制品禁止上市销售;禁止宾馆、饭店等餐饮单位及个人加工销售湟鱼食品。违者由农业农村、公安、市场监管部门依法处罚,情节严重构成犯罪的追究刑事责任。科研等确需捕捞须经省农业农村厅审批。旅行者:不钓鱼、不捞鱼、不点湟鱼菜。注:餐馆常见的'刚察黄鱼'等需看是否合规养殖来源,未查到官方对其界定。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xining",
+   "name": "塔尔寺",
+   "level": "5A",
+   "peak": 70,
+   "off": 40,
+   "season_rule": "官方(青发改价格〔2018〕576号,省政府网2025-05-10答复):旺季4/1-10/31 全价70/半价35;淡季11/1-次年3/31 全价40/半价20(半价适用于18-60周岁(均不含)无优惠人群)。",
+   "extras": [
+    {
+     "item": "景区电瓶车(自媒体称刚需,价格未查到)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到官方预约要求(搜索摘要称旺季建议提前约,来源不明)。",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定;自媒体称殿堂内禁拍照、禁触摸法器。",
+   "discounts": "现役军人、残疾军人、军队离退休干部、残疾人、老年人、学龄前儿童、藏传佛教僧众、信教群众等按国家及省规定减免。",
+   "open": "携程:07:30-17:30(17:30停止入园)。",
+   "src": [
+    "http://www.qinghai.gov.cn/zmhd/system/2025/05/10/030071939.shtml",
+    "http://www.qinghai.gov.cn/zwgk/system/2018/09/19/010312777.shtml",
+    "https://gs.ctrip.com/html5/you/sight/Xining237/9794.html",
+    "https://c.m.163.com/news/a/KUTFVS5C0556BNOH.html"
+   ],
+   "confidence": "high",
+   "note": "门票价为省政府网官方答复;电瓶车价格及是否强制未核实。门票一票制,不得另设园中园门票(2018通知)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xining",
+   "name": "西宁东关清真大寺",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-18:00。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/237/9808.html"
+   ],
+   "confidence": "medium",
+   "note": "携程标注免费开放、无需购票。搜索摘要(来源不明)称非穆斯林游客可能收少量费用、周五主麻日勿去、着装需端庄;未能打开原文核实,请现场以标识为准。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "qilian",
+   "name": "卓尔山景区",
+   "level": null,
+   "peak": 78,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:07:30-18:00。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Qilian120123/147838.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。携程页面未标注A级;景区观光车/索道等二次消费未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "qilian",
+   "name": "门源百里油菜花海",
+   "level": "4A",
+   "peak": null,
+   "off": null,
+   "season_rule": "花期约7月上中旬至8月(自媒体,2026年有称7/5-8/15);携程当前(2026-10-03)显示'暂停营业,恢复营业时间待定'。",
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程当前为暂停营业,开放时间待定(季节性)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/120014/45458.html"
+   ],
+   "confidence": "low",
+   "note": "是否收费未查到官方说明:携程景区条目显示'门市价¥330起'(口径不明,疑为含服务的组合产品);沿公路观花是否免费未核实。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "zhangye",
+   "name": "张掖七彩丹霞",
+   "level": "5A",
+   "peak": 106,
+   "off": null,
+   "season_rule": "自媒体称3-4月为淡季(票价更低),具体淡旺季划分与价格未查到官方。",
+   "extras": [
+    {
+     "item": "景区观光车(刚需,覆盖四大观景台;价格未查到,可能已含在106内)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定。",
+   "open": "携程:06:30-18:00(18:00停止售票)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Qilian120123/51858.html",
+    "https://c.m.163.com/news/a/KUTFVS5C0556BNOH.html",
+    "https://m.sohu.com/a/973080909_122545901/"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。自媒体称张掖户籍市民元旦/春节免丹霞首道门票;学生、老人半价/免票。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "zhangye",
+   "name": "平山湖大峡谷",
+   "level": "4A",
+   "peak": 128,
+   "off": null,
+   "season_rule": "携程显示淡季与旺季开放时间不同,价格未区分。",
+   "extras": [
+    {
+     "item": "深度游/探险车套票(可选,自媒体称328元含探险车与云梯)",
+     "price": 328
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:淡季08:30-19:00(17:30停止入园);旺季07:30-19:50(18:00停止入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Qilian120123/1418345.html",
+    "https://m.sohu.com/a/973080909_122545901/"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。328元套票来自搜狐行程文,未核官方。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "zhongwei",
+   "name": "沙坡头",
+   "level": "5A",
+   "peak": null,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:07:30-19:00。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Zhongwei1184/50442.html"
+   ],
+   "confidence": "low",
+   "note": "官方票价未查到;携程'门票¥40起'(最低起价,口径不明,可能为淡季/优惠价),点评称项目多用套票(滑沙、羊皮筏、黄河游览等)。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yinchuan",
+   "name": "西夏陵",
+   "level": "4A",
+   "peak": 68,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-20:00(19:00停止售票)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Yinchuan239/8831.html"
+   ],
+   "confidence": "low",
+   "note": "携程挂牌门票68元,页面叠加'开学季特惠'后显示0元起(限时优惠,不代表常年免票)。2025年西夏陵已列入世界文化遗产(携程点评提及)。官方票价与预约要求未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yinchuan",
+   "name": "镇北堡西部影城",
+   "level": "5A",
+   "peak": 80,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-18:00(18:00停止入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Yinchuan239/8834.html"
+   ],
+   "confidence": "low",
+   "note": "携程挂牌门票80元(76起)。携程公告有'福建籍门票优惠'。官方票价未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yinchuan",
+   "name": "贺兰山岩画",
+   "level": "4A",
+   "peak": 70,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-18:30(18:30停止入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Yinchuan239/8821.html"
+   ],
+   "confidence": "low",
+   "note": "携程挂牌门票70元(65起),景区含世界岩画博物馆、岩画遗址区、韩美林艺术馆。官方票价未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "eerduosi",
+   "name": "响沙湾",
+   "level": "5A",
+   "peak": 120,
+   "off": null,
+   "season_rule": null,
+   "extras": [
+    {
+     "item": "上岛索道/沙海游艇(点评称属上岛交通工具,价格未查到)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "携程'公告'栏有《宠物携带须知》,正文未取到,宠物是否允许需到景区公众号核实。",
+   "open": "携程:08:30-18:00(18:00停止入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Ordos600/61708.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。岛内项目(全地形车、过山车、滑索、骑骆驼等)另收费。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "eerduosi",
+   "name": "成吉思汗陵",
+   "level": "5A",
+   "peak": 90,
+   "off": null,
+   "season_rule": null,
+   "extras": [
+    {
+     "item": "景区观光车(两大片区相隔数公里,点评称优先乘坐;价格未查到)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:07:30-18:30。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Ordos600/1410446.html",
+    "https://gs.ctrip.com/html5/you/sight/Ordos600/61697.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。携程另有'成吉思汗陵旅游区'(东联景区)条目,票价需咨询景区。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "huhehaote",
+   "name": "大召寺",
+   "level": "4A",
+   "peak": 35,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-18:30(17:30停止售票/入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Hohhot156/8950.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "huhehaote",
+   "name": "内蒙古博物院(新馆)",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "需提前预约(携程标注'需提前预约';官方预约渠道未查到)",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:09:00-17:00(16:00停止入园);标注2025年新馆开放。闭馆日(如周一)未查到。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Hohhot156/111989682.html"
+   ],
+   "confidence": "medium",
+   "note": "携程标注免费开放。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xilinhaote",
+   "name": "贝子庙",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-18:00(17:30停止入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/484/16695.html"
+   ],
+   "confidence": "medium",
+   "note": "携程标注免费开放、无需购票。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "xilinhaote",
+   "name": "乌拉盖草原/锡林郭勒草原(自驾)",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:乌拉盖草原、锡林郭勒盟草原均标注全年全天开放、免费。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/484/1675901.html",
+    "https://gs.ctrip.com/html5/you/sight/484/16693.html"
+   ],
+   "confidence": "low",
+   "note": "野外草原公路沿线自驾观景携程标注免费;但景区化点位收费,如乌拉盖草原九曲湾景区(4A,携程门票50元/47起,08:00-17:30,https://gs.ctrip.com/html5/you/sight/484/2482646.html);乌珠穆沁草原携程标注'收费,具体价格需咨询'。牧民草场围栏/私人点位是否收费未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "aershan",
+   "name": "阿尔山国家森林公园",
+   "level": "5A",
+   "peak": 178,
+   "off": null,
+   "season_rule": null,
+   "extras": [
+    {
+     "item": "景区观光大巴(必买,价格未单列,疑已含在178内)",
+     "price": null
+    }
+   ],
+   "reserve": "点评称网上提前预约购票更省心;官方预约要求未查到。",
+   "pets": "未查到",
+   "pets_note": "未查到宠物规定;点评提示林区全域禁明火。",
+   "open": "携程:07:30-17:30;观光大巴设末班车。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/120084/52423.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。点评称门票有效期48小时可分两天入园,观光车票属必买项目。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "hailaer",
+   "name": "莫日格勒河景区",
+   "level": "5A",
+   "peak": null,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "点评称自驾车须预约当日进景区时间段(如预约下午4点);预约渠道与是否必须预约未查到官方说明。",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-18:00。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Hulunbuir458/1713053.html"
+   ],
+   "confidence": "low",
+   "note": "携程门票信息栏写'具体收费状况需咨询景区官方',票价未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "hailaer",
+   "name": "呼伦湖",
+   "level": "4A",
+   "peak": 40,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:30-18:00(17:00停止售票)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/458/61403.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。有景区小火车(点评),价格未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "eerguna",
+   "name": "额尔古纳湿地",
+   "level": "4A",
+   "peak": 65,
+   "off": null,
+   "season_rule": null,
+   "extras": [
+    {
+     "item": "景区观光车(点评称行程长、步行太累;价格未查到)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程两个条目:额尔古纳湿地07:30-18:30(17:30停止售票,17:00停止入园);额尔古纳国家湿地公园08:30-17:30(16:30停止入园,门票59起),二者关系未核实。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Hulunbuir458/140919.html",
+    "https://gs.ctrip.com/html5/you/sight/Hulunbuir458/4690344.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "eerguna",
+   "name": "室韦",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:全年全天开放。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/458/70713.html"
+   ],
+   "confidence": "low",
+   "note": "携程标注小镇免费开放、无需购票;镇内景点/项目另收费未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "eerguna",
+   "name": "黑山头",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": null,
+   "src": [
+    "https://gs.ctrip.com/html5/you/place/458.html"
+   ],
+   "confidence": "low",
+   "note": "未查到:携程呼伦贝尔景点列表中未找到'黑山头'条目,。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "mohe",
+   "name": "北极村",
+   "level": "5A",
+   "peak": 88,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:全年全天开放(景区门票另有售检票时段,未核)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Mohe983/61235.html"
+   ],
+   "confidence": "low",
+   "note": "价格取自携程2026-10-03页面'门票起价/挂牌价'(OTA),非官方票价,构成(是否含景交/套票)未核实。淡旺季划分与价格差异未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "mohe",
+   "name": "北红村",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:全年全天开放。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/Mohe983/124858.html"
+   ],
+   "confidence": "low",
+   "note": "携程标注免费开放、无需购票;村内项目/住宿另计。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "heihe",
+   "name": "瑷珲历史陈列馆",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "需提前预约(携程标注;官方预约渠道未查到)",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:09:00-16:00;闭馆日未查到。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/265/5069240.html"
+   ],
+   "confidence": "medium",
+   "note": "携程标注免费开放。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wudalianchi",
+   "name": "五大连池风景区",
+   "level": "5A",
+   "peak": 0,
+   "off": null,
+   "season_rule": null,
+   "extras": [
+    {
+     "item": "景区内摆渡/观光车(价格未查到)",
+     "price": null
+    }
+   ],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程:08:00-16:30(16:00停止入园)。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/265/9226.html"
+   ],
+   "confidence": "low",
+   "note": "携程标注景区免费开放、无需购票,但园内分景区单独收费(如老黑山、龙门石寨42.75起);含车价格未查到。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wudalianchi",
+   "name": "五大连池老黑山(火山)景区",
+   "level": null,
+   "peak": 78,
+   "off": null,
+   "season_rule": null,
+   "extras": [],
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到",
+   "open": "携程当前(2026-10-03)标注'暂停营业,恢复营业时间待定'。",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/265/9224.html"
+   ],
+   "confidence": "low",
+   "note": "重大提醒:携程显示老黑山景区暂停营业,恢复时间待定,原因未查到(可能为季节性/整修),出行前必须向景区核实。门市价78元起为OTA口径,含车情况未查到。",
+   "checked": "2026-10-03"
+  }
+ ],
+ "campsites": [
+  {
+   "node": "chaka",
+   "name": "茶卡盐湖景区D区房车露营区",
+   "location": "青海省海西州乌兰县茶卡镇茶卡盐湖景区停车场D区",
+   "price": null,
+   "pets": "未查到",
+   "src": [
+    "https://travel.sina.cn/2026-06-18/detail-inicvmmp6461646.d.html"
+   ],
+   "note": "新浪文旅文章(2026-06-18)称景区停车场D区为房车露营区,价格/预约/营业状态未核实;仅作补充线索。",
+   "checked": "2026-10-03"
+  }
+ ]
+}

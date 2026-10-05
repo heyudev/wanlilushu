@@ -1,0 +1,35 @@
+{
+  "name": "wanlilushu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "万里路书：按出发地、人数、偏好生成专属的全国自驾环线计划",
+  "scripts": {
+    "dev": "vite --port 5180",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 5181",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "data": "python3 scripts/build_data.py",
+    "export:md": "vite-node scripts/export-md.ts",
+    "data:check": "vite-node scripts/check-data.ts --",
+    "deploy:cf": "npm test && npm run build && npx wrangler pages deploy dist --project-name wanlilushu"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vite-node": "^3.2.4",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

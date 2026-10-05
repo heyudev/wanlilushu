@@ -1,0 +1,1874 @@
+{
+ "shanghai": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 71
+  },
+  "dining": {
+   "count": 110
+  },
+  "vets": {
+   "count": 405
+  }
+ },
+ "suzhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 51
+  },
+  "dining": {
+   "count": 61
+  },
+  "vets": {
+   "count": 187
+  }
+ },
+ "wuzhen": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 18
+  },
+  "dining": {
+   "count": 5
+  },
+  "vets": {
+   "count": 13
+  }
+ },
+ "shaoxing": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 9
+  },
+  "dining": {
+   "count": 11
+  },
+  "vets": {
+   "count": 46
+  }
+ },
+ "hangzhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 97
+  },
+  "dining": {
+   "count": 112
+  },
+  "vets": {
+   "count": 357
+  }
+ },
+ "moganshan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 61
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 15
+  }
+ },
+ "shexian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 5
+  }
+ },
+ "huangshan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 17
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "wuyuan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 22
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "jingdezhen": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 26
+  },
+  "dining": {
+   "count": 8
+  },
+  "vets": {
+   "count": 19
+  }
+ },
+ "wuyishan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 15
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "xiapu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 11
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 4
+  }
+ },
+ "fuzhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 18
+  },
+  "dining": {
+   "count": 71
+  },
+  "vets": {
+   "count": 146
+  }
+ },
+ "pingtan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 49
+  },
+  "dining": {
+   "count": 10
+  },
+  "vets": {
+   "count": 4
+  }
+ },
+ "quanzhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 23
+  },
+  "dining": {
+   "count": 38
+  },
+  "vets": {
+   "count": 67
+  }
+ },
+ "xiamen": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 61
+  },
+  "dining": {
+   "count": 61
+  },
+  "vets": {
+   "count": 125
+  }
+ },
+ "tulou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "dongshan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 25
+  },
+  "dining": {
+   "count": 5
+  },
+  "vets": {
+   "count": 4
+  }
+ },
+ "chaozhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 18
+  },
+  "dining": {
+   "count": 8
+  },
+  "vets": {
+   "count": 21
+  }
+ },
+ "guangzhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 86
+  },
+  "dining": {
+   "count": 87
+  },
+  "vets": {
+   "count": 408
+  }
+ },
+ "kaiping": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 11
+  }
+ },
+ "huangyao": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 16
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "yangshuo": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 40
+  },
+  "dining": {
+   "count": 9
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "longji": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 8
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "sanjiang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "zhaoxing": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "libo": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 2
+  }
+ },
+ "xijiang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 9
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "zhenyuan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 5
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "guiyang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 25
+  },
+  "dining": {
+   "count": 34
+  },
+  "vets": {
+   "count": 150
+  }
+ },
+ "huangguoshu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 8
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 5
+  }
+ },
+ "xingyi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 21
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 25
+  }
+ },
+ "luoping": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "kunming": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 52
+  },
+  "dining": {
+   "count": 31
+  },
+  "vets": {
+   "count": 288
+  }
+ },
+ "jianshui": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 15
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 13
+  }
+ },
+ "yuanyang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "puer": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 9
+  },
+  "dining": {
+   "count": 5
+  },
+  "vets": {
+   "count": 12
+  }
+ },
+ "jinghong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 35
+  },
+  "dining": {
+   "count": 9
+  },
+  "vets": {
+   "count": 15
+  }
+ },
+ "lincang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 12
+  }
+ },
+ "tengchong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 66
+  },
+  "dining": {
+   "count": 5
+  },
+  "vets": {
+   "count": 7
+  }
+ },
+ "dali": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 224
+  },
+  "dining": {
+   "count": 12
+  },
+  "vets": {
+   "count": 26
+  }
+ },
+ "shaxi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 15
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "lijiang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 183
+  },
+  "dining": {
+   "count": 12
+  },
+  "vets": {
+   "count": 15
+  }
+ },
+ "lugu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 19
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "shangrila": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 19
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "deqin": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "mangkang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "basu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "bomi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 7
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "linzhi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 5
+  }
+ },
+ "lasa": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 48
+  },
+  "dining": {
+   "count": 6
+  },
+  "vets": {
+   "count": 31
+  }
+ },
+ "gyantse": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "rikaze": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 4
+  }
+ },
+ "sakya": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "dingri": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "saga": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "taqin": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "zhada": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "shiquanhe": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 2
+  }
+ },
+ "ritu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "yecheng": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "shache": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 6
+  }
+ },
+ "taxian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 6
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "kashi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 17
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 18
+  }
+ },
+ "aksu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 17
+  }
+ },
+ "kuche": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 9
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 6
+  }
+ },
+ "bayinbuluke": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "nalati": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 25
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "tekes": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 15
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "zhaosu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 6
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "yining": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 23
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 17
+  }
+ },
+ "sailimu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "wuerhe": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "buerjin": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "kanas": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "keketuohai": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "wulumuqi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 16
+  },
+  "vets": {
+   "count": 125
+  }
+ },
+ "tulufan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 2
+  }
+ },
+ "hami": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 7
+  }
+ },
+ "dunhuang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 16
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 7
+  }
+ },
+ "dachaidan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "chaka": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "qinghaihu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "xining": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 8
+  },
+  "dining": {
+   "count": 9
+  },
+  "vets": {
+   "count": 47
+  }
+ },
+ "qilian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "zhangye": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 14
+  }
+ },
+ "wuwei": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 11
+  }
+ },
+ "zhongwei": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "yinchuan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 7
+  },
+  "dining": {
+   "count": 22
+  },
+  "vets": {
+   "count": 94
+  }
+ },
+ "eerduosi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 8
+  }
+ },
+ "huhehaote": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 24
+  },
+  "vets": {
+   "count": 114
+  }
+ },
+ "xilinhaote": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 15
+  }
+ },
+ "wulagai": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "aershan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "hailaer": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 16
+  }
+ },
+ "manzhouli": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 5
+  }
+ },
+ "eerguna": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "shiwei": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "aoluguya": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "mohe": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 5
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "huma": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "heihe": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 10
+  }
+ },
+ "wudalianchi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "haerbin": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 25
+  },
+  "dining": {
+   "count": 86
+  },
+  "vets": {
+   "count": 232
+  }
+ },
+ "jingpohu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "yanji": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 15
+  },
+  "vets": {
+   "count": 29
+  }
+ },
+ "changbaishan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "jian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 4
+  }
+ },
+ "dandong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 20
+  }
+ },
+ "dalian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 31
+  },
+  "dining": {
+   "count": 58
+  },
+  "vets": {
+   "count": 173
+  }
+ },
+ "yantai": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 27
+  },
+  "dining": {
+   "count": 19
+  },
+  "vets": {
+   "count": 83
+  }
+ },
+ "weihai": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 40
+  },
+  "dining": {
+   "count": 15
+  },
+  "vets": {
+   "count": 59
+  }
+ },
+ "qingdao": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 49
+  },
+  "dining": {
+   "count": 89
+  },
+  "vets": {
+   "count": 124
+  }
+ },
+ "taian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 11
+  },
+  "dining": {
+   "count": 10
+  },
+  "vets": {
+   "count": 54
+  }
+ },
+ "jinan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 37
+  },
+  "dining": {
+   "count": 52
+  },
+  "vets": {
+   "count": 174
+  }
+ },
+ "tianjin": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 30
+  },
+  "dining": {
+   "count": 68
+  },
+  "vets": {
+   "count": 313
+  }
+ },
+ "beijing": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 56
+  },
+  "dining": {
+   "count": 121
+  },
+  "vets": {
+   "count": 398
+  }
+ },
+ "chengde": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 30
+  }
+ },
+ "saihanba": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "zhangbei": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 7
+  },
+  "vets": {
+   "count": 6
+  }
+ },
+ "datong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 19
+  },
+  "dining": {
+   "count": 16
+  },
+  "vets": {
+   "count": 64
+  }
+ },
+ "yingxian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "wutaishan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 6
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "pingyao": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 21
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 5
+  }
+ },
+ "qikou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "hukou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "luoyang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 22
+  },
+  "dining": {
+   "count": 35
+  },
+  "vets": {
+   "count": 103
+  }
+ },
+ "huashan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 8
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 5
+  }
+ },
+ "xian": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 51
+  },
+  "dining": {
+   "count": 78
+  },
+  "vets": {
+   "count": 332
+  }
+ },
+ "tianshui": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 10
+  }
+ },
+ "xiahe": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "langmusi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "ruoergai": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 0
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "jiuzhaigou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 11
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "huanglong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 2
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "chengdu": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 132
+  },
+  "dining": {
+   "count": 88
+  },
+  "vets": {
+   "count": 544
+  }
+ },
+ "siguniang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 1
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "danba": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 13
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "xinduqiao": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 6
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "daocheng": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "litang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 0
+  }
+ },
+ "kangding": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 5
+  },
+  "dining": {
+   "count": 3
+  },
+  "vets": {
+   "count": 2
+  }
+ },
+ "yaan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 2
+  },
+  "vets": {
+   "count": 13
+  }
+ },
+ "leshan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 14
+  },
+  "dining": {
+   "count": 14
+  },
+  "vets": {
+   "count": 31
+  }
+ },
+ "zigong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 4
+  },
+  "dining": {
+   "count": 8
+  },
+  "vets": {
+   "count": 35
+  }
+ },
+ "chongqing": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 99
+  },
+  "dining": {
+   "count": 71
+  },
+  "vets": {
+   "count": 411
+  }
+ },
+ "wulong": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 10
+  },
+  "dining": {
+   "count": 1
+  },
+  "vets": {
+   "count": 3
+  }
+ },
+ "enshi": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 8
+  },
+  "dining": {
+   "count": 4
+  },
+  "vets": {
+   "count": 23
+  }
+ },
+ "zhangjiajie": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 26
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "furongzhen": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 3
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 1
+  }
+ },
+ "fenghuang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 22
+  },
+  "dining": {
+   "count": 0
+  },
+  "vets": {
+   "count": 4
+  }
+ },
+ "changsha": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 79
+  },
+  "dining": {
+   "count": 70
+  },
+  "vets": {
+   "count": 286
+  }
+ },
+ "yueyang": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 6
+  },
+  "dining": {
+   "count": 8
+  },
+  "vets": {
+   "count": 23
+  }
+ },
+ "wuhan": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 60
+  },
+  "dining": {
+   "count": 103
+  },
+  "vets": {
+   "count": 302
+  }
+ },
+ "nanjing": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 74
+  },
+  "dining": {
+   "count": 65
+  },
+  "vets": {
+   "count": 280
+  }
+ },
+ "yangzhou": {
+  "checked": "2026-10-04",
+  "hotels": {
+   "count": 23
+  },
+  "dining": {
+   "count": 18
+  },
+  "vets": {
+   "count": 121
+  }
+ }
+}

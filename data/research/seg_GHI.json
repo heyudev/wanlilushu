@@ -1,0 +1,944 @@
+{
+ "attractions": [
+  {
+   "node": "taqin",
+   "name": "冈仁波齐(神山景区门票/转山)",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "属阿里地区普兰县边境管理区,需电子《边境管理区通行证》;门票/转山是否收费未查到,无官方预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到(转山路线常规为夏秋季,封山时间未查到)",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=7489",
+    "https://www.autohome.com.cn/ask/25521261.html"
+   ],
+   "confidence": "low",
+   "note": "去哪儿页面(id=7489)未单列门票,仅有 ¥500 起的旅游产品/9日游套餐,不是景区门票。搜索结果摘要称2026年为马年(冈仁波齐本命年,转山功德被传为平时13倍),可能客流偏大(来源 c.m.163.com/news/a/L31S0FCC05219GPS.html 仅在搜索结果中见到,未打开核实)。进普兰县需电子边防证(见 roads)。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "taqin",
+   "name": "玛旁雍错",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "属阿里地区普兰县边境管理区,需电子《边境管理区通行证》;门票未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "src": [
+    "http://touch.piao.qunar.com/touch/detail_12833.html",
+    "https://www.autohome.com.cn/ask/25521261.html"
+   ],
+   "confidence": "low",
+   "note": "去哪儿页面显示该景点『暂无门票预订』,无官方票价信息。未能查到官方或新闻来源;门票价格未查到,留空待确认。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "zhada",
+   "name": "古格王朝遗址",
+   "level": "4A",
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "景区观光车(点评提及,价格未查到)",
+     "price": null
+    }
+   ],
+   "reserve": "属阿里地区札达县边境管理区,需电子边防证;是否需预约未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "全年 10:00-18:00(携程景点页)",
+   "src": [
+    "https://you.ctrip.com/sight/zanda2454/4316.html"
+   ],
+   "confidence": "low",
+   "note": "携程页面(已打开)标注4A、全年10:00-18:00,但页面文本未显示票价,门票价格未查到(搜索结果摘要称『约150元起』,未能核实)。携程2025-07-28一条点评称:因大雨导致遗址内多数路线封闭、仍照收门票+观光车+停车费,并称景区个人承包、『两年不开放』——为单条游客点评,未获官方证实,行前需向景区/札达县文旅局确认开放范围。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "zhada",
+   "name": "札达土林",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "属札达县边境管理区,需电子边防证;预约要求未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到(搜索摘要称 08:00-17:00,17:00停止入园,未核实)",
+   "src": [
+    "https://you.ctrip.com/sight/zanda2454/4316.html"
+   ],
+   "confidence": "low",
+   "note": "搜索结果摘要(来源为携程札达页面)称札达土林国家地质公园免费,未能打开原页核实,故 peak 留空。携程古格页面『附近景点』列有札达土林国家地质公园、观景台及霞义沟土林景区(评分仅2.3)。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "zhada",
+   "name": "托林寺",
+   "level": null,
+   "peak": 50,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "属札达县边境管理区,需电子边防证;预约要求未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到(搜索摘要称 08:00-19:00,未核实)",
+   "src": [
+    "https://chinatrekking.com/destinations/tibet/ngari-region/tholing-monastery"
+   ],
+   "confidence": "low",
+   "note": "50元仅来自 chinatrekking 页面(发布/更新日期为2007年,严重过期)及搜索摘要,不能视为2026年价格,需出发前向札达县文旅部门核实。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "bangong",
+   "name": "班公湖",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "属阿里地区日土县边境管理区,需电子《边境管理区通行证》",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "src": [
+    "https://gs.ctrip.com/html5/you/place/120147.html",
+    "https://www.autohome.com.cn/ask/25521261.html"
+   ],
+   "confidence": "low",
+   "note": "搜索结果摘要称班公湖参观免费,但仅见于搜索摘要,未能打开原页核实,故 peak 留空。汽车之家问答(2026-06-26)明确阿里地区普兰、札达、日土、噶尔四县需持边境管理区通行证,填写目的地须精确到县名,不可写『西藏』『全区』。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kashi",
+   "name": "喀什古城(开城仪式)",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "无(首道门票免费)",
+   "extras": [
+    {
+     "item": "区间观光车全程+讲解(可选)",
+     "price": 40
+    },
+    {
+     "item": "古城内院落/空中花园等分项门票(可选)",
+     "price": 39
+    }
+   ],
+   "reserve": "首道门票免费,无需预约,凭有效身份证件入园",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "全天免费开放(一说 9:00-22:00);开城仪式:每日约10:00-10:30在东门(去哪儿演出页写10:30,周一休演);夏季19:30一说仅见搜索摘要未核实",
+   "discounts": "古城首道门票免费;内部分项收费景点有老人/学生优惠",
+   "src": [
+    "https://c.m.163.com/news/a/L180DI780556LMQY.html",
+    "https://c.m.163.com/news/a/L0BAMNII0556LTAY.html",
+    "https://touch.piao.qunar.com/touch/detail_41909.html"
+   ],
+   "confidence": "medium",
+   "note": "开城仪式时间各来源不一(10:00/10:30/8-9-10点),建议当天以古城游客中心公告为准。去哪儿页面提示:景区新二维码扫码系统已上线。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kashi",
+   "name": "艾提尕尔清真寺",
+   "level": null,
+   "peak": 45,
+   "off": 45,
+   "season_rule": "未见淡旺季区分",
+   "reserve": "无需预约(未见预约要求);穿着需端庄,忌短裤等暴露服装",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "约10:00/10:30起开门(去哪儿点评称10:30才开门);周五主麻日聚礼时段对游客有限制/不开放;肉孜节、古尔邦节全天不对游客开放(后两点见搜索摘要)",
+   "discounts": "老人、学生半价(163, 2026-07-07)",
+   "src": [
+    "https://c.m.163.com/news/a/L0BAMNII0556LTAY.html",
+    "https://c.m.163.com/news/a/L180DI780556LMQY.html",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=12596"
+   ],
+   "confidence": "medium",
+   "note": "2026年票价各来源不一:163(2026-06-26)约45元,163(2026-07-07)参考价30元,去哪儿搜索摘要29元。此处取45(较高口径),以现场/官方为准。",
+   "extras": [],
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kashi",
+   "name": "香妃园(阿帕克霍加麻扎)",
+   "level": "4A",
+   "peak": 40,
+   "off": 40,
+   "season_rule": "未见淡旺季区分",
+   "extras": [
+    {
+     "item": "民俗演出(可选,门票+演出成人80)",
+     "price": 40
+    }
+   ],
+   "reserve": "去哪儿可订明日电子票,未见强制预约要求",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "约 10:30-19:30(大河票务页面,2025-03,称全年);另有页面写 09:30-21:30,以景区为准",
+   "discounts": "去哪儿:65岁以上老人、学生20元;6岁及以下或1.3米以下儿童优待(大河票务:军人、残疾人免费)",
+   "src": [
+    "http://touch.piao.qunar.com/touch/detail.htm?id=15357",
+    "https://www.dahepiao.com/lvyounews1/20250325507608.html",
+    "https://lxs.cncn.com/82937/n683812"
+   ],
+   "confidence": "medium",
+   "note": "成人票各来源不一:去哪儿40(现价),大河票务2025-03写30,欣欣旅游网2025-11写60。取去哪儿现价40。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "taxian",
+   "name": "喀拉库勒湖",
+   "level": "3A",
+   "peak": 45,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "景区区间车(必乘,价格报道不一,搜索摘要写约45)",
+     "price": null
+    }
+   ],
+   "reserve": "属塔什库尔干县边境管理区,需电子边防证;景区预约未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "10:30-20:30(163,2026-08-06);另一篇写 10:00-20:00",
+   "src": [
+    "http://touch.piao.qunar.com/touch/detail.htm?id=1543759286",
+    "https://c.m.163.com/news/a/L0BAMNII0556LTAY.html",
+    "https://www.163.com/dy/article/L3L6HFS80556LMQY.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票44.8元,163写约45元。163(2026-08-06)称『需乘坐景区区间车进入』但未给价格,区间车价格未核实(搜索摘要称参考价45元)。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "taxian",
+   "name": "白沙湖",
+   "level": "3A",
+   "peak": 40,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "区间车(由联票78元-门票40元反推,未核实)",
+     "price": 38
+    }
+   ],
+   "reserve": "属阿克陶县边境地区,去哪儿提示游客需办理电子通行证;景区预约未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "一说 9:30-20:00(163,2026-06-26),一说 10:00-20:00",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=512436",
+    "https://c.m.163.com/news/a/L0BAMNII0556LTAY.html",
+    "https://www.163.com/dy/article/L3L6HFS80556LMQY.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票39.8元、老人/学生20元;163(2026-06-26)约40元,且北岸观景台免费;163(2026-08-06)另称白沙湖无门票、全年可自由观景——互相矛盾。无人机禁飞。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "taxian",
+   "name": "塔县石头城",
+   "level": null,
+   "peak": 30,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "环保车/观光车(报道不一:一说含在30元内,一说另收20)",
+     "price": 20
+    }
+   ],
+   "reserve": "属塔什库尔干县边境管理区,需电子边防证",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "各来源不一:8:30-23:30(163,2026-06-26)/10:30-19:30(欣欣旅游网,2025-11)",
+   "src": [
+    "https://c.m.163.com/news/a/L0BAMNII0556LTAY.html",
+    "https://lxs.cncn.com/82937/n683812",
+    "https://touch.piao.qunar.com/touch/detail_6376.html"
+   ],
+   "confidence": "low",
+   "note": "163(2026-06-26)称约30元、一票制含观光车;欣欣旅游网(2025-11-20)称30元+环保车20元。去哪儿页面未单列门票(仅旅游产品)。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "taxian",
+   "name": "盘龙古道",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "无(开放式自然景观)",
+   "reserve": "位于塔县瓦恰乡,边境管理区,需电子边防证;无需景区预约",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "全年开放(163,2026-08-06);实行单向通行管理;2026年禁止大型客车驶入,6人小团所用小型乘用车可通行(搜索摘要)",
+   "src": [
+    "https://www.163.com/dy/article/L3L6HFS80556LMQY.html",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=1597813562"
+   ],
+   "confidence": "medium",
+   "note": "欣欣旅游网(2025-11)曾写门票50元、10:00-20:00,与163/去哪儿(无单独门票)矛盾,此处取0。自驾上山须注意单向通行与车型限制,现场以交警/景区指引为准。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kuche",
+   "name": "天山神秘大峡谷",
+   "level": "4A",
+   "peak": 40,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "discounts": "65岁以上老人、学生约半价(20.5元);6岁以下或1.3米以下儿童优待",
+   "src": [
+    "http://touch.piao.qunar.com/touch/detail.htm?id=13477"
+   ],
+   "confidence": "medium",
+   "note": "位于库车市G217旁(独库公路南段)。去哪儿成人票40元,未见区间车费用。",
+   "extras": [],
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kuche",
+   "name": "克孜尔千佛洞",
+   "level": "4A",
+   "peak": 70,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "据搜索摘要:需提前经『龟兹文化』微信公众号实名预约,日限约3000人;特窟另需单独预约并另行收费(去哪儿点评称部分窟另收高价)",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "10:00-19:00(搜索摘要,2026)",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=15101",
+    "https://www.news.cn/government/20260627/7b5532f40d804c83b11872c2c4d8b561/c.html"
+   ],
+   "confidence": "low",
+   "note": "70元/10:00-19:00/日限3000/『龟兹文化』预约均来自搜索结果摘要,未能打开原页核实;欣欣旅游网(2025-11)另写40元。新华网(2026-06-27)报道:洞窟内禁止使用强光/闪光灯拍摄。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kuche",
+   "name": "库车王府",
+   "level": "4A",
+   "peak": 45,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "discounts": "65岁以上老人、学生约半价;6岁/1.3米以下儿童优待",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=31943"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票45元起(另有搜索摘要写53.5元)。",
+   "extras": [],
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "bayinbuluke",
+   "name": "巴音布鲁克(九曲十八弯/天鹅湖,含区间车)",
+   "level": null,
+   "peak": 65,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "景区区间车(必乘,报道75或90)",
+     "price": 75
+    },
+    {
+     "item": "天鹅湖站至九曲十八弯观景台电瓶车(可选)",
+     "price": 20
+    }
+   ],
+   "reserve": "官方公众号/携程/美团线上购票,扫电子票入园;旺季建议提前约3天(搜索摘要)",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "旺季售票约 8:30-19:00;区间车运行至约22:00-23:30(搜索摘要,时间偏晚,存疑)",
+   "src": [
+    "https://www.sina.cn/news/article/nikrvzr0982111.html",
+    "https://sina.cn/detail/nikrvzn9378451"
+   ],
+   "confidence": "low",
+   "note": "门票65元+区间车75元=140元(另一口径区间车90元=155元)均来自搜索结果摘要,所列新浪链接直接打开为首页、无法核对正文,故置信度低。九曲十八弯观光车单程10元(摘要)。出发前向景区官方公众号核实;独库公路巴音布鲁克段10月中旬即将封闭。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "nalati",
+   "name": "那拉提(含区间车)",
+   "level": "5A",
+   "peak": 95,
+   "off": 75,
+   "season_rule": "旺季6月1日-9月30日;淡季4-5月、10-11月(淡季价75与时段来自搜索摘要,未核实)",
+   "extras": [
+    {
+     "item": "空中草原线区间车(往返,按次)",
+     "price": 40
+    },
+    {
+     "item": "河谷草原线区间车(可选)",
+     "price": 24
+    },
+    {
+     "item": "盘龙谷道线区间车(可选)",
+     "price": 40
+    }
+   ],
+   "reserve": "自驾入景区:须提前7天在微信小程序『智游那拉提』预约,每日限300辆、7座及以下、驾龄满3年、300元/人、48小时有效;一说另一篇写200元/人,存疑",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "售票 8:00-18:00,末班区间车约20:00(163,2026-06-26)",
+   "discounts": "门票48小时有效、可二次入园;老人/学生/儿童有折扣(去哪儿)",
+   "src": [
+    "https://m.163.com/dy/article/L0B9LFTH0556LTAY.html",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=10716",
+    "https://m.163.com/dy/article/L389REO40556NAGL.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿:门票+空中草原往返区间车成人135元起(=95+40)。景区内有星空营地/毡房/民宿(400-1200元/晚,未给具体名称)。独库公路北段与那拉提入口连通,注意独库预约与封路。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yining",
+   "name": "霍城解忧公主薰衣草园",
+   "level": "4A",
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到(薰衣草花期为夏季,10月已过盛花期,常识性提醒,未查到官方公告)",
+   "reserve": "去哪儿未单列门票,仅有一日游套票",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=39900"
+   ],
+   "confidence": "low",
+   "note": "去哪儿(id=39900)显示4A、评分3.6,但门票价格未单列,只有¥280起的一日游套票,价格未查到。位于霍城县清水河镇G218。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yining",
+   "name": "喀赞其民俗旅游区",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "src": [
+    "https://touch.piao.qunar.com/touch/index_%E4%BC%8A%E7%8A%81.html"
+   ],
+   "confidence": "low",
+   "note": "未查到:src 中的去哪儿伊犁景点列表未收录该景区。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "yining",
+   "name": "六星街",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "未查到",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "src": [
+    "https://touch.piao.qunar.com/touch/index_%E4%BC%8A%E7%8A%81.html"
+   ],
+   "confidence": "low",
+   "note": "未查到:src 中的去哪儿伊犁景点列表未收录该景区。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "sailimu",
+   "name": "赛里木湖(门票/自驾车入湖费/露营规定)",
+   "level": "5A",
+   "peak": 70,
+   "off": 35,
+   "season_rule": "旺季4月1日-10月15日;淡季10月16日-次年3月15日(多篇2026报道一致;另一篇写旺季4/26-10/25,与其余不符,不采信)",
+   "extras": [
+    {
+     "item": "自驾服务费(自驾套票145元/人含门票70,7座及以下,日限3000辆需预约;淡季套票110元/人)",
+     "price": 75
+    },
+    {
+     "item": "区间车(不自驾时二选一;全年75元,一篇写60)(可选)",
+     "price": 75
+    }
+   ],
+   "reserve": "自驾须实名预约:『一部手机游赛湖』小程序/『赛里木湖旅游』公众号,每日10:00放票,提前3-7天,旺季常提前售罄,现场不售自驾票;非自驾游客可在东门窗口购票至21:00",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "旺季约 8:00-21:00,末班区间车约19:30;东门进、南门出,逆时针环湖约92km,限速30-50km/h",
+   "discounts": "学生、60-64岁半价;1.3米以下儿童、65岁以上免票(163,2026-06-30);属马者生日当天免票;新婚夫妇凭结婚证终身免门票(新浪,2026-06-18)",
+   "src": [
+    "https://travel.sina.cn/2026-06-18/detail-inicvmmr3305480.d.html",
+    "https://c.m.163.com/news/a/L0LLGDMT0556LTAY.html",
+    "https://m.163.com/dy/article/L26PUV3U0556LTAY.html",
+    "https://travel.sina.cn/2026-07-01/detail-iniffivs3264543.d.html"
+   ],
+   "confidence": "medium",
+   "note": "自驾票口径互相矛盾:多篇2026-06/07报道为『自驾套票145元/人(24h)、190元/人(48h)』;新浪2026-07-11一篇写『自驾票370元/车含乘客门票』;去哪儿页面列『门票70+自驾车票120(5座及以下)』;搜狐2026-05写『约100元/车』。这里采用按人收费口径(145),出行前务必在官方小程序核对。路边违停罚200元并扣3分(163,2026-06-30);露营明文规定未查到——报道只提到景区内有房车营地、蒙古包(旺季需预订),未见允许自行扎营的依据。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wuerhe",
+   "name": "乌尔禾世界魔鬼城",
+   "level": "5A",
+   "peak": 42,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "景区电瓶车/区间车(由『门票+区间车62元』-门票42元反推)",
+     "price": 20
+    }
+   ],
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "discounts": "去哪儿:60-64岁、学生41元(含区间车);65岁以上、儿童10元(含区间车)",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail_3910.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人联票62元(含区间车);门票42元与区间车20元的拆分来自搜索摘要,未核实。景区另有越野车(200-600元起)、骆驼(150元起)等可选项目。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "buerjin",
+   "name": "五彩滩",
+   "level": "4A",
+   "peak": 45,
+   "off": null,
+   "season_rule": "未查到(去哪儿点评提到淡季游览,未给价格)",
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "discounts": "老人、学生22元;6岁以下儿童优待",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail_32051.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票45元。欣欣旅游网(2025-11)曾写30元(淡季10元),与现价不符,不采信。位于布尔津县S227,日落/日出为最佳。",
+   "extras": [],
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kanas",
+   "name": "喀纳斯景区(门票+区间车,宠物政策)",
+   "level": null,
+   "peak": 160,
+   "off": null,
+   "season_rule": "夏季旺季价适用5月1日-10月15日;淡季价未查到",
+   "extras": [
+    {
+     "item": "区间车(夏季自驾禁入,必乘;一进70/二进110元)",
+     "price": 70
+    },
+    {
+     "item": "观景台(可选)",
+     "price": 20
+    }
+   ],
+   "reserve": "2026年夏季起不再强制分时预约,但仍须实名购票(搜狐2026-08-25写8月14日起取消强制分时预约;163/新浪2026-07-08写7月1日起无需预约——日期说法不一);私家车停贾登峪或禾木检票站停车场,换乘区间车",
+   "pets": "未查到",
+   "pets_note": "已查来源均未提及喀纳斯景区宠物规定,需致电景区/官方公众号确认",
+   "open": "8:00-20:00(入园时间)",
+   "discounts": "学生、老人门票5折,区间车无优惠(163,2026-08-02)",
+   "src": [
+    "https://c.m.163.com/news/a/L1ADVGD50556LTAY.html",
+    "https://m.sohu.com/a/1067289380_122744094/",
+    "https://m.163.com/dy/article/L389REO40556NAGL.html"
+   ],
+   "confidence": "medium",
+   "note": "门票160元(2日有效)+区间车一进70元(二进110元)=230元(二进270元)。喀纳斯湖面、三湾、神仙湾、月亮湾等核心景点无需边防证;去白哈巴需要边防证(见 roads)。9月中旬-10月初为秋色高峰,10月15日夏季运营期结束。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kanas",
+   "name": "禾木",
+   "level": null,
+   "peak": 50,
+   "off": null,
+   "season_rule": "随喀纳斯夏季运营期(5月1日-10月15日);淡季价未查到",
+   "extras": [
+    {
+     "item": "区间车(私家车不得入内)",
+     "price": 25
+    },
+    {
+     "item": "缆车套票(可选)",
+     "price": 159
+    }
+   ],
+   "reserve": "无需预约(2026-07-01起)",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "约 8:00-22:00(搜狐,2026-08-25)",
+   "src": [
+    "https://c.m.163.com/news/a/L1ADVGD50556LTAY.html",
+    "https://m.sohu.com/a/1067289380_122744094/"
+   ],
+   "confidence": "medium",
+   "note": "门票50+区间车25=75元(与搜狐『门票加区间车75元』一致);另一篇网易文章写60+42元,与二者不符,不采信。缆车套票159-249元。禾木不需要边防证。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "kanas",
+   "name": "白哈巴",
+   "level": null,
+   "peak": 30,
+   "off": null,
+   "season_rule": "随喀纳斯夏季运营期(5月1日-10月15日);淡季价未查到",
+   "extras": [
+    {
+     "item": "区间车",
+     "price": 45
+    }
+   ],
+   "reserve": "必须持《边境管理区通行证》;2026年起电子化,可在喀纳斯换乘中心约10分钟办结(目的地填『白哈巴村』),也可线上办理;无需景区预约",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "约 8:00-20:00(搜狐,2026-08-25)",
+   "src": [
+    "https://c.m.163.com/news/a/L1ADVGD50556LTAY.html",
+    "https://c.m.163.com/news/a/L1D6FNSC0556LMQY.html",
+    "https://m.sohu.com/a/1067289380_122744094/"
+   ],
+   "confidence": "medium",
+   "note": "门票30+区间车45=75元(联票)。禁止无人机飞行。全线查验边防证,无证禁止通行。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wulumuqi",
+   "name": "天山天池(含区间车)",
+   "level": null,
+   "peak": 95,
+   "off": 45,
+   "season_rule": "旺季4月1日-10月31日;淡季11月1日-次年3月31日(搜索摘要)",
+   "extras": [
+    {
+     "item": "景区区间车(必选;淡季约50,欣欣旅游网口径)",
+     "price": 60
+    },
+    {
+     "item": "马牙山索道往返(可选)",
+     "price": 220
+    }
+   ],
+   "reserve": "分时段实名制预约,需提前1天经官方公众号/小程序(搜索摘要提及『昌吉文旅』小程序)购买门票+区间车,现场无人工窗口",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "旺季 8:00-21:00;淡季 9:30-19:00(搜索摘要)",
+   "discounts": "免票人群含:生日当天、阜康市居民、中高考生(6月10日-8月31日)、5月医护、9月教师(搜索摘要)",
+   "src": [
+    "https://sina.cn/detail/nikqupy9651624",
+    "https://www.sina.cn/news/article/nikqiye9639069.html",
+    "https://lxs.cncn.com/61420/n713394"
+   ],
+   "confidence": "low",
+   "note": "旺季门票95+区间车60=155元;组合套票(门票+区间车+索道+游船)510元。上述新浪链接直接打开为首页,无法核对正文,内容主要来自搜索结果摘要;欣欣旅游网(2025-11-10)写门票95元(淡季60元)、区间车60元(淡季50元),与摘要中的淡季价45元不一致,淡季价存疑。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "wulumuqi",
+   "name": "新疆维吾尔自治区博物馆",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "无",
+   "reserve": "2026年预约渠道未查到;咨询电话 (0991)4536436 / 4552826",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "周二至周日 10:30-19:00,18:00停止入场;周一闭馆(国家法定节假日期间另有安排)",
+   "src": [
+    "https://www.icauto.com.cn/trip/hot_2350.html",
+    "http://touch.piao.qunar.com/touch/detail.htm?id=15440"
+   ],
+   "confidence": "medium",
+   "note": "开放时间取自 icauto 页面(显示更新于2026-10-02);『免费』推断自去哪儿页面仅售讲解服务(电子讲解6元起)以及搜索摘要称免费景点,页面本身未明示,需出行前确认并确认是否需实名预约。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulufan",
+   "name": "火焰山",
+   "level": "3A",
+   "peak": 40,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "discounts": "老人(65岁以上)、学生20元;1.2米以下儿童优待",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail_468808.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票40元起,等级标注为AAA(与网上常见『火焰山5A』说法不同,欣欣旅游网2026-09-30页面写185元/区间车130元,明显为套餐口径,不采信)。",
+   "extras": [],
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulufan",
+   "name": "坎儿井民俗园",
+   "level": "4A",
+   "peak": 40,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "discounts": "老人(65岁以上)、学生20元;1.2米以下且6岁以下儿童优待",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=3326"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票40元起。不要与同名邻近的『坎儿井乐园』『交河驿·坎儿井源』(也是40元,id=468805)混淆。",
+   "extras": [],
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulufan",
+   "name": "葡萄沟",
+   "level": "5A",
+   "peak": 60,
+   "off": 60,
+   "season_rule": "开放时间分季:旺季4月21日-10月20日 8:00-21:00;淡季10月21日-次年4月20日 10:00-18:30;票价未见分季(搜索摘要)",
+   "extras": [
+    {
+     "item": "景区区间车(去哪儿『免费门票+往返区间车』¥23起;欣欣旅游网写20)",
+     "price": 23
+    }
+   ],
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "旺季 8:00-21:00;淡季 10:00-18:30",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=15267",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=792742006",
+    "https://lxs.cncn.com/61420/n572560"
+   ],
+   "confidence": "low",
+   "note": "60元为搜索摘要及欣欣旅游网(2026-09-30)口径;去哪儿却把『免费门票+往返区间车票』作为¥23起的商品出售,说明首道门票可能免费或有营销免票,具体以现场为准。搜索摘要称5月1日-10月31日持重庆身份证免票。",
+   "discounts": null,
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "tulufan",
+   "name": "交河故城",
+   "level": null,
+   "peak": 70,
+   "off": null,
+   "season_rule": "未查到",
+   "extras": [
+    {
+     "item": "景区区间车/环保车(去哪儿联票95元=门票70+25)",
+     "price": 25
+    }
+   ],
+   "reserve": "去哪儿可订明日电子票,无强制预约信息",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到(搜索摘要称与葡萄沟基本一致)",
+   "discounts": "老人、学生35元",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail_12609.html"
+   ],
+   "confidence": "medium",
+   "note": "去哪儿成人票70元,含区间车联票95元(区间车25元由差价推算);另有含交河古村联票130元、夜游演出套票等。",
+   "checked": "2026-10-03"
+  },
+  {
+   "node": "hami",
+   "name": "大海道(门票/是否需报备)",
+   "level": null,
+   "peak": null,
+   "off": null,
+   "season_rule": "未查到",
+   "reserve": "未查到(是否需向哈密/鄯善方面报备、是否需边防证均未查到)",
+   "pets": "未查到",
+   "pets_note": "未查到宠物相关规定",
+   "open": "未查到",
+   "src": [
+    "https://touch.piao.qunar.com/touch/index_%E5%93%88%E5%AF%86.html"
+   ],
+   "confidence": "low",
+   "note": "未查到可用来源。",
+   "extras": [],
+   "discounts": null,
+   "checked": "2026-10-03"
+  }
+ ],
+ "campsites": [
+  {
+   "node": "sailimu",
+   "name": "将台星空营地",
+   "location": "赛里木湖景区内(文中仅称可夜观银河、邻近『松树头』拍S弯日落,具体位置未查到)",
+   "price": "旺季营地房费 1500-2000 元/晚",
+   "pets": "未查到",
+   "src": [
+    "https://travel.sina.cn/2026-07-11/detail-inihmkwz8269369.d.html"
+   ],
+   "confidence": "low",
+   "note": "新浪旅游2026-07-11 一篇攻略原文:『将台星空营地看银河……唯一短板:营地房费旺季1500-2000元/晚』。性质为景区内星空营地住宿(带房费),并非自驾扎营地;是否接收房车、是否可自带帐篷、是否营业未核实,仅作线索。巴音布鲁克、那拉提、喀纳斯三处营地未查到可靠来源,故不写入(那拉提仅知景区内有星空营地/毡房/民宿400-1200元/晚,无名称)。",
+   "checked": "2026-10-03"
+  }
+ ],
+ "roads": [
+  {
+   "topic": "独库公路(G217)2026年通车与封闭日期",
+   "finding": "2026-06-01 10 时恢复通车（新疆交通运输厅发布，央视新闻客户端转载）。报道称预计 10 月中旬因降雪关闭，具体日期视天气调整；截至 2026-10-03 未查到正式封闭公告。每年约开放 4 个月，冬季封闭养护。",
+   "src": [
+    "https://www.chinanews.com.cn/sh/2026/05-29/10630962.shtml",
+    "https://travel.sina.cn/2026-09-10/detail-inirhrrh3227815.d.html",
+    "https://travel.sina.cn/2026-06-25/detail-iniepvfn6008591.d.html"
+   ],
+   "confidence": "high",
+   "title": "独库公路 2026 年开放时间",
+   "checked": "2026-10-03",
+   "review_by": "2026-10-20",
+   "review_note": "预计 10 月中旬封闭，2027 年开放日期待公布"
+  },
+  {
+   "topic": "独库公路2026年通行规定(车型/时段/限速/预约)",
+   "finding": "北段乌苏驿至库如力每日 8:00–19:00 通行，库如力至那拉提入口视流量和天气延至 21:00，19:00 后北段禁止社会车辆驶入。允许 7 座及以下小客车、核载 5 吨及以下货车，拖挂式房车、8 座以上客车禁行。2026-06-25 起北段（乌苏驿至那拉提入口约 185 公里）实行网上分时段预约，预约渠道各报道说法不一（“新疆交警”“新疆路网”公众号、“平安独库”小程序等），中段、南段无需预约。山区限速 40–60 km/h、急弯 30 km/h 的说法来自媒体转述，官方原文未明确。",
+   "src": [
+    "https://www.chinanews.com.cn/sh/2026/05-29/10630962.shtml",
+    "https://news.qq.com/rain/a/20260530A08A7K00",
+    "https://c.m.163.com/news/a/KVNH63040556LTAY.html",
+    "https://travel.sina.cn/2026-06-26/detail-iniesvka5289720.d.html",
+    "https://travel.sina.cn/2026-06-25/detail-iniepvfn6008591.d.html"
+   ],
+   "confidence": "medium",
+   "title": "独库公路通行规定",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "新藏线G219(叶城-狮泉河)2025-2026年路况",
+   "finding": "未查到 2025–2026 年逐段的权威路况通报。新浪旅游（2026-04-07）提示出发前查询最新路况，西藏段加油站间隔远；新疆段适宜 6–9 月，西藏段适宜 5–10 月。旧攻略提示麻扎达坂易降雪、夜间有薄冰，宜白天通过；大红柳滩至松西乡约 255 公里无补给。",
+   "src": [
+    "https://travel.sina.cn/2026-04-07/detail-inhtsmhy0296056.d.html",
+    "https://k.sina.com.cn/article_7857141524_1d4527714019022iaa.html",
+    "https://www.163.com/dy/article/FHMGMN7O0544EEMG.html"
+   ],
+   "confidence": "low",
+   "title": "新藏线路况",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "新藏线G219沿途加油点(库地、麻扎、三十里营房、大红柳滩、多玛、日土)",
+   "finding": "未查到 2025–2026 年逐段的权威路况通报。新浪旅游（2026-04-07）提示出发前查询最新路况，西藏段加油站间隔远；新疆段适宜 6–9 月，西藏段适宜 5–10 月。旧攻略提示麻扎达坂易降雪、夜间有薄冰，宜白天通过；大红柳滩至松西乡约 255 公里无补给。",
+   "src": [
+    "https://travel.sina.cn/2026-04-07/detail-inhtsmhy0296056.d.html"
+   ],
+   "confidence": "low",
+   "title": "新藏线路况",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "新藏线G219检查站/边防证要求",
+   "finding": "未查到 2025–2026 年逐段的权威路况通报。新浪旅游（2026-04-07）提示出发前查询最新路况，西藏段加油站间隔远；新疆段适宜 6–9 月，西藏段适宜 5–10 月。旧攻略提示麻扎达坂易降雪、夜间有薄冰，宜白天通过；大红柳滩至松西乡约 255 公里无补给。",
+   "src": [
+    "https://www.autohome.com.cn/ask/25521261.html",
+    "https://m.gmw.cn/2026-04/07/content_1304408586.htm",
+    "https://www.163.com/dy/article/FHMGMN7O0544EEMG.html"
+   ],
+   "confidence": "low",
+   "title": "新藏线路况",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "帕米尔(塔县)是否需要边境管理区通行证及办理方式",
+   "finding": "需要。塔什库尔干塔吉克自治县（喀拉库勒湖、石头城、盘龙古道、红其拉甫等）属边境管理区。16 周岁以上内地居民在“移民局12367”App 或微信、支付宝小程序申请，目的地填到“喀什地区塔什库尔干塔吉克自治县”，有效期最长 3 个月。山区信号弱，提前截图或打印。",
+   "src": [
+    "https://c.m.163.com/news/a/KVNH7HCJ0556LTAY.html",
+    "https://m.gmw.cn/2026-04/07/content_1304408586.htm",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=1543759286"
+   ],
+   "confidence": "medium",
+   "title": "帕米尔（塔县）通行证",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "喀纳斯/白哈巴(及禾木)是否需要边境管理区通行证及办理方式",
+   "finding": "白哈巴必须办理，无证禁止通行；喀纳斯湖、三湾、观鱼台和禾木不需要。可在喀纳斯换乘中心现场办理（约 10 分钟），也可在“新疆公安微警务”小程序或“移民局12367”线上申请，免费。阿勒泰可可托海额尔齐斯河大峡谷核心区等地也需要办理。",
+   "src": [
+    "https://c.m.163.com/news/a/L1D6FNSC0556LMQY.html",
+    "https://c.m.163.com/news/a/L0TN4DFN0556LTAY.html",
+    "https://c.m.163.com/news/a/L0LU244A0556KV63.html"
+   ],
+   "confidence": "medium",
+   "title": "喀纳斯、禾木、白哈巴通行证",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "阿里地区是否需要边境管理区通行证及办理方式",
+   "finding": "需要。普兰县（冈仁波齐、玛旁雍错）、札达县（古格、札达土林、托林寺）、日土县（班公湖）、噶尔县（狮泉河）均属边境管理区。在“移民局12367”申请时事由选“旅游”，目的地填到县名，不能只写“西藏”。部分问答网站仍写户籍地办理、旅行社代办等旧办法，以电子证新规为准。",
+   "src": [
+    "https://www.autohome.com.cn/ask/25521261.html",
+    "https://www.autohome.com.cn/ask/25497657.html",
+    "https://m.gmw.cn/2026-04/07/content_1304408586.htm"
+   ],
+   "confidence": "medium",
+   "title": "阿里地区通行证",
+   "checked": "2026-10-03"
+  }
+ ]
+}

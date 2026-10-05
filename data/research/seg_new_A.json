@@ -1,0 +1,615 @@
+{
+ "attractions": [
+  {
+   "node": "wuzhen",
+   "name": "乌镇西栅",
+   "level": null,
+   "peak": 150,
+   "off": 150,
+   "season_rule": "不分淡旺季，全年统一价（官方预订网显示西栅成人票150元、东西栅联票190元）",
+   "extras": [],
+   "reserve": "可通过官方小程序/官方预订网购票，未查到强制预约要求；2026年世界互联网大会乌镇峰会期间，西栅及乌村门票的官方原有销售渠道将暂时关闭（公告正文图片未能读取，具体日期未查到）",
+   "pets": "未查到",
+   "pets_note": "所查来源未见乌镇景区官方宠物规定，建议出行前电话咨询景区",
+   "discounts": "优惠票西栅75元（东栅55、联票130）：全日制本科及以下在校学生、身高1.2m（不含）至1.5m（含）儿童、6周岁（不含）至18周岁（含）未成年人、60周岁（含）至70周岁（不含）游客；1.2m及以下儿童等免票细则未查到",
+   "open": "西栅 09:00-22:00",
+   "src": [
+    "https://www.ewuzhen.com/ticket/index.htm",
+    "https://www.sina.cn/weibo/detail/5349640066564329.html"
+   ],
+   "confidence": "high",
+   "note": "西栅150元、联票190元见官方预订网ewuzhen.com；优惠票价格与适用人群来自检索结果对乌镇官网票务政策页的转述，官网页面因证书错误未能直接打开。景区等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "wuzhen",
+   "name": "乌镇东栅",
+   "level": null,
+   "peak": 110,
+   "off": 110,
+   "season_rule": "不分淡旺季，全年统一价",
+   "extras": [],
+   "reserve": "可通过官方小程序/官方预订网购票，未查到强制预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见乌镇景区官方宠物规定，建议出行前电话咨询景区",
+   "discounts": "优惠票东栅55元：全日制本科及以下在校学生、身高1.2m（不含）至1.5m（含）儿童、6周岁（不含）至18周岁（含）未成年人、60周岁（含）至70周岁（不含）游客",
+   "open": "夏令07:00-18:00，冬令07:00-17:30（官方预订网：夏令7点至18点、冬令7点至17:30）",
+   "src": [
+    "https://www.ewuzhen.com/ticket/index.htm"
+   ],
+   "confidence": "medium",
+   "note": "东栅110元来自检索结果对乌镇官网票务政策页的转述；官方预订网页面仅直接显示西栅150元与联票190元。景区等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "shaoxing",
+   "name": "鲁迅故里",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "免费开放，无淡旺季票价",
+   "extras": [],
+   "reserve": "需提前分时预约（关注“绍兴市文旅集团”或“绍兴鲁迅纪念馆”官方微信）；每个手机号每天限预约一次，每次最多5人",
+   "pets": "未查到",
+   "pets_note": "所查来源未见鲁迅故里宠物规定",
+   "discounts": "免费开放；去哪儿网上显示的145-160元等产品为导览/组合类产品，非入园门票",
+   "open": "周一 08:30-17:00（16:45停止入园）；周二至周日 08:30-21:00（20:30停止入园）；黄金周/小长假 08:30-22:30（22:00停止入园）",
+   "src": [
+    "http://sxlxmuseum.com/cgzn/lxgl.htm",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=14212"
+   ],
+   "confidence": "medium",
+   "note": "免费与预约、开放时间来自检索结果对景区官网（sxlxmuseum.com）内容的转述，官网因证书错误未能直接打开；鲁迅祖居、三味书屋、鲁迅纪念馆、百草园等核心点免费参观。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "shaoxing",
+   "name": "沈园",
+   "level": null,
+   "peak": 40,
+   "off": 40,
+   "season_rule": "白天票不分淡旺季；夜场（沈园之夜）另售票",
+   "extras": [
+    {
+     "item": "沈园之夜/梦回沈园·钗头凤演出(可选)",
+     "price": 110
+    }
+   ],
+   "reserve": "未查到强制预约要求，可在去哪儿等平台提前购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见沈园宠物规定",
+   "discounts": "1.2m以下儿童、70周岁及以上老人凭证免费；1.2-1.4m儿童、学生、60-69周岁老人凭证半价（沈园之夜仅儿童优惠）；去哪儿网优待票20元起",
+   "open": "白天 08:00-17:00；夜场 17:30-22:00",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=4261",
+    "https://touch.travel.qunar.com/poi/705645"
+   ],
+   "confidence": "medium",
+   "note": "成人票40元、开放时间与优惠政策来自去哪儿网及检索结果转述；演出票价为去哪儿网“110-120元起”区间下限。景区等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "moganshan",
+   "name": "莫干山风景名胜区",
+   "level": "4A",
+   "peak": 95,
+   "off": 70,
+   "season_rule": "分旺季/平季，去哪儿网旺季成人95元（当日售）/85元（非当日售），平季70元；旺季与平季的具体起止日期未查到官方公示",
+   "extras": [
+    {
+     "item": "上下山换乘车+景区游览车（私家车不可直接上山）",
+     "price": 65
+    }
+   ],
+   "reserve": "未查到强制预约要求，可线上提前购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见景区官方宠物规定",
+   "discounts": "全日制学生、老年人（去哪儿网旺季47.5元/平季40元）；6周岁（含）以下或1.2m（含）以下儿童、70周岁（含）以上老人享免票优待",
+   "open": "未查到官方公示（非官方转述为旺季约07:30-17:00、平季约08:00-16:30，待确认）",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=12671",
+    "https://touch.piao.qunar.com/touch/detail_3241002926.html"
+   ],
+   "confidence": "low",
+   "note": "各来源价格互相矛盾：去哪儿网旺季95/85、平季70；其他转述有70/85/80/100/50等。交通车65元由去哪儿网“门票+交通车”套票（旺季160、平季135）与单门票之差推算，单独价格未查到。以景区现场公示为准。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "shexian",
+   "name": "徽州古城（歙县）",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "古城主街、斗山街、许国石坊外景免费；全域联票不分淡旺季；开放时间旺季（4-10月）08:00-17:00、淡季（11-3月）08:00-16:30",
+   "extras": [
+    {
+     "item": "全域联票（含徽州府衙、许国石坊内部展厅等6个景点，3天内有效）(可选)",
+     "price": 95
+    }
+   ],
+   "reserve": "未查到强制预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "6周岁（含）或1.2m（含）以下儿童、65周岁（含）以上老人、现役军人、残疾人免票；6-18周岁未成年人、全日制本科及以下学生、60-65周岁老人购优待票（来自检索结果转述）",
+   "open": "08:00-17:00（旺季）/08:00-16:30（淡季），夜景亮灯19:00-21:30",
+   "src": [
+    "https://www.163.com/dy/article/L4A2P4M30556KX13.html",
+    "https://touch.piao.qunar.com/touch/detail_2111320238.html",
+    "https://touch.travel.qunar.com/poi/9550770"
+   ],
+   "confidence": "medium",
+   "note": "联票现场95元/线上85元来自网易2026攻略；去哪儿网另有“成人票90元（原价140）”产品，口径不一致。徽州府衙单买约45元。大河票务网（2022）称开放时间全年08:00-17:00。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "shexian",
+   "name": "棠樾牌坊群",
+   "level": null,
+   "peak": 62,
+   "off": 62,
+   "season_rule": "票价不分淡旺季；开放时间分夏令/冬令",
+   "extras": [
+    {
+     "item": "鲍家花园(可选)；与牌坊群联票98元",
+     "price": 50
+    }
+   ],
+   "reserve": "未查到强制预约要求，可通过大河票务网等线上购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "1.2m（不含）以下儿童、65周岁及以上老人、残疾人免票；优待票：牌坊群32.5元、鲍家花园25元、联票50元（学生、退役军人等）",
+   "open": "4月1日-10月31日 06:30-18:30；11月1日-3月31日 07:00-18:00",
+   "src": [
+    "https://www.dahepiao.com/lvyounews1/20250708520055.html",
+    "https://touch.piao.qunar.com/touch/detail_1462.html"
+   ],
+   "confidence": "medium",
+   "note": "联票（牌坊群+鲍家花园）成人98元、鲍家花园50元已在页面核实；牌坊群单点62元仅见于检索结果转述，未在页面核实。景区等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "jingdezhen",
+   "name": "景德镇御窑博物院/御窑厂国家考古遗址公园",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "御窑博物院免费，无淡旺季",
+   "extras": [
+    {
+     "item": "陶阳里御窑景区（含御窑厂遗址等）门票(可选)",
+     "price": 53
+    }
+   ],
+   "reserve": "御窑博物院需预约：微信小程序“畅游景德镇”或公众号“景德镇御窑博物院”预约导览（亦可现场扫码预约），使用身份证等证件",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "陶阳里景区：6周岁（含）以下或1.2m（含）以下儿童、一二级残疾人、65周岁（含）以上老人免费；儿童/老人票26元起",
+   "open": "博物院周二至周日 09:00-22:00（21:30停止入场），每周一闭馆（法定节假日除外）；陶阳里景区 08:30-22:00",
+   "src": [
+    "http://www.jdzyybwy.com/jdzmu/frontend/pg/index",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=201301",
+    "https://www.dahepiao.com/lvyounews1/20250724522648.html"
+   ],
+   "confidence": "medium",
+   "note": "免费与预约信息来自检索结果对博物院官网内容的转述（官网页面未能打开）；53元为陶阳里景区OTA成人票价，是否为御窑厂遗址必需票未查到官方说明。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "jingdezhen",
+   "name": "古窑民俗博览区",
+   "level": "5A",
+   "peak": 95,
+   "off": 95,
+   "season_rule": "未查到淡旺季差异（去哪儿网成人票85-95元，原价95元）",
+   "extras": [],
+   "reserve": "未查到强制预约要求，可线上购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "65周岁（含）以上老人免费；1.2m以下儿童优惠；学生/儿童/老人票约45-50元；60-64周岁半价",
+   "open": "08:00开园，约17:30闭园（检索结果转述）",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=38714"
+   ],
+   "confidence": "medium",
+   "note": "95元为OTA标注的原价；区内是否另收游览车费用未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "fuzhou",
+   "name": "三坊七巷",
+   "level": "5A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "街区免费，无淡旺季",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "街区免费；区内个别故居/展馆是否另收费未查到",
+   "open": "全年全天开放（街区）",
+   "src": [
+    "https://gs.ctrip.com/html5/you/sight/168.html"
+   ],
+   "confidence": "medium",
+   "note": "信息来自携程景点页检索结果转述，页面本身未能直接打开。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "fuzhou",
+   "name": "鼓山",
+   "level": "4A",
+   "peak": 0,
+   "off": 0,
+   "season_rule": "进山免费，无淡旺季；涌泉寺等区段单独收费",
+   "extras": [
+    {
+     "item": "涌泉寺（核心景点，另一来源标价32元）",
+     "price": 40
+    },
+    {
+     "item": "达摩洞十八景(可选)",
+     "price": 10
+    },
+    {
+     "item": "鼓山缆车往返(可选)；单程50元",
+     "price": 70
+    }
+   ],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "缆车儿童（1.25-1.4m）往返35元/单程25元；1.25m以下儿童免费乘坐",
+   "open": "景区全天；涌泉寺约06:30-17:30；十八景约08:00-18:00；缆车周一08:10-17:00，周二至周日08:10-17:30",
+   "src": [
+    "https://www.fuzhou.gov.cn/zgfzhd/znhd/fzsgllydjqglwyh/kpzs/202312/t20231206_4731660.htm",
+    "http://fz.bendibao.com/tour/2024126/72676.shtm",
+    "https://www.meet99.com/jingdian-gushan.html"
+   ],
+   "confidence": "medium",
+   "note": "缆车价格来自福州市政府门户网站答复（2023-12-06，政府来源但较旧）；涌泉寺价格各来源不一（本地宝40元，meet99为32元）。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "pingtan",
+   "name": "石牌洋景区（平潭）",
+   "level": "3A",
+   "peak": 20,
+   "off": 20,
+   "season_rule": "未查到淡旺季差异",
+   "extras": [
+    {
+     "item": "往返船票",
+     "price": 25
+    }
+   ],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "1.2m以下儿童船票免费；其他优惠未查到",
+   "open": "07:00-18:00",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=464606",
+    "http://www.7pingtan.com/archives/141"
+   ],
+   "confidence": "low",
+   "note": "门票20元、船票25元仅见于检索结果转述的旧页面（发布时间不详），2025-2026年价格未查到；去哪儿网页面门票价格显示异常。各来源对是否可登岛说法不一（有称已禁止登岛，有称可下船走一走），以现场为准。等级“3A”来自去哪儿网页面标注。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "dongshan",
+   "name": "东山风动石景区（含关帝庙）",
+   "level": "4A",
+   "peak": 45,
+   "off": 45,
+   "season_rule": "未查到淡旺季差异",
+   "extras": [],
+   "reserve": "未查到预约要求，可线上购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "儿童票22元（去哪儿网）；其他优惠细则未查到",
+   "open": "景区 07:00-18:30（18:30停止入园）；关帝庙 07:00-18:00",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=12512",
+    "https://touch.travel.qunar.com/poi/18713584"
+   ],
+   "confidence": "medium",
+   "note": "成人票携程45元、去哪儿网42-45元；关帝庙位于景区内，未见单独收费。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "kaiping",
+   "name": "开平碉楼（自力村/立园/马降龙/联票）",
+   "level": "5A",
+   "peak": 150,
+   "off": 150,
+   "season_rule": "未查到淡旺季差异",
+   "extras": [
+    {
+     "item": "马降龙碉楼群(可选)",
+     "price": 60
+    },
+    {
+     "item": "锦江里碉楼群(可选)",
+     "price": 50
+    },
+    {
+     "item": "五点套票（立园+自力村+马降龙+锦江里+南楼，两日有效）(可选)",
+     "price": 180
+    }
+   ],
+   "reserve": "未查到强制预约要求，可通过美团/携程/同程/抖音等平台购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "1.2m（含）以下儿童优待；优待票（青少年/老人）去哪儿网：套票90、自力村39、立园50、马降龙30、锦江里25",
+   "open": "立园 08:30-17:30；自力村 08:40-17:25；马降龙 08:50-17:15",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=11067",
+    "http://jm.bendibao.com/tour/202164/5684.shtm"
+   ],
+   "confidence": "medium",
+   "note": "peak=立园+自力村两点联票（江门本地宝150元；去哪儿网147元）。单点：立园100元（去哪儿网97）、自力村78元（75）、马降龙60元（47）、锦江里50元（47）；五点套票180元（去哪儿网177）。本地宝页面为2021年，价格为窗口价口径，请以现场为准。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "kaiping",
+   "name": "赤坎古镇",
+   "level": null,
+   "peak": 145,
+   "off": 145,
+   "season_rule": "未查到淡旺季差异；另有夜场票68元",
+   "extras": [
+    {
+     "item": "观光铛铛车(可选)",
+     "price": 50
+    },
+    {
+     "item": "观光游船拼船票(可选)",
+     "price": 80
+    }
+   ],
+   "reserve": "未查到强制预约要求，可线上购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "1.2m以下儿童、离休人员、残疾人、军人、消防员免费；大学生票90元；儿童/老人等优待票75元起",
+   "open": "全年 10:00-22:00",
+   "src": [
+    "https://www.dahepiao.com/lvyounews1/20250826527499.html",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=21580",
+    "https://news.ycwb.com/2025-01/07/content_53167481.htm"
+   ],
+   "confidence": "medium",
+   "note": "赤坎古镇已作为“赤坎·广东华侨国际旅游度假区”收费运营（2025-01-06正式开业，此前试运营两年），成人票145元（去哪儿网150元起）；另有检索结果称古镇免费，与该票价口径冲突，以最新售票页为准。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "huangyao",
+   "name": "黄姚古镇",
+   "level": "5A",
+   "peak": 88,
+   "off": 88,
+   "season_rule": "不分淡旺季，3天内有效；2026年暑期特惠66元（07-10至09-30）已于09-30结束",
+   "extras": [
+    {
+     "item": "直通车(可选)",
+     "price": 50
+    }
+   ],
+   "reserve": "未查到强制预约要求，可线上购票（部分平台需提前2小时）",
+   "pets": "未查到",
+   "pets_note": "古镇内部分民宿标注可带宠物；景区官方对宠物入园的规定未查到",
+   "discounts": "半票44元；2026-07-10至12-31：全国中小学生（小学至中专）凭证免首道门票、贺州市户籍及在贺工作人员凭证免首道门票；梧州/郴州/永州/清远/肇庆市民专享价44元（去哪儿网）；65周岁以上老人、6周岁以下或1.2m以下儿童优待",
+   "open": "古镇全天可进，售票时段约08:00-17:30/18:00；清晨7:30前及夜间部分时段免费入但内部收费点不开放（转述）",
+   "src": [
+    "https://www.sohu.com/a/1047193845_121123828",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=10280",
+    "https://touch.travel.qunar.com/poi/711623"
+   ],
+   "confidence": "medium",
+   "note": "原价88元见搜狐2026惠民政策文章；其他来源有74（去哪儿网折后）/95/98/100/108元等不同口径，窗口价以现场为准。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "sanjiang",
+   "name": "程阳八寨",
+   "level": "5A",
+   "peak": 80,
+   "off": 80,
+   "season_rule": "不分淡旺季，价格全年统一",
+   "extras": [],
+   "reserve": "未查到预约要求，可线上购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "6周岁（含）以下或1.2m（含）以下儿童、残疾人、现役军人、65周岁（含）以上老人免票；6-18周岁未成年人、全日制本科及以下学生半票",
+   "open": "全年全天开放",
+   "src": [
+    "http://www.sjx.gov.cn/xxgk/fdzdgknr/xfly/efh/202206/t20220607_3073268.shtml",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=11393",
+    "https://liuzhou.bendibao.com/news/2022812/15089.shtm"
+   ],
+   "confidence": "medium",
+   "note": "80元来自三江县政府2022-04价格批复（页面未能直接打开，经检索结果转述）；OTA当前售价：门票+观光车约90-95元，门票+民俗表演+观光车约120元，观光车单独价格未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "zhaoxing",
+   "name": "肇兴侗寨",
+   "level": "4A",
+   "peak": 80,
+   "off": 80,
+   "season_rule": "不分淡旺季；2026-07-13至12-31为优惠政策期（黔东南州、广西户籍居民凭证免门票，套票60-100元）",
+   "extras": [
+    {
+     "item": "景区观光车往返（寨内禁止外来车辆，自驾需换乘）",
+     "price": 20
+    }
+   ],
+   "reserve": "建议提前在平台预约入园（转述）",
+   "pets": "未查到",
+   "pets_note": "景区官方宠物规定未查到；部分民宿标注宠物友好",
+   "discounts": "2026-07-13至12-31：黔东南州、广西户籍居民凭身份证/居住证免门票；6周岁以下儿童、65周岁以上老人、警察、现役军人、教师、医护、导游、记者凭证免票（搜狐转述黔东南州文体广电旅游局政策）；另有来源称学生/教师/65岁以上老人免票",
+   "open": "全天开放",
+   "src": [
+    "https://www.sohu.com/a/1051888429_121106902",
+    "https://www.thepaper.cn/newsDetail_forward_32458535",
+    "https://cn.chinadaily.com.cn/a/202604/21/WS69e71030a310942cc49a8999.html"
+   ],
+   "confidence": "medium",
+   "note": "门票80元、观光车往返20元见搜狐2026政策文章；澎湃2026-01-27称80元含观光车，口径冲突；另有来源称2026年寨内免费仅收观光车，未获官方证实。2025年已创建国家4A级景区（中国日报）。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "zhenyuan",
+   "name": "青龙洞",
+   "level": null,
+   "peak": 60,
+   "off": 60,
+   "season_rule": "未查到淡旺季差异",
+   "extras": [],
+   "reserve": "凭身份证在售票处购票，可在线购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "14周岁以下儿童、60周岁以上老人免票；14-18岁儿童及学生半票30元；杭州、佛山市民免票（2023年页面）",
+   "open": "08:30-16:00",
+   "src": [
+    "http://gy.bendibao.com/tour/202383/67516.shtm",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=37068"
+   ],
+   "confidence": "medium",
+   "note": "60元与优惠政策来自贵阳本地宝（2023-08），去哪儿网当前成人票55元；优惠政策可能已变化。景区等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "zhenyuan",
+   "name": "镇远古城",
+   "level": null,
+   "peak": 0,
+   "off": 0,
+   "season_rule": "古城免费，景点单独收费",
+   "extras": [],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "古城街巷、祝圣桥等免费；区内收费景点（2023页面）：青龙洞60元、舞阳河40元、石屏山30元、铁溪50元、天后宫30元；古城水上游去哪儿网日间60元起、夜间约80-89元",
+   "open": "全天开放（古城）",
+   "src": [
+    "http://gy.bendibao.com/tour/2023418/65463.shtm",
+    "https://touch.piao.qunar.com/touch/detail.htm?id=37068"
+   ],
+   "confidence": "medium",
+   "note": "收费景点价格来自贵阳本地宝（2023-09-19），较旧。景区等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "xingyi",
+   "name": "万峰林",
+   "level": "5A",
+   "peak": 70,
+   "off": 60,
+   "season_rule": "旺季3月1日至11月30日70元，淡季12月1日至次年2月28日60元（检索结果转述，官方公示未能核实）",
+   "extras": [
+    {
+     "item": "观光车（每个观景平台停靠，不分淡旺季）",
+     "price": 50
+    }
+   ],
+   "reserve": "可通过“万峰林景”等官方渠道线上购票，未查到强制预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "1.2m以下或6周岁以下儿童免票；65周岁以上老人免票；80周岁以上老人、盲人、重度残疾人及一名陪护免票；在校学生凭证优惠（转述）；去哪儿网老人/儿童（14岁以下）优待票50元起",
+   "open": "08:00-18:00（17:30停止入园）",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=26097",
+    "https://gy.bendibao.com/tour/202381/67485.shtm"
+   ],
+   "confidence": "medium",
+   "note": "门票70元、观光车50元（门票+观光车合计约120元）见去哪儿网；淡旺季价格与日期、免票细则来自检索结果转述（贵阳本地宝页面被验证码拦截未能打开）。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "xingyi",
+   "name": "马岭河峡谷",
+   "level": "4A",
+   "peak": 70,
+   "off": 60,
+   "season_rule": "旺季70元、淡季60元（检索结果转述，起止日期未查到）",
+   "extras": [
+    {
+     "item": "观光电梯(可选)；单程30元",
+     "price": 40
+    }
+   ],
+   "reserve": "可在“一码游贵州”小程序、美团购票，未查到强制预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "2025年免费政策细则未查到（贵阳本地宝页面被验证码拦截）",
+   "open": "08:00-18:00",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=1814",
+    "https://gy.bendibao.com/tour/202381/67471.shtm"
+   ],
+   "confidence": "medium",
+   "note": "电梯价格为往返40元、单程30元（检索结果转述）；去哪儿网当前成人票70元起（含安全服务包80元起）。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "luoping",
+   "name": "九龙瀑布群",
+   "level": "4A",
+   "peak": 60,
+   "off": 60,
+   "season_rule": "当前OTA（携程、去哪儿网2026）成人票60元；较旧来源称旺季（2-5月）80元、淡季（6-1月）60元，未获证实",
+   "extras": [
+    {
+     "item": "缆车(可选)；单程30元",
+     "price": 50
+    },
+    {
+     "item": "竹筏(可选)",
+     "price": 5
+    }
+   ],
+   "reserve": "未查到强制预约要求，可线上购票",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "1.2m以下儿童、70周岁及以上老人优惠；双人票118元、家庭票138元、亲子票88元（去哪儿网）",
+   "open": "08:30-17:30（携程）或09:00-17:00（其他来源），以现场为准",
+   "src": [
+    "https://touch.piao.qunar.com/touch/detail.htm?id=6786",
+    "https://www.meet99.com/jingdian-jiulongpubuqun.html"
+   ],
+   "confidence": "medium",
+   "note": "缆车、竹筏价格来自meet99攻略（发布年份不详）；去哪儿网另有飞毯+滑道39元起、电动竹筏门票套餐78元起。区内是否有必需观光车未查到。",
+   "checked": "2026-10-04"
+  },
+  {
+   "node": "luoping",
+   "name": "金鸡峰丛",
+   "level": null,
+   "peak": 30,
+   "off": 30,
+   "season_rule": "未查到淡旺季差异；2-3月油菜花季客流集中",
+   "extras": [
+    {
+     "item": "观光车往返(可选)",
+     "price": 30
+    },
+    {
+     "item": "小火车(可选)",
+     "price": 50
+    }
+   ],
+   "reserve": "未查到预约要求",
+   "pets": "未查到",
+   "pets_note": "所查来源未见宠物规定",
+   "discounts": "未查到",
+   "open": "未查到",
+   "src": [
+    "https://zhuanlan.zhihu.com/p/31537689504",
+    "https://gs.ctrip.com/html5/you/sight/luoping676/135222.html"
+   ],
+   "confidence": "low",
+   "note": "门票30元、观光车30元往返、小火车50元仅见于检索结果对攻略类页面的转述，未在官方或OTA页面核实。等级未在所查来源中确认。",
+   "checked": "2026-10-04"
+  }
+ ]
+}

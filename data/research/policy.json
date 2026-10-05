@@ -1,0 +1,426 @@
+{
+ "items": [
+  {
+   "topic": "1",
+   "key": "fuel_price_92",
+   "finding": "2026-09-24 24 时调价后，92# 汽油零售限价（元/升）：北京 8.61、上海 8.57、广东 8.63、四川一价区 8.70、西藏拉萨价区 9.48（昌都价区 9.66、阿里价区 9.86）、新疆 8.39、青海一价区 8.57、内蒙古一价区 8.62、黑龙江南区 8.58。下一个调价窗口为 2026-10-15 24 时。数字来自多个油价汇总网站，未逐省核对发改委原文。",
+   "data": {
+    "adjustment_effective": "2026-09-24 24:00",
+    "gasoline_per_ton_change_yuan": 395,
+    "diesel_per_ton_change_yuan": 385,
+    "national_avg_92_yuan_per_l": 8.66,
+    "next_window": "2026-10-15 24:00 (ifeng); aggregators say 2026-10-16",
+    "92_yuan_per_l": {
+     "北京": 8.61,
+     "上海": 8.57,
+     "广东": 8.63,
+     "四川_一价区": 8.7,
+     "西藏_拉萨价区": 9.48,
+     "西藏_昌都价区": 9.66,
+     "西藏_阿里价区": 9.86,
+     "新疆": 8.39,
+     "青海_一价区": 8.57,
+     "青海_二价区": 8.66,
+     "青海_三价区": 8.76,
+     "内蒙古_一价区": 8.62,
+     "内蒙古_二价区": 8.68,
+     "黑龙江_南区": 8.58,
+     "黑龙江_北区": 8.62
+    },
+    "national_lowest": "新疆 8.39",
+    "national_highest": "海南 9.72",
+    "cross_check": "天津92#=8.61（川观新闻报道，来源称上调0.32元）"
+   },
+   "src": [
+    "https://gas.chahuo.com/",
+    "https://www.autohome.com.cn/oil/1",
+    "https://youjia.abapi.cn/oil/92",
+    "https://www.xiaoxiongyouhao.com/fprice/",
+    "https://news.10jqka.com.cn/20260924/c680254810.shtml",
+    "https://i.ifeng.com/c/8wgSTUT6LOI",
+    "https://cbgc.scol.com.cn/news/7993969"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-10-03",
+   "notes": "xiaoxiongyouhao 把西藏记为9.86，实为阿里价区；拉萨价区9.48（autohome/abapi/chahuo 一致）。西藏、青海、内蒙古、黑龙江、四川存在分价区，自驾路线上的实际价要按具体地市。聚合站声明“仅供参考”。",
+   "title": "92# 汽油限价",
+   "checked": "2026-10-03",
+   "review_by": "2026-10-16",
+   "review_note": "下一个调价窗口 2026-10-15 24 时"
+  },
+  {
+   "topic": "2",
+   "key": "charging_price_fast_public",
+   "finding": "2026 年国庆前后的公开报道：高速服务区快充约 1.4–2.0 元/度（其中服务费约 0.8–0.9 元/度），高速以外的县城、商场约 0.36–0.82 元/度，热门线路服务区峰时可达 2–3 元/度。来源为个人和平台文章，不是运营商或政府公示价，只作量级参考。",
+   "data": {
+    "service_area_combined_yuan_per_kwh": "1.4-2.0",
+    "service_fee_service_area_yuan_per_kwh": "0.8-0.9",
+    "off_highway_county_or_mall_yuan_per_kwh": "0.36-0.82",
+    "service_area_by_period_yuan_per_kwh": {
+     "valley_23-07": "0.7-1.1",
+     "normal": "1.2-1.8",
+     "peak_hot_routes": "2-3"
+    },
+    "city_service_fee_range_yuan_per_kwh": "0.15-0.5",
+    "example": "电费1.08 + 服务费0.8 元/度",
+    "promo_2026": "国网e充电 2026-09-25至10-07 发2万张2-5元服务费券（文章称）"
+   },
+   "src": [
+    "https://post.smzdm.com/p/al3lz5ee/",
+    "https://post.smzdm.com/p/arzq49g7/"
+   ],
+   "confidence": "low",
+   "as_of": "2026-09-25",
+   "notes": "国家电网/特来电/星星充电各自的官方价目表未取得（运营商 App 内公示，随站点、时段浮动）。峰谷差异：电费部分随电网分时变化，服务费各站自定。",
+   "title": "公共快充价格",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "2",
+   "key": "charging_service_fee_cap_unverified",
+   "finding": "网上流传“2026 年起公共充电服务费统一封顶 0.5 元/度”，但各文章给出的生效日期互相矛盾，发改委、国家能源局官网未查到原文，另有平台文章称服务区服务费为 0.8–0.9 元/度。这一说法待确认。",
+   "data": {
+    "claimed_cap_yuan_per_kwh": 0.5,
+    "verified": false
+   },
+   "src": [
+    "https://www.ndrc.gov.cn/xxgk/jd/jd/202510/t20251015_1401015.html"
+   ],
+   "confidence": "low",
+   "as_of": "2026-10-03",
+   "title": "充电服务费封顶 0.5 元的说法",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "3",
+   "key": "toll_class1_rates_by_province",
+   "finding": "一类客车指车长小于 6 米且核定载客 9 人及以下（2020-01-01 起）。已查到的费率（元/车公里）：广东 0.45（四车道）、0.60（六车道及以上）；黑龙江 0.45（2020 年试行文件，现行是否延续未核）；内蒙古 0.40（2015 年起试行文件）；北京 0.50（听证方案，最终稿未核）；云南弥勒—玉溪高速 0.50、桥隧 1.40（2026 年）；浙江 5 元/车次加 0.40（2020 年文件，现行未核）。四川、西藏、新疆、甘肃未查到可核实的数字。",
+   "data": {
+    "unit": "元/车公里（一类客车）",
+    "广东": {
+     "value": "0.45 (4车道); 0.60 (6车道及以上)",
+     "since": "2020-01-01",
+     "confidence": "high"
+    },
+    "浙江": {
+     "value": "5元/车次 + 0.40元/车公里; 沪杭甬 0.45",
+     "doc": "浙交〔2020〕118号, 暂定至2021-12-31",
+     "etc": "ETC至少九五折",
+     "confidence": "low-medium (现行未核)"
+    },
+    "四川": {
+     "value": "未查到",
+     "note": "省交通运输厅有《四川高速公路收费标准》扫描版PDF（141MB，无法提取文字）；个别路段高于0.4，山区桥隧另计"
+    },
+    "云南": {
+     "value": "0.50 (普通路段); 1.40 (桥梁隧道)",
+     "scope": "弥勒—玉溪高速，2026-06-26通车，云政复〔2025〕2号；其他路段未核",
+     "confidence": "medium"
+    },
+    "西藏": {
+     "value": "未查到"
+    },
+    "新疆": {
+     "value": "未查到",
+     "note": "新政办函〔2021〕5号（2021-01-16起执行）费率表是图片附件，无法读取"
+    },
+    "甘肃": {
+     "value": "未查到",
+     "note": "省政府PDF返回412，本地宝需验证码"
+    },
+    "内蒙古": {
+     "value": "0.4 (第1类, ≤7座, 高速)",
+     "doc": "内发改费字〔2014〕1684号, 2015-01-01起试行两年；2020年后另有调整文件未读",
+     "confidence": "low-medium"
+    },
+    "黑龙江": {
+     "value": "0.45",
+     "doc": "黑交规〔2020〕3号, 2020-04-24起试行1年",
+     "confidence": "medium"
+    },
+    "北京": {
+     "value": "0.50（听证方案中客车一类车标准，取消起步价）",
+     "doc": "北京市发改委2020-04听证方案要点",
+     "confidence": "medium"
+    }
+   },
+   "src": [
+    "https://www.sz.gov.cn/xxgk/sydwxxgk/jt/gsgl/ywxx/gsglsfbz/content/post_9464574.html",
+    "https://jtyst.zj.gov.cn/art/2020/12/31/art_1229023900_2222693.html",
+    "https://gzw.yn.gov.cn/xwzx/ssqy/202606/t20260625_3054362.html",
+    "https://jt.hlj.gov.cn/jt/c105132/202004/c00_31355634.shtml",
+    "http://fgw.xlgl.gov.cn/fgw/ywgz/jgsf/zcfg/310ecfca56fb47a7aa00c5f7a5e9fa05/index.html",
+    "https://fgw.beijing.gov.cn/gzdt/tztg//202004/P020200417617534768463.pdf",
+    "https://jtt.sc.gov.cn/jtt/c101539/2020/2/18/715772a847d84f72baff8634278de937.shtml",
+    "https://www.163.com/dy/article/G0FH9PG40544B5GC.html"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-10-03",
+   "notes": "各省通行费率按路段（四车道/六车道、桥隧、改扩建）不同，上表只是基准。ETC 普遍有九五折类优惠。",
+   "title": "一类客车高速通行费",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "3",
+   "key": "holiday_free_toll_rules",
+   "finding": "7 座及以下小型客车在春节、清明、劳动节、国庆四个节假日免收高速通行费，元旦不免。2026 年免费时段：春节 2/15–2/23、清明 4/4–4/6、劳动节 5/1–5/5、国庆 10/1 0 时至 10/7 24 时（交通运输部 2026-09-24 国新办发布会确认）。按驶离出口收费车道的时间判断；“免费时段驶入、非免费时段驶出要交全程”这一说法未在原文核实。",
+   "data": {
+    "2026_windows": {
+     "spring_festival": "2026-02-15..02-23",
+     "qingming": "2026-04-04..04-06",
+     "labor_day": "2026-05-01..05-05",
+     "national_day": "2026-10-01 00:00..2026-10-07 24:00"
+    },
+    "vehicle": "7座及以下载客汽车（小型客车）",
+    "time_basis": "高速：驶离收费站收费车道时间（出口）；普通收费公路：通过收费车道时间",
+    "tip": "走人工通道上高速，不建议在ETC车道下高速（澎湃2025-11-08提示）",
+    "inference": "收费分类里8、9座已并入一类客车，但免费政策口径为“7座及以下”，8–9座车是否免费应以当次通告为准（推断，未见官方明文）"
+   },
+   "src": [
+    "https://m.gmw.cn/2026-09/24/content_1304567759.htm",
+    "https://m.thepaper.cn/newsDetail_forward_31921850",
+    "https://m.bjnews.com.cn/detail/1762923448019100.html"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-10-03",
+   "title": "节假日小客车免费通行",
+   "checked": "2026-10-03",
+   "review_by": "2027-01-15",
+   "review_note": "2027 年节假日安排公布后更新免费日期"
+  },
+  {
+   "topic": "4",
+   "key": "tibet_border_pass_electronic",
+   "finding": "国家移民管理局 2026 年第 2 号公告：2026-04-15 起启用电子边境管理区通行证，停发纸质证（已发的在有效期内继续有效）。16 周岁以上内地居民在“移民局12367”App 或微信、支付宝小程序申请，网上申请有效期最长 3 个月；携带不满 16 周岁子女或申请 1 年有效期的，到县级以上公安机关出入境管理机构现场办理。使用时与身份证一并出示，可出示手机或打印件。",
+   "data": {
+    "effective": "2026-04-15",
+    "channels": [
+     "移民局12367 APP",
+     "微信小程序",
+     "支付宝小程序",
+     "县级以上公安出入境管理机构/指定派出所现场"
+    ],
+    "online_validity": "≤3个月；1年期须现场办理",
+    "age": "16周岁以上可自办，不满16周岁偕行不单独办"
+   },
+   "src": [
+    "https://www.nia.gov.cn/n741440/n741542/c1775717/content.html"
+   ],
+   "confidence": "high",
+   "as_of": "2026-04-02",
+   "title": "电子边境管理区通行证",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "4",
+   "key": "tibet_shigatse_pass_suspended",
+   "finding": "国家移民管理局 2026 年第 5 号公告（2026-08-27）：因尼泊尔一侧大规模泥石流导致吉隆口岸重大伤亡、道路通信中断，自 2026-08-28 0 时起暂停签发前往日喀则市的电子边境管理区通行证，已持证且目的地含日喀则的人员暂勿前往，恢复时间另行公布。截至 2026-10-03，国家移民管理局通知公告中未见恢复公告。定日（珠峰方向）、萨嘎、仲巴、亚东、聂拉木、吉隆等边境县属日喀则市；公告原文只写“日喀则市”，具体影响范围待确认。",
+   "data": {
+    "suspended_from": "2026-08-28 00:00",
+    "area": "西藏日喀则市",
+    "resume": "另行发布（截至2026-10-03未见）"
+   },
+   "src": [
+    "https://www.nia.gov.cn/n741440/n741542/c1797217/content.html",
+    "https://www.nia.gov.cn/n741440/n741542/index.html"
+   ],
+   "confidence": "high",
+   "as_of": "2026-10-03",
+   "title": "暂停签发前往日喀则市的通行证",
+   "checked": "2026-10-03",
+   "review_by": "2026-11-01",
+   "review_note": "暂停签发，恢复时间另行公布，每月复查"
+  },
+  {
+   "topic": "4",
+   "key": "tibet_border_area_list",
+   "finding": "维基百科列出的西藏边境管理区县：日喀则市仲巴、萨嘎、聂拉木、定日、康马、亚东、岗巴、定结、吉隆；山南市错那、隆子、洛扎、浪卡子；林芝市米林、朗县、察隅、墨脱；阿里地区普兰、札达、日土、噶尔。这是二手来源，出发前在 12367 平台按目的地核对。",
+   "data": {
+    "日喀则": [
+     "仲巴",
+     "萨嘎",
+     "聂拉木",
+     "定日",
+     "康马",
+     "亚东",
+     "岗巴",
+     "定结",
+     "吉隆"
+    ],
+    "山南": [
+     "错那",
+     "隆子",
+     "洛扎",
+     "浪卡子"
+    ],
+    "林芝": [
+     "米林",
+     "朗县",
+     "察隅",
+     "墨脱"
+    ],
+    "阿里": [
+     "普兰",
+     "札达",
+     "日土",
+     "噶尔"
+    ]
+   },
+   "src": [
+    "https://zh.wikipedia.org/wiki/%E8%BE%B9%E9%98%B2%E8%AF%81"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-10-03",
+   "title": "西藏需办通行证的县",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "4",
+   "key": "tibet_documents_checkpoint_dog_not_found",
+   "finding": "未查到官方来源说明内地居民自驾进藏的必带证件、进藏检查站对车辆的要求，以及西藏对携带犬只入藏的专门规定。携犬入藏按全国规定至少需要《动物检疫合格证明》，西藏的专门要求待确认。",
+   "data": {},
+   "src": [],
+   "confidence": "low",
+   "as_of": "2026-10-03",
+   "title": "自驾进藏证件与携犬规定",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "5",
+   "key": "xinjiang_refuel",
+   "finding": "2025–2026 年多篇自驾攻略称新疆加油站需刷身份证并人脸识别，司机本人到场，部分加油站进站和加油各刷一次。“人车分离”、汽车桶装油和限量规定未查到官方文件。检查站常见查验身份证、驾驶证（来源可信度低）。",
+   "data": {
+    "id_scan": true,
+    "face_recognition": "多个来源称有",
+    "driver_must_be_present": true,
+    "jerry_can": "未查到汽车桶装油规定；摩托车用油壶见2018年文章",
+    "limit": "未查到"
+   },
+   "src": [
+    "https://www.benyuelx.com/news/224.html",
+    "https://m.sohu.com/n/539169861/"
+   ],
+   "confidence": "low",
+   "as_of": "2026-04-20",
+   "title": "新疆加油",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "5",
+   "key": "xinjiang_animal_entry",
+   "finding": "新疆维吾尔自治区人民政府新政函〔2026〕15 号：2026-02-01 起，跨省（区）道路运输动物须经指定通道进疆，附动物检疫证明，接受检查站检查、登记和消毒；省际公路动物卫生监督检查站调整为 5 个。通告没有单独提到宠物犬，自驾携犬是否查验、是否处罚官方未写明；“抽查并罚款 500 元、劝返”只见于消费类文章，未核实。",
+   "data": {
+    "doc": "新政函〔2026〕15号",
+    "effective": "2026-02-01",
+    "checkpoints": 5
+   },
+   "src": [
+    "https://www.xinjiang.gov.cn/xinjiang/zfgbml/202603/33e5ba43dd8740ab82997d78f6d4b0b4.shtml"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-03-15",
+   "title": "动物进疆检查",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "6",
+   "key": "dog_cross_province_quarantine_legal",
+   "finding": "《动物防疫法》要求运输动物附检疫证明；携犬出户须佩戴犬牌、系犬绳。犬猫跨省运输须在出发地申报检疫，取得《动物检疫合格证明》：多地政务页面写明提前 3 天申报、证明有效期最长 5 天，犬需有效期内的狂犬病免疫证明和抗体检测合格，多地不收费。条文针对“运输”，私家车自驾携犬被查验的频率官方未说明。",
+   "data": {
+    "advance_notice_days": 3,
+    "certificate_validity_max_days": 5,
+    "dog_requirements": [
+     "狂犬病免疫证明（免疫后1年内保护期）",
+     "狂犬病抗体检测合格",
+     "临床健康检查"
+    ],
+    "cat_requirements": "无需抗体检测",
+    "shanghai_putuo_extra": "犬证、居住证明、出行信息；跨省为动物A证，有效≤5天；检查报告14天；免费",
+    "apps": "湖南鄂州/长沙官方页面提到“宠运通”小程序/APP；广州为“广州动物检验”小程序"
+   },
+   "src": [
+    "https://zh.wikisource.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%8A%A8%E7%89%A9%E9%98%B2%E7%96%AB%E6%B3%95_(2021%E5%B9%B4)",
+    "http://www.zjxj.gov.cn/art/2025/8/20/art_1635154_59031109.html",
+    "https://nyj.ezhou.gov.cn/xxgk/fdzdgknr/qtzdgk/hygq/202501/t20250120_686480.html",
+    "https://www.shpt.gov.cn/bm-ms/20250213/956737.html",
+    "https://m.gmw.cn/2026-09/24/content_1304567567.htm"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-09-24",
+   "notes": "“牧运通”：在检索摘要里被称为全国线上出证渠道，但未见农业农村部或省级官方页面确认，所以不写成事实；各地实际入口不同，需在出发地农业农村局/动物卫生监督所确认。",
+   "title": "携犬跨省",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "6",
+   "key": "beijing_large_dog_rule",
+   "finding": "《北京市养犬管理规定》（2003 年）：重点管理区每户限养一只犬，不得饲养烈性犬、大型犬；北京市农业局京农畜字〔2003〕47 号规定重点管理区允许成年体高 35 厘米及以下的犬，导盲犬、扶助犬除外。第十七条禁止携犬进入商场、饭店、公园、公共绿地、医院、展览馆、游乐场、候车室等公共场所。官方页面没有外地游客临时携犬入京的例外条款，体高超过 35 厘米的犬进入重点管理区是否违规，待向北京公安或农业部门确认；文本为 2003 年原文，后续修订未核对。",
+   "data": {
+    "height_limit_cm": 35,
+    "key_zone": "东城、西城、朝阳、海淀、丰台、石景山（2003原文还含崇文、宣武）",
+    "doc": "京农畜字〔2003〕47号"
+   },
+   "src": [
+    "https://www.beijing.gov.cn/zhengce/zhengcefagui/202310/t20231023_3284516.html",
+    "https://zh.wikisource.org/wiki/%E5%8C%97%E4%BA%AC%E5%B8%82%E5%85%BB%E7%8A%AC%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A",
+    "https://banshi.beijing.gov.cn/pubtask/bhyjs/dog/dog.html"
+   ],
+   "confidence": "medium",
+   "as_of": "2026-10-03",
+   "title": "北京养犬规定",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "6",
+   "key": "service_area_dog_and_pet_hotels",
+   "finding": "未查到国家层面对高速服务区遛狗或设置宠物区的规定。有报道称四川出现首个“宠物友好驿站”（2026-08-18）、高德地图可筛选“宠物友好服务区”，均未核实。北京日报 2025-06-11 报道美团、大众点评“必住榜”中宠物友好酒店同比增长 40%。",
+   "data": {},
+   "src": [
+    "https://xinwen.bjd.com.cn/content/s684956c2e4b0aabe0a023534.html"
+   ],
+   "confidence": "low",
+   "as_of": "2025-06-11",
+   "title": "服务区与宠物友好住宿",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "7",
+   "key": "qiongzhou_ferry",
+   "finding": "2024 年春运期间报道：徐闻港至海口小轿车（含驾驶员）415.5 元/车；另一来源称客位 41.5 元/人（无日期）。2025–2026 年官方价目和宠物政策未查到，出发前通过官方渠道核价。",
+   "data": {
+    "xuwen_haikou_sedan_with_driver_yuan_2024": 415.5,
+    "passenger_ticket_yuan_snippet": 41.5,
+    "pet_policy": "未查到"
+   },
+   "src": [
+    "https://news.qq.com/rain/a/20240201A0807400"
+   ],
+   "confidence": "low",
+   "as_of": "2024-02-01",
+   "title": "琼州海峡轮渡",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "8",
+   "key": "g318_g219_rules",
+   "finding": "G318 西藏段、G219 新藏线的限速、区间测速和夜间限行官方通告未查到。",
+   "data": {},
+   "src": [],
+   "confidence": "low",
+   "as_of": "2026-10-03",
+   "title": "G318、G219 限速与区间测速",
+   "checked": "2026-10-03"
+  },
+  {
+   "topic": "9",
+   "key": "dog_altitude_and_hot_car",
+   "finding": "未查到可引用的兽医资料和车内升温数据，页面上的相关建议为经验做法。",
+   "data": {},
+   "src": [],
+   "confidence": "low",
+   "as_of": "2026-10-03",
+   "title": "狗的高原反应与车内高温",
+   "checked": "2026-10-03"
+  }
+ ]
+}
