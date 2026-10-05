@@ -4,7 +4,7 @@
 import { comfortScore } from "./comfort";
 import { addDays, monthOf, newYearLeaveDays } from "./dates";
 import { haversine } from "./geo";
-import { keepNode, nightsFor } from "./stay";
+import { drivingDays, keepNode, nightsFor } from "./stay";
 import type { Dataset, Leg, PlanInput, PlanPart, RouteNode } from "./types";
 
 /** Loop order starting at `entryIdx`; legs[i] goes from nodes[i] to nodes[i+1] (wrapping back to the entry). */
@@ -188,7 +188,7 @@ function searchOrder(data: Dataset, input: PlanInput, gates: Record<string, [num
   const month = (d: number) => monthAt[Math.min(MAX - 1, d)];
   const ny = input.newYearHome ? newYearLeaveDays(input.startDate) : [];
   const nyDays = input.newYearHome?.days ?? 0;
-  const dayRoad = (h: number) => Math.max(0, Math.ceil(h / input.maxDriveHours) - 1);
+  const dayRoad = (h: number) => drivingDays(h, input.maxDriveHours) - 1;
 
   const score = (order: Unit[]): number => {
     let day = 0, km = 0, good = 0, gateBad = 0, longEnd = 0, nyNext = 0;
@@ -198,7 +198,7 @@ function searchOrder(data: Dataset, input: PlanInput, gates: Record<string, [num
       const startEnd = 2 * u + (rev ? 1 : 0), endEnd = 2 * u + (rev ? 0 : 1);
       const d = at < 0 ? fromHome[startEnd] : drive[at][startEnd];
       km += d.km;
-      day += at < 0 ? Math.max(1, Math.ceil(d.h / input.maxDriveHours)) - 1 : dayRoad(d.h);
+      day += dayRoad(d.h);
       const g = gates[seg];
       if (g && (month(day) < g[0] || month(day) > g[1])) gateBad++;
       const stops = units[u].stops;

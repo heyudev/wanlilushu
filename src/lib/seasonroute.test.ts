@@ -2,7 +2,10 @@ import { describe, expect, it } from "vitest";
 import { addDays, newYearLeaveDays, SPRING_FESTIVAL } from "./dates";
 import { baseInput, fixture } from "./fixture";
 import { routeMode, seasonOrder } from "./order";
-import { buildPlan } from "./plan";
+import { buildPlan, TRANSFER_SEG, transferKm } from "./plan";
+import { segmentRuns } from "../components/segments";
+import { estimateDrive } from "./order";
+import { drivingDays } from "./stay";
 import type { Dataset, Leg, PlanInput, RouteNode } from "./types";
 
 // Four segments, each good in one season, stored in an order that suits none of them:
@@ -66,7 +69,7 @@ describe("route order", () => {
   it("drives long connecting legs over several days, with nights on the road", () => {
     const p = buildPlan(seasons(), input({ maxDriveHours: 7 }), gates);
     const t = p.legs.find((l) => l.parts.some((x) => "transfer" in x))!;
-    expect(t.driveDays).toBe(Math.ceil(t.h / 7));
+    expect(t.driveDays).toBe(drivingDays(t.h, 7));
     const next = p.stops.find((s) => s.node.id === t.to)!;
     expect(next.date).toBe(addDays(t.date, t.driveDays - 1));
     // a drive that is already split over several days is not flagged as too long
@@ -81,6 +84,45 @@ describe("route order", () => {
     const stored = parts.find((x) => "transfer" in x && x.transfer === "P1>S0");
     expect(stored && "transfer" in stored && [stored.km, stored.estimated]).toEqual([1234, false]);
     expect(parts.some((x) => "transfer" in x && x.estimated)).toBe(true);
+  });
+});
+
+describe("connecting drives", () => {
+  it("are not counted in the segments they join", () => {
+    const p = buildPlan(seasons(), input(), gates);
+    const transfer = p.legs.reduce((a, l) => a + transferKm(l), 0);
+    expect(transfer).toBeGreaterThan(0);
+    const inSegments = segmentRuns(p).reduce((a, r) => a + r.km, 0);
+    expect(inSegments + transfer).toBeCloseTo(p.legs.reduce((a, l) => a + l.km, 0));
+    expect(p.costBySeg[TRANSFER_SEG].km).toBeCloseTo(transfer);
+  });
+});
+
+// a home far from the fixture's stops, so driving home takes several days
+function farHome() {
+  const d = fixture();
+  d.starts.push({ name: "远城", ll: [45, 90], entry: "a", km: 0, h: 0, hw: 0 });
+  const daysEach = drivingDays(estimateDrive(d, d.nodes[0].ll, [45, 90]).h, 7);
+  return { d, daysEach };
+}
+
+describe("trips home", () => {
+  it("adds the days and hotel nights of a long drive home, both ways", () => {
+    const { d, daysEach } = farHome();
+    expect(daysEach).toBeGreaterThan(1);
+    const over = { start: "远城", maxDriveHours: 7 };
+    const fly = buildPlan(d, baseInput({ ...over, breaks: [{ after: "a", days: 10, mode: "fly" }] }));
+    const drive = buildPlan(d, baseInput({ ...over, breaks: [{ after: "a", days: 10, mode: "drive" }] }));
+    expect(drive.breaks[0].roadDays).toBe(2 * (daysEach - 1));
+    expect(drive.days - fly.days).toBe(2 * (daysEach - 1));
+    expect(drive.stops[1].date).toBe(addDays(fly.stops[1].date, 2 * (daysEach - 1)));
+    expect(drive.totals.tripDays).toBe(fly.totals.tripDays);
+  });
+
+  it("boards the dog while the family flies home", () => {
+    const p = buildPlan(fixture(), baseInput({ dog: true, dogPerDay: 0, boardingPerDay: 100, breaks: [{ after: "a", days: 10, mode: "fly" }] }));
+    expect(p.breaks[0].dogBoarding).toBe(10);
+    expect(p.costs.dog).toBe(1000);
   });
 });
 
@@ -105,6 +147,17 @@ describe("going home for the Spring Festival", () => {
     expect(before.sleep).toBe("R");
     expect(home.days).toBe(stay.days + 14);
     expect(home.costs.tickets).toBe(stay.costs.tickets);
+  });
+
+  it("leaves earlier when driving home takes several days, to be home before New Year's Eve", () => {
+    const { d, daysEach } = farHome();
+    const over = { start: "远城", maxDriveHours: 7, startDate: "2027-12-20", nightsOverride: { a: 60 } };
+    const fly = buildPlan(d, baseInput({ ...over, newYearHome: { days: 14, mode: "fly" } }));
+    const drive = buildPlan(d, baseInput({ ...over, newYearHome: { days: 14, mode: "drive" } }));
+    expect(fly.breaks[0].date).toBe("2028-01-22");
+    expect(drive.breaks[0].date).toBe(addDays("2028-01-22", -(daysEach - 1)));
+    // arriving home three days before New Year's Eve (2028-01-25)
+    expect(addDays(drive.breaks[0].date, daysEach - 1)).toBe("2028-01-22");
   });
 
   it("needs no extra trip when the traveller is already home for another break", () => {

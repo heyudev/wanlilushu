@@ -27,3 +27,11 @@ export function nightsFor(node: RouteNode, input: PlanInput): number {
   return Math.max(1, Math.round(base * (input.stayFactor || 1)));
 }
 
+
+/**
+ * Days needed for a drive of `h` hours when the traveller drives at most `max` hours a day. A drive up to
+ * 10% over the limit still fits in one day (it is flagged as a long day instead of costing a night on the road).
+ */
+export function drivingDays(h: number, max: number): number {
+  return Math.max(1, Math.ceil(h / max - 0.1));
+}

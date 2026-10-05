@@ -7,9 +7,8 @@ import {
 import { comfortScore } from "./comfort";
 import { addDays, daysBetween, holidayName, monthOf, newYearLeaveDays } from "./dates";
 import { GATE_WINDOWS, PERMIT_NODES, SEASONAL_ROADS, SUSPENDED_NODES } from "./defaults";
-import { haversine } from "./geo";
 import { seasonFit } from "./season";
-import { keepNode, nightsFor } from "./stay";
+import { drivingDays, keepNode, nightsFor } from "./stay";
 import { estimateDrive, loopRoute, routeFromOrder, routeMode, seasonOrder } from "./order";
 
 export { keepNode, nightsFor, nodeInterests, PLATEAU_M } from "./stay";
@@ -41,7 +40,15 @@ export function findStart(data: Dataset, name: string): StartCity {
 
 function approachFor(start: StartCity, input: PlanInput): Approach | null {
   if (start.km <= 0) return null;
-  return { km: start.km, h: start.h, hw: start.hw, days: Math.max(1, Math.ceil(start.h / input.maxDriveHours)) };
+  return { km: start.km, h: start.h, hw: start.hw, days: drivingDays(start.h, input.maxDriveHours) };
+}
+
+/** Plan.costBySeg key for the connecting drives between segments */
+export const TRANSFER_SEG = "transfer";
+
+/** km of a day's drive spent on connecting drives between segments */
+export function transferKm(l: PlanLeg): number {
+  return l.parts.reduce((a, p) => a + ("transfer" in p ? p.km : 0), 0);
 }
 
 /** less than this from home and the trip simply starts (or ends) at that stop */
@@ -50,7 +57,7 @@ const SAME_PLACE_KM = 30;
 function estimatedApproach(data: Dataset, from: [number, number], to: [number, number], input: PlanInput): Approach | null {
   const d = estimateDrive(data, from, to);
   if (d.km < SAME_PLACE_KM) return null;
-  return { ...d, days: Math.max(1, Math.ceil(d.h / input.maxDriveHours)), estimated: true };
+  return { ...d, days: drivingDays(d.h, input.maxDriveHours), estimated: true };
 }
 
 const emptyCosts = (): CostBreakdown => ({
@@ -83,8 +90,11 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   const lastNode = closed ? nodes[0] : nodes[N - 1];
   // the loop joins the start city's entry stop (road data); a season route starts and ends wherever its
   // first and last segments do, so those drives are estimated
-  const approach = closed ? approachFor(start, input) : estimatedApproach(data, start.ll, nodes[0].ll, input);
-  const homeward = closed ? approach : estimatedApproach(data, lastNode.ll, start.ll, input);
+  // (the start city's own entry stop has road data either way)
+  const roadOr = (node: RouteNode, from: [number, number], to: [number, number]) =>
+    node.id === start.entry ? approachFor(start, input) : estimatedApproach(data, from, to, input);
+  const approach = closed ? approachFor(start, input) : roadOr(nodes[0], start.ll, nodes[0].ll);
+  const homeward = closed ? approach : roadOr(lastNode, lastNode.ll, start.ll);
   const people = input.adults + input.kids;
   const costs = emptyCosts();
   const warnings: PlanWarning[] = [];
@@ -96,10 +106,11 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   let day = approach ? approach.days - 1 : 0;
   const stops: Stop[] = [];
   const uncosted = new Set<Plan["uncosted"][number]>();
-  // nearest stop along the route (either side) that has local price data
+  // nearest stop along the route (either side) that has local price data; only a loop wraps around
   const pricedNear = (i: number): RouteNode | null => {
     for (let k = 0; k < N; k++) {
       for (const j of [i - k, i + k]) {
+        if (!closed && (j < 0 || j >= N)) continue;
         const n = nodes[(j + N) % N];
         if (mealsPerDay(data, n.id, input.foodTier, input.meals) != null) return n;
       }
@@ -252,19 +263,28 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
 
   // ---- trips home
   const breaks: PlanBreak[] = [];
+  /** days on the road each way when driving home from `node` (one day's drive fits in the day you leave) */
+  const homeDriveDays = (node: RouteNode) => drivingDays(estimateDrive(data, node.ll, start.ll).h, input.maxDriveHours);
+  let dogBoardingAtHome = 0;
   const goHome = (node: RouteNode, days: number, mode: "drive" | "fly", isNewYear: boolean) => {
-    const oneWay = haversine(node.ll, start.ll) * 1.25;
+    const way = estimateDrive(data, node.ll, start.ll);
+    // a drive longer than a day adds days and hotel nights on the road, both ways
+    const roadDays = mode === "drive" ? 2 * (homeDriveDays(node) - 1) : 0;
     let cost: number;
     if (mode === "fly") {
       cost = input.flightPerPerson * (input.adults + input.kids) * 2 + input.parkingPerDay * days;
     } else {
-      const e = energyFor(oneWay, node.seg, fuelPriceFor(node, data, input), input);
-      cost = 2 * (e.fuelCost + e.elecCost + oneWay * 0.8 * input.tollPerKm);
+      const e = energyFor(way.km, node.seg, fuelPriceFor(node, data, input), input);
+      cost = 2 * (e.fuelCost + e.elecCost + way.hw * input.tollPerKm) + (lodgingCost("H", roadDays, input) ?? 0);
+      if (roadDays > 0 && input.hotelPerRoom == null) uncosted.add("hotel");
     }
-    breaks.push({ after: node.id, stopIdx: stops.length - 1, date: addDays(input.startDate, day), days, mode, km: oneWay, cost,
-      ...(isNewYear ? { newYear: true } : {}) });
+    // flying home, the dog stays behind in boarding
+    const dogBoarding = input.dog && mode === "fly" ? days : 0;
+    dogBoardingAtHome += dogBoarding;
+    breaks.push({ after: node.id, stopIdx: stops.length - 1, date: addDays(input.startDate, day), days, mode, km: way.km, cost,
+      ...(roadDays ? { roadDays } : {}), ...(dogBoarding ? { dogBoarding } : {}), ...(isNewYear ? { newYear: true } : {}) });
     costs.home += cost;
-    day += days;
+    day += days + roadDays;
   };
   const takeBreak = (node: RouteNode) => {
     const b = input.breaks.find((x) => x.after === node.id);
@@ -275,7 +295,9 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   };
   /** A stay of `nights` at a stop; when a Spring Festival trip home falls inside it, the stay is split around it. */
   const stay = (node: RouteNode, nights: number, o: StopOpts) => {
-    const leave = nyLeave[nyNext];
+    // driving home takes longer from far away: leave early enough to be home before New Year's Eve
+    const leave = nyLeave[nyNext] == null ? undefined
+      : nyLeave[nyNext] - (newYear?.mode === "drive" ? homeDriveDays(node) - 1 : 0);
     if (newYear && leave != null && leave < day + nights) {
       nyNext++;
       // leave on the planned day, but sleep at least one night here first
@@ -336,9 +358,8 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
       acc.via.push(next.id);
       continue;
     }
-    // a connecting drive between segments can take several days, with nights on the road
-    const transfer = acc.parts.some((p) => "transfer" in p);
-    const driveDays = transfer ? Math.max(1, Math.ceil(acc.h / input.maxDriveHours)) : 1;
+    // a drive longer than a day (mostly connecting drives between segments) takes several, with nights on the road
+    const driveDays = acc.ferryKm > 0 ? 1 : drivingDays(acc.h, input.maxDriveHours);
     planLegs.push({
       from: fromNode.id, to: next.id, km: acc.km, h: acc.h, hw: acc.hw, ferryKm: acc.ferryKm, via: acc.via,
       seg: fromNode.seg, day, date: addDays(input.startDate, day), energy: energyForDay(acc.energy, input), toll: acc.toll,
@@ -363,7 +384,8 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
 
   const endDay = day + (homeward ? homeward.days : 0);
   const days = endDay + 1;
-  const breakDays = breaks.reduce((a, b) => a + b.days, 0);
+  // days away from the trip: at home and on the road there and back
+  const breakDays = breaks.reduce((a, b) => a + b.days + (b.roadDays ?? 0), 0);
   const tripDays = days - breakDays;
 
   // ---- totals and costs
@@ -377,7 +399,12 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   for (const l of planLegs) {
     km += l.km; hwKm += l.hw; driveH += l.h; ferryKm += l.ferryKm;
     costs.fuel += l.energy.fuelCost; costs.electricity += l.energy.elecCost; costs.toll += l.toll;
-    segAdd(l.seg, l.km, 0, l.energy.fuelCost + l.energy.elecCost + l.toll);
+    // a connecting drive belongs to neither segment it joins: its share of the day goes to its own bucket
+    const drive = l.energy.fuelCost + l.energy.elecCost + l.toll + (lodgingCost("H", l.driveDays - 1, input) ?? 0);
+    const tKm = transferKm(l);
+    const share = l.km > 0 ? tKm / l.km : 0;
+    segAdd(l.seg, l.km - tKm, 0, drive * (1 - share));
+    if (tKm > 0) segAdd(TRANSFER_SEG, tKm, 0, drive * share);
     roadNights += Math.max(0, l.driveDays - 1);
   }
   let careDays = 0;
@@ -412,7 +439,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   }
   const entryFood = stops[0]?.foodPerPerson;
   if (entryFood != null) costs.food += Math.max(0, tripDays - foodDays) * eaters * entryFood;
-  costs.dog = input.dog ? tripDays * input.dogPerDay + careDays * input.boardingPerDay : 0;
+  costs.dog = input.dog ? tripDays * input.dogPerDay + (careDays + dogBoardingAtHome) * input.boardingPerDay : 0;
   costs.maintenance = ((km + localKm) / 10_000) * input.maintenancePer10k;
   costs.misc = tripDays * input.miscPerDay;
 
@@ -422,12 +449,12 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   if (offStops.length) {
     warnings.push({
       kind: "season", level: offStops.length > 8 ? "warn" : "info",
-      text: `${offStops.length} 个停留点到达时不在最佳季节，可以调整出发日期或方向。`,
+      text: `${offStops.length} 个停留点到达时不在最佳季节，${closed ? "可以调整出发日期或方向，或者改为跟着季节走。" : "可以调整出发日期。"}`,
       nodes: offStops.map((s) => s.node.id),
     });
   }
-  // connecting drives already take as many days as they need
-  const longLegs = planLegs.filter((l) => l.h > input.maxDriveHours && l.ferryKm === 0 && l.driveDays <= 1);
+  // drives already split over several days only count when a day is still over the limit
+  const longLegs = planLegs.filter((l) => l.ferryKm === 0 && l.h / Math.max(1, l.driveDays) > input.maxDriveHours);
   if (longLegs.length) {
     warnings.push({
       kind: "long-drive", level: "warn",

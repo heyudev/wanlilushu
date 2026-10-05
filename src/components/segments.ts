@@ -1,4 +1,5 @@
 // Groups a plan's stops into contiguous segment runs for the route and itinerary views.
+import { transferKm } from "../lib/plan";
 import type { Dataset, Plan, PlanLeg, ScenicRoad, Stop } from "../lib/types";
 
 export interface SegRun {
@@ -21,7 +22,8 @@ export function segmentRuns(plan: Plan): SegRun[] {
       runs.push(run);
     }
     run.items.push({ stop, leg, index });
-    run.km += leg?.km ?? 0;
+    // connecting drives into a segment are not part of it (shown on their own in the day list)
+    run.km += leg ? leg.km - transferKm(leg) : 0;
     run.nights += stop.nights;
     if (!stop.transit) {
       run.counted++;

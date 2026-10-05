@@ -412,7 +412,12 @@ export interface PlanBreak {
   stopIdx: number;
   /** the yearly Spring Festival trip */
   newYear?: boolean;
+  /** driving: days on the road there and back beyond the day of leaving and of returning */
+  roadDays?: number;
+  /** flying: days the dog is boarded meanwhile */
+  dogBoarding?: number;
   date: string;
+  /** at home, not counting days on the road */
   days: number;
   mode: "drive" | "fly";
   /** one-way distance home, great-circle × 1.25 (estimate) */

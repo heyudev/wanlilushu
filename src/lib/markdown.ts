@@ -57,7 +57,7 @@ export function planToMarkdown(plan: Plan, data: Dataset): string {
     if (!s.transit) for (const f of s.node.food) L.push(`- 美食：${f[0]}（人均约 ¥${f[2]}）${f[1] ? `：${f[1]}` : ""}`);
     if (s.node.tip && !s.transit) L.push(`- 提示：${s.node.tip}`);
     for (const b of plan.breaks.filter((x) => x.stopIdx === i)) {
-      L.push(`- ${b.newYear ? `${shortDate(b.date)} 回家过年` : "回家"} ${b.days} 天（${b.mode === "fly" ? "坐飞机" : "开车"}，往返约 ${yuan(b.cost)}），之后从这里接着走`);
+      L.push(`- ${b.newYear ? `${shortDate(b.date)} 回家过年` : "回家"}，在家住 ${b.days} 天（${b.mode === "fly" ? "坐飞机" : "开车"}${b.roadDays ? `，路上来回多花 ${b.roadDays} 天` : ""}，往返约 ${yuan(b.cost)}${b.dogBoarding ? `，狗寄养 ${b.dogBoarding} 天` : ""}），之后从这里接着走`);
     }
     L.push("");
   });

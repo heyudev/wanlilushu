@@ -92,13 +92,13 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
                     {leg && !leg.resume && (
                       <div className="leg-line small muted">
                         {leg.ferryKm > 0 ? "渤海轮渡（时长未公示，按估算）"
-                          : leg.driveDays > 1 || leg.parts.some((p) => "transfer" in p)
+                          : leg.parts.some((p) => "transfer" in p)
                             ? `转场 ${km(leg.km)} · 约 ${hours(leg.h)}${leg.driveDays > 1 ? `，分 ${leg.driveDays} 天开，路上住 ${leg.driveDays - 1} 晚` : ""}${leg.parts.some((p) => "transfer" in p && p.estimated) ? "（无路网数据，按直线估算）" : ""}`
-                            : `驾驶 ${km(leg.km)} · 约 ${hours(leg.h)}`}
+                            : `驾驶 ${km(leg.km)} · 约 ${hours(leg.h)}${leg.driveDays > 1 ? `，分 ${leg.driveDays} 天开，路上住 ${leg.driveDays - 1} 晚` : ""}`}
                         {leg.toll > 0 && ` · 过路费约 ${yuan(leg.toll)}`}
                         {leg.via.length > 0 && ` · 途经 ${leg.via.length} 处`}
                         {roadsOf(leg).map((r) => <span key={r.id} className="road-tag">{r.name}</span>)}
-                        {leg.h > plan.input.maxDriveHours && leg.ferryKm === 0 && leg.driveDays <= 1 && <span className="chip ok">长途日</span>}
+                        {leg.ferryKm === 0 && leg.h / Math.max(1, leg.driveDays) > plan.input.maxDriveHours && <span className="chip ok">长途日</span>}
                       </div>
                     )}
                     <button type="button" className="day-row" onClick={() => onOpenStop(index)}>
@@ -118,7 +118,8 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
                     </button>
                     {plan.breaks.filter((b) => b.stopIdx === index).map((b) => (
                       <div key={b.date} className="break-line small">
-                        {b.newYear ? `${shortDate(b.date)} 回家过年，` : ""}{b.mode === "fly" ? "车停在这里，坐飞机" : "开车"}回家 {b.days} 天（单程约 {km(b.km)}，往返约 {yuan(b.cost)}），之后从这里接着走
+                        {b.newYear ? `${shortDate(b.date)} 回家过年，` : ""}{b.mode === "fly" ? "车停在这里，坐飞机" : "开车"}回家住 {b.days} 天
+                        （单程约 {km(b.km)}{b.roadDays ? `，路上来回多花 ${b.roadDays} 天` : ""}，往返约 {yuan(b.cost)}{b.dogBoarding ? `；狗寄养 ${b.dogBoarding} 天` : ""}），之后从这里接着走
                       </div>
                     ))}
                   </li>

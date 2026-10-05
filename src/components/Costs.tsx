@@ -1,4 +1,4 @@
-import { costTotal } from "../lib/plan";
+import { costTotal, TRANSFER_SEG } from "../lib/plan";
 import { int, yuan, yuanShort } from "../lib/format";
 import type { CostBreakdown, Dataset, Plan, PlanInput } from "../lib/types";
 import { CostParams, EatSleepParams, type SetInput } from "./TripSettings";
@@ -28,7 +28,11 @@ export function Costs({ plan, data, set, setAll }: { plan: Plan; data: Dataset; 
     .filter((r) => r.v > 0)
     .sort((a, b) => b.v - a.v);
   const max = Math.max(...rows.map((r) => r.v), 1);
-  const segs = data.segs.filter((s) => plan.costBySeg[s.k]).map((s) => ({ s, c: plan.costBySeg[s.k] }));
+  // segments in travel order, then the connecting drives between them
+  const segs = [
+    ...plan.order.map((u) => data.segs.find((s) => s.k === u.seg)).filter((s) => s && plan.costBySeg[s.k]).map((s) => ({ s: s!, c: plan.costBySeg[s!.k] })),
+    ...(plan.costBySeg[TRANSFER_SEG] ? [{ s: { k: "→", name: "转场", range: "", season: "" }, c: plan.costBySeg[TRANSFER_SEG] }] : []),
+  ];
   const segMax = Math.max(...segs.map((x) => x.c.cost), 1);
   return (
     <div>
