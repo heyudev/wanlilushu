@@ -8,6 +8,7 @@ import { wgsToGcj } from "../lib/coords";
 import { shortDate } from "../lib/dates";
 import { PERMIT_NODES } from "../lib/defaults";
 import { km } from "../lib/format";
+import { loadTransferGeom } from "../lib/transferGeom";
 import type { Dataset, Plan, Stop } from "../lib/types";
 
 import { AMAP_ENABLED, loadAMap } from "./amapLoader";
@@ -101,6 +102,7 @@ export function AmapView(props: Props) {
   const [ready, setReady] = useState(false);
   const [satellite, setSatellite] = useState(false);
   const [layers, setLayers] = useState<Record<LayerKey, boolean>>(loadLayers);
+  const [transferGeom, setTransferGeom] = useState<Record<string, [number, number][]> | null>(null);
   const [legendOpen, setLegendOpen] = useState(() => typeof window === "undefined" || window.innerWidth > 760);
 
   useEffect(() => { try { localStorage.setItem(LAYER_STORE, JSON.stringify(layers)); } catch { /* optional */ } }, [layers]);
@@ -143,6 +145,12 @@ export function AmapView(props: Props) {
       setReady(false);
     };
   }, []);
+
+  // connecting drives between segments: their road geometry is a separate file, fetched when first needed
+  const hasTransfers = plan.legs.some((l) => l.parts.some((p) => "transfer" in p));
+  useEffect(() => {
+    if (hasTransfers && !transferGeom) loadTransferGeom().then(setTransferGeom);
+  }, [hasTransfers, transferGeom]);
 
   // ---- draw everything for the current plan and layer switches
   useEffect(() => {
@@ -197,6 +205,25 @@ export function AmapView(props: Props) {
       }
     });
 
+    // connecting drives: dashed, along the road when its geometry is known, otherwise a straight line
+    const nodeLl = new Map(data.nodes.map((n) => [n.id, n.ll]));
+    for (const pl of plan.legs) {
+      for (const p of pl.parts) {
+        if (!("transfer" in p)) continue;
+        const [a, b] = p.transfer.split(">");
+        const road = transferGeom?.[p.transfer];
+        const path = road?.length ? road.map(gcj) : [nodeLl.get(a), nodeLl.get(b)].filter(Boolean).map((ll) => llToGcj(ll!));
+        const line = new AMap.Polyline({
+          path, strokeColor: C.route, strokeWeight: 4, strokeOpacity: 0.8, strokeStyle: "dashed", strokeDasharray: [10, 6],
+          lineJoin: "round", lineCap: "round", showDir: layers.dir, dirColor: "#ffffff", zIndex: 48, cursor: "pointer",
+        });
+        line.on("mouseover", (e: any) => showHover(e.lnglat,
+          `转场 ${nodeName.get(pl.from)} → ${nodeName.get(pl.to)}\n${km(pl.km)} · 约 ${pl.h.toFixed(1)} 小时${pl.driveDays > 1 ? `，分 ${pl.driveDays} 天` : ""} · ${shortDate(pl.date)}${p.estimated ? "\n无路网数据，按直线估算" : ""}`));
+        line.on("mouseout", hideHover);
+        G.ferry.push(line);
+      }
+    }
+
     // day trips: dashed spoke from the stop to the destination
     if (layers.excursions) {
       for (const s of plan.stops) {
@@ -212,9 +239,10 @@ export function AmapView(props: Props) {
 
     // stops in one collision-aware layer; rank decides who keeps the label when crowded
     const labels = new AMap.LabelsLayer({ collision: true, allowCollision: false, zIndex: 120 });
-    const entryId = plan.entry.id;
+    const lastStop = plan.stops[plan.stops.length - 1];
+    const pinned = new Set([plan.entry.id, ...(plan.loop ? [] : [lastStop.node.id])]);
     for (const { s, order } of ordered) {
-      if (s.node.id === entryId) continue; // drawn as a pin
+      if (pinned.has(s.node.id)) continue; // drawn as a pin
       // country scale shows the main places; the rest appear as you zoom in
       const major = s.sojourn || s.comfortStay || s.waitDays > 0 || s.node.custom || (s.node.star === 3 && !s.transit);
       const m = new AMap.LabelMarker({
@@ -227,14 +255,14 @@ export function AmapView(props: Props) {
           style: { fontSize: 12, fontWeight: s.sojourn || s.node.star === 3 ? 600 : 400, fillColor: "#23201b", strokeColor: "#ffffff", strokeWidth: 3 },
         },
       });
-      const brk = plan.breaks.find((b) => b.after === s.node.id);
+      const brk = plan.breaks.find((b) => b.after === s.node.id && !b.newYear) ?? plan.breaks.find((b) => b.after === s.node.id);
       const detail = `${order}. ${s.node.n}${s.transit ? "（途中过夜）" : ""}\n${shortDate(s.date)} 到 · 住 ${s.nights} 晚${s.sojourn ? " · 旅居" : s.comfortStay ? " · 多住" : ""}${s.waitDays ? ` · 等季节 ${s.waitDays} 天` : ""}\n海拔 ${s.node.alt ?? "?"} m${brk ? `\n之后回家 ${brk.days} 天` : ""}`;
       m.on("click", () => cb.current.onSelectStop(s.node.id));
       m.on("mouseover", () => showHover(llToGcj(s.node.ll), detail));
       m.on("mouseout", hideHover);
       labels.add(m);
       if (brk) {
-        G.pins.push(new AMap.Text({ text: `回家 ${brk.days} 天`, position: llToGcj(s.node.ll), anchor: "top-center", offset: new AMap.Pixel(0, 10), zIndex: 140,
+        G.pins.push(new AMap.Text({ text: `${brk.newYear ? "回家过年" : "回家"} ${brk.days} 天`, position: llToGcj(s.node.ll), anchor: "top-center", offset: new AMap.Pixel(0, 10), zIndex: 140,
           style: { padding: "1px 6px", "border-radius": "3px", border: "0", "background-color": C.start, color: "#fff", "font-size": "11px" } }));
       }
     }
@@ -252,17 +280,31 @@ export function AmapView(props: Props) {
       if (onClick) mk.on("click", onClick);
       G.pins.push(mk);
     };
-    pin(llToGcj(entryStop.node.ll), homeIsEntry ? "起" : "入",
-      `${homeIsEntry ? "起点 · 终点" : "进入 · 离开环线"}<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDate(plan.input.startDate)} 出发，${shortDate(plan.endDate)} 回来</span>`,
-      () => cb.current.onSelectStop(entryStop.node.id));
-    if (plan.approach) {
-      const home = llToGcj(plan.start.ll);
-      pin(home, "家", `起点 · 终点<b>${plan.start.name}</b><span>开 ${km(plan.approach.km)} 接入环线</span>`);
-      G.pins.push(new AMap.Polyline({ path: [home, llToGcj(entryStop.node.ll)], strokeColor: C.start, strokeWeight: 3, strokeStyle: "dashed", strokeDasharray: [8, 6], zIndex: 46 }));
+    const homeLine = (a: [number, number], b: [number, number]) =>
+      G.pins.push(new AMap.Polyline({ path: [llToGcj(a), llToGcj(b)], strokeColor: C.start, strokeWeight: 3, strokeStyle: "dashed", strokeDasharray: [8, 6], zIndex: 46 }));
+    if (plan.loop) {
+      pin(llToGcj(entryStop.node.ll), homeIsEntry ? "起" : "入",
+        `${homeIsEntry ? "起点 · 终点" : "进入 · 离开环线"}<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDate(plan.input.startDate)} 出发，${shortDate(plan.endDate)} 回来</span>`,
+        () => cb.current.onSelectStop(entryStop.node.id));
+      if (plan.approach) {
+        pin(llToGcj(plan.start.ll), "家", `起点 · 终点<b>${plan.start.name}</b><span>开 ${km(plan.approach.km)} 接入环线</span>`);
+        homeLine(plan.start.ll, entryStop.node.ll);
+      }
+    } else {
+      // a season route starts and ends at different places
+      pin(llToGcj(entryStop.node.ll), "起", `第一站<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDate(entryStop.date)} 到</span>`,
+        () => cb.current.onSelectStop(entryStop.node.id));
+      pin(llToGcj(lastStop.node.ll), "终", `最后一站<b>${lastStop.node.n.split(" · ")[0]}</b><span>${shortDate(plan.endDate)} 到家</span>`,
+        () => cb.current.onSelectStop(lastStop.node.id));
+      if (plan.approach || plan.homeward) {
+        pin(llToGcj(plan.start.ll), "家", `家<b>${plan.start.name}</b><span>${shortDate(plan.input.startDate)} 出发，${shortDate(plan.endDate)} 回来</span>`);
+        if (plan.approach) homeLine(plan.start.ll, entryStop.node.ll);
+        if (plan.homeward) homeLine(lastStop.node.ll, plan.start.ll);
+      }
     }
 
     Object.values(G).flat().forEach((o) => map.add(o));
-  }, [ready, plan, data, ordered, layers]);
+  }, [ready, plan, data, ordered, layers, transferGeom]);
 
   // ---- segment focus: dim the others, zoom to it, swap in detailed geometry
   useEffect(() => {
@@ -338,7 +380,7 @@ export function AmapView(props: Props) {
         <button type="button" className="legend-toggle" aria-expanded={legendOpen} onClick={() => setLegendOpen(!legendOpen)}>图例与图层 {legendOpen ? "−" : "+"}</button>
         {legendOpen && (
           <div className="legend-body">
-            <div className="lg-row"><i className="lg-pin" />起点、终点</div>
+            <div className="lg-row"><i className="lg-pin" />起点、终点{hasTransfers && <><i className="lg-transfer" />转场</>}</div>
             <div className="lg-row"><i className="lg-shape circle" />城市 <i className="lg-shape square" />古镇村寨 <i className="lg-shape tri" />自然</div>
             <div className="lg-row"><i className="lg-shape circle fill" />三星必去 <i className="lg-shape circle ring" />途中过夜</div>
             <div className="lg-row"><i className="lg-dot" style={{ background: C.sojourn }} />旅居 <i className="lg-dot" style={{ background: C.comfort }} />多住 <i className="lg-dot" style={{ background: C.wait }} />等季节</div>

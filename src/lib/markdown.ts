@@ -39,12 +39,15 @@ export function planToMarkdown(plan: Plan, data: Dataset): string {
       L.push(`### ${seg} · ${segName.get(seg) ?? ""}`, "");
     }
     const leg = i > 0 ? plan.legs[i - 1] : null;
-    if (leg) {
+    if (leg && !leg.resume) {
       const via = leg.via.length ? `，途经 ${leg.via.map((v) => node.get(v)?.n).join("、")}` : "";
-      L.push(`> 🚗 ${shortDate(leg.date)} 驾驶 ${km(leg.km)}，约 ${hours(leg.h)}${via}`, "");
+      const transfer = leg.parts.some((p) => "transfer" in p);
+      const days = leg.driveDays > 1 ? `，分 ${leg.driveDays} 天开` : "";
+      L.push(`> 🚗 ${shortDate(leg.date)} ${transfer ? "转场" : "驾驶"} ${km(leg.km)}，约 ${hours(leg.h)}${days}${via}`, "");
     }
-    const tag = s.transit ? "（途中过夜）" : s.sojourn ? "（旅居）" : s.waitDays ? `（等季节 ${s.waitDays} 天）` : "";
+    const tag = s.resumed ? "（回家后接着住）" : s.transit ? "（途中过夜）" : s.sojourn ? "（旅居）" : s.waitDays ? `（等季节 ${s.waitDays} 天）` : "";
     L.push(`**${shortDate(s.date)} ${s.node.n}${tag}** · ${s.node.p} · 海拔 ${s.node.alt ?? "?"}m · 住 ${s.nights} 晚`, "");
+    if (s.resumed) { L.push(""); return; }
     if (s.node.about && !s.transit) L.push(`> ${s.node.about}`, "");
     const m = monthOf(s.date);
     for (const a of s.attractions) {
@@ -53,8 +56,8 @@ export function planToMarkdown(plan: Plan, data: Dataset): string {
     }
     if (!s.transit) for (const f of s.node.food) L.push(`- 美食：${f[0]}（人均约 ¥${f[2]}）${f[1] ? `：${f[1]}` : ""}`);
     if (s.node.tip && !s.transit) L.push(`- 提示：${s.node.tip}`);
-    for (const b of plan.breaks.filter((x) => x.after === s.node.id)) {
-      L.push(`- 回家 ${b.days} 天（${b.mode === "fly" ? "坐飞机" : "开车"}，往返约 ${yuan(b.cost)}），之后从这里接着走`);
+    for (const b of plan.breaks.filter((x) => x.stopIdx === i)) {
+      L.push(`- ${b.newYear ? `${shortDate(b.date)} 回家过年` : "回家"} ${b.days} 天（${b.mode === "fly" ? "坐飞机" : "开车"}，往返约 ${yuan(b.cost)}），之后从这里接着走`);
     }
     L.push("");
   });

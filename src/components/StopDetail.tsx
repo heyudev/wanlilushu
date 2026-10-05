@@ -190,7 +190,9 @@ export function StopDetail({ s, plan, data, set, onAddAfter, onSkipped }: {
         </div>
         {legIn && (
           <p className="small muted">
-            {legIn.ferryKm > 0 ? "坐渤海轮渡抵达" : `从上一站开 ${km(legIn.km)}，约 ${legIn.h.toFixed(1)} 小时`}
+            {legIn.resume ? "回家一趟之后回到这里，接着住完"
+              : legIn.ferryKm > 0 ? "坐渤海轮渡抵达"
+              : `从上一站${legIn.parts.some((p) => "transfer" in p) ? "转场" : ""}开 ${km(legIn.km)}，约 ${legIn.h.toFixed(1)} 小时${legIn.driveDays > 1 ? `，分 ${legIn.driveDays} 天` : ""}`}
             {legIn.toll > 0 && `，过路费约 ${yuan(legIn.toll)}`}
           </p>
         )}

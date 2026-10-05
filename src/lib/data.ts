@@ -7,8 +7,9 @@ import climateFile from "../data/climate.json";
 import petFile from "../data/pet_friendly.json";
 import roadsFile from "../data/roads.json";
 import pricesFile from "../data/prices.json";
+import transfersFile from "../data/transfers.json";
 import { withOrigins } from "./legs";
-import type { Attraction, Campsite, Dataset, Leg, LocalPrices, MonthClimate, PetFriendly, PolicyItem, RouteNode, ScenicRoad, Segment, StartCity, Excursion } from "./types";
+import type { Attraction, Campsite, Dataset, Leg, LocalPrices, MonthClimate, PetFriendly, PolicyItem, RouteNode, ScenicRoad, Segment, StartCity, Excursion, Transfer } from "./types";
 
 export const policy = policyFile.items as PolicyItem[];
 export const campsites = attractionsFile.campsites as Campsite[];
@@ -48,5 +49,6 @@ export function loadDataset(): Dataset {
     roads: roadsFile as unknown as ScenicRoad[],
     prices: pricesFile as unknown as Record<string, LocalPrices>,
     priceMedian: medianMeal(pricesFile as unknown as Record<string, LocalPrices>),
+    transfers: transfersFile as Record<string, Transfer>,
   };
 }

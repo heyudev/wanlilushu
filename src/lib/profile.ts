@@ -10,6 +10,8 @@ export interface ProfilePoint {
   m: number;
   /** index into plan.legs */
   leg: number;
+  /** first point after a connecting drive, which has no samples: the chart breaks the line here */
+  gapBefore?: boolean;
 }
 
 export function buildProfile(plan: Plan, data: Dataset, raw: RawSample[]): ProfilePoint[] {
@@ -22,15 +24,22 @@ export function buildProfile(plan: Plan, data: Dataset, raw: RawSample[]): Profi
 
   const out: ProfilePoint[] = [];
   let offset = 0;
+  let gap = false;
   plan.legs.forEach((pl, i) => {
-    for (const li of pl.legIdx) {
+    for (const part of pl.parts) {
+      // connecting drives between segments have no elevation samples: a gap of their length
+      if (!("leg" in part)) { offset += part.km; gap = true; continue; }
+      const li = part.leg;
       const len = data.legs[li].km;
       const o = origOf(li);
       let pts = (o >= 0 ? byLeg.get(o) ?? [] : [])
         .filter((s) => s[1] != null)
         .map((s) => ({ pos: s[0] - (legStart.get(o) ?? 0), m: s[1] as number }));
-      if (pl.reversed) pts = pts.map((p) => ({ pos: len - p.pos, m: p.m })).reverse();
-      for (const p of pts) out.push({ km: offset + p.pos, m: p.m, leg: i });
+      if (part.reversed) pts = pts.map((p) => ({ pos: len - p.pos, m: p.m })).reverse();
+      for (const p of pts) {
+        out.push({ km: offset + p.pos, m: p.m, leg: i, ...(gap ? { gapBefore: true } : {}) });
+        gap = false;
+      }
       offset += len;
     }
   });

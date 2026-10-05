@@ -34,6 +34,9 @@ npm run fonts        # 宋体子集（思源宋体）：新增了界面文字或
 - `src/lib/costs.ts`：费用规则（能耗、住宿、门票、狗）。
 - `src/lib/profile.ts`：把顺时针存储的海拔采样按计划的行驶顺序重排。
 - `src/lib/audit.ts`：数据新鲜度检查，`scripts/check-data.ts` 和每月工作流调用它。
+- `src/lib/order.ts`：路线顺序。`routeMode` 决定走环线还是跟着季节走（auto：打卡走环线）；`seasonOrder` 用模拟退火按“当季的常规晚数 − 转场里程/150 − 季节性区域关闭期进出”排 17 段的先后和正反，固定种子、结果缓存；`routeFromOrder` 把段连起来，相邻段用环线路段，其余用 `data.transfers`（OSRM）或直线估算。
+- `src/lib/stay.ts`：`keepNode`、`nightsFor`（plan.ts 重新导出）。
+- 过年回家：`dates.ts` 的 `SPRING_FESTIVAL` 是查表（香港天文台），不要改成 Intl 计算，2027、2030 年会差一天。
 - `src/lib/custom.ts`：把用户加入的地点（`input.custom`）插进环线；`legs.ts` 记录每段对应的原始路段。
 - `src/lib/share.ts`：分享链接，`?plan=` 里是与默认值的差异（deflate + base64url）。`gpx.ts`、`markdown.ts`：导出。
 - `src/lib/budget.ts`：总预算与省钱选项。

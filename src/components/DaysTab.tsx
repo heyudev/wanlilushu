@@ -69,7 +69,9 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
     <div className="days-tab">
       {toggle_}
       <div className="days-tools">
-        {plan.approach && <p className="small muted">{plan.input.startDate} 从{plan.start.name}出发，开 {km(plan.approach.km)} 到{plan.entry.n}进入环线，结束后原路返回。</p>}
+        {plan.loop
+          ? plan.approach && <p className="small muted">{plan.input.startDate} 从{plan.start.name}出发，开 {km(plan.approach.km)} 到{plan.entry.n}进入环线，结束后原路返回。</p>
+          : <p className="small muted">路线按季节安排：夏天去西部和北方，冬天在南方。{plan.input.startDate} 从{plan.start.name}出发{plan.approach ? `，开约 ${km(plan.approach.km)} 到${plan.entry.n}` : ""}。</p>}
         <button type="button" className="link" onClick={() => setOpen(all ? new Set() : new Set(runs.map((_, i) => i)))}>{all ? "全部收起" : "全部展开"}</button>
       </div>
       {runs.map((r, ri) => {
@@ -87,13 +89,16 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
               <ol className="day-list">
                 {r.items.map(({ stop, leg, index }) => (
                   <li key={index}>
-                    {leg && (
+                    {leg && !leg.resume && (
                       <div className="leg-line small muted">
-                        {leg.ferryKm > 0 ? "渤海轮渡（时长未公示，按估算）" : `驾驶 ${km(leg.km)} · 约 ${hours(leg.h)}`}
+                        {leg.ferryKm > 0 ? "渤海轮渡（时长未公示，按估算）"
+                          : leg.driveDays > 1 || leg.parts.some((p) => "transfer" in p)
+                            ? `转场 ${km(leg.km)} · 约 ${hours(leg.h)}${leg.driveDays > 1 ? `，分 ${leg.driveDays} 天开，路上住 ${leg.driveDays - 1} 晚` : ""}${leg.parts.some((p) => "transfer" in p && p.estimated) ? "（无路网数据，按直线估算）" : ""}`
+                            : `驾驶 ${km(leg.km)} · 约 ${hours(leg.h)}`}
                         {leg.toll > 0 && ` · 过路费约 ${yuan(leg.toll)}`}
                         {leg.via.length > 0 && ` · 途经 ${leg.via.length} 处`}
                         {roadsOf(leg).map((r) => <span key={r.id} className="road-tag">{r.name}</span>)}
-                        {leg.h > plan.input.maxDriveHours && leg.ferryKm === 0 && <span className="chip ok">长途日</span>}
+                        {leg.h > plan.input.maxDriveHours && leg.ferryKm === 0 && leg.driveDays <= 1 && <span className="chip ok">长途日</span>}
                       </div>
                     )}
                     <button type="button" className="day-row" onClick={() => onOpenStop(index)}>
@@ -101,7 +106,7 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
                       {stop.node.img ? <img className="day-thumb" src={stop.node.img.src} alt="" loading="lazy" width={72} height={48} /> : <span className="day-thumb" />}
                       <span className="place">
                         <b>{stop.node.n}</b>
-                        <span className="muted small">{stop.transit ? "途中过夜" : stop.node.food.slice(0, 2).map((f) => f[0]).join(" · ")}</span>
+                        <span className="muted small">{stop.resumed ? "回家后回到这里，接着住" : stop.transit ? "途中过夜" : stop.node.food.slice(0, 2).map((f) => f[0]).join(" · ")}</span>
                       </span>
                       <span className="small">{stop.nights >= 14 ? `${Math.round(stop.nights / 7)} 周` : `${stop.nights} 晚`} · {SLEEP_LABEL[stop.sleep]}</span>
                       {stop.sojourn ? <span className="chip sojourn">旅居</span>
@@ -111,9 +116,9 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
                       <span className="num small cost">{yuan(stop.lodgingCost + stop.ticketCost)}</span>
                       <span className="chev" aria-hidden="true">›</span>
                     </button>
-                    {plan.breaks.filter((b) => b.after === stop.node.id).map((b) => (
-                      <div key={b.after} className="break-line small">
-                        {b.mode === "fly" ? "车停在这里，坐飞机" : "开车"}回家 {b.days} 天（单程约 {km(b.km)}，往返约 {yuan(b.cost)}），之后从这里接着走
+                    {plan.breaks.filter((b) => b.stopIdx === index).map((b) => (
+                      <div key={b.date} className="break-line small">
+                        {b.newYear ? `${shortDate(b.date)} 回家过年，` : ""}{b.mode === "fly" ? "车停在这里，坐飞机" : "开车"}回家 {b.days} 天（单程约 {km(b.km)}，往返约 {yuan(b.cost)}），之后从这里接着走
                       </div>
                     ))}
                   </li>
@@ -123,7 +128,9 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
           </section>
         );
       })}
-      <p className="small muted end-line">{shortDate(last.date)} 开 {km(lastLeg.km)} 回到{last.node.n}，环线结束{plan.approach ? `，再开 ${km(plan.approach.km)} 回${plan.start.name}` : ""}。</p>
+      {plan.loop
+        ? <p className="small muted end-line">{shortDate(last.date)} 开 {km(lastLeg.km)} 回到{last.node.n}，环线结束{plan.approach ? `，再开 ${km(plan.approach.km)} 回${plan.start.name}` : ""}。</p>
+        : <p className="small muted end-line">{shortDate(plan.endDate)} {plan.homeward ? `从${last.node.n}开约 ${km(plan.homeward.km)} 回到${plan.start.name}` : `回到${plan.start.name}`}，全程结束。</p>}
     </div>
   );
 }

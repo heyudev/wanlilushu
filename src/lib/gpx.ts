@@ -4,7 +4,8 @@ import type { Dataset, Plan } from "./types";
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-export function planToGpx(plan: Plan, data: Dataset): string {
+/** `transferGeom`: road geometry of connecting drives (lib/transferGeom); without it they are drawn straight */
+export function planToGpx(plan: Plan, data: Dataset, transferGeom: Record<string, [number, number][]> = {}): string {
   const L: string[] = [
     `<?xml version="1.0" encoding="UTF-8"?>`,
     `<gpx version="1.1" creator="万里路书 wanlilushu.cn" xmlns="http://www.topografix.com/GPX/1/1">`,
@@ -18,8 +19,13 @@ export function planToGpx(plan: Plan, data: Dataset): string {
       + `<desc>${esc(`${shortDate(s.date)} 到，住 ${s.nights} 晚`)}</desc></wpt>`);
   });
   L.push(`<trk><name>${esc("全程路线")}</name>`);
+  const ll = new Map(data.nodes.map((n) => [n.id, [n.ll[1], n.ll[0]] as [number, number]]));
   for (const pl of plan.legs) {
-    const pts = pl.legIdx.flatMap((li) => data.legs[li].geom);
+    const pts = pl.parts.flatMap((p): [number, number][] => {
+      const g = "leg" in p ? data.legs[p.leg].geom as [number, number][]
+        : transferGeom[p.transfer] ?? p.transfer.split(">").map((id) => ll.get(id)!).filter(Boolean);
+      return p.reversed ? [...g].reverse() : g;
+    });
     if (!pts.length) continue;
     L.push(`<trkseg>${pts.map(([lon, lat]) => `<trkpt lat="${lat}" lon="${lon}"/>`).join("")}</trkseg>`);
   }

@@ -47,7 +47,7 @@ function Hero({ data, onPlan }: { data: Dataset; onPlan: () => void }) {
         <p className="hero-verse">读万卷书 · 行万里路</p>
         <h1>万里路书</h1>
         <p className="hero-lede">
-          一条环线，走过{provinces}个省区市的山河、古镇与人间烟火。可以几个月走完，也可以慢慢走一两年，在喜欢的地方住下来。
+          走过{provinces}个省区市的山河、古镇与人间烟火。可以几个月沿大环线走完，也可以跟着季节慢慢走一两年，在喜欢的地方住下来。
         </p>
         <dl className="hero-stats">
           <div><dt>公里</dt><dd>{int(Math.round(loopKm / 1000) * 1000)}</dd></div>
@@ -78,7 +78,7 @@ function Segments({ data }: { data: Dataset }) {
     <section className="w-segs" aria-labelledby="w-segs-title">
       <header className="w-head">
         <h2 id="w-segs-title">一路{cnNum(data.segs.length)}段</h2>
-        <p>从江南水乡出发，经闽粤山海、云贵高原、雪域西藏、天山南北、河西走廊、林海雪原，再回到中原古都。</p>
+        <p>江南水乡、闽粤山海、云贵高原、雪域西藏、天山南北、河西走廊、林海雪原、中原古都。走得快就沿大环线顺着走，走得慢就按季节安排先后。</p>
       </header>
       <ol className="seg-strip">
         {data.segs.map((s) => {

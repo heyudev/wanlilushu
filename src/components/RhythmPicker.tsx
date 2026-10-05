@@ -16,7 +16,7 @@ export function applyRhythm(input: PlanInput, r: Preset): PlanInput {
 export function RhythmPicker({ input, data, onPick }: { input: PlanInput; data: Dataset; onPick: (next: PlanInput) => void }) {
   const lengths = useMemo(() => Object.fromEntries((Object.keys(RHYTHMS) as Preset[]).map((r) => [r, buildPlan(data, applyRhythm(input, r)).days])),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [data, input.start, input.startDate, input.direction, input.pace, input.interests.join(), input.minComfort, input.breaks, input.waitForSeason]);
+    [data, input.start, input.startDate, input.direction, input.pace, input.interests.join(), input.minComfort, input.breaks, input.waitForSeason, input.routeOrder, input.newYearHome]);
   return (
     <div className="field">
       <span className="label">旅行节奏</span>

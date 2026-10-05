@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildPlan } from "./plan";
 import { buildProfile, type RawSample } from "./profile";
 import { baseInput, fixture } from "./fixture";
+import type { Plan } from "./types";
 
 const data = fixture();
 // samples every 100 km along the stored loop a→b→c→d→a (100, 300, 200, 400 km)
@@ -25,6 +26,15 @@ describe("buildProfile", () => {
     expect(p.map((x) => x.km)).toEqual(raw.map((r) => r[0]));
     expect(p.map((x) => x.m)).toEqual(raw.map((r) => r[1]));
   });
+  it("leaves a gap the length of a connecting drive and breaks the line there", () => {
+    // a→b, then a 500 km connecting drive, then c→d
+    const plan = { legs: [{ parts: [
+      { leg: 0, reversed: false }, { transfer: "b>c", reversed: false, km: 500, estimated: true }, { leg: 2, reversed: false },
+    ] }] } as unknown as Plan;
+    const p = buildProfile(plan, data, raw);
+    expect(p.map((x) => [x.km, x.m, !!x.gapBefore])).toEqual([[0, 10, false], [600, 50, true], [700, 60, false]]);
+  });
+
   it("starts at the entry and mirrors legs counter-clockwise", () => {
     const p = buildProfile(buildPlan(data, baseInput({ direction: "ccw" })), data, raw);
     // first travelled leg is d→a reversed (stored d→a is 400 km, samples at 0..300 into it)

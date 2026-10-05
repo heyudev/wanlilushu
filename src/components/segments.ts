@@ -13,7 +13,7 @@ export interface SegRun {
 export function segmentRuns(plan: Plan): SegRun[] {
   const runs: SegRun[] = [];
   plan.stops.forEach((stop, index) => {
-    if (index === plan.stops.length - 1) return; // loop end, shown in the footer
+    if (plan.loop && index === plan.stops.length - 1) return; // loop end, shown in the footer
     const leg = index > 0 ? plan.legs[index - 1] : null;
     let run = runs[runs.length - 1];
     if (!run || run.k !== stop.node.seg) {

@@ -1,7 +1,7 @@
 """Merge hand-maintained route data, research findings and generated geodata into src/data/*.json for the app.
 
-Inputs:  data/route.json, data/research/*.json, data/generated/{legs,elevation,images,starts}.json
-Outputs: src/data/{route,attractions,policy,elevation,starts}.json
+Inputs:  data/route.json, data/research/*.json, data/generated/{legs,elevation,images,starts,transfers}.json
+Outputs: src/data/{route,attractions,policy,elevation,starts,transfers}.json
 """
 import glob, json, os
 from _common import load, save, path
@@ -83,6 +83,8 @@ def main():
     save("src/data/prices.json", prices)
     pet = load("data/generated/pet_friendly.json") if os.path.exists(path("data/generated/pet_friendly.json")) else {}
     save("src/data/pet_friendly.json", pet)
+    transfers = path("data/generated/transfers.json")
+    save("src/data/transfers.json", load("data/generated/transfers.json")["pairs"] if os.path.exists(transfers) else {})
     save("src/data/roads.json", [{k: r[k] for k in ("id", "name", "legs", "best", "about")} for r in load("data/roads.json")["roads"]])
     print(f"nodes {len(nodes)} legs {len(out_legs)} attractions {len(attractions)} campsites {len(campsites)} policy {len(policy)} images {len(images)}")
 

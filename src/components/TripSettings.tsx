@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import { DOG_SIZE_LABEL, FOOD_TIER_LABEL, INTEREST_LABEL } from "../lib/defaults";
-import { bestStartDates } from "../lib/plan";
+import { bestStartDates, buildPlan } from "../lib/plan";
+import { routeMode } from "../lib/order";
+import { duration, int } from "../lib/format";
 import { shortDate } from "../lib/dates";
 import type { Dataset, Interest, Plan, PlanInput } from "../lib/types";
 import { Choice, Num, NumOpt, Stepper, Toggle } from "./Fields";
@@ -13,7 +15,7 @@ export const POPULAR = ["北京", "上海", "广州", "深圳", "成都", "杭�
 export function StartFields({ input, set, data, today }: { input: PlanInput; set: SetInput; data: Dataset; today: string }) {
   const best = useMemo(() => bestStartDates(data, input, today, 365, 3),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [data, input.start, input.direction, input.pace, input.interests.join(), input.maxDriveHours, today]);
+    [data, input.start, input.direction, input.pace, input.interests.join(), input.maxDriveHours, routeMode(input), today]);
   const others = data.starts.filter((s) => !POPULAR.includes(s.name));
   return (
     <>
@@ -31,7 +33,9 @@ export function StartFields({ input, set, data, today }: { input: PlanInput; set
       <div className="field">
         <label htmlFor="date">哪天出发</label>
         <input id="date" type="date" value={input.startDate} onChange={(e) => e.target.value && set("startDate", e.target.value)} />
-        <div className="best-dates">
+        {routeMode(input) === "season"
+          ? <span className="hint">路线跟着季节走，会按出发日期重新安排，不用特意挑日子。</span>
+          : <div className="best-dates">
           <span className="hint">季节最顺：</span>
           {best.map((b) => (
             <button key={b.date} type="button" aria-pressed={input.startDate === b.date} onClick={() => set("startDate", b.date)}
@@ -39,7 +43,7 @@ export function StartFields({ input, set, data, today }: { input: PlanInput; set
               {b.date.slice(0, 4)} {shortDate(b.date)}
             </button>
           ))}
-        </div>
+        </div>}
       </div>
       <div className="field">
         <span className="label">谁一起去</span>
@@ -80,7 +84,7 @@ function EditsSummary({ input, set, data }: { input: PlanInput; set: SetInput; d
           <li key={id}>不去 <b>{name(id)}</b> <button type="button" className="link" onClick={() => set("skip", input.skip.filter((x) => x !== id))}>恢复</button></li>
         ))}
         {input.skipSegs.map((k) => (
-          <li key={k}><b>{segName(k)}</b> 只途经 <button type="button" className="link" onClick={() => set("skipSegs", input.skipSegs.filter((x) => x !== k))}>恢复停留</button></li>
+          <li key={k}><b>{segName(k)}</b> {routeMode(input) === "season" ? "不去" : "只途经"} <button type="button" className="link" onClick={() => set("skipSegs", input.skipSegs.filter((x) => x !== k))}>恢复停留</button></li>
         ))}
         {input.custom.map((c) => (
           <li key={c.id}>加入 <b>{c.name}</b>（在{name(c.after)}之后，住 {c.nights} 晚） <button type="button" className="link" onClick={() => set("custom", input.custom.filter((x) => x.id !== c.id))}>删除</button></li>
@@ -103,6 +107,65 @@ export function BudgetField({ input, set }: { input: PlanInput; set: SetInput })
   );
 }
 
+/** Loop or season order, with what each would mean for this trip. */
+function RouteOrderField({ input, set, data }: { input: PlanInput; set: SetInput; data: Dataset }) {
+  const mode = routeMode(input);
+  const both = useMemo(() => (["season", "loop"] as const).map((o) => {
+    const p = buildPlan(data, { ...input, routeOrder: o });
+    return { o, km: p.totals.km, off: p.seasonScore.off, days: p.days };
+  }), [data, input]);
+  const label = { season: "跟着季节走", loop: "一条环线" } as const;
+  return (
+    <>
+      <div className="field">
+        <span className="label">路线顺序</span>
+        <div className="seg-btns" role="group" aria-label="路线顺序">
+          {both.map((b) => <button key={b.o} type="button" aria-pressed={mode === b.o} onClick={() => set("routeOrder", b.o)}>{label[b.o]}</button>)}
+        </div>
+        <ul className="route-compare small">
+          {both.map((b) => (
+            <li key={b.o} className={mode === b.o ? "on" : ""}>
+              <b>{label[b.o]}</b>：{duration(b.days)}，开 {int(b.km)} km，{b.off} 站到达时不在最佳季节
+            </li>
+          ))}
+        </ul>
+        <p className="hint">
+          跟着季节走：按段重新排先后，夏天去西藏、新疆、西北和东北，冬天在云南和华南，段与段之间开车转场。一条环线：沿全国大环线顺着走，路最顺。
+          {input.routeOrder === "auto" ? "现在按节奏自动选择：打卡走环线，更慢的节奏跟着季节走。" : ""}
+          {input.routeOrder !== "auto" && <button type="button" className="link" onClick={() => set("routeOrder", "auto")}>改回按节奏自动选择</button>}
+        </p>
+      </div>
+      {mode === "loop" && (
+        <>
+          <Choice label="方向" value={input.direction} onChange={(v) => set("direction", v)}
+            options={[["cw", "顺时针（推荐）"], ["ccw", "逆时针"]]} />
+          <p className="hint">顺时针按季节排：春天江南华南，初夏进藏，盛夏新疆、青海和东北，秋天川西。</p>
+        </>
+      )}
+    </>
+  );
+}
+
+/** Going home for the Spring Festival every year the trip spans. */
+function NewYearField({ input, set }: { input: PlanInput; set: SetInput }) {
+  const ny = input.newYearHome;
+  return (
+    <div className="field new-year">
+      <Toggle id="ny" label="过年回家" checked={ny != null} onChange={(v) => set("newYearHome", v ? { days: 14, mode: "fly" } : null)} />
+      {ny && (
+        <>
+          <div className="people">
+            <Stepper id="ny-days" label="在家住几天" value={ny.days} min={3} max={60} onChange={(v) => set("newYearHome", { ...ny, days: v })} />
+          </div>
+          <Choice label="怎么回" value={ny.mode} onChange={(v) => set("newYearHome", { ...ny, mode: v })}
+            options={[["fly", "车停在当地，坐飞机"], ["drive", "开车回"]]} />
+        </>
+      )}
+      <p className="hint">每年除夕前三天从当时所在的地方回家（春节日期按香港天文台公历农历对照表），住满天数后回到原地接着走；正在住的地方回来后接着住完。春运机票较贵，可在下面“回家机票”里调整。</p>
+    </div>
+  );
+}
+
 export function TripSettings({ input, set, setAll, data, today }: { input: PlanInput; set: SetInput; setAll: (next: PlanInput) => void; data: Dataset; today: string }) {
   const toggleInterest = (t: Interest) =>
     set("interests", input.interests.includes(t) ? input.interests.filter((x) => x !== t) : [...input.interests, t]);
@@ -111,9 +174,7 @@ export function TripSettings({ input, set, setAll, data, today }: { input: PlanI
       <fieldset>
         <legend>出发</legend>
         <StartFields input={input} set={set} data={data} today={today} />
-        <Choice label="方向" value={input.direction} onChange={(v) => set("direction", v)}
-          options={[["cw", "顺时针（推荐）"], ["ccw", "逆时针"]]} />
-        <p className="hint">顺时针按季节排：春天江南华南，初夏进藏，盛夏新疆、青海和东北，秋天川西。</p>
+        <RouteOrderField input={input} set={set} data={data} />
         {input.dog && (
           <Choice label="景区不让带狗时" value={input.dogCare} onChange={(v) => set("dogCare", v)}
             options={[["rotate", "轮流陪狗"], ["boarding", "就近寄养"]]} />
@@ -124,6 +185,7 @@ export function TripSettings({ input, set, setAll, data, today }: { input: PlanI
         <legend>节奏与旅居</legend>
         <RhythmPicker input={input} data={data} onPick={setAll} />
         <RhythmFields input={input} set={set} />
+        <NewYearField input={input} set={set} />
       </fieldset>
       <fieldset>
         <legend>预算</legend>

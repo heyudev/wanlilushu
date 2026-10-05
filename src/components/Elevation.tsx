@@ -19,8 +19,13 @@ export function Elevation({ plan, data }: { plan: Plan; data: Dataset }) {
 
   const area = useMemo(() => {
     if (!pts.length) return "";
-    const line = pts.map((p) => `${x(p.km).toFixed(1)},${y(p.m).toFixed(1)}`).join("L");
-    return `M${x(pts[0].km).toFixed(1)},${y(0)}L${line}L${x(maxKm).toFixed(1)},${y(0)}Z`;
+    // one closed shape per stretch with samples; connecting drives between segments are left as gaps
+    const runs: (typeof pts)[] = [];
+    for (const p of pts) (p.gapBefore || !runs.length ? runs.push([p]) : runs[runs.length - 1].push(p));
+    return runs.map((r) => {
+      const line = r.map((p) => `${x(p.km).toFixed(1)},${y(p.m).toFixed(1)}`).join("L");
+      return `M${x(r[0].km).toFixed(1)},${y(0)}L${line}L${x(r[r.length - 1].km).toFixed(1)},${y(0)}Z`;
+    }).join("");
   }, [pts, maxKm]);
 
   const peak = pts.reduce((a, p) => (p.m > a.m ? p : a), { km: 0, m: 0, leg: 0 });

@@ -7,7 +7,8 @@
 ## 功能
 
 - **节奏**：打卡、慢游、深度慢游、慢游 + 旅居四档，可自定义每个地方住多久、舒服的地方多住几晚、隔多久旅居一次。进西藏、新疆、川西、东北极北等有季节窗口的区域前，季节不对时可在前一个旅居地多住等待。
-- **改路线**：跳过某一站，某一段只途经不停留，修改某站住几晚，在任意一站后加入自己想去的地方（高德地点搜索与驾车路线），在任意一站后插入回家。
+- **路线顺序**：沿全国大环线顺着走，或者“跟着季节走”：17 段按季节重新排先后（每段可正走或反走），夏天去西藏、新疆、西北和东北，冬天在云南和华南，段与段之间开车转场，超过一天车程的分几天开。慢游及更慢的节奏默认跟着季节走，打卡默认走环线；设置里会对比两种顺序的时长、里程和季节吻合度。
+- **改路线**：跳过某一站，某一段不去，修改某站住几晚，在任意一站后加入自己想去的地方（高德地点搜索与驾车路线），在任意一站后插入回家，每年过年回家（除夕前三天出发，春节日期取自香港天文台公历农历对照表，回来后接着住完）。
 - **地图**：高德地图，标准图与卫星图；起终点、站点类型、行驶方向、风景道、高海拔山口、单日往返，可分图层开关；每站可直接打开高德导航。
 - **行程**：按站点或按月查看；每站有历史文化介绍、景点门票与预约方式、当地美食、逐月气候、带狗的便利程度（附近可带宠物的酒店、宠物餐厅、宠物医院数量）。
 - **旅居**：36 个适合长住的地方按月比较气候舒适度和带狗便利程度。
@@ -60,6 +61,7 @@ npm run deploy:cf       # 测试、打包（读取本地 .env）、上传到 Pag
 
 ```bash
 python3 scripts/fetch_legs.py           # 路段里程、时长、高速里程（OSRM，有本地缓存）
+python3 scripts/fetch_transfers.py      # 各段端点之间的转场路线（OSRM，约 550 条，按季节排路线时用）
 python3 scripts/fetch_full_geom.py      # 完整精度路线，按分段写入 public/route/
 python3 scripts/fetch_elevation.py      # 海拔与各段最高点（OpenTopoData SRTM 90m）
 python3 scripts/fetch_starts.py         # 出发城市到环线最近点
@@ -86,6 +88,7 @@ npm run data                            # 合并到 src/data/
 | 数据 | 来源 | 性质 |
 |---|---|---|
 | 路段里程、驾驶时长、路线 | OSRM，OpenStreetMap 路网 | 计算值；时长为纯驾驶时间 |
+| 转场里程（段与段之间） | OSRM，OpenStreetMap 路网 | 计算值；没有路网数据的组合（如加入自己的地点后）和从家出发、回家的路程按直线 × 1.25 估算 |
 | 高速里程 | OSRM 路段的道路编号 | 估算 |
 | 海拔、山口高度 | OpenTopoData SRTM 90m，每 12 km 采样 | 计算值，山口高度略低于实际 |
 | 逐月气候 | Open-Meteo 历史气象，47 处为 2016–2025 年、其余为 2022–2025 年 | 计算值 |
@@ -104,7 +107,9 @@ npm run data                            # 合并到 src/data/
 未完成：
 
 - 部分景点票价和大多数景点的宠物政策未核实，页面已标出。
-- “跳过一段”只是不停留，路线仍经过该区域；绕开整个大区需要重新设计环线。
+- 走环线时“跳过一段”只是不停留，路线仍经过该区域；跟着季节走时整段不去。
+- 转场路线来自 OSRM，不知道季节性封路；冬天的转场如果经过高海拔山口，出发前要另外确认。
+- 段的先后由程序自动排，暂不支持手动拖动调整。
 - 没有账号和云端保存，方案保存在浏览器本地，可用分享链接在设备间转移。
 - 没有离线使用。
 - 服务器在境外，中国大陆访问速度不稳定；部署到大陆需要 ICP 备案。
@@ -116,7 +121,7 @@ npm run data                            # 合并到 src/data/
 | 内容 | 位置 | 来源与许可 |
 |---|---|---|
 | 过夜点图片、首页大图 | `public/img/`、`public/hero/` | Wikimedia Commons，各图许可（CC BY、CC BY-SA、公有领域等）与作者见 `data/generated/images.json` 和页面“数据来源” |
-| 路段里程、路线几何 | `data/generated/legs.json`、`public/route/` | 由 OSRM 基于 OpenStreetMap 计算，© OpenStreetMap contributors，ODbL |
+| 路段与转场里程、路线几何 | `data/generated/legs.json`、`data/generated/transfers.json`、`public/route/` | 由 OSRM 基于 OpenStreetMap 计算，© OpenStreetMap contributors，ODbL |
 | 海拔 | `data/generated/elevation.json` | OpenTopoData，SRTM 90m |
 | 逐月气候 | `data/generated/climate.json` | Open-Meteo，CC BY 4.0 |
 | 宋体字体子集 | `public/fonts/` | Noto Serif CJK SC（思源宋体），SIL Open Font License 1.1，见 `public/fonts/OFL.txt` |

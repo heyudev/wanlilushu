@@ -1,4 +1,5 @@
 // Ways to bring a plan under a total budget. Each option changes one setting; the UI lets the user pick.
+import { routeMode } from "./order";
 import { buildPlan, costTotal } from "./plan";
 import type { Dataset, PlanInput } from "./types";
 
@@ -28,6 +29,7 @@ function candidates(input: PlanInput): { label: string; change: Partial<PlanInpu
   if (shorter != null) out.push({ label: `每站少住一些（停留 ×${shorter}）`, change: { stayFactor: shorter, rhythm: "custom" } });
   if (input.sojournWeeks > 2) out.push({ label: `旅居缩短到 ${Math.ceil(input.sojournWeeks / 2)} 周`, change: { sojournWeeks: Math.ceil(input.sojournWeeks / 2), rhythm: "custom" } });
   if (input.pace === "full") out.push({ label: "只去精华站点", change: { pace: "highlights" } });
+  if (routeMode(input) === "season") out.push({ label: "路线改为一条环线（少开转场，但更多地方不在最佳季节）", change: { routeOrder: "loop" } });
   return out;
 }
 

@@ -47,7 +47,7 @@ export function RouteTab({ plan, data, selectedSeg, onSelectSeg, onOpenStop, cri
                       <p className="small muted">{s?.range} · 最佳季节：{s?.season}</p>
                       <label className="pass-through small">
                         <input type="checkbox" checked={plan.input.skipSegs.includes(r.k)} onChange={(e) => passThrough(r.k, e.target.checked)} />
-                        这一段只开车经过，不停留（路线不变，途中按需过夜）
+                        {plan.loop ? "这一段只开车经过，不停留（路线不变，途中按需过夜）" : "这一段不去（跟着季节走时整段跳过，不用开过去）"}
                       </label>
                       <ul>
                         {r.items.map(({ stop, index }) => (

@@ -39,12 +39,12 @@ export const GATE_WINDOWS: Record<string, [number, number]> = {
 
 export const RHYTHMS: Record<Exclude<Rhythm, "custom">, { label: string; hint: string; stayFactor: number;
   comfortStayNights: number; sojournEveryWeeks: number; sojournWeeks: number }> = {
-  // trip lengths on the full loop (2027 starts, March–September): about 9 months / 1 year / 1.5 years / 1.5–2 years.
-  // Waiting for a region's season is a separate choice (waitForSeason), off unless the traveller turns it on.
+  // trip lengths with the route following the seasons (2027 starts, March–September): about 9 months / 1 year /
+  // 1.5 years / 2 years. Waiting for a region's season is a separate choice (waitForSeason), off unless turned on.
   checkin: { label: "打卡", hint: "每站住一两晚，看主要风景", stayFactor: 1, comfortStayNights: 0, sojournEveryWeeks: 0, sojournWeeks: 0 },
-  slow: { label: "慢游", hint: "每个地方多住一点，舒服的地方住一周", stayFactor: 1.25, comfortStayNights: 7, sojournEveryWeeks: 0, sojournWeeks: 0 },
-  deep: { label: "深度慢游", hint: "每个地方多住一半，舒服的地方住两周", stayFactor: 1.5, comfortStayNights: 14, sojournEveryWeeks: 0, sojournWeeks: 0 },
-  sojourn: { label: "慢游 + 旅居", hint: "舒服的地方住两周，每走两个多月就旅居一个半月", stayFactor: 1.5, comfortStayNights: 14, sojournEveryWeeks: 10, sojournWeeks: 6 },
+  slow: { label: "慢游", hint: "每站住常规天数，舒服的地方住一周", stayFactor: 1, comfortStayNights: 7, sojournEveryWeeks: 0, sojournWeeks: 0 },
+  deep: { label: "深度慢游", hint: "每个地方多住一半，舒服的地方住十天", stayFactor: 1.5, comfortStayNights: 10, sojournEveryWeeks: 0, sojournWeeks: 0 },
+  sojourn: { label: "慢游 + 旅居", hint: "舒服的地方住两周，每走两个多月就旅居一个半月", stayFactor: 1.25, comfortStayNights: 14, sojournEveryWeeks: 10, sojournWeeks: 6 },
 };
 
 export const DOG_SIZE_LABEL: Record<"small" | "medium" | "large", { label: string; hint: string }> = {
@@ -66,6 +66,7 @@ export const INTEREST_LABEL: Record<Interest, string> = {
 export const DEFAULT_INPUT: PlanInput = {
   start: "上海",
   startDate: "2027-04-01",
+  routeOrder: "auto",
   direction: "cw",
   pace: "full",
   interests: ["food", "nature", "culture"],
@@ -106,6 +107,7 @@ export const DEFAULT_INPUT: PlanInput = {
   waitForSeason: false,
   rentPerMonth: null,
   breaks: [],
+  newYearHome: null,
   flightPerPerson: 1500,
   parkingPerDay: 30,
   budget: null,

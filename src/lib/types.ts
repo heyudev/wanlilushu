@@ -225,6 +225,14 @@ export interface Dataset {
   /** median of all stops' sit-down meal p50, the base of the local price index */
   priceMedian: number | null;
   roads: ScenicRoad[];
+  /** driving routes between segment ends that are not joined by a loop leg, keyed "a>b" (driven either way) */
+  transfers: Record<string, Transfer>;
+}
+
+export interface Transfer {
+  km: number;
+  h: number;
+  hw: number;
 }
 
 // ---------- plan input / output
@@ -245,9 +253,19 @@ export interface HomeBreak {
   mode: "drive" | "fly";
 }
 
+/** auto: follow the seasons for slow rhythms, the loop for 打卡 */
+export type RouteOrder = "auto" | "loop" | "season";
+
+export interface NewYearHome {
+  days: number;
+  mode: "drive" | "fly";
+}
+
 export interface PlanInput {
   start: string;
   startDate: string;
+  /** loop: the fixed national loop; season: segments reordered so each is visited in its season */
+  routeOrder: RouteOrder;
   direction: Direction;
   pace: Pace;
   interests: Interest[];
@@ -301,6 +319,8 @@ export interface PlanInput {
   /** monthly rent for month-long stays; null = price those nights as hotel nights */
   rentPerMonth: number | null;
   breaks: HomeBreak[];
+  /** go home for the Spring Festival every year the trip spans; null = no */
+  newYearHome: NewYearHome | null;
   flightPerPerson: number;
   parkingPerDay: number;
   /** total budget in yuan, null = none */
@@ -332,7 +352,18 @@ export interface PlanLeg {
   legIdx: number[];
   /** travelled against the stored leg direction */
   reversed: boolean;
+  /** what the day's drive is made of, in order: loop legs and connecting drives between segments */
+  parts: PlanPart[];
+  /** days on the road (a long connecting drive takes several, with nights in between) */
+  driveDays: number;
+  /** no drive: the same stop again after a trip home */
+  resume?: boolean;
 }
+
+export type PlanPart =
+  | { leg: number; reversed: boolean }
+  /** `estimated`: no road data for this pair, distance from the straight line × 1.25 */
+  | { transfer: string; reversed: boolean; km: number; estimated: boolean };
 
 export interface EnergyCost {
   fuelL: number;
@@ -371,10 +402,16 @@ export interface Stop {
   waitDays: number;
   /** climate comfort 0–1 in the arrival month, null when no climate data */
   comfort: number | null;
+  /** the rest of a stay, after a trip home in the middle of it */
+  resumed?: boolean;
 }
 
 export interface PlanBreak {
   after: string;
+  /** index in Plan.stops after which the trip pauses */
+  stopIdx: number;
+  /** the yearly Spring Festival trip */
+  newYear?: boolean;
   date: string;
   days: number;
   mode: "drive" | "fly";
@@ -421,13 +458,22 @@ export interface Approach {
   h: number;
   hw: number;
   days: number;
+  /** no road data: straight line × 1.25 at the loop's average speed */
+  estimated?: boolean;
 }
 
 export interface Plan {
   input: PlanInput;
   start: StartCity;
   entry: RouteNode;
+  /** home to the first stop */
   approach: Approach | null;
+  /** last stop back home */
+  homeward: Approach | null;
+  /** true: the last stop is the arrival back where the loop was joined; false: the trip ends at its last stop */
+  loop: boolean;
+  /** segments in travel order */
+  order: { seg: string; rev: boolean }[];
   stops: Stop[];
   legs: PlanLeg[];
   days: number;

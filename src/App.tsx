@@ -16,6 +16,7 @@ import { formatDate, shortDate } from "./lib/dates";
 import { DEFAULT_INPUT } from "./lib/defaults";
 import { duration, int, yuanShort } from "./lib/format";
 import { planToGpx } from "./lib/gpx";
+import { loadTransferGeom } from "./lib/transferGeom";
 import { planToMarkdown } from "./lib/markdown";
 import { buildPlan, costTotal } from "./lib/plan";
 import { decodePlan, encodePlan, SHARE_PARAM } from "./lib/share";
@@ -96,12 +97,13 @@ export function App() {
   const set = useCallback(<K extends keyof PlanInput>(k: K, v: PlanInput[K]) => setInput((p) => ({ ...p, [k]: v })), []);
   const setAll = useCallback((next: PlanInput) => setInput(next), []);
   const go = (t: Tab) => { setTab(t); history.replaceState(null, "", `#${t}`); window.scrollTo({ top: 0 }); };
-  const lastIdx = plan.stops.length - 2; // the final stop is the arrival back at the loop entry
+  // on the loop the final stop is the arrival back at the entry, not a stay to open
+  const lastIdx = plan.stops.length - (plan.loop ? 2 : 1);
   const openStopAt = (i: number) => { if (i >= 0) setOpenStop(Math.min(i, lastIdx)); };
   const openStopById = (id: string) => {
     const i = plan.stops.findIndex((s) => s.node.id === id);
     if (i >= 0) openStopAt(i);
-    else setNotice("这个地方不在当前行程里（被跳过、整段只途经，或被节奏省略）。可以在“调整条件”里恢复。");
+    else setNotice("这个地方不在当前行程里（被跳过、整段不去或只途经，或被节奏省略）。可以在“调整条件”里恢复。");
   };
   const closeStop = useCallback(() => setOpenStop(null), []);
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
@@ -154,7 +156,7 @@ export function App() {
               <div className="menu-pop">
                 <button type="button" onClick={share}>复制分享链接</button>
                 <button type="button" onClick={() => download(`万里路书-${stamp}.md`, planToMarkdown(plan, data), "text/markdown;charset=utf-8")}>导出 Markdown（笔记）</button>
-                <button type="button" onClick={() => download(`万里路书-${stamp}.gpx`, planToGpx(plan, data), "application/gpx+xml")}>导出 GPX（导航、轨迹软件）</button>
+                <button type="button" onClick={async () => download(`万里路书-${stamp}.gpx`, planToGpx(plan, data, plan.legs.some((l) => l.parts.some((p) => "transfer" in p)) ? await loadTransferGeom() : {}), "application/gpx+xml")}>导出 GPX（导航、轨迹软件）</button>
               </div>
             </details>
           </div>
