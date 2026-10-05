@@ -55,7 +55,7 @@ export function RhythmFields({ input, set }: { input: PlanInput; set: SetInput }
             onChange={(e) => e.target.value !== "" && custom("comfortStayNights", Math.max(0, Number(e.target.value)))} />
         </div>
         <div className="field">
-          <label htmlFor="se">旅居：每隔几周一次（0 为不旅居）</label>
+          <label htmlFor="se">旅居：每走几周旅居一次（0 为不旅居）</label>
           <input id="se" type="number" inputMode="numeric" min={0} max={52} value={input.sojournEveryWeeks}
             onChange={(e) => e.target.value !== "" && custom("sojournEveryWeeks", Math.max(0, Number(e.target.value)))} />
         </div>

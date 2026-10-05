@@ -44,8 +44,9 @@ export function Costs({ plan, data, set, setAll }: { plan: Plan; data: Dataset; 
       <BudgetPanel plan={plan} data={data} set={set} setAll={setAll} />
       <div className="hero">
         <div><div className="v">{yuanShort(total)}</div><div className="k">预估总花费</div></div>
-        <div><div className="v">{yuan(total / plan.days)}</div><div className="k">平均每天</div></div>
-        <div><div className="v">{yuan((total / plan.days) * 30.44)}</div><div className="k">平均每月</div></div>
+        {/* days at home are not travel days: averaging over them would understate the cost on the road */}
+        <div><div className="v">{yuan(total / Math.max(1, plan.totals.tripDays))}</div><div className="k">在路上平均每天</div></div>
+        <div><div className="v">{yuan((total / Math.max(1, plan.totals.tripDays)) * 30.44)}</div><div className="k">在路上平均每月</div></div>
         <div><div className="v">{yuan(total / Math.max(1, people))}</div><div className="k">人均（{people} 人）</div></div>
         <div><div className="v">{yuan((plan.costs.fuel + plan.costs.electricity) / Math.max(1, (plan.totals.km + plan.totals.localKm) / 100))}</div><div className="k">每百公里能耗</div></div>
       </div>

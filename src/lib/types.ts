@@ -290,7 +290,7 @@ export interface PlanInput {
   stayFactor: number;
   /** nights at a comfortable long-stay place (1–2 weeks); 0 = no extra stay */
   comfortStayNights: number;
-  /** take a long stay (旅居) at a comfortable base about every N weeks; 0 = never */
+  /** take a long stay (旅居) at a comfortable base after about N weeks of travel since the last one; 0 = never */
   sojournEveryWeeks: number;
   sojournWeeks: number;
   /** minimum climate comfort (0–1) for a long stay */

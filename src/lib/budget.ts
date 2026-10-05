@@ -11,6 +11,9 @@ export interface BudgetOption {
 
 const round10 = (n: number) => Math.round(n / 10) * 10;
 
+/** stay factors offered in the settings, longest first */
+const STAY_STEPS = [3, 2, 1.5, 1.25, 1];
+
 function candidates(input: PlanInput): { label: string; change: Partial<PlanInput> }[] {
   const out: { label: string; change: Partial<PlanInput> }[] = [];
   if (input.lodging === "comfort") out.push({ label: "城市住酒店、风景地露营", change: { lodging: "balanced" } });
@@ -21,7 +24,8 @@ function candidates(input: PlanInput): { label: string; change: Partial<PlanInpu
   if (input.foodTier === "normal") out.push({ label: "餐饮改为经济档", change: { foodTier: "budget" } });
   if (input.level === "all") out.push({ label: "门票只算 5A 景区", change: { level: "5A" } });
   if (input.dog && input.dogCare === "boarding") out.push({ label: "禁宠景区改为轮流陪狗", change: { dogCare: "rotate" } });
-  if (input.stayFactor > 1) out.push({ label: `每站少住一些（停留 ×${input.stayFactor - 1}）`, change: { stayFactor: input.stayFactor - 1, rhythm: "custom" } });
+  const shorter = STAY_STEPS.find((f) => f < input.stayFactor);
+  if (shorter != null) out.push({ label: `每站少住一些（停留 ×${shorter}）`, change: { stayFactor: shorter, rhythm: "custom" } });
   if (input.sojournWeeks > 2) out.push({ label: `旅居缩短到 ${Math.ceil(input.sojournWeeks / 2)} 周`, change: { sojournWeeks: Math.ceil(input.sojournWeeks / 2), rhythm: "custom" } });
   if (input.pace === "full") out.push({ label: "只去精华站点", change: { pace: "highlights" } });
   return out;

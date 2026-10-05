@@ -17,12 +17,26 @@ export function fuelPriceFor(node: RouteNode, data: Dataset, input: PlanInput): 
  * A plug-in hybrid drives min(km, range) × availability electrically; the rest (and any HEV/ICE driving) burns fuel.
  */
 export function energyFor(km: number, seg: string, fuelPrice: number, input: PlanInput): EnergyCost {
-  const avail = input.vehicle === "phev" ? CHARGE_AVAIL[seg] ?? 0.5 : 0;
-  const eKm = Math.min(km, input.evRangeKm) * avail;
-  const fKm = km - eKm;
-  const fuelL = (fKm * input.lPer100) / 100;
-  const kwh = (eKm * input.kwhPer100) / 100;
-  return { fuelL, kwh, fuelCost: fuelL * fuelPrice, elecCost: kwh * input.elecPrice };
+  return energyForDay([{ km, seg, fuelPrice }], input);
+}
+
+/**
+ * Energy for one day's driving made of several legs (stops passed without staying): the battery is
+ * charged once overnight, so the electric range is used up across the legs rather than refilled for each.
+ */
+export function energyForDay(parts: { km: number; seg: string; fuelPrice: number }[], input: PlanInput): EnergyCost {
+  let range = input.vehicle === "phev" ? input.evRangeKm : 0;
+  let out = ZERO_ENERGY;
+  for (const p of parts) {
+    const avail = range > 0 ? CHARGE_AVAIL[p.seg] ?? 0.5 : 0;
+    const onBattery = Math.min(p.km, range);
+    range -= onBattery;
+    const eKm = onBattery * avail;
+    const fuelL = ((p.km - eKm) * input.lPer100) / 100;
+    const kwh = (eKm * input.kwhPer100) / 100;
+    out = addEnergy(out, { fuelL, kwh, fuelCost: fuelL * p.fuelPrice, elecCost: kwh * input.elecPrice });
+  }
+  return out;
 }
 
 export function addEnergy(a: EnergyCost, b: EnergyCost): EnergyCost {
@@ -130,7 +144,17 @@ export function ticketCost(perPerson: number, input: PlanInput): number {
   return perPerson * input.adults + perPerson * 0.5 * input.kids;
 }
 
-/** A stop needs someone to look after the dog when an attraction bans pets, or charges entry with no known pet policy. */
+/** An attraction needs someone to look after the dog when it bans pets, or charges entry with no known pet policy. */
+export function needsCare(a: Attraction): boolean {
+  return a.pets.includes("禁止") || (!a.pets.includes("允许") && (a.peak ?? 0) > 0);
+}
+
 export function needsDogCare(attractions: Attraction[]): boolean {
-  return attractions.some((a) => a.pets.includes("禁止") || (!a.pets.includes("允许") && (a.peak ?? 0) > 0));
+  return attractions.some(needsCare);
+}
+
+/** Days the dog is boarded at a stop: one per attraction that needs care, never more than the days spent there. */
+export function boardingDays(attractions: Attraction[], nights: number): number {
+  const n = attractions.filter(needsCare).length;
+  return n === 0 ? 0 : Math.min(n, Math.max(1, nights - 1));
 }

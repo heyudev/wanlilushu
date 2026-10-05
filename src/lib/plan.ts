@@ -1,8 +1,8 @@
 // Turns the fixed national loop into a personal plan: rotate to the traveller's entry point, apply
 // direction and pace, lay out dates, and cost every leg and night.
 import {
-  addEnergy, attractionPrice, energyFor, foodPerDayAt, fuelPriceFor, lodgingCost, mealsPerDay, needsDogCare, passesLevel,
-  priceIndex, sleepModeFor, ticketCost, ZERO_ENERGY,
+  attractionPrice, boardingDays, energyFor, energyForDay, foodPerDayAt, fuelPriceFor, lodgingCost, mealsPerDay, needsDogCare,
+  passesLevel, priceIndex, sleepModeFor, ticketCost, ZERO_ENERGY,
 } from "./costs";
 import { comfortScore } from "./comfort";
 import { addDays, daysBetween, holidayName, monthOf } from "./dates";
@@ -183,14 +183,41 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   };
 
   // ---- how long to stay: rhythm, long stays at comfortable bases, waiting for the next region's season
-  let lastSojournDay = 0;
-  const waits: { at: string; seg: string; days: number }[] = [];
-  const nextGate = (i: number): number => {
+  // day the last long stay (a sojourn, or a month or more waiting) ended; the interval is travel time since then
+  let lastLongStayEnd = 0;
+  const waits: { at: string; segs: string[]; days: number }[] = [];
+  const breakDaysAfter = (id: string) => input.breaks.find((b) => b.after === id)?.days ?? 0;
+  /**
+   * Seasonal regions entered between stop i and the next long-stay base, with the days from arriving
+   * at i until entering each (stays at the stops in between and trips home included).
+   */
+  const gatesAhead = (i: number, nightsHere: number) => {
+    const out: { seg: string; offset: number }[] = [];
+    let offset = nightsHere + breakDaysAfter(nodes[i].id);
     for (let j = i + 1; j < N; j++) {
-      const seg = nodes[j].seg;
-      if (gates[seg] && seg !== nodes[j - 1].seg && seg !== nodes[i].seg) return j;
+      const n = nodes[j];
+      const kept = keepNode(n, input);
+      // a region is entered on arriving at its first stop, even when that stop is the next base
+      if (gates[n.seg] && n.seg !== nodes[j - 1].seg) out.push({ seg: n.seg, offset });
+      if (kept && n.base) break;
+      if (kept) offset += nightsFor(n, input) + breakDaysAfter(n.id);
     }
-    return -1;
+    return out;
+  };
+  /**
+   * Days to wait at stop i so that the regions ahead are entered in season: the shortest wait that brings
+   * the most of them into their windows. A trip home right after stop i counts as part of the wait.
+   */
+  const seasonWait = (i: number, nightsHere: number) => {
+    const ahead = gatesAhead(i, nightsHere);
+    if (!ahead.length) return { days: 0, segs: [] as string[] };
+    let best = { days: 0, fit: -1 };
+    for (let w = 0; w <= 366; w++) {
+      const fit = ahead.filter((g) => daysUntilWindow(addDays(input.startDate, day + w + g.offset), gates[g.seg]) === 0).length;
+      if (fit > best.fit) best = { days: w, fit };
+      if (fit === ahead.length) break;
+    }
+    return { days: best.days, segs: ahead.map((g) => g.seg) };
   };
   const planStay = (i: number) => {
     const node = nodes[i];
@@ -202,29 +229,25 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     const comfort = comfortAt(data, node.id, month);
     // nights the traveller set by hand are kept as they are
     const comfortable = node.base === true && comfort != null && comfort >= input.minComfort && input.nightsOverride[node.id] == null;
-    if (comfortable && input.sojournEveryWeeks > 0 && input.sojournWeeks > 0 && day - lastSojournDay >= input.sojournEveryWeeks * 7) {
+    if (comfortable && input.sojournEveryWeeks > 0 && input.sojournWeeks > 0 && day - lastLongStayEnd >= input.sojournEveryWeeks * 7) {
       nights = Math.max(nights, input.sojournWeeks * 7);
       sojourn = true;
-      lastSojournDay = day;
     } else if (comfortable && input.comfortStayNights > nights) {
       nights = input.comfortStayNights;
       comfortStay = true;
     }
-    if (input.waitForSeason) {
-      const g = nextGate(i);
-      const lastBase = g > 0 && !nodes.slice(i + 1, g).some((n) => n.base);
-      if (g > 0 && ((node.base && lastBase) || i === g - 1)) {
-        let ahead = 0;
-        for (let j = i + 1; j < g; j++) if (keepNode(nodes[j], input)) ahead += nightsFor(nodes[j], input);
-        const arrive = addDays(input.startDate, day + nights + ahead);
-        // the wait is set by the region's window: from arrival until the window opens
-        waitDays = daysUntilWindow(arrive, gates[nodes[g].seg]);
-        if (waitDays > 0) {
-          nights += waitDays;
-          waits.push({ at: node.id, seg: nodes[g].seg, days: waitDays });
-        }
+    // waiting happens only where one can live for a while (a long-stay base, or the starting point),
+    // never at a stop in the middle of a seasonal region
+    if (input.waitForSeason && (node.base || i === 0)) {
+      const w = seasonWait(i, nights);
+      if (w.days > 0) {
+        waitDays = w.days;
+        nights += waitDays;
+        waits.push({ at: node.id, segs: w.segs, days: waitDays });
       }
     }
+    // a month or more in one place is a long stay too: the next one is due an interval of travel later
+    if (nights >= LONG_STAY_NIGHTS) lastLongStayEnd = day + nights;
     return { nights, sojourn, waitDays, comfortStay };
   };
 
@@ -252,7 +275,8 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   day += first.nights;
   takeBreak(nodes[0]);
 
-  let acc = { km: 0, h: 0, hw: 0, ferryKm: 0, via: [] as string[], energy: ZERO_ENERGY, toll: 0, legIdx: [] as number[] };
+  type Part = { km: number; seg: string; fuelPrice: number };
+  let acc = { km: 0, h: 0, hw: 0, ferryKm: 0, via: [] as string[], parts: [] as Part[], toll: 0, legIdx: [] as number[] };
   let fromNode = nodes[0];
   for (let i = 0; i < N; i++) {
     const leg = legs[i];
@@ -262,7 +286,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     const fuel = fuelPriceFor(legFrom, data, input);
     acc = {
       km: acc.km + leg.km, h: acc.h + leg.h, hw: acc.hw + leg.hw, ferryKm: acc.ferryKm + leg.ferry,
-      via: acc.via, energy: addEnergy(acc.energy, energyFor(leg.km, legFrom.seg, fuel, input)),
+      via: acc.via, parts: [...acc.parts, { km: leg.km, seg: legFrom.seg, fuelPrice: fuel }],
       toll: acc.toll + leg.hw * input.tollPerKm, legIdx: [...acc.legIdx, idx[i]],
     };
     if (leg.ferry > 0) {
@@ -283,7 +307,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     }
     planLegs.push({
       from: fromNode.id, to: next.id, km: acc.km, h: acc.h, hw: acc.hw, ferryKm: acc.ferryKm, via: acc.via,
-      seg: fromNode.seg, day, date: addDays(input.startDate, day), energy: acc.energy, toll: acc.toll,
+      seg: fromNode.seg, day, date: addDays(input.startDate, day), energy: energyForDay(acc.parts, input), toll: acc.toll,
       legIdx: acc.legIdx, reversed: input.direction === "ccw",
     });
     if (isLast) {
@@ -301,7 +325,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
       takeBreak(next);
     }
     fromNode = next;
-    acc = { km: 0, h: 0, hw: 0, ferryKm: 0, via: [], energy: ZERO_ENERGY, toll: 0, legIdx: [] };
+    acc = { km: 0, h: 0, hw: 0, ferryKm: 0, via: [], parts: [], toll: 0, legIdx: [] };
   }
 
   const endDay = day + (approach ? approach.days : 0);
@@ -326,7 +350,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     localKm += s.localKm;
     costs.fuel += s.localEnergy.fuelCost; costs.electricity += s.localEnergy.elecCost;
     costs.lodging += s.lodgingCost; costs.tickets += s.ticketCost;
-    if (s.petBanned && input.dogCare === "boarding") careDays += Math.max(1, s.nights - 1);
+    if (input.dogCare === "boarding") careDays += boardingDays(s.attractions, s.nights);
     segAdd(s.node.seg, s.localKm, s.nights, s.localEnergy.fuelCost + s.localEnergy.elecCost + s.lodgingCost + s.ticketCost);
   }
   if (approach) {
@@ -357,7 +381,6 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
 
   // ---- warnings
   const visited = new Set(stops.map((s) => s.node.id));
-  const visitDate = new Map(stops.map((s) => [s.node.id, s.date]));
   const offStops = stops.filter((s) => s.season === "off");
   if (offStops.length) {
     warnings.push({
@@ -391,19 +414,19 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     });
   }
   for (const [a, b, m1, m2, name] of SEASONAL_ROADS) {
-    if (!visited.has(a) && !visited.has(b)) continue;
-    const date = visitDate.get(a) ?? visitDate.get(b);
-    if (!date) continue;
-    const m = monthOf(date);
+    const k = data.legs.findIndex((l) => (l.frm === a && l.to === b) || (l.frm === b && l.to === a));
+    const drive = planLegs.find((l) => l.legIdx.includes(k));
+    if (k < 0 || !drive) continue;
+    const m = monthOf(drive.date);
     if (m < m1 || m > m2) {
       warnings.push({ kind: "road-season", level: "critical", text: `${name} 通常只在 ${m1}–${m2} 月通行，按当前日期你会在 ${m} 月经过。`, nodes: [a, b] });
     }
   }
-  const high = stops.filter((s) => (s.node.alt ?? 0) >= 4000);
+  const high = stops.filter((s) => (s.node.alt ?? 0) >= 4000 && s.nights > 0);
   if (high.length) {
     warnings.push({
       kind: "altitude", level: "info",
-      text: `${high.length} 晚住在海拔 4000m 以上，进藏前在 3000m 左右的地方适应 1–2 晚。`,
+      text: `${high.reduce((a, s) => a + s.nights, 0)} 晚住在海拔 4000m 以上（${high.length} 个地方），进藏前在 3000m 左右的地方适应 1–2 晚。`,
       nodes: high.map((s) => s.node.id),
     });
   }
@@ -437,10 +460,10 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   }
   for (const w of waits) {
     const at = data.nodes.find((n) => n.id === w.at)?.n ?? w.at;
-    const seg = data.segs.find((x) => x.k === w.seg)?.name ?? w.seg;
+    const segs = w.segs.map((k) => `「${data.segs.find((x) => x.k === k)?.name ?? k}」`).join("");
     warnings.push({
       kind: "season", level: "info",
-      text: `为了赶上「${seg}」的季节，在${at}多住 ${w.days} 天再出发。`,
+      text: `为了赶上${segs}的季节，在${at}多住 ${w.days} 天再出发。`,
       nodes: [w.at],
     });
   }
