@@ -297,8 +297,6 @@ export interface PlanInput {
   minComfort: number;
   /** wait at the last base before a seasonal region until its window opens */
   waitForSeason: boolean;
-  /** longest such wait; when the window is further off the trip goes on and the region is reached off-season */
-  maxWaitDays: number;
   /** monthly rent for month-long stays; null = price those nights as hotel nights */
   rentPerMonth: number | null;
   breaks: HomeBreak[];

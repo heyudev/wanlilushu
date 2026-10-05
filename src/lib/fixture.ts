@@ -51,5 +51,5 @@ export const baseInput = (over: Partial<PlanInput> = {}): PlanInput => ({
   ...DEFAULT_INPUT, start: "A城", startDate: "2027-04-01", dog: false, includeExcursions: false,
   vehicle: "hev", lPer100: 5, tollPerKm: 0.5, hotelPerRoom: 300, localPrice: false, campPerNight: 80, rentPerMonth: 3000, adults: 2, kids: 0,
   foodMode: "local", foodTier: "normal", meals: 3, foodPerMeal: null, miscPerDay: 0, maintenancePer10k: 0, localKmPerStayDay: 0,
-  rhythm: "checkin", stayFactor: 1, comfortStayNights: 0, sojournEveryWeeks: 0, sojournWeeks: 0, waitForSeason: false, maxWaitDays: 0, breaks: [], ...over,
+  rhythm: "checkin", stayFactor: 1, comfortStayNights: 0, sojournEveryWeeks: 0, sojournWeeks: 0, waitForSeason: false, breaks: [], ...over,
 });

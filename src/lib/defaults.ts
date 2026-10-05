@@ -104,7 +104,6 @@ export const DEFAULT_INPUT: PlanInput = {
   sojournWeeks: RHYTHMS.slow.sojournWeeks,
   minComfort: 0.7,
   waitForSeason: false,
-  maxWaitDays: 30,
   rentPerMonth: null,
   breaks: [],
   flightPerPerson: 1500,

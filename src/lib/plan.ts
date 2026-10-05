@@ -185,7 +185,6 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
   // ---- how long to stay: rhythm, long stays at comfortable bases, waiting for the next region's season
   let lastSojournDay = 0;
   const waits: { at: string; seg: string; days: number }[] = [];
-  const skippedWaits: { at: string; seg: string; days: number }[] = [];
   const nextGate = (i: number): number => {
     for (let j = i + 1; j < N; j++) {
       const seg = nodes[j].seg;
@@ -218,13 +217,11 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
         let ahead = 0;
         for (let j = i + 1; j < g; j++) if (keepNode(nodes[j], input)) ahead += nightsFor(nodes[j], input);
         const arrive = addDays(input.startDate, day + nights + ahead);
-        const need = daysUntilWindow(arrive, gates[nodes[g].seg]);
-        if (need > 0 && need <= input.maxWaitDays) {
-          waitDays = need;
+        // the wait is set by the region's window: from arrival until the window opens
+        waitDays = daysUntilWindow(arrive, gates[nodes[g].seg]);
+        if (waitDays > 0) {
           nights += waitDays;
           waits.push({ at: node.id, seg: nodes[g].seg, days: waitDays });
-        } else if (need > input.maxWaitDays && !skippedWaits.some((w) => w.seg === nodes[g].seg)) {
-          skippedWaits.push({ at: node.id, seg: nodes[g].seg, days: need });
         }
       }
     }
@@ -444,15 +441,6 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     warnings.push({
       kind: "season", level: "info",
       text: `为了赶上「${seg}」的季节，在${at}多住 ${w.days} 天再出发。`,
-      nodes: [w.at],
-    });
-  }
-  for (const w of skippedWaits) {
-    const at = data.nodes.find((n) => n.id === w.at)?.n ?? w.at;
-    const seg = data.segs.find((x) => x.k === w.seg)?.name ?? w.seg;
-    warnings.push({
-      kind: "season", level: "warn",
-      text: `到${at}时「${seg}」还要约 ${w.days} 天才进入通行季节，超过了最多等 ${input.maxWaitDays} 天的设置，没有等。可以换个出发日期，或在“调整条件”里放宽等待天数。`,
       nodes: [w.at],
     });
   }
