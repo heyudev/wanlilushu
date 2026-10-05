@@ -11,6 +11,7 @@ npm run typecheck
 npm run build
 npm run data         # data/ → src/data/（改了 data/route.json 或 data/research/ 之后）
 npm run data:check   # 待更新数据清单（复核到期、过期、缺价、低可信）
+npm run fonts        # 宋体子集（思源宋体）：新增了界面文字或数据里的新字后重跑，否则 fonts.test.ts 会失败
 ```
 
 ## 密钥

@@ -69,6 +69,7 @@ python3 scripts/fetch_pet_friendly.py   # 可带宠物的酒店、宠物餐厅�
 python3 scripts/fetch_images.py         # 图片与署名（Wikimedia Commons，只取开放授权）
 python3 scripts/fetch_hero.py           # 首页大图（同一批 Commons 照片的大尺寸版本）
 python3 scripts/make_og.py              # 分享卡片 public/og.png
+python3 scripts/build_fonts.py          # 宋体子集：按全站用到的字截取思源宋体，改了数据或界面文字后重跑
 npm run data                            # 合并到 src/data/
 ```
 
@@ -118,4 +119,5 @@ npm run data                            # 合并到 src/data/
 | 路段里程、路线几何 | `data/generated/legs.json`、`public/route/` | 由 OSRM 基于 OpenStreetMap 计算，© OpenStreetMap contributors，ODbL |
 | 海拔 | `data/generated/elevation.json` | OpenTopoData，SRTM 90m |
 | 逐月气候 | `data/generated/climate.json` | Open-Meteo，CC BY 4.0 |
+| 宋体字体子集 | `public/fonts/` | Noto Serif CJK SC（思源宋体），SIL Open Font License 1.1，见 `public/fonts/OFL.txt` |
 | 餐厅人均与带狗便利程度统计 | `data/generated/prices.json`、`data/generated/pet_friendly.json` | 基于高德开放平台检索结果的统计，受其服务条款约束 |

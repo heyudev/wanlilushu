@@ -12,6 +12,7 @@
     "test": "vitest run",
     "data": "python3 scripts/build_data.py",
     "export:md": "vite-node scripts/export-md.ts",
+    "fonts": "python3 scripts/build_fonts.py",
     "data:check": "vite-node scripts/check-data.ts --",
     "deploy:cf": "npm test && npm run build && npx wrangler pages deploy dist --project-name wanlilushu"
   },
