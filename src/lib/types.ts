@@ -280,6 +280,7 @@ export interface PlanInput {
   foodPerMeal: number | null;
   dogPerDay: number;
   boardingPerDay: number;
+  /** local driving per stay day; long stays count it only for an ordinary visit's days */
   localKmPerStayDay: number;
   maintenancePer10k: number;
   miscPerDay: number;

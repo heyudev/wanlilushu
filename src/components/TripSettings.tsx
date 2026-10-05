@@ -230,7 +230,7 @@ export function CostParams({ input, set, data }: { input: PlanInput; set: SetInp
           </div>
           {input.vehicle === "phev" && <Num id="ep" label="充电价" unit="元/kWh" step={0.1} value={input.elecPrice} onChange={(v) => set("elecPrice", v)} />}
           <Num id="toll" label="过路费" unit="元/km" step={0.05} value={input.tollPerKm} onChange={(v) => set("tollPerKm", v)} />
-          <Num id="local" label="停留日市内行驶" unit="km/天" step={5} value={input.localKmPerStayDay} onChange={(v) => set("localKmPerStayDay", v)} />
+          <Num id="local" label="停留日市内行驶（旅居等长住不计）" unit="km/天" step={5} value={input.localKmPerStayDay} onChange={(v) => set("localKmPerStayDay", v)} />
           <Num id="maint" label="保养" unit="元/万公里" step={100} value={input.maintenancePer10k} onChange={(v) => set("maintenancePer10k", v)} />
           <Num id="misc" label="停车杂费" unit="元/天" step={5} value={input.miscPerDay} onChange={(v) => set("miscPerDay", v)} />
         </div>

@@ -98,6 +98,27 @@ describe("long stays", () => {
   });
 });
 
+describe("local driving", () => {
+  it("is not counted for the living days of a long stay", () => {
+    const d = bases("a", "b");
+    const input = baseInput({ localKmPerStayDay: 30, stayFactor: 2 });
+    // b: an ordinary visit is 2 nights (one day of local driving), the sojourn makes it 28
+    const p = buildPlan(d, { ...input, sojournEveryWeeks: 0.1, sojournWeeks: 4 });
+    expect(p.stops[1].nights).toBe(28);
+    expect(p.stops[1].localKm).toBe(30);
+    // waiting a month or more for the season is a long stay as well
+    const w = buildPlan(d, { ...input, waitForSeason: true }, { B: [7, 8] });
+    expect(w.stops[1].nights).toBeGreaterThanOrEqual(28);
+    expect(w.stops[1].localKm).toBe(30);
+  });
+
+  it("is counted on every day of a one-to-two-week stay", () => {
+    const p = buildPlan(bases("a", "b"), baseInput({ localKmPerStayDay: 30, comfortStayNights: 10 }));
+    expect(p.stops[0].nights).toBe(10);
+    expect(p.stops[0].localKm).toBe(9 * 30);
+  });
+});
+
 describe("warnings", () => {
   it("counts nights at altitude, not places", () => {
     const p = buildPlan(fixture(), baseInput({ nightsOverride: { c: 3 } }));

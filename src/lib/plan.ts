@@ -159,13 +159,18 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     const stayDays = Math.max(0, nights - 1);
     const excursions = !transit && input.includeExcursions && stayDays > 0 ? exByNode.get(node.id) ?? [] : [];
     const exKm = excursions.reduce((s, e) => s + e.km, 0);
-    const localKm = Math.max(0, stayDays - excursions.length) * input.localKmPerStayDay + exKm;
+    // during a long stay (a sojourn, or a month or more in one place) local driving counts only for the
+    // days of an ordinary visit; the rest is living there, not sightseeing by car
+    const long = sojourn || nights >= LONG_STAY_NIGHTS;
+    const driveDays = long ? Math.max(0, Math.min(nights, nightsFor(node, { ...input, nightsOverride: {} })) - 1) : stayDays;
+    const localKm = Math.max(0, driveDays - excursions.length) * input.localKmPerStayDay + exKm;
     const fuel = fuelPriceFor(node, data, input);
-    // each stay day starts on a fresh charge; spread local km evenly over those days
+    // each driving day starts on a fresh charge; spread local km evenly over those days
     let localEnergy = ZERO_ENERGY;
-    if (stayDays > 0 && localKm > 0) {
-      const perDay = energyFor(localKm / stayDays, node.seg, fuel, input);
-      localEnergy = { fuelL: perDay.fuelL * stayDays, kwh: perDay.kwh * stayDays, fuelCost: perDay.fuelCost * stayDays, elecCost: perDay.elecCost * stayDays };
+    const kmDays = Math.max(driveDays, excursions.length);
+    if (kmDays > 0 && localKm > 0) {
+      const perDay = energyFor(localKm / kmDays, node.seg, fuel, input);
+      localEnergy = { fuelL: perDay.fuelL * kmDays, kwh: perDay.kwh * kmDays, fuelCost: perDay.fuelCost * kmDays, elecCost: perDay.elecCost * kmDays };
     }
     const exToll = excursions.reduce((s, e) => s + e.hw * input.tollPerKm, 0);
     costs.toll += exToll;
