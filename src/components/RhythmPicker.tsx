@@ -9,7 +9,7 @@ type Preset = Exclude<Rhythm, "custom">;
 
 export function applyRhythm(input: PlanInput, r: Preset): PlanInput {
   const p = RHYTHMS[r];
-  return { ...input, rhythm: r, stayFactor: p.stayFactor, comfortStayNights: p.comfortStayNights, sojournEveryWeeks: p.sojournEveryWeeks, sojournWeeks: p.sojournWeeks, waitForSeason: p.waitForSeason };
+  return { ...input, rhythm: r, stayFactor: p.stayFactor, comfortStayNights: p.comfortStayNights, sojournEveryWeeks: p.sojournEveryWeeks, sojournWeeks: p.sojournWeeks, waitForSeason: p.waitForSeason, maxWaitDays: p.maxWaitDays };
 }
 
 /** Four rhythm presets, each showing how long the whole trip becomes with the current choices. */
@@ -43,6 +43,7 @@ export function RhythmFields({ input, set }: { input: PlanInput; set: SetInput }
           <label htmlFor="sf">每个地方住多久</label>
           <select id="sf" value={String(input.stayFactor)} onChange={(e) => custom("stayFactor", Number(e.target.value))}>
             <option value="1">按基础天数（如大理 3 晚）</option>
+            <option value="1.25">多住一点（大理 4 晚）</option>
             <option value="1.5">多住一半（大理约 5 晚）</option>
             <option value="2">住两倍（大理 6 晚）</option>
             <option value="3">住三倍（大理 9 晚）</option>
@@ -77,6 +78,14 @@ export function RhythmFields({ input, set }: { input: PlanInput; set: SetInput }
         <span className="track" aria-hidden="true" />
         <span>等季节：进西藏、新疆、川西、东北极北前季节不对，就在前一个旅居地多住</span>
       </label>
+      {input.waitForSeason && (
+        <div className="field" style={{ marginTop: 10 }}>
+          <label htmlFor="mw">最多等多久（再久就不等，到时提醒季节不对）</label>
+          <select id="mw" value={String(input.maxWaitDays)} onChange={(e) => custom("maxWaitDays", Number(e.target.value))}>
+            {[14, 30, 60, 90, 180].map((d) => <option key={d} value={d}>{d >= 30 ? `${d / 30} 个月` : `${d / 7} 周`}</option>)}
+          </select>
+        </div>
+      )}
     </div>
   );
 }

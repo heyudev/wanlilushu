@@ -75,7 +75,7 @@ describe("waiting for the season", () => {
     const d = slowData();
     d.segs[1].k = "B";
     // segment B (stops c, d) only open in July–August for this test
-    const input = baseInput({ waitForSeason: true, startDate: "2027-04-01" });
+    const input = baseInput({ waitForSeason: true, maxWaitDays: 120, startDate: "2027-04-01" });
     const gates = { B: [7, 8] as [number, number] };
     const p = buildPlan({ ...d }, input, gates);
     const b = p.stops.find((s) => s.node.id === "b")!;
@@ -83,6 +83,28 @@ describe("waiting for the season", () => {
     expect(b.waitDays).toBeGreaterThan(0);
     expect(c.date >= "2027-07-01").toBe(true);
     expect(p.warnings.some((w) => w.text.includes("多住"))).toBe(true);
+  });
+
+  it("does not wait longer than allowed, and warns once per region instead", () => {
+    const d = slowData();
+    const gates = { B: [7, 8] as [number, number] };
+    const p = buildPlan(d, baseInput({ waitForSeason: true, maxWaitDays: 30, startDate: "2027-04-01" }), gates);
+    expect(p.totals.waitDays).toBe(0);
+    expect(p.stops.every((s) => s.waitDays === 0)).toBe(true);
+    const skipped = p.warnings.filter((w) => w.text.includes("没有等"));
+    expect(skipped).toHaveLength(1);
+    expect(skipped[0].text).toContain("最多等 30 天");
+  });
+
+  it("waits when the window opens within the allowed days", () => {
+    const d = slowData();
+    // allowed exactly up to the days needed, skipped one day short of it
+    const gates = { B: [7, 8] as [number, number] };
+    const allowed = buildPlan(d, baseInput({ waitForSeason: true, maxWaitDays: 120, startDate: "2027-04-20" }), gates);
+    const need = allowed.totals.waitDays;
+    expect(need).toBeGreaterThan(0);
+    expect(buildPlan(d, baseInput({ waitForSeason: true, maxWaitDays: need, startDate: "2027-04-20" }), gates).totals.waitDays).toBe(need);
+    expect(buildPlan(d, baseInput({ waitForSeason: true, maxWaitDays: need - 1, startDate: "2027-04-20" }), gates).totals.waitDays).toBe(0);
   });
 });
 
