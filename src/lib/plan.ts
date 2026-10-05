@@ -176,7 +176,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
     costs.toll += exToll;
     return {
       node, day, date, nights, transit, sleep,
-      season: transit || final || resumed ? "ok" : seasonFit(month, node.best),
+      season: transit || final ? "ok" : seasonFit(month, node.best),
       lodgingCost: lodging ?? 0,
       foodPerPerson, priceFrom: src && src.id !== node.id ? src.id : null,
       ticketCost: ticketCost(ticketPerPerson, input),
@@ -448,7 +448,7 @@ export function buildPlan(data: Dataset, input: PlanInput, gates: Record<string,
 
   // ---- warnings
   const visited = new Set(stops.map((s) => s.node.id));
-  const offStops = stops.filter((s) => s.season === "off");
+  const offStops = stops.filter((s) => s.season === "off" && !s.resumed);
   if (offStops.length) {
     warnings.push({
       kind: "season", level: offStops.length > 8 ? "warn" : "info",

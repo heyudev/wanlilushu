@@ -12,7 +12,7 @@ import { TripSettings } from "./components/TripSettings";
 import { Welcome } from "./components/Welcome";
 import { applyCustomStops } from "./lib/custom";
 import { loadDataset } from "./lib/data";
-import { formatDate, shortDate } from "./lib/dates";
+import { dateRange, formatDate } from "./lib/dates";
 import { DEFAULT_INPUT } from "./lib/defaults";
 import { duration, int, yuanShort } from "./lib/format";
 import { planToGpx } from "./lib/gpx";
@@ -140,7 +140,7 @@ export function App() {
           <a className="brand" href="#route" onClick={(e) => { e.preventDefault(); go("route"); }}><span className="seal" aria-hidden="true"><i>路</i><i>万</i><i>书</i><i>里</i></span>万里路书</a>
           <p className="summary">
             <span>{plan.start.name}出发</span>
-            <span className="num">{shortDate(plan.input.startDate).split(" ")[0]}–{shortDate(plan.endDate).split(" ")[0]}</span>
+            <span className="num">{dateRange(plan.input.startDate, plan.endDate)}</span>
             <span className="num" title={parts.join("，")}>{duration(plan.days)}{parts.length > 0 && <span className="muted">（其中{parts.join("、")}）</span>}</span>
             <span className="num">{int(plan.totals.km + plan.totals.localKm)} km</span>
             <span className="num">

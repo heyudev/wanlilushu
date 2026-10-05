@@ -1,6 +1,6 @@
 import { campsites } from "../lib/data";
 import { attractionPrice } from "../lib/costs";
-import { monthOf, shortDate } from "../lib/dates";
+import { monthOf, shortDateFrom } from "../lib/dates";
 import { int, km, yuan } from "../lib/format";
 import { SEASON_LABEL } from "../lib/season";
 import type { Attraction, Dataset, DogSize, HomeBreak, PetFriendly, Plan, PlanInput, Stop } from "../lib/types";
@@ -179,7 +179,7 @@ export function StopDetail({ s, plan, data, set, onAddAfter, onSkipped }: {
       <div className="sd-head">
         <span className="muted">{n.p}{n.alt != null && ` · 海拔 ${int(n.alt)}m`}</span>
         <div className="chips">
-          <span className="chip date">{shortDate(s.date)} 到</span>
+          <span className="chip date">{shortDateFrom(s.date, plan.input.startDate.slice(0, 4))} {s.resumed ? "回来" : "到"}</span>
           {s.nights > 0 && <span className="chip">住 {s.nights} 晚 · {SLEEP_LABEL[s.sleep]}</span>}
           {s.transit && <span className="chip">途中过夜</span>}
           {!s.transit && <span className={`chip ${s.season}`}>{SEASON_LABEL[s.season]} · 最佳 {n.best.join("/")} 月</span>}

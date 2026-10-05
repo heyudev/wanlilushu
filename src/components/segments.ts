@@ -25,7 +25,8 @@ export function segmentRuns(plan: Plan): SegRun[] {
     // connecting drives into a segment are not part of it (shown on their own in the day list)
     run.km += leg ? leg.km - transferKm(leg) : 0;
     run.nights += stop.nights;
-    if (!stop.transit) {
+    // the rest of a stay after a trip home is the same visit, not another stop
+    if (!stop.transit && !stop.resumed) {
       run.counted++;
       if (stop.season === "good") run.good++;
     }

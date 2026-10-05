@@ -5,7 +5,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import elevation from "../data/elevation.json";
 import { wgsToGcj } from "../lib/coords";
-import { shortDate } from "../lib/dates";
+import { shortDateFrom } from "../lib/dates";
 import { PERMIT_NODES } from "../lib/defaults";
 import { km } from "../lib/format";
 import { loadTransferGeom } from "../lib/transferGeom";
@@ -183,7 +183,7 @@ export function AmapView(props: Props) {
         const road = roadByLeg.get(`${leg.frm}>${leg.to}`);
         line.on("click", () => cb.current.onSelectSeg(pl.seg));
         line.on("mouseover", (e: any) => showHover(e.lnglat,
-          `${nodeName.get(pl.from)} → ${nodeName.get(pl.to)}\n${km(pl.km)} · 约 ${pl.h.toFixed(1)} 小时 · ${shortDate(pl.date)}${road ? `\n风景道：${road}` : ""}`));
+          `${nodeName.get(pl.from)} → ${nodeName.get(pl.to)}\n${km(pl.km)} · 约 ${pl.h.toFixed(1)} 小时 · ${shortDateFrom(pl.date, plan.input.startDate.slice(0, 4))}${road ? `\n风景道：${road}` : ""}`));
         line.on("mouseout", hideHover);
         R.lines.set(li, { line, seg: pl.seg });
         map.add(line);
@@ -218,7 +218,7 @@ export function AmapView(props: Props) {
           lineJoin: "round", lineCap: "round", showDir: layers.dir, dirColor: "#ffffff", zIndex: 48, cursor: "pointer",
         });
         line.on("mouseover", (e: any) => showHover(e.lnglat,
-          `转场 ${nodeName.get(pl.from)} → ${nodeName.get(pl.to)}\n${km(pl.km)} · 约 ${pl.h.toFixed(1)} 小时${pl.driveDays > 1 ? `，分 ${pl.driveDays} 天` : ""} · ${shortDate(pl.date)}${p.estimated ? "\n无路网数据，按直线估算" : ""}`));
+          `转场 ${nodeName.get(pl.from)} → ${nodeName.get(pl.to)}\n${km(pl.km)} · 约 ${pl.h.toFixed(1)} 小时${pl.driveDays > 1 ? `，分 ${pl.driveDays} 天` : ""} · ${shortDateFrom(pl.date, plan.input.startDate.slice(0, 4))}${p.estimated ? "\n无路网数据，按直线估算" : ""}`));
         line.on("mouseout", hideHover);
         G.ferry.push(line);
       }
@@ -256,7 +256,7 @@ export function AmapView(props: Props) {
         },
       });
       const brk = plan.breaks.find((b) => b.after === s.node.id && !b.newYear) ?? plan.breaks.find((b) => b.after === s.node.id);
-      const detail = `${order}. ${s.node.n}${s.transit ? "（途中过夜）" : ""}\n${shortDate(s.date)} 到 · 住 ${s.nights} 晚${s.sojourn ? " · 旅居" : s.comfortStay ? " · 多住" : ""}${s.waitDays ? ` · 等季节 ${s.waitDays} 天` : ""}\n海拔 ${s.node.alt ?? "?"} m${brk ? `\n之后回家 ${brk.days} 天` : ""}`;
+      const detail = `${order}. ${s.node.n}${s.transit ? "（途中过夜）" : ""}\n${shortDateFrom(s.date, plan.input.startDate.slice(0, 4))} 到 · 住 ${s.nights} 晚${s.sojourn ? " · 旅居" : s.comfortStay ? " · 多住" : ""}${s.waitDays ? ` · 等季节 ${s.waitDays} 天` : ""}\n海拔 ${s.node.alt ?? "?"} m${brk ? `\n之后回家 ${brk.days} 天` : ""}`;
       m.on("click", () => cb.current.onSelectStop(s.node.id));
       m.on("mouseover", () => showHover(llToGcj(s.node.ll), detail));
       m.on("mouseout", hideHover);
@@ -284,7 +284,7 @@ export function AmapView(props: Props) {
       G.pins.push(new AMap.Polyline({ path: [llToGcj(a), llToGcj(b)], strokeColor: C.start, strokeWeight: 3, strokeStyle: "dashed", strokeDasharray: [8, 6], zIndex: 46 }));
     if (plan.loop) {
       pin(llToGcj(entryStop.node.ll), homeIsEntry ? "起" : "入",
-        `${homeIsEntry ? "起点 · 终点" : "进入 · 离开环线"}<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDate(plan.input.startDate)} 出发，${shortDate(plan.endDate)} 回来</span>`,
+        `${homeIsEntry ? "起点 · 终点" : "进入 · 离开环线"}<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDateFrom(plan.input.startDate, plan.input.startDate.slice(0, 4))} 出发，${shortDateFrom(plan.endDate, plan.input.startDate.slice(0, 4))} 回来</span>`,
         () => cb.current.onSelectStop(entryStop.node.id));
       if (plan.approach) {
         pin(llToGcj(plan.start.ll), "家", `起点 · 终点<b>${plan.start.name}</b><span>开 ${km(plan.approach.km)} 接入环线</span>`);
@@ -292,12 +292,12 @@ export function AmapView(props: Props) {
       }
     } else {
       // a season route starts and ends at different places
-      pin(llToGcj(entryStop.node.ll), "起", `第一站<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDate(entryStop.date)} 到</span>`,
+      pin(llToGcj(entryStop.node.ll), "起", `第一站<b>${entryStop.node.n.split(" · ")[0]}</b><span>${shortDateFrom(entryStop.date, plan.input.startDate.slice(0, 4))} 到</span>`,
         () => cb.current.onSelectStop(entryStop.node.id));
-      pin(llToGcj(lastStop.node.ll), "终", `最后一站<b>${lastStop.node.n.split(" · ")[0]}</b><span>${shortDate(plan.endDate)} 到家</span>`,
+      pin(llToGcj(lastStop.node.ll), "终", `最后一站<b>${lastStop.node.n.split(" · ")[0]}</b><span>${shortDateFrom(plan.endDate, plan.input.startDate.slice(0, 4))} 到家</span>`,
         () => cb.current.onSelectStop(lastStop.node.id));
       if (plan.approach || plan.homeward) {
-        pin(llToGcj(plan.start.ll), "家", `家<b>${plan.start.name}</b><span>${shortDate(plan.input.startDate)} 出发，${shortDate(plan.endDate)} 回来</span>`);
+        pin(llToGcj(plan.start.ll), "家", `家<b>${plan.start.name}</b><span>${shortDateFrom(plan.input.startDate, plan.input.startDate.slice(0, 4))} 出发，${shortDateFrom(plan.endDate, plan.input.startDate.slice(0, 4))} 回来</span>`);
         if (plan.approach) homeLine(plan.start.ll, entryStop.node.ll);
         if (plan.homeward) homeLine(lastStop.node.ll, plan.start.ll);
       }

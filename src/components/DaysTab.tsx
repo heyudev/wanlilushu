@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { monthlyView } from "../lib/calendar";
-import { shortDate } from "../lib/dates";
+import { shortDate, shortDateFrom } from "../lib/dates";
 import { hours, km, yuan } from "../lib/format";
 import { SEASON_LABEL } from "../lib/season";
 import type { Dataset, Plan } from "../lib/types";
@@ -49,6 +49,7 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
   const roadsOf = roadsLookup(data);
   const segs = new Map(data.segs.map((s) => [s.k, s]));
   const runs = segmentRuns(plan);
+  const year = plan.input.startDate.slice(0, 4);
   const [open, setOpen] = useState<Set<number>>(() => new Set([0]));
   const toggle = (i: number) => setOpen((prev) => {
     const next = new Set(prev);
@@ -82,7 +83,7 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
             <button type="button" className="day-seg-head" aria-expanded={isOpen} onClick={() => toggle(ri)}>
               <span className="shield">{r.k}</span>
               <span className="seg-name"><b>{s?.name}</b><span className="muted small">{s?.range}</span></span>
-              <span className="num small">{shortDate(r.items[0].stop.date)} 起 · {r.nights} 晚 · {km(r.km)}</span>
+              <span className="num small">{shortDateFrom(r.items[0].stop.date, year)} 起 · {r.nights} 晚 · {km(r.km)}</span>
               <span className="chev" aria-hidden="true">{isOpen ? "−" : "+"}</span>
             </button>
             {isOpen && (
@@ -118,7 +119,7 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
                     </button>
                     {plan.breaks.filter((b) => b.stopIdx === index).map((b) => (
                       <div key={b.date} className="break-line small">
-                        {b.newYear ? `${shortDate(b.date)} 回家过年，` : ""}{b.mode === "fly" ? "车停在这里，坐飞机" : "开车"}回家住 {b.days} 天
+                        {b.newYear ? `${shortDateFrom(b.date, year)} 回家过年，` : ""}{b.mode === "fly" ? "车停在这里，坐飞机" : "开车"}回家住 {b.days} 天
                         （单程约 {km(b.km)}{b.roadDays ? `，路上来回多花 ${b.roadDays} 天` : ""}，往返约 {yuan(b.cost)}{b.dogBoarding ? `；狗寄养 ${b.dogBoarding} 天` : ""}），之后从这里接着走
                       </div>
                     ))}
@@ -130,8 +131,8 @@ export function DaysTab({ plan, data, onOpenStop }: { plan: Plan; data: Dataset;
         );
       })}
       {plan.loop
-        ? <p className="small muted end-line">{shortDate(last.date)} 开 {km(lastLeg.km)} 回到{last.node.n}，环线结束{plan.approach ? `，再开 ${km(plan.approach.km)} 回${plan.start.name}` : ""}。</p>
-        : <p className="small muted end-line">{shortDate(plan.endDate)} {plan.homeward ? `从${last.node.n}开约 ${km(plan.homeward.km)} 回到${plan.start.name}` : `回到${plan.start.name}`}，全程结束。</p>}
+        ? <p className="small muted end-line">{shortDateFrom(last.date, year)} 开 {km(lastLeg.km)} 回到{last.node.n}，环线结束{plan.approach ? `，再开 ${km(plan.approach.km)} 回${plan.start.name}` : ""}。</p>
+        : <p className="small muted end-line">{shortDateFrom(plan.endDate, year)} {plan.homeward ? `从${last.node.n}开约 ${km(plan.homeward.km)} 回到${plan.start.name}` : `回到${plan.start.name}`}，全程结束。</p>}
     </div>
   );
 }

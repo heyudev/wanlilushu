@@ -167,3 +167,13 @@ describe("going home for the Spring Festival", () => {
     expect(p.breaks.filter((b) => b.newYear)).toHaveLength(0);
   });
 });
+
+describe("a stay split by a trip home", () => {
+  it("counts as one visit for the season tally", () => {
+    const p = buildPlan(fixture(), baseInput({ startDate: "2027-12-20", nightsOverride: { a: 60 }, newYearHome: { days: 14, mode: "fly" } }));
+    const runs = segmentRuns(p);
+    expect(runs[0].items.filter((x) => x.stop.node.id === "a")).toHaveLength(2);
+    expect(runs[0].counted).toBe(2); // a and b, not a twice
+    expect(p.seasonScore.good + p.seasonScore.ok + p.seasonScore.off).toBe(4);
+  });
+});

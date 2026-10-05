@@ -1,4 +1,4 @@
-import { shortDate } from "../lib/dates";
+import { shortDate, shortDateFrom } from "../lib/dates";
 import { km } from "../lib/format";
 import type { Dataset, Plan, PlanInput } from "../lib/types";
 import { Elevation } from "./Elevation";
@@ -39,7 +39,7 @@ export function RouteTab({ plan, data, selectedSeg, onSelectSeg, onOpenStop, cri
                 <li key={r.k + r.items[0].index} className={open ? "open" : ""}>
                   <button type="button" className="seg-row" aria-expanded={open} onClick={() => onSelectSeg(open ? null : r.k)}>
                     <span className="shield">{r.k}</span>
-                    <span className="seg-name"><b>{s?.name}</b><span className="muted small">{shortDate(r.items[0].stop.date)} 起 · {r.nights} 晚 · {km(r.km)}</span></span>
+                    <span className="seg-name"><b>{s?.name}</b><span className="muted small">{shortDateFrom(r.items[0].stop.date, plan.input.startDate.slice(0, 4))} 起 · {r.nights} 晚 · {km(r.km)}</span></span>
                     <span className={`fit ${r.good === r.counted ? "good" : r.good * 2 >= r.counted ? "ok" : "off"}`} title="到达时当季的停留点">{r.good}/{r.counted}</span>
                   </button>
                   {open && (

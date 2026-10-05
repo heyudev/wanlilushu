@@ -63,3 +63,14 @@ export function newYearLeaveDays(start: string): number[] {
     .map((d) => daysBetween(start, d) - 1 - NEW_YEAR_LEAVE_BEFORE_EVE)
     .filter((d) => d >= 0);
 }
+
+/** shortDate, with the year in front when it is not `year` (trips often run past a year end) */
+export function shortDateFrom(s: string, year: string): string {
+  return s.slice(0, 4) === year ? shortDate(s) : `${s.slice(0, 4)} 年 ${shortDate(s)}`;
+}
+
+/** "4/1–11/20" within a year, "2027/4/1–2028/4/3" across years */
+export function dateRange(a: string, b: string): string {
+  const md = (s: string) => `${Number(s.slice(5, 7))}/${Number(s.slice(8, 10))}`;
+  return a.slice(0, 4) === b.slice(0, 4) ? `${md(a)}–${md(b)}` : `${a.slice(0, 4)}/${md(a)}–${b.slice(0, 4)}/${md(b)}`;
+}

@@ -55,3 +55,13 @@ describe("search", () => {
     expect(searchStops(d, "  ")).toEqual([]);
   });
 });
+
+describe("dates across a year end", () => {
+  it("shows the year when a date is not in the trip's first year", async () => {
+    const { dateRange, shortDateFrom } = await import("./dates");
+    expect(dateRange("2027-04-01", "2027-11-20")).toBe("4/1–11/20");
+    expect(dateRange("2027-04-01", "2028-04-03")).toBe("2027/4/1–2028/4/3");
+    expect(shortDateFrom("2027-05-01", "2027")).toBe("5/1 周六");
+    expect(shortDateFrom("2028-01-12", "2027")).toBe("2028 年 1/12 周三");
+  });
+});

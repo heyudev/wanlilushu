@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { DOG_SIZE_LABEL, FOOD_TIER_LABEL, INTEREST_LABEL } from "../lib/defaults";
 import { bestStartDates, buildPlan } from "../lib/plan";
 import { routeMode } from "../lib/order";
+import { roomsFor } from "../lib/costs";
 import { duration, int } from "../lib/format";
 import { shortDate } from "../lib/dates";
 import type { Dataset, Interest, Plan, PlanInput } from "../lib/types";
@@ -271,7 +272,7 @@ export function EatSleepParams({ input, set, plan }: { input: PlanInput; set: Se
           <NumOpt id="camp" label="营地每晚" unit="元" step={10} value={input.campPerNight} onChange={(v) => set("campPerNight", v)} />
           <NumOpt id="rent" label="旅居月租" unit="元/月" step={500} value={input.rentPerMonth} onChange={(v) => set("rentPerMonth", v)} placeholder="不填按酒店价" />
         </div>
-        {avgHotel != null && <p className="es-result">全程平均每晚约 <b className="num">¥{Math.round(avgHotel)}</b></p>}
+        {avgHotel != null && <p className="es-result">全程酒店平均每晚约 <b className="num">¥{Math.round(avgHotel)}</b>{roomsFor(input) > 1 ? `（${roomsFor(input)} 间合计）` : ""}</p>}
       </div>
       <div className="es-foot">
         <Toggle id="lp" label="酒店价和自己填的餐费，按各地物价折算（物价指数 = 当地餐厅人均 ÷ 全线中位数，限 0.5–2 倍）" checked={input.localPrice} onChange={(v) => set("localPrice", v)} />
