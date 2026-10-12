@@ -24,7 +24,7 @@ const photoCaption = (n: Node) => {
   return t && !n.n.includes(t) ? `${t} · ${placeName(n)}` : placeName(n);
 };
 
-function Hero({ data, onPlan }: { data: Dataset; onPlan: () => void }) {
+function Hero({ data, onPlan, onShortTrip }: { data: Dataset; onPlan: () => void; onShortTrip: () => void }) {
   const slides = HERO.map((id) => data.nodes.find((n) => n.id === id)).filter((n): n is Node => !!n?.img);
   const [i, setI] = useState(0);
   useEffect(() => {
@@ -47,14 +47,15 @@ function Hero({ data, onPlan }: { data: Dataset; onPlan: () => void }) {
         <p className="hero-verse">读万卷书 · 行万里路</p>
         <h1>万里路书</h1>
         <p className="hero-lede">
-          走过{provinces}个省区市的山河、古镇与人间烟火。可以几个月沿大环线走完，也可以跟着季节慢慢走一两年，在喜欢的地方住下来。
+          周末去附近走走，或走过{provinces}个省区市的山河与古镇。自定义短途起终点，也可以沿全国大环线慢慢走，在喜欢的地方住下来。
         </p>
         <dl className="hero-stats">
           <div><dt>公里</dt><dd>{int(Math.round(loopKm / 1000) * 1000)}</dd></div>
           <div><dt>城镇村落与风景</dt><dd>{data.nodes.length}</dd></div>
           <div><dt>风景道</dt><dd>{data.roads.length}</dd></div>
         </dl>
-        <button type="button" className="btn hero-cta" onClick={onPlan}>规划我的旅程</button>
+        <div className="hero-actions"><button type="button" className="btn hero-cta" onClick={onShortTrip}>规划短途自驾</button>
+          <button type="button" className="btn hero-cta" onClick={onPlan}>规划全国旅程</button></div>
       </div>
       {cur && (
         <div className="hero-foot">
@@ -100,8 +101,8 @@ function Segments({ data }: { data: Dataset }) {
   );
 }
 
-export function Welcome({ input, set, setAll, data, today, onStart }: {
-  input: PlanInput; set: SetInput; setAll: (next: PlanInput) => void; data: Dataset; today: string; onStart: () => void;
+export function Welcome({ input, set, setAll, data, today, onStart, onShortTrip }: {
+  input: PlanInput; set: SetInput; setAll: (next: PlanInput) => void; data: Dataset; today: string; onStart: () => void; onShortTrip: () => void;
 }) {
   const [askHotel, setAskHotel] = useState(false);
   const submit = () => {
@@ -111,7 +112,7 @@ export function Welcome({ input, set, setAll, data, today, onStart }: {
   const toPlan = () => document.getElementById("plan")?.scrollIntoView({ behavior: "smooth" });
   return (
     <div className="welcome">
-      <Hero data={data} onPlan={toPlan} />
+      <Hero data={data} onPlan={toPlan} onShortTrip={onShortTrip} />
       <Segments data={data} />
       <section id="plan" className="w-plan" aria-labelledby="w-plan-title">
         <header className="w-head">

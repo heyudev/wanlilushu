@@ -10,6 +10,7 @@ The bundled national loop covers approximately 36,000 km, 30 provincial-level re
 
 ## Features
 
+- **Custom short trips:** choose an origin, destination and up to five ordered waypoints, departure date, 1–30 total days, one-way/return travel, driving policy and daily driving limit. Generate road routes through AMap, daily driving/stay schedules, preparation notes, and Markdown/GPX exports. Enter optional party-wide cost assumptions and budget; unknown prices stay unfilled. Free-text requirements are retained as notes, not interpreted automatically. Intermediate overnight places and attraction/hotel recommendations still require selection. See [Custom short trips](docs/short-trips.md).
 - **Travel pace:** four presets, from sightseeing to extended stays. Customize nights at each stop, extra nights in comfortable locations, and the frequency of long stays. Optionally wait at a preceding long-stay location before entering a region with a seasonal travel window, such as Tibet, Xinjiang, western Sichuan, or the far northeast.
 - **Route order:** follow the national loop or reorder its 17 segments to follow the seasons. Each segment can run in either direction, with connecting drives between segments split across multiple days when needed. Slower presets follow the seasons by default; the sightseeing preset follows the loop. Settings compare duration, distance, and seasonal fit.
 - **Route editing:** skip a stop or segment, change its nights, add a place using AMap search and driving directions, and insert trips home. Annual Spring Festival breaks leave three days before Lunar New Year's Eve, using the Hong Kong Observatory's calendar tables, then resume the interrupted stay.
@@ -29,7 +30,7 @@ Use Node.js 22, as specified in [`.node-version`](.node-version). Copy [`.env.ex
 | `VITE_AMAP_JS_KEY`, `VITE_AMAP_JS_SECURITY_CODE` | Web (JS API) | Browser maps, place search, and driving directions. These values are included in the frontend bundle; configure an allowed-domain list in the AMap console. |
 | `AMAP_WEB_KEY`, `AMAP_WEB_SECRET` | Web Service | Data scripts under `scripts/` only. These values must never enter the frontend bundle. |
 
-Without keys, the application works except for the map and adding places.
+Without keys, nationwide planning works except for the map and adding places. Custom short trips require an AMap JS API key for place search and driving-route generation.
 
 ```bash
 npm ci
@@ -43,6 +44,8 @@ The [GitHub Actions workflow](.github/workflows/ci.yml) is configured to check u
 ### Optional browser checks
 
 [`scripts/check_share_browser.py`](scripts/check_share_browser.py) checks sharing and local storage in an isolated browser context. It accesses only the local development server and does not validate the live AMap service.
+
+[`scripts/check_short_trip_browser.py`](scripts/check_short_trip_browser.py) checks short-trip entry, route generation, constraints, exports, waypoint editing, mobile layout and storage isolation using mocked AMap responses. Run `python3 scripts/check_short_trip_browser.py` with the same local server and browser dependencies. The mock does not verify live AMap access.
 
 It requires Python 3.9 or newer, [Playwright](https://playwright.dev/python/docs/browsers), and the matching Chromium version. The following commands are for macOS/Linux; Python 3.11 was used for the local verification. Create an isolated environment and install the declared test dependency:
 

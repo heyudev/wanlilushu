@@ -6,6 +6,7 @@ import { Drawer } from "./components/Drawer";
 import { PrepTab } from "./components/PrepTab";
 import { RouteTab } from "./components/RouteTab";
 import { SearchBox } from "./components/SearchBox";
+import { ShortTrip } from "./components/ShortTrip";
 import { SojournTab } from "./components/SojournTab";
 import { StopDetail } from "./components/StopDetail";
 import { TripSettings } from "./components/TripSettings";
@@ -47,6 +48,7 @@ export function App() {
   const saved = useMemo(() => loadSavedPlan(() => localStorage.getItem(KEY)), []);
   const [input, setInput] = useState<PlanInput>(saved.input ?? DEFAULT_INPUT);
   const [started, setStarted] = useState(saved.input != null);
+  const [shortTripOpen, setShortTripOpen] = useState(location.hash === "#short" && !new URLSearchParams(location.search).has(SHARE_PARAM));
   const [tab, setTab] = useState<Tab>(tabFromHash);
   const [selectedSeg, setSelectedSeg] = useState<string | null>(null);
   const [openStop, setOpenStop] = useState<number | null>(null);
@@ -68,7 +70,7 @@ export function App() {
     let active = true;
     decodePlan(code).then((shared) => {
       if (!active) return;
-      if (shared) { setInput(shared); setStarted(true); setNotice("已打开分享的路书。改动只保存在你自己的浏览器里。"); }
+      if (shared) { setInput(shared); setStarted(true); setShortTripOpen(false); setNotice("已打开分享的路书。改动只保存在你自己的浏览器里。"); }
       else setNotice(saved.input ? "分享链接已损坏，打开的是你自己的路书。" : "分享链接已损坏，请重新设置路书。");
       params.delete(SHARE_PARAM);
       const query = params.toString();
@@ -84,7 +86,7 @@ export function App() {
   }, [input, started]);
 
   useEffect(() => {
-    const onHash = () => setTab(tabFromHash());
+    const onHash = () => { setTab(tabFromHash()); setShortTripOpen(location.hash === "#short"); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
@@ -121,10 +123,13 @@ export function App() {
   const stamp = `${plan.start.name}-${plan.input.startDate}`;
   const addCustom = (c: CustomStop) => { setInput((p) => ({ ...p, custom: [...p.custom, c] })); setAddAfter(null); setNotice(`已把「${c.name}」加入行程。`); };
 
+  const openShortTrip = () => { setShortTripOpen(true); history.replaceState(null, "", location.pathname + location.search + "#short"); window.scrollTo({ top: 0 }); };
+  if (shortTripOpen) return <ShortTrip today={today} onClose={() => { setShortTripOpen(false); history.replaceState(null, "", location.pathname + location.search + (started ? `#${tab}` : "")); }} />;
+
   if (!started) {
     return <>
       {notice && <div className="toast" role="status">{notice}</div>}
-      <Welcome input={input} set={set} setAll={setAll} data={data} today={today} onStart={() => { setStarted(true); go("route"); }} />
+      <Welcome input={input} set={set} setAll={setAll} data={data} today={today} onShortTrip={openShortTrip} onStart={() => { setStarted(true); go("route"); }} />
     </>;
   }
 
@@ -154,6 +159,7 @@ export function App() {
           </p>
           <SearchBox data={data} onPick={openStopById} />
           <div className="actions">
+            <button type="button" className="btn ghost" onClick={openShortTrip}>短途自驾</button>
             <button type="button" className="btn" onClick={() => setSettingsOpen(true)}>调整条件</button>
             <details className="menu">
               <summary className="btn ghost">分享与导出</summary>
