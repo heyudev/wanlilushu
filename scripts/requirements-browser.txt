@@ -1,0 +1,2 @@
+# Optional dependency for scripts/check_share_browser.py.
+playwright==1.58.0

@@ -6,6 +6,7 @@ import { searchStops } from "./search";
 import { decodePlan, diffFromDefaults, encodePlan } from "./share";
 import { DEFAULT_INPUT } from "./defaults";
 import { baseInput, fixture } from "./fixture";
+import type { PlanInput } from "./types";
 
 const data = fixture();
 
@@ -21,6 +22,15 @@ describe("share links", () => {
   });
   it("rejects a damaged code", async () => {
     expect(await decodePlan("not-a-plan")).toBeNull();
+  });
+  it.each([
+    { custom: null },
+    { startDate: "2027-02-30" },
+    { nightsOverride: { dali: "six" } },
+    { maxDriveHours: 0 },
+  ])("rejects a readable code with invalid settings: %j", async (invalid) => {
+    const code = await encodePlan({ ...DEFAULT_INPUT, ...invalid } as unknown as PlanInput);
+    expect(await decodePlan(code)).toBeNull();
   });
 });
 

@@ -16,6 +16,7 @@ import { dateRange, formatDate } from "./lib/dates";
 import { DEFAULT_INPUT } from "./lib/defaults";
 import { duration, int, yuanShort } from "./lib/format";
 import { planToGpx } from "./lib/gpx";
+import { loadSavedPlan } from "./lib/input";
 import { loadTransferGeom } from "./lib/transferGeom";
 import { planToMarkdown } from "./lib/markdown";
 import { buildPlan, costTotal } from "./lib/plan";
@@ -28,15 +29,6 @@ const KEY = "wanlilushu.input.v2";
 
 type Tab = "route" | "days" | "stay" | "costs" | "prep";
 const TABS: [Tab, string][] = [["route", "路线"], ["days", "行程"], ["stay", "旅居"], ["costs", "费用"], ["prep", "出发准备"]];
-
-function loadSaved(): PlanInput | null {
-  try {
-    const saved = JSON.parse(localStorage.getItem(KEY) ?? "null");
-    return saved ? { ...DEFAULT_INPUT, ...saved } : null;
-  } catch {
-    return null;
-  }
-}
 
 function tabFromHash(): Tab {
   const h = location.hash.slice(1);
@@ -52,15 +44,17 @@ function download(name: string, text: string, type: string) {
 }
 
 export function App() {
-  const saved = useMemo(loadSaved, []);
-  const [input, setInput] = useState<PlanInput>(saved ?? DEFAULT_INPUT);
-  const [started, setStarted] = useState(saved != null);
+  const saved = useMemo(() => loadSavedPlan(() => localStorage.getItem(KEY)), []);
+  const [input, setInput] = useState<PlanInput>(saved.input ?? DEFAULT_INPUT);
+  const [started, setStarted] = useState(saved.input != null);
   const [tab, setTab] = useState<Tab>(tabFromHash);
   const [selectedSeg, setSelectedSeg] = useState<string | null>(null);
   const [openStop, setOpenStop] = useState<number | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [addAfter, setAddAfter] = useState<string | null>(null);
-  const [notice, setNotice] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(saved.status === "invalid"
+    ? "本地保存的路书已损坏，请重新设置。原存档会保留到你开始新路书。"
+    : saved.status === "unavailable" ? "浏览器无法读取本地路书，请重新设置或打开分享链接。" : null);
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const data = useMemo(() => applyCustomStops(baseData, input.custom), [input.custom]);
   const plan = useMemo(() => buildPlan(data, input), [data, input]);
@@ -68,18 +62,25 @@ export function App() {
 
   // a shared link (?plan=…) opens that plan once, then the address bar is cleaned
   useEffect(() => {
-    const code = new URLSearchParams(location.search).get(SHARE_PARAM);
-    if (!code) return;
+    const params = new URLSearchParams(location.search);
+    const code = params.get(SHARE_PARAM);
+    if (code === null) return;
+    let active = true;
     decodePlan(code).then((shared) => {
+      if (!active) return;
       if (shared) { setInput(shared); setStarted(true); setNotice("已打开分享的路书。改动只保存在你自己的浏览器里。"); }
-      else setNotice("分享链接已损坏，打开的是你自己的路书。");
-      history.replaceState(null, "", location.pathname + location.hash);
+      else setNotice(saved.input ? "分享链接已损坏，打开的是你自己的路书。" : "分享链接已损坏，请重新设置路书。");
+      params.delete(SHARE_PARAM);
+      const query = params.toString();
+      history.replaceState(null, "", location.pathname + (query ? `?${query}` : "") + location.hash);
     });
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
     if (!started) return;
-    try { localStorage.setItem(KEY, JSON.stringify(input)); } catch { /* storage may be unavailable */ }
+    try { localStorage.setItem(KEY, JSON.stringify(input)); }
+    catch { setNotice("路书暂时无法保存在浏览器里，请复制分享链接留存。"); }
   }, [input, started]);
 
   useEffect(() => {
@@ -121,7 +122,10 @@ export function App() {
   const addCustom = (c: CustomStop) => { setInput((p) => ({ ...p, custom: [...p.custom, c] })); setAddAfter(null); setNotice(`已把「${c.name}」加入行程。`); };
 
   if (!started) {
-    return <Welcome input={input} set={set} setAll={setAll} data={data} today={today} onStart={() => { setStarted(true); go("route"); }} />;
+    return <>
+      {notice && <div className="toast" role="status">{notice}</div>}
+      <Welcome input={input} set={set} setAll={setAll} data={data} today={today} onStart={() => { setStarted(true); go("route"); }} />
+    </>;
   }
 
   const total = costTotal(plan.costs);

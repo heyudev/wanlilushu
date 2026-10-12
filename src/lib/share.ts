@@ -1,5 +1,6 @@
 // Share links: the settings that differ from the defaults, deflated and base64url-encoded into ?plan=.
 import { DEFAULT_INPUT } from "./defaults";
+import { parsePlanInput } from "./input";
 import type { PlanInput } from "./types";
 
 export const SHARE_PARAM = "plan";
@@ -36,9 +37,7 @@ export async function encodePlan(input: PlanInput): Promise<string> {
 export async function decodePlan(code: string): Promise<PlanInput | null> {
   try {
     const json = new TextDecoder().decode(await pipe(fromB64url(code), new DecompressionStream("deflate-raw")));
-    const diff = JSON.parse(json);
-    if (typeof diff !== "object" || diff == null) return null;
-    return { ...DEFAULT_INPUT, ...diff };
+    return parsePlanInput(JSON.parse(json));
   } catch {
     return null;
   }

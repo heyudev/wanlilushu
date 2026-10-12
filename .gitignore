@@ -3,6 +3,7 @@ dist
 .DS_Store
 *.log
 __pycache__
+.venv/
 # local secrets
 .env
 .env.*
